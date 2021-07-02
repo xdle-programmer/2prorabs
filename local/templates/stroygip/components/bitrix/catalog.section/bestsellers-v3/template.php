@@ -67,11 +67,9 @@ $this->setFrameMode(true);?>
 				?>
 				<div class="previews-grid__item product-cart preload__area">
 					<div class="product-cart__block">
-						<div class="product-cart__name">
-							<a href="<?=$arElement["DETAIL_PAGE_URL"]?>">
+							<a href="<?=$arElement["DETAIL_PAGE_URL"]?>" class="product-cart__name">
 								<?=$arElement["NAME"]?>
 							</a>
-						</div>
 						<div class="product-cart__reviews">
 							<div class="rating">
 								<div class="rating__stars">
