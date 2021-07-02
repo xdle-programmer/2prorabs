@@ -1,0 +1,94 @@
+.personal-area.personal-area--indent-bottom
+    .container
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Личный кабинет
+        .title.personal-area__title Добрый день Иван!
+        .personal-area__grid
+
+
+            // panel container
+            .personal-area__panel-container
+                a(href="#").personal-area__panel-item.personal-area__panel-item-home
+                    .personal-area__panel-icon.personal-area__panel-icon--home
+                    .personal-area__panel-text Главная
+
+                .personal-area__panel-title Заказы
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--orders
+                        .personal-area__panel-text Мои заказы
+
+
+                .personal-area__panel-title Профиль
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--organization
+                        .personal-area__panel-text Мои организации
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--estimate
+                        .personal-area__panel-text Сметы
+                    a(href="#").personal-area__panel-item.personal-area__panel-item--active
+                        .personal-area__panel-icon.personal-area__panel-icon--info
+                        .personal-area__panel-text Личные данные
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--bonuses
+                        .personal-area__panel-text Бонусы
+
+                        .personal-area__bonuses-notification
+                            .personal-area__bonuses-notification-text 245
+                            .personal-area__bonuses-notification-icon
+                                img(src="/src/blocks/personal-area/assets/img/bonus-star.svg")
+
+
+
+                a(href="#").personal-area__panel-item
+                    .personal-area__panel-icon.personal-area__panel-icon--exit
+                    .personal-area__panel-text Выход
+            // end panel container
+
+            .personal-area__block
+                .personal-area__block-inner
+                    .personal-area__block-title.personal-area__block-title--indent-bottom Иван Петров
+                    .personal-area__personal-data-container
+                        .personal-area__title-small Учетные данные
+                        include ../input-styled/input-styled_personal-data
+                        .personal-area__gender-select
+                            .personal-area__gender-title Пол:
+                            include ../radio-styled/radio-styled_gender
+                        include ../input-styled/input-styled_personal-data-tel
+                        .personal-area__tel-notification
+                            .personal-area__tel-notification-icon
+                                img(src="/src/blocks/personal-area/assets/img/check-3.svg")
+                            | Номер подтвержден
+
+                        .button.button--red.button--red-width.personal-area__btn-personal-data Обновить данные
+
+                        .personal-area__personal-data-row
+                            .personal-area__personal-data-box
+                                .personal-area__who-you-title.personal-area__who-you-title--mb Стали прорабом?
+                                .personal-area__who-you-text
+                                    a(href="#").personal-area__who-you-link Подтвердите лицензию
+                                    | и получайте <br> дополнительные скидки!
+
+                            .personal-area__personal-data-box
+                                .personal-area__who-you-title.personal-area__who-you-title--mb Вы представитель организации?
+                                .personal-area__who-you-text
+                                    a(href="#").personal-area__who-you-link Добавьте юридическое лицо
+                                    | и получите доступ к специальным ценам в нашем магазине!
+                        .personal-area__title-small Сохраненные адреса доставки
+                        .personal-area__address
+                            | Ваш город
+                            a(href="#").personal-area__address-link Бишкек
+                        .personal-area__select-country-box
+                            include ../select-country/select-country
+                            a(href="#").personal-area__select-country#btnAddAddress
+                                .personal-area__select-country-icon
+                                | Добавить новый адрес
+
+
+
+
+

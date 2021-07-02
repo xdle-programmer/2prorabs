@@ -1,0 +1,31 @@
+@import "../../libs/scss/mixins";
+@import "../../../blocks/base/variables";
+@import "../../../blocks/base/media-queries";
+
+.modal-complete-company{
+  display: none;
+  margin: 0 auto;
+  position: relative;
+  background: #fff;
+  width: 1056px;
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+	width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+	background-color: #415ab7;
+	border-radius: 3px;
+  }
+  &::-webkit-scrollbar-track {
+	background: transparent;
+  }
+  @media #{$tablet-small-screen}{
+	width: 700px;
+  }
+  @media #{$mobile-big-screen}{
+	width: 95%;
+	min-width: 300px;
+  }
+}

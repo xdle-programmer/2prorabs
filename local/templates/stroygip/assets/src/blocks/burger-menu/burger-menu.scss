@@ -1,0 +1,17 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.burger-menu{
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background: $black;
+  -webkit-mask: url(assets/img/burger-menu.svg);
+  mask: url(assets/img/burger-menu.svg);
+  @include mask-contain-center;
+  @media #{$mobile-big-screen}{
+    width: 25px;
+    height: 25px;
+  }
+}

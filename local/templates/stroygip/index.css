@@ -1,0 +1,199 @@
+.main-product-carousel .owl-dots {
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+  .main-product-carousel .owl-dots {
+    bottom: 15px;
+  }
+}
+
+.main-product-carousel .owl-dot {
+  flex-shrink: 0;
+  margin-right: 15px;
+  width: 9.6px;
+  border-radius: 100%;
+  height: 9.6px;
+  background-color: rgba(248, 248, 248, 0.3) !important;
+}
+
+.main-product-carousel .owl-dot.active {
+  width: 12.5px;
+  height: 12.5px;
+  background-color: #f8f8f8 !important;
+}
+
+.main-product-carousel .owl-dot:last-child {
+  margin-right: 0;
+}
+
+.main-product-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+@media (max-width: 1279px) {
+  .main-product-carousel .owl-nav {
+    padding: 0 10px;
+  }
+}
+
+.main-product-carousel .owl-next,
+.main-product-carousel .owl-prev {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% !important;
+  position: relative;
+  cursor: pointer;
+  width: 56px;
+  height: 72px;
+  border-radius: 4px;
+  background-color: rgba(248, 248, 248, 0.1) !important;
+}
+
+@media (max-width: 1279px) {
+  .main-product-carousel .owl-next,
+  .main-product-carousel .owl-prev {
+    width: 35px;
+    height: 50px;
+  }
+}
+
+.main-product-carousel .owl-prev:before {
+  content: "";
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% !important;
+  background: url("/local/templates/stroygip/img/main-carousel/arrow-white-left.svg") no-repeat;
+  width: 15px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+@media (max-width: 1279px) {
+  .main-product-carousel .owl-prev:before {
+    background-size: 70% !important;
+  }
+}
+
+.main-product-carousel .owl-next:before {
+  content: "";
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% !important;
+  background: url("/local/templates/stroygip/img/main-carousel/arrow-white-right.svg") no-repeat;
+  width: 15px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+@media (max-width: 1279px) {
+  .main-product-carousel .owl-next:before {
+    background-size: 70% !important;
+  }
+}
+
+.main-owl-carousel .owl-item .main-owl-carousel-slide {
+  width: 100%;
+  background-size: 100% !important;
+}
+
+.main-owl-carousel-slide {
+  width: 100%;
+  padding-bottom: 29.58%;
+}
+
+@media (max-width: 767px) {
+  .main-owl-carousel-slide {
+    display: none;
+  }
+}
+
+.main-owl-carousel-mobile-slide {
+  display: none;
+  padding-bottom: 151.466%;
+  background-size: 100%;
+}
+
+@media (max-width: 767px) {
+  .main-owl-carousel-mobile-slide {
+    display: block;
+  }
+}
+
+.product-review-form {
+  width: 500px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  .product-review-form .product-review-form {
+    width: 100%;
+  }
+}
+
+.product-review-form__row1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.product-review-form__control-wrapper {
+  width: 100%;
+}
+
+.product-review-form__control-wrapper:not(:last-child) {
+  margin-right: 16px;
+}
+
+.product-review-form__textarea {
+  height: 100px;
+}
+
+.product-review {
+  margin-bottom: 20px;
+}
+
+.product-review__name {
+  font-weight: bold;
+}
+
+.product-review__text {
+  margin-top: 5px;
+}
+
+.checkout__unavailable-products-text {
+  margin-top: 8px;
+  color: #e0141f;
+}
+
+.checkout__unavailable-product {
+  color: #e0141f;
+}
+
+/*# sourceMappingURL=index.css.map */

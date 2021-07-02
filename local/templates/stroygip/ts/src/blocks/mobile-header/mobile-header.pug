@@ -1,0 +1,12 @@
+.mobile-header
+    .mobile-header__block.layout.preload__area
+        .mobile-header__button(data-menu-target='mobile-menu')
+            +iconSvg('menu','mobile-header__button-icon')
+        .mobile-header__catalog-button(data-menu-target='main')
+            +iconSvg('mobile-catalog','mobile-header__catalog-button-icon')
+            .mobile-header__catalog-button-text Каталог
+
+        a(href='#').mobile-header__basket
+            +iconSvg('basket','mobile-header__basket-icon')
+            span.mobile-header__basket-text Корзина
+            span.mobile-header__basket-count 214

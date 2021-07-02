@@ -1,0 +1,240 @@
+.basket-products
+    .container
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link(href="#") Корзина
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Оформление заказа
+
+        .basket-products__grid
+
+            // First container
+            .basket-products__container
+                .basket-products__title Оформление заказа
+
+                .basket-products__steps
+                    .basket-products__step-item
+                        .basket-products__step-icon 1
+                        .basket-products__step-text Доставка
+                    .basket-products__step-arrow
+                    .basket-products__step-item
+                        .basket-products__step-icon 2
+                        .basket-products__step-text Оплата
+                    .basket-products__step-arrow
+                    .basket-products__step-item
+                        .basket-products__step-icon 3
+                        .basket-products__step-text Подтверждение
+
+                .basket-products__title.basket-products__title--medium-center.basket-products__title--mb Доставка
+
+                .basket-products__registration-inner
+
+                    .basket-products__registration-title Получатель
+                    .basket-products__registration-forms
+                        .basket-products__registration-input-box.basket-products__registration-input-box--mr
+                            label.basket-products__registration-label Имя
+                            input(type="text").basket-products__registration-input
+
+                        .basket-products__registration-input-box
+                            label.basket-products__registration-label Фамилия
+                            input(type="text").basket-products__registration-input
+
+                    .basket-products__registration-title Город получения
+
+                    .basket-products__select
+                        .ui-widget.ui-widget--mb
+                            //.select-label Ваш населенный пункт
+                            select#combobox
+                                option(value="") Select one...
+                                option(value="Бишкек") Select
+                                option(value="Бишкек") Бишкек
+                                option(value="Бишкек2") Бишкек2
+
+
+
+
+
+
+                    .basket-products__registration-title Выберите способ получения заказа
+
+                    .basket-products__container-tabs
+
+                        .basket-products__delivery-buttons
+
+                            .basket-products__delivery-button.basket-products__delivery-button--active
+                                .basket-products__delivery-button-title Самовывоз
+                                .basket-products__delivery-button-text Бесплатно
+
+                            .basket-products__delivery-button
+                                .basket-products__delivery-button-title Курьерская доставка
+                                .basket-products__delivery-button-text От 273 com
+
+                            .basket-products__delivery-button
+                                .basket-products__delivery-button-title Доставка до ТК
+                                .basket-products__delivery-button-text От 134 com
+
+                        .basket-products__content.basket-products__content--active
+                            .basket-products__registration-title.basket-products__registration-title--mb-small Пункты самовывоза
+                            .basket-products__delivery-points
+                                // Start delivery point item
+                                .basket-products__delivery-point
+                                    .basket-products__delivery-point-container
+                                        .basket-products__delivery-point-position ул. Вакуленчука, 29/2, ТРЦ "Муссон"
+                                        .basket-products__delivery-point-time
+                                            | График работы: пн-пт 10.00-20.00, сб-вс 11.00-17.00 <br>
+                                            | Можно забрать во вторник, 25 августа
+                                        .basket-products__delivery-pay-method Заказ можно оплатить наличными или банковской картой при получении
+                                    a(href="#").basket-products__delivery-point-button Выбрать
+                                // End delivery point item
+
+                                // Start delivery point item
+                                .basket-products__delivery-point
+                                    .basket-products__delivery-point-container
+                                        .basket-products__delivery-point-position ул. Вакуленчука, 29/2, ТРЦ "Муссон"
+                                        .basket-products__delivery-point-time
+                                            | График работы: пн-пт 10.00-20.00, сб-вс 11.00-17.00 <br>
+                                            | Можно забрать во вторник, 25 августа
+                                        .basket-products__delivery-pay-method Заказ можно оплатить наличными или банковской картой при получении
+                                    a(href="#").basket-products__delivery-point-button Выбрать
+                                // End delivery point item
+
+                                // Start delivery point item
+                                .basket-products__delivery-point
+                                    .basket-products__delivery-point-container
+                                        .basket-products__delivery-point-position ул. Вакуленчука, 29/2, ТРЦ "Муссон"
+                                        .basket-products__delivery-point-time
+                                            | График работы: пн-пт 10.00-20.00, сб-вс 11.00-17.00 <br>
+                                            | Можно забрать во вторник, 25 августа
+                                        .basket-products__delivery-pay-method Заказ можно оплатить наличными или банковской картой при получении
+                                    a(href="#").basket-products__delivery-point-button Выбрать
+                                // End delivery point item
+                                // Start delivery point item
+                                .basket-products__delivery-point
+                                    .basket-products__delivery-point-container
+                                        .basket-products__delivery-point-position ул. Вакуленчука, 29/2, ТРЦ "Муссон"
+                                        .basket-products__delivery-point-time
+                                            | График работы: пн-пт 10.00-20.00, сб-вс 11.00-17.00 <br>
+                                            | Можно забрать во вторник, 25 августа
+                                        .basket-products__delivery-pay-method Заказ можно оплатить наличными или банковской картой при получении
+                                    a(href="#").basket-products__delivery-point-button Выбрать
+                                // End delivery point item
+
+
+
+
+
+
+                        .basket-products__content
+                            // START SELECT COURIER
+                            .basket-products__registration-title.basket-products__registration-title--mb-small Введите адрес доставки
+
+                            .basket-products__delivery-inner
+                                .basket-products__delivery-box
+                                    .basket-products__your-country
+                                        | Ваш город
+                                        a(href="#").basket-products__your-country-link Бишкек
+
+                                    include ../select-country/select-country
+
+
+                                .basket-products__delivery-box
+                                    .basket-products__delivery-title   Или добавьте новый адрес
+                                    .basket-products__delivery-input
+                                        .basket-products__registration-input-box
+                                            label.basket-products__registration-label Город
+                                            input(type="text").basket-products__registration-input
+                                    .basket-products__delivery-input
+                                        .basket-products__registration-input-box
+                                            label.basket-products__registration-label Улица
+                                            input(type="text").basket-products__registration-input
+
+                                    .basket-products__delivery-input
+                                        .basket-products__registration-input-box
+                                            label.basket-products__registration-label Дом
+                                            input(type="text").basket-products__registration-input
+                                    .basket-products__delivery-input
+                                        .basket-products__registration-input-box
+                                            label.basket-products__registration-label Квартира
+                                            input(type="text").basket-products__registration-input
+
+                                    .basket-products__checkbox
+                                        input(type="checkbox").basket-products__checkbox-input
+                                        .basket-products__checkbox-square
+                                        .basket-products__checkbox-text Добавить адрес в список сохраненных адресов
+                            //END SELECT COURIER
+
+                        .basket-products__content
+                            // START SELECT TK
+                            .basket-products__tk
+                                .basket-products__registration-title.basket-products__registration-title--mb-small Введите адрес пункта ТК
+
+                                // Start warning info
+                                .basket-products__warning
+                                    .basket-products__warning-close
+                                        img(src="/src/blocks/basket-products/assets/img/close.svg")
+                                    .basket-products__warning-title Внимание!
+                                    .basket-products__warning-text
+                                        | Мы доставляем груз только до пункта ТК в  городе Бишкек. Транспортные расходы, связанные с оплатой доставки до пункта ТК в вашем городе вы оплачиваете отдельно при получении.
+                                        | Стоимость между филиалами Транспортной Компании вы можете рассчитать самостоятельно на сайте выбранной Транспортной компании. Окончательную стоимость вам сообщит оператор при оформлении заказа.
+                                // End warning info
+
+                                .basket-products__registration-forms.basket-products__registration-forms--mb
+                                    .basket-products__registration-input-box.basket-products__registration-input-box--mr
+                                        label.basket-products__registration-label Город
+                                        input(type="text").basket-products__registration-input
+
+                                    .basket-products__registration-input-box
+                                        label.basket-products__registration-label Улица
+                                        input(type="text").basket-products__registration-input
+
+                                .basket-products__registration-forms
+                                    .basket-products__registration-input-box.basket-products__registration-input-box--mr
+                                        label.basket-products__registration-label Дом
+                                        input(type="text").basket-products__registration-input
+
+                                    .basket-products__registration-input-box
+                                        label.basket-products__registration-label Квартира
+                                        input(type="text").basket-products__registration-input
+                            // END SELECT TK
+
+
+
+                // Start next button
+                a(href="#").basket-products__next-button
+                    | Далее
+                    .basket-products__next-button-icon
+                // End next button
+
+
+            // Second container
+            .basket-products__container.basket-products__container--pb
+                .basket-products__title-medium.basket-products__title-medium--mb Ваш заказ:
+
+                .basket-products__row
+                    .basket-products__row-name
+                        | Товары 3 шт.
+                    .basket-products__row-info
+                        | 23 645 com
+                .basket-products__row
+                    .basket-products__row-name
+                        | Вес заказа
+                    .basket-products__row-info
+                        | 2 кг
+                .basket-products__row
+                    .basket-products__row-name
+                        | Скидка 15%
+                    .basket-products__row-info.basket-products__row-info--red
+                        | -1 500 com
+                .basket-products__row
+                    .basket-products__row-name
+                        | Доставка (3 дня)
+                    .basket-products__row-info
+                        | Бесплатно
+
+                .basket-products__total-cost
+                    .basket-products__total-cost-row
+                        .basket-products__total-cost-name Общая стоимость:
+                        .basket-products__total-cost-amount
+                            | 21 456 com

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+    <g fill="none">
+        <path fill="#415AB7" d="M15.82 3.711L12.124.015H0v35.846l40.193-.04V3.711H15.82z" transform="translate(5 8.5)"/>
+        <path fill="#415AB7" d="M40.193 3.711h-17.62v8.857h17.62V3.71z" transform="translate(5 8.5)"/>
+        <path fill="#E4F3FF" d="M39.883 38.822L0 38.822 0 35.861 7.262 9.717 47.338 9.717z" transform="translate(5 8.5)"/>
+        <path fill="#C3DAFD" d="M47.338 9.717L22.572 9.717 22.572 38.822 39.883 38.822z" transform="translate(5 8.5)"/>
+        <g transform="translate(5 8.5) translate(14.23 15.246)">
+            <path fill="#E5636A" d="M16.686 18.174H0v-1.386c0-4.6 3.743-8.343 8.343-8.343s8.343 3.742 8.343 8.343v1.386z"/>
+            <circle cx="8.34" cy="5.662" r="5.561" fill="#415AB7" transform="rotate(-.688 8.34 5.662)"/>
+        </g>
+        <path fill="#E0141F" d="M30.915 32.033c0-3.14-1.744-5.88-4.315-7.304-1.476 0-4.028.59-4.028 1.733v6.957h8.343v-1.386z" transform="translate(5 8.5)"/>
+        <path fill="#415AB7" d="M28.132 20.902c0-3.066-2.494-5.56-5.56-5.56v11.12c3.055 0 5.56-2.49 5.56-5.56z" transform="translate(5 8.5)"/>
+    </g>
+</svg>

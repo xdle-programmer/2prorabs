@@ -1,0 +1,14 @@
+extends ../templates/main
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    include ../blocks/menu/menu
+    #main-group.preload
+        include ../blocks/mobile-header/mobile-header
+        include ../blocks/header/header
+
+        .layout
+            div(style='width:100%;padding:50px;text-align:center;font-size:50px') Каталог

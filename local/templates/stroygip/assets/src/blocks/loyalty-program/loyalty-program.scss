@@ -1,0 +1,11 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.loyalty-program{
+  height: 496px;
+  background: url(assets/img/loyalty-back.svg) no-repeat center;
+  @media #{$mobile-big-screen}{
+    height: 370px;
+  }
+}

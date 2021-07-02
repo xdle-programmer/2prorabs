@@ -1,0 +1,136 @@
+.personal-area
+    .container
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Личный кабинет
+        .title.personal-area__title Добрый день Иван!
+        .personal-area__grid
+
+
+            // panel container
+            .personal-area__panel-container
+                a(href="#").personal-area__panel-item.personal-area__panel-item-home
+                    .personal-area__panel-icon.personal-area__panel-icon--home
+                    .personal-area__panel-text Главная
+
+                .personal-area__panel-title Заказы
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--orders
+                        .personal-area__panel-text Мои заказы
+
+
+                .personal-area__panel-title Профиль
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--organization
+                        .personal-area__panel-text Мои организации
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--estimate
+                        .personal-area__panel-text Сметы
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--info
+                        .personal-area__panel-text Личные данные
+                    a(href="#").personal-area__panel-item.personal-area__panel-item--active
+                        .personal-area__panel-icon.personal-area__panel-icon--bonuses
+                        .personal-area__panel-text Бонусы
+
+                        .personal-area__bonuses-notification
+                            .personal-area__bonuses-notification-text 245
+                            .personal-area__bonuses-notification-icon
+                                img(src="/src/blocks/personal-area/assets/img/bonus-star.svg")
+
+
+
+                a(href="#").personal-area__panel-item
+                    .personal-area__panel-icon.personal-area__panel-icon--exit
+                    .personal-area__panel-text Выход
+            // end panel container
+
+            .personal-area__block
+                .personal-area__block-inner
+                    .personal-area__block-title Здесь хранятся ваши сметы.
+
+                    .personal-area__estimate-text Вы можете скачать смету и повтороить заказ.
+                    .personal-area__estimate-description
+                        | Чтобы создать новую смету, добавьте необходимые товары в корзину и нажмите кнопку "сохранить как смету". <br>
+                        | Смета автоматически сохранится в вашем личном кабинете. После этого вы можете скачать её и передать другому лицу для заказа. <br>
+                        | Ваш промокод SD345 автоматически отображается в документе со сметой. Также его можно ввести отдельно в корзине при заказе.
+
+
+                    .personal-area__title-small История смет
+                    .personal-area__tab-history-block
+                        .personal-area__tab-history
+                            .personal-area__tab-history-head
+                                .personal-area__bonuses-head-row
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-title Дата:
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-title Номер заказа:
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-title Сумма заказа:
+                                    .personal-area__tab-history-col.personal-area__tab-history-col--width
+                                        .personal-area__tab-history-title Файл сметы:
+                            .personal-area__tab-history-inner
+                                .personal-area__tab-history-row
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text 27.06.2020
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text № 23833548
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text 1500 com
+                                    .personal-area__tab-history-col.personal-area__tab-history-col--width
+                                        .personal-area__estimate-row
+                                            .personal-area__estimate-file
+                                                | Скачать
+                                                .personal-area__estimate-file-icon
+                                            a(href="#").personal-area__btn-repeat-order
+                                                | Повторить заказ
+                                .personal-area__tab-history-row
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text 27.06.2020
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text № 23833548
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text 1500 com
+                                    .personal-area__tab-history-col.personal-area__tab-history-col--width
+                                        .personal-area__estimate-row
+                                            .personal-area__estimate-file
+                                                | Скачать
+                                                .personal-area__estimate-file-icon
+                                            a(href="#").personal-area__btn-repeat-order
+                                                | Повторить заказ
+                                .personal-area__tab-history-row
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text 27.06.2020
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text № 23833548
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text 1500 com
+                                    .personal-area__tab-history-col.personal-area__tab-history-col--width
+                                        .personal-area__estimate-row
+                                            .personal-area__estimate-file
+                                                | Скачать
+                                                .personal-area__estimate-file-icon
+                                            a(href="#").personal-area__btn-repeat-order
+                                                | Повторить заказ
+                                .personal-area__tab-history-row
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text 27.06.2020
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text № 23833548
+                                    .personal-area__tab-history-col
+                                        .personal-area__tab-history-text 1500 com
+                                    .personal-area__tab-history-col.personal-area__tab-history-col--width
+                                        .personal-area__estimate-row
+                                            .personal-area__estimate-file
+                                                | Скачать
+                                                .personal-area__estimate-file-icon
+                                            a(href="#").personal-area__btn-repeat-order
+                                                | Повторить заказ
+
+
+
+

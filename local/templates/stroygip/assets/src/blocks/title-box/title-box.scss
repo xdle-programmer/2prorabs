@@ -1,0 +1,76 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.title-box {
+  margin-bottom: 56px;
+  @include flex-row-center;
+
+  &--mb-small{
+	margin-bottom: 18px;
+  }
+
+  @media #{$mobile-big-screen}{
+	flex-direction: column;
+	margin-bottom: 30px;
+  }
+
+  &__notification {
+	img {
+	  margin-right: 9px;
+	}
+
+	font-size: 20px;
+	color: #1c1c1d;
+	margin-left: 25px;
+	display: inline-flex;
+	align-items: center;
+	background: #ffecde;
+	padding: 11px 16px;
+	border-radius: 4px;
+	@media #{$tablet-small-screen}{
+	  font-size: 18px;
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 14px !important;
+	  padding: 8px 12px;
+	  margin: 10px 0 0 0;
+	}
+
+
+	&--small{
+	  font-size: 14px;
+	}
+  }
+
+  &__title {
+	font-size: 40px;
+	text-align: center;
+	color: #2f3137;
+	@media #{$tablet-big-screen} {
+	  font-size: 35px;
+	}
+	@media #{$tablet-small-screen} {
+	  font-size: 30px;
+	}
+	@media #{$mobile-big-screen} {
+	  font-size: 23px;
+	}
+
+	&--small{
+	  font-size: 28px;
+	  @media #{$tablet-small-screen} {
+		font-size: 19px;
+	  }
+	  @media #{$mobile-big-screen} {
+		font-size: 16px;
+	  }
+	}
+	&--bold{
+	  font-weight: 500;
+	}
+
+
+  }
+}

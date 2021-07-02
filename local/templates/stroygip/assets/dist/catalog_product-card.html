@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара</title>
+  <link href="libs.css" rel="stylesheet"><link href="style.css" rel="stylesheet"></head>
+  <body>
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__logo-hidden">
+<div class="logo"></div>
+      </div><a class="your-country open-modal-region"><img class="your-country__img" src="/src/blocks/your-country/assets/img/maps.svg">
+  <p class="your-country__text">Ваш регион Бишкек?</p></a>
+<nav class="nav"><a class="nav__links" href="#">О нас</a><a class="nav__links" href="#">Доставка и оплата</a><a class="nav__links" href="#">Корпоративным клиентам</a><a class="nav__links" href="#">Поставщикам</a><a class="nav__phone" href="tel:">+ 996 552 90 13 22</a>
+<div class="switch-language">
+  <div class="switch-language__container">
+    <input class="switch-language__switch" type="radio" name="radio" value="1" id="radio-1" checked>
+    <label class="switch-language__label" for="radio-1"><span class="switch-language__name">Kg</span></label>
+    <input class="switch-language__switch" type="radio" name="radio" value="2" id="radio-2">
+    <label class="switch-language__label" for="radio-2"><span class="switch-language__name">Ru</span></label>
+  </div>
+</div>
+</nav>
+      <div class="header__icon header__icon--user"></div>
+      <div class="header__icon header__icon--basket"></div>
+      <div class="header__burger-menu">
+<div class="burger-menu"></div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="scroll-panel">
+<div class="information-panel">
+  <div class="container">
+    <div class="information-panel__inner">
+      <div class="information-panel__box">
+        <div class="information-panel__burger-menu information-panel__burger-menu--mobile-hidden">
+<div class="burger-menu"></div>
+        </div><a class="information-panel__logo-link" href="#">
+<div class="logo"></div></a>
+        <div class="information-panel__search">
+<div class="search-panel">
+  <div class="search-panel__icon search-panel__icon--mobile-hidden"></div>
+  <input class="search-panel__input" type="text">
+  <button class="search-panel__button">
+    <p class="search-panel__text">Найти</p>
+    <div class="search-panel__icon search-panel__icon--mobile-show"></div>
+  </button>
+</div>
+        </div>
+      </div>
+      <div class="information-panel__user-panel">
+<div class="users-panel">
+  <div class="users-panel__item">
+    <div class="users-panel__icon users-panel__icon--heart"></div>
+    <div class="users-panel__text">Избранное</div>
+  </div>
+  <div class="users-panel__item">
+    <div class="users-panel__icon users-panel__icon--stat"></div>
+    <div class="users-panel__text">Сравнение</div>
+  </div>
+  <div class="users-panel__item">
+    <div class="users-panel__icon users-panel__icon--basket"></div>
+    <div class="users-panel__text">Корзина</div>
+    <div class="users-panel__notification">
+      <div class="users-panel__notification-value">1</div>
+      <div class="users-panel__notification-background"></div>
+    </div>
+  </div>
+  <div class="users-panel__item">
+    <div class="users-panel__icon users-panel__icon--user"></div>
+    <div class="users-panel__text">Мой профиль</div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="catalog">
+  <div class="container">
+    <div class="catalog__inner">
+      <div class="catalog__button">
+        <div class="catalog__button-icon"></div>
+        <div class="catalog__button-text">Весь каталог</div>
+      </div>
+      <div class="catalog__list">
+        <div class="catalog__list-item">
+          <div class="catalog__list-item-icon catalog__list-item-icon--flowers"></div>
+          <div class="catalog__list-item-text">Сад и огород</div>
+<div class="catalog__submenu">
+  <div class="catalog__submenu-inner container">
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+  </div>
+</div>
+        </div>
+        <div class="catalog__list-item">
+          <div class="catalog__list-item-icon catalog__list-item-icon--materials"></div>
+          <div class="catalog__list-item-text">Строительные материалы</div>
+<div class="catalog__submenu">
+  <div class="catalog__submenu-inner container">
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+  </div>
+</div>
+        </div>
+        <div class="catalog__list-item">
+          <div class="catalog__list-item-icon catalog__list-item-icon--electro"></div>
+          <div class="catalog__list-item-text">Электроинструмент</div>
+<div class="catalog__submenu">
+  <div class="catalog__submenu-inner container">
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+  </div>
+</div>
+        </div>
+        <div class="catalog__list-item">
+          <div class="catalog__list-item-icon catalog__list-item-icon--instruments"></div>
+          <div class="catalog__list-item-text">Инструменты</div>
+<div class="catalog__submenu">
+  <div class="catalog__submenu-inner container">
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+  </div>
+</div>
+        </div>
+        <div class="catalog__list-item">
+          <div class="catalog__list-item-icon catalog__list-item-icon--coverings"></div>
+          <div class="catalog__list-item-text">Напольные покрытия</div>
+<div class="catalog__submenu">
+  <div class="catalog__submenu-inner container">
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+  </div>
+</div>
+        </div>
+        <div class="catalog__list-item">
+          <div class="catalog__list-item-icon catalog__list-item-icon--plumbing"></div>
+          <div class="catalog__list-item-text">Сантехника</div>
+<div class="catalog__submenu">
+  <div class="catalog__submenu-inner container">
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+  </div>
+</div>
+        </div>
+        <div class="catalog__list-item">
+          <div class="catalog__list-item-icon catalog__list-item-icon--electrical"></div>
+          <div class="catalog__list-item-text">Электротовары</div>
+<div class="catalog__submenu">
+  <div class="catalog__submenu-inner container">
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+  </div>
+</div>
+        </div>
+        <div class="catalog__list-item">
+          <div class="catalog__list-item-icon catalog__list-item-icon--stock"></div>
+          <div class="catalog__list-item-text">Акции</div>
+<div class="catalog__submenu">
+  <div class="catalog__submenu-inner container">
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Ландшафтный дизайн</a><a class="catalog__submenu-item-link" href="#">Агроволокно и укрывные материалы</a><a class="catalog__submenu-item-link" href="#">Садовые фигуры</a><a class="catalog__submenu-item-link" href="#">Сетки и ограждения</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Газовые шланги и комплектующие</a><a class="catalog__submenu-item-link" href="#">Компрессоры и комплектующие</a><a class="catalog__submenu-item-link" href="#">Огнетушители</a><a class="catalog__submenu-item-link" href="#">Пожарные рукава</a><a class="catalog__submenu-item-link" href="#">Пожарные шкафы и щиты</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Отделочный инструмент</a><a class="catalog__submenu-item-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog__submenu-item-link" href="#">Миксеры для смесей и красок</a><a class="catalog__submenu-item-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog__submenu-item-link" href="#">Пистолет для пены и герметика</a></div>
+    <div class="catalog__submenu-item"><a class="catalog__submenu-item-title" href="#">Полив и орошения</a><a class="catalog__submenu-item-link" href="#">Емкости для полива</a><a class="catalog__submenu-item-link" href="#">Капельный полив и орошение</a><a class="catalog__submenu-item-link" href="#">Катушки для шланга</a><a class="catalog__submenu-item-link" href="#">Опрыскиватели</a><a class="catalog__submenu-item-link" href="#">Полиэтиленовые трубы и фитинги</a><a class="catalog__submenu-item-link" href="#">Разбрызгиватели и наконечники</a><a class="catalog__submenu-item-link" href="#">Шланги для полива</a></div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="catalog-menu">
+  <div class="catalog-menu__box container">
+    <div class="catalog-menu__item catalog-menu__item--open"><a class="catalog-menu__item-link" href="#">Сад и огород</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/flowers.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Строительные материалы</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/materials.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Декор для дома (краски, обои)</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/decor.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Электроинструмент</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/instruments.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Инструменты</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/tools-box.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Плитка и напольные покрытия</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/parket.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Сантехника и водопровод</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/bathroom.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Электротовары</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/flowers.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Электроинструменты</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/flowers.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Освещение</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/flowers.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Изделия из дерева</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/flowers.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Изделия из металла</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/flowers.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Посуда и кухонная утварь</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/flowers.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="catalog-menu__item"><a class="catalog-menu__item-link" href="#">Офис и канцтовары</a>
+      <div class="catalog-menu__item-button"></div>
+      <div class="catalog-menu__submenu"><img class="catalog-menu__submenu-img" src="/src/blocks/catalog-menu/asset/img/flowers.png">
+<div class="catalog-menu__submenu-box">
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Измерительный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гидроуровни</a><a class="catalog-menu__submenu-inner-link" href="#">Дальномеры/Измерительные колеса</a><a class="catalog-menu__submenu-inner-link" href="#">Измерительные приборы</a><a class="catalog-menu__submenu-inner-link" href="#">Рулетки</a><a class="catalog-menu__submenu-inner-link" href="#">Угольники/Линейки/Штангенциркули</a><a class="catalog-menu__submenu-inner-link" href="#">Уровни</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Машины, станки, оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Генераторы</a><a class="catalog-menu__submenu-inner-link" href="#">Компрессоры</a><a class="catalog-menu__submenu-inner-link" href="#">Станки для резки плитки и камня</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Отделочный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Прочие инструменты</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Клеевые пистолеты/Стержни</a><a class="catalog-menu__submenu-inner-link" href="#">Очки защитные</a><a class="catalog-menu__submenu-inner-link" href="#">Паяльные лампы</a><a class="catalog-menu__submenu-inner-link" href="#">Степлеры</a><a class="catalog-menu__submenu-inner-link" href="#">Ящики для инструментов/Органайзеры</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Режущий инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Буры и насадки для перфоратора</a><a class="catalog-menu__submenu-inner-link" href="#">Коронки</a><a class="catalog-menu__submenu-inner-link" href="#">Круги и диски</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a><a class="catalog-menu__submenu-inner-link" href="#">Резьбонарезной инструмент</a><a class="catalog-menu__submenu-inner-link" href="#">Сверла</a><a class="catalog-menu__submenu-inner-link" href="#">Скребки/Стеклорезы/Плиткорезы</a><a class="catalog-menu__submenu-inner-link" href="#">Ножницы</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Пневмоинструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инструмент для затирки швов/Шпатели/Щетки</a><a class="catalog-menu__submenu-inner-link" href="#">Миксеры для смесей и красок</a><a class="catalog-menu__submenu-inner-link" href="#">Отвесы/Правила строительные/Терки</a><a class="catalog-menu__submenu-inner-link" href="#">Пистолет для пены и герметика</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Сварочное оборудование</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Инверторы сварочные</a><a class="catalog-menu__submenu-inner-link" href="#">Электроды и сварная проволока</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Слесарный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Биты/Головки сменные/Воротки/Надфили</a><a class="catalog-menu__submenu-inner-link" href="#">Бокорезы/Кусачки/Зажимы/Просекатели</a><a class="catalog-menu__submenu-inner-link" href="#">Ключи и наборы ключей</a><a class="catalog-menu__submenu-inner-link" href="#">Молотки/Кувалды/Зубила</a><a class="catalog-menu__submenu-inner-link" href="#">Наборы инструментов</a><a class="catalog-menu__submenu-inner-link" href="#">Плоскогубцы/Длинногубцы/Отвертки</a></div>
+  </div>
+  <div class="catalog-menu__submenu-item"><a class="catalog-menu__submenu-item-link" href="#">Столярный инструмент</a>
+    <div class="catalog-menu__submenu-item-button"></div>
+    <div class="catalog-menu__submenu-inner"><a class="catalog-menu__submenu-inner-link" href="#">Гвоздодеры/Кирки</a><a class="catalog-menu__submenu-inner-link" href="#">Ножовки/Пилы/Лобзики</a><a class="catalog-menu__submenu-inner-link" href="#">Стамески/Струбцины</a><a class="catalog-menu__submenu-inner-link" href="#">Тиски/Стусла</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<section class="product-card">
+  <div class="container">
+    <div class="breadcrumbs">
+      <div class="breadcrumbs__inner"><a class="breadcrumbs__link" href="#">Главная</a>
+        <div class="breadcrumbs__separator"></div><a class="breadcrumbs__link" href="#">Каталог</a>
+        <div class="breadcrumbs__separator"></div><a class="breadcrumbs__link" href="#">Электротовары</a>
+        <div class="breadcrumbs__separator"></div><a class="breadcrumbs__link" href="#">Освещение</a>
+        <div class="breadcrumbs__separator"></div>
+        <div class="breadcrumbs__separator"></div><a class="breadcrumbs__link" href="#">Люстры</a>
+        <div class="breadcrumbs__separator"></div><a class="breadcrumbs__link active" href="#">Люстра Vitaluce</a>
+      </div>
+    </div>
+    <div class="product-card__item">
+      <div class="product-card__main-product">
+        <div class="product-card__box">
+          <div class="product-card__slides">
+            <div class="product-card__slide-small"><img src="/src/images/product-card/small-image-2.png"></div>
+            <div class="product-card__slide-small"><img src="/src/images/product-card/small-image-2.png"></div>
+            <div class="product-card__slide-small"><img src="/src/images/product-card/small-image-2.png"></div>
+            <div class="product-card__slide-small"><img src="/src/images/product-card/small-image-2.png"></div>
+          </div>
+          <!--.wrapper-->
+          <!--    .owl-carousel.owl-theme.owl-carousel-vertical-->
+          <!--        img.vertical-item(src='http://placehold.it/320x240?text=Slide%200')-->
+          <!--        img.vertical-item(src='http://placehold.it/320x240?text=Slide%200')-->
+          <!--        img.vertical-item(src='http://placehold.it/320x240?text=Slide%200')-->
+          <!--        img.vertical-item(src='http://placehold.it/320x240?text=Slide%200')-->
+          <div class="product-card__preview">
+            <div class="product-card__preview-header">
+              <div class="product-card__rating-box">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+                <div class="product-card__reviews-counter">Нет отзывов</div>
+              </div>
+              <div class="product-card__select-box"><a class="product-card__select-button" href="#">
+                  <div class="product-card__select-button-icon product-card__select-button-icon--favourites"></div>В избранное</a><a class="product-card__select-button" href="#">
+                  <div class="product-card__select-button-icon product-card__select-button-icon--comparison"></div>В сравнение</a></div>
+            </div>
+            <div class="product-card__main-image-box">
+              <img class="product-card__main-image" src="/src/images/product-card/main-image.png">
+              <div class="product-card__mark"><img class="product-card__mark-icon" src="/src/images/icons/sale.svg">Скидка 15%</div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card__about">
+          <div class="product-card__title">Потолочная Люстра Vitaluce 3 х Е27, 60 Вт. V4313-1/3PL , E27, 60 Вт</div>
+          <div class="product-card__subtitle product-card__article">Артикул: 30361709</div>
+          <div class="product-card__subtitle product-card__color">Цвет:<span class="product-card__text">Белый</span></div>
+          <div class="product-card__radio-container">
+            <div class="product-card__radio-box">
+              <input class="product-card__radio-input" type="radio" id="color-1" name="color">
+              <label class="product-card__radio-label product-card__radio-label--indent" for="color-1"><span class="product-card__color-palette"></span></label>
+            </div>
+            <div class="product-card__radio-box">
+              <input class="product-card__radio-input" type="radio" id="color-2" name="color">
+              <label class="product-card__radio-label product-card__radio-label--indent" for="color-2"><span class="product-card__color-palette product-card__color-palette--black"></span></label>
+            </div>
+            <div class="product-card__radio-box">
+              <input class="product-card__radio-input" type="radio" id="color-3" name="color">
+              <label class="product-card__radio-label product-card__radio-label--indent" for="color-3"><span class="product-card__color-palette product-card__color-palette--grey"></span></label>
+            </div>
+          </div>
+          <div class="product-card__amount-box">
+            <div class="product-card__subtitle">Количество:</div><a class="product-card__calculator" href="#">
+              <div class="product-card__calculator-icon"></div>Рассчитать расход материалов</a>
+          </div>
+          <div class="product-card__sum">
+            <div class="product-card__sum-icon" id="minusSum">-</div>
+            <input class="product-card__sum-input" id="calculatorSum" type="text" value="1">
+            <div class="product-card__sum-icon" id="plusSum">+</div>
+          </div>
+          <div class="product-card__price-box">
+            <div class="product-card__discount">4 812<span class="product-card__discount-prefix">com</span></div>
+            <div class="product-card__price">4 812<span class="product-card__price-prefix">com</span></div>
+          </div>
+          <div class="product-card__nds">4 300 сом/шт без НДС</div>
+          <div class="product-card__buttons"><a class="button button--red button--medium-style product-card__button" href="#" id="basketOrder">В корзину</a><a class="button button--white-red button--medium-style product-card__button" href="#">Быстрый заказ</a></div>
+          <div class="product-card__availability-box">
+            <div class="product-card__item-availability">
+              <div class="product-card__item-availability-icon"><img src="/src/images/icons/availability.svg"></div>В наличии:<a class="product-card__item-availability-link" href="#">в 2 магазинах</a>
+            </div>
+            <div class="product-card__item-availability">
+              <div class="product-card__item-availability-icon"><img src="/src/images/icons/courier.svg"></div>Доставка курьером:<a class="product-card__item-availability-courier">4 августа</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="product-description">
+  <div class="container">
+    <div class="product-description__grid">
+      <div class="product-description__container">
+        <div class="product-description__tabs">
+          <div class="product-description__tab product-description__tab--active">Описание</div>
+          <div class="product-description__tab">Характеристики</div>
+          <div class="product-description__tab">Отзывы</div>
+        </div>
+        <div class="product-description__box">
+          <div class="product-description__content-box product-description__content-box--active">
+            <div class="product-description__description-title">Эксклюзивные люстры и светильники Vitaluce</div>
+            <div class="product-description__description-text">Эксклюзивные люстры и светильники Vitaluce гармонично сочетаются с любым интерьером и наполняют дом неповторимой атмосферой комфорта и уюта. Продукция Vitaluce уверенно занимает лидирующее место на рынке декоративного освещения, благодаря высокому качеству, интересному дизайну и приемлемым ценам, пользуется популярностью у потребителей в России, странах СНГ и Восточной Европы. Покупателям предлагается как уже полюбившиеся коллекции светильников и люстр, так и вновь разработанные с учетом новейших тенденций и направлений дизайна в области декоративного света, решенные в разных стилях и богатой цветовой гамме. Широкая линейка продукции Vitaluce позволяет каждому покупателю найти для себя оптимальную модель.</div>
+          </div>
+          <div class="product-description__content-box">
+            <div class="product-description__description-title">Эксклюзивные люстры и светильники Vitaluce2</div>
+            <div class="product-description__description-text">Эксклюзивные люстры и светильники Vitaluce гармонично сочетаются с любым интерьером и наполняют дом неповторимой атмосферой комфорта и уюта. Продукция Vitaluce уверенно занимает лидирующее место на рынке декоративного освещения, благодаря высокому качеству, интересному дизайну и приемлемым ценам, пользуется популярностью у потребителей в России, странах СНГ и Восточной Европы. Покупателям предлагается как уже полюбившиеся коллекции светильников и люстр, так и вновь разработанные с учетом новейших тенденций и направлений дизайна в области декоративного света, решенные в разных стилях и богатой цветовой гамме. Широкая линейка продукции Vitaluce позволяет каждому покупателю найти для себя оптимальную модель.</div>
+          </div>
+          <div class="product-description__content-box">
+            <div class="product-description__description-title">Эксклюзивные люстры и светильники Vitaluce3</div>
+            <div class="product-description__description-text">Эксклюзивные люстры и светильники Vitaluce гармонично сочетаются с любым интерьером и наполняют дом неповторимой атмосферой комфорта и уюта. Продукция Vitaluce уверенно занимает лидирующее место на рынке декоративного освещения, благодаря высокому качеству, интересному дизайну и приемлемым ценам, пользуется популярностью у потребителей в России, странах СНГ и Восточной Европы. Покупателям предлагается как уже полюбившиеся коллекции светильников и люстр, так и вновь разработанные с учетом новейших тенденций и направлений дизайна в области декоративного света, решенные в разных стилях и богатой цветовой гамме. Широкая линейка продукции Vitaluce позволяет каждому покупателю найти для себя оптимальную модель.</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-description__container">
+        <div class="product-description__tabs">
+          <div class="product-description__tab product-description__tab--active">По городу</div>
+          <div class="product-description__tab">Область</div>
+        </div>
+        <div class="product-description__box">
+          <div class="product-description__content-box product-description__content-box--active">
+            <div class="product-description__input-block">
+              <label class="product-description__label" for="input-city">Ваш город</label>
+              <input class="product-description__input" type="text" id="input-city">
+              <div class="product-description__input-reset"><img src="/src/images/icons/reset.svg"></div>
+            </div>
+            <div class="product-description__title-medium product-description__pickup-title">Самовывоз из магазинов:</div>
+            <div class="product-description__link-box"><a class="product-description__pickup-link" href="#">
+                <div class="product-description__pickup-icon"></div>Ул. Адмирала, дом 10к2</a><a class="product-description__pickup-link" href="#">
+                <div class="product-description__pickup-icon"></div>Ул. Адмирала, дом 10к2</a></div>
+            <div class="product-description__title-medium product-description__title-delivery">Доставка по городу:
+              <div class="product-description__text">1-3 дня, 250 com</div>
+            </div>
+            <div class="product-description__title-medium">График доставки:
+              <div class="product-description__text">ежедневно с 09:00 до 21:00</div>
+            </div><a class="product-description__pickup-link product-description__delivery-link" href="#">
+              <div class="product-description__pickup-icon product-description__pickup-icon--delivery-icon"></div>Условия доставки</a>
+          </div>
+          <div class="product-description__content-box">
+            <div class="product-description__input-block">
+              <label class="product-description__label" for="input-city2">Ваш город</label>
+              <input class="product-description__input" type="text" id="input-city2">
+              <div class="product-description__input-reset"><img src="/src/images/icons/reset.svg"></div>
+            </div>
+            <div class="product-description__title-medium product-description__pickup-title">2 Самовывоз из магазинов:</div>
+            <div class="product-description__link-box"><a class="product-description__pickup-link" href="#">
+                <div class="product-description__pickup-icon"></div>Ул. Адмирала, дом 10к2</a><a class="product-description__pickup-link" href="#">
+                <div class="product-description__pickup-icon"></div>Ул. Адмирала, дом 10к2</a></div>
+            <div class="product-description__title-medium product-description__title-delivery">Доставка по городу:
+              <div class="product-description__text">1-3 дня, 250 com</div>
+            </div>
+            <div class="product-description__title-medium">График доставки:
+              <div class="product-description__text">ежедневно с 09:00 до 21:00</div>
+            </div><a class="product-description__pickup-link product-description__delivery-link" href="#">
+              <div class="product-description__pickup-icon product-description__pickup-icon--delivery-icon"></div>Условия доставки</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="similar-products">
+  <div class="container">
+    <div class="title">Похожие товары</div>
+    <div class="recommends-owl-carousel owl-carousel owl-theme owl-carousel-style">
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/instruments-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/instruments-2.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/blender-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/instruments-2.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/product-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="buy-with">
+  <div class="container">
+    <div class="title">С этим товаром покупают</div>
+    <div class="recommends-owl-carousel owl-carousel owl-theme owl-carousel-style">
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/instruments-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/instruments-2.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/blender-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/instruments-2.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/product-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="recently-viewed">
+  <div class="container">
+    <div class="title">Вы недавно смотрели</div>
+    <div class="recommends-owl-carousel owl-carousel owl-theme owl-carousel-style">
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/instruments-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/instruments-2.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/blender-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/instruments-2.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item">
+        <div class="catalog-category__button"><a class="button button--red" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-item__image" src="/src/images/products/product-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__price">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          <div class="catalog-category__article">Арт. 30361709</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="subscribe-mailing">
+  <div class="container">
+    <div class="subscribe-mailing__inner">
+      <div class="subscribe-mailing__title">Подпишитесь на нашу еженедельную <br> e-mail рассылку</div>
+      <div class="subscribe-mailing__box">
+<form class="feedback-area">
+  <div class="feedback-area__box">
+    <label class="feedback-area__label" for="input-mail">Почта</label>
+    <input class="feedback-area__input" type="email" id="input-mail">
+  </div>
+  <div class="feedback-area__item-button">
+    <button class="button">Оставить заявку</button>
+  </div>
+</form>
+<!---->
+<!--.feedback-area__checkbox-box-->
+<!--    input(type="checkbox" id="feedback-area-email").feedback-area__checkbox-input-->
+<!--    label(for="feedback-area-email").feedback-area__checkbox-label Я даю согласие на обработку своих персональных данных согласно <a class="feedback-area__checkbox-link" href="#"> политике конфиденциальности </a>-->
+        <div class="subscribe-mailing__checkbox">
+          <input class="subscribe-mailing__input" type="checkbox">
+          <div class="subscribe-mailing__square"></div>
+          <div class="subscribe-mailing__text">Я даю согласие на обработку своих персональных данных согласно<a class="subscribe-mailing__right-link" href="#">политике конфиденциальности</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="modal-wrapper">
+  <div class="modal-overlay"></div>
+  <div class="modal-position">
+    <div class="modal-calculator">
+      <div class="modal-title modal-calculator__title">Онлайн калькулятор расчета расхода герметика</div>
+      <div class="modal-calculator__container">
+        <div class="modal-calculator__input-box">
+          <p class="modal-calculator__input-text">Длина шва</p>
+          <input class="modal-calculator__input" type="text" value="3">
+          <div class="modal-calculator__size">м</div>
+        </div>
+        <div class="modal-calculator__input-box">
+          <p class="modal-calculator__input-text">Сечение шва</p>
+          <input class="modal-calculator__input" type="text" value="0">
+          <div class="modal-calculator__size">мм2</div>
+        </div><a class="button button--blue modal-calculator__button">Рассчитать расход</a>
+      </div>
+      <div class="modal-calculator__separator"></div>
+      <div class="modal-title modal-title__small">Ваш расход составит:</div>
+      <div class="modal-calculator__amount">120 мл.</div><a class="modal-close modal-calculator__close"><img src="/src/images/icons/close-modal.svg"></a>
+    </div>
+  </div>
+</div><a class="button button--red button--medium-style product-card__button" href="#" id="basketOrder">В корзину</a>
+<div class="modal-wrapper">
+  <div class="modal-overlay"></div>
+  <div class="modal-position">
+    <div class="modal-basket">
+      <div class="modal-basket__close"></div>
+      <div class="modal-basket__inner">
+        <div class="modal-basket__image-box"><img class="modal-basket__image" src="/src/blocks/modals/modal-basket/assets/img/product-1.png"></div>
+        <div class="modal-basket__information">
+          <div class="modal-basket__title">
+            <div class="modal-basket__title-icon"><img src="/src/blocks/modals/modal-basket/assets/img/productadded.svg"></div>Товар добавлен в корзину
+          </div>
+          <div class="modal-basket__name">GARDENA Комплект садовых инструментов</div>
+          <div class="modal-basket__container">
+            <div class="modal-basket__box">
+              <div class="modal-basket__price">4 812 com</div>
+              <div class="modal-basket__amount">
+<div class="amount-input__sum">
+  <div class="amount-input__sum-icon" id="minusSum">-</div>
+  <input class="amount-input__sum-input amount-input__sum-input--small" id="calculatorSum" type="text" value="1">
+  <div class="amount-input__sum-icon" id="plusSum">+</div>
+</div>
+              </div>
+            </div>
+            <div class="modal-basket__buttons"><a class="button button--red button--red-width modal-basket__button" href="#">Перейти в корзину</a><a class="button button--white-blue modal-basket__button" href="#">Продолжить покупки</a></div>
+          </div>
+        </div>
+      </div>
+<section class="recommends recommends--padding">
+  <div class="container">
+    <div class="title recommends__title recommends__title--small">Рекомендуемое</div>
+    <div class="owl-carousel owl-theme owl-carousel-style recommends-modal-owl-carousel">
+      <div class="catalog-category__item catalog-category__item-modal">
+        <div class="catalog-category__button"><a class="button button--red button--red-width" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-category__image" src="/src/blocks/recommends/assets/img/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__discount catalog-category__discount--small">4 812<span class="catalog-category__discount-span">com</span></div>
+          <div class="catalog-category__price catalog-category__price--small">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container catalog-category__container--direction">
+          <div class="catalog-category__rating">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          </div>
+          <div class="catalog-category__article catalog-category__article--order">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item catalog-category__item-modal">
+        <div class="catalog-category__button"><a class="button button--red button--red-width" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-category__image" src="/src/blocks/recommends/assets/img/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__discount catalog-category__discount--small">4 812<span class="catalog-category__discount-span">com</span></div>
+          <div class="catalog-category__price catalog-category__price--small">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container catalog-category__container--direction">
+          <div class="catalog-category__rating">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          </div>
+          <div class="catalog-category__article catalog-category__article--order">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item catalog-category__item-modal">
+        <div class="catalog-category__button"><a class="button button--red button--red-width" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-category__image" src="/src/blocks/recommends/assets/img/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__discount catalog-category__discount--small">4 812<span class="catalog-category__discount-span">com</span></div>
+          <div class="catalog-category__price catalog-category__price--small">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container catalog-category__container--direction">
+          <div class="catalog-category__rating">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          </div>
+          <div class="catalog-category__article catalog-category__article--order">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item catalog-category__item-modal">
+        <div class="catalog-category__button"><a class="button button--red button--red-width" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-category__image" src="/src/blocks/recommends/assets/img/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__discount catalog-category__discount--small">4 812<span class="catalog-category__discount-span">com</span></div>
+          <div class="catalog-category__price catalog-category__price--small">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container catalog-category__container--direction">
+          <div class="catalog-category__rating">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          </div>
+          <div class="catalog-category__article catalog-category__article--order">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item catalog-category__item-modal">
+        <div class="catalog-category__button"><a class="button button--red button--red-width" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-category__image" src="/src/blocks/recommends/assets/img/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__discount catalog-category__discount--small">4 812<span class="catalog-category__discount-span">com</span></div>
+          <div class="catalog-category__price catalog-category__price--small">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container catalog-category__container--direction">
+          <div class="catalog-category__rating">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          </div>
+          <div class="catalog-category__article catalog-category__article--order">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item catalog-category__item-modal">
+        <div class="catalog-category__button"><a class="button button--red button--red-width" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-category__image" src="/src/blocks/recommends/assets/img/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__discount catalog-category__discount--small">4 812<span class="catalog-category__discount-span">com</span></div>
+          <div class="catalog-category__price catalog-category__price--small">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container catalog-category__container--direction">
+          <div class="catalog-category__rating">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          </div>
+          <div class="catalog-category__article catalog-category__article--order">Арт. 30361709</div>
+        </div>
+      </div>
+      <div class="catalog-category__item catalog-category__item-modal">
+        <div class="catalog-category__button"><a class="button button--red button--red-width" href="#">В корзину</a></div><a class="catalog-category__image-box" href="#"><img class="catalog-category__image" src="/src/blocks/recommends/assets/img/cleaner-1.png">
+          <div class="catalog-category__icon-box">
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--favourite"></div>
+            </div>
+            <div class="catalog-category__icon">
+              <div class="catalog-category__icon-image catalog-category__icon-image--comparison"></div>
+            </div>
+          </div></a>
+        <div class="catalog-category__price-box">
+          <div class="catalog-category__discount catalog-category__discount--small">4 812<span class="catalog-category__discount-span">com</span></div>
+          <div class="catalog-category__price catalog-category__price--small">4 812<span class="catalog-category__price-span">com</span></div>
+        </div><a class="catalog-category__name" href="#">GARDENA Комплект садовых инструментов</a>
+        <div class="catalog-category__container catalog-category__container--direction">
+          <div class="catalog-category__rating">
+<div class="rating">
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star active"></div>
+  <div class="rating__star"></div>
+  <div class="rating__star"></div>
+</div>
+          </div>
+          <div class="catalog-category__article catalog-category__article--order">Арт. 30361709</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__box">
+        <div class="footer__col footer__col--mr footer__col--hidden"><img class="footer__logo" src="/src/images/icons/logo-prorab.svg">
+          <div class="footer__discription">Цены на сайте могут отличаться от цен в розничных магазинах.</div>
+          <div class="footer__right">2 прораба © 2020 <br> Все права защищены.</div>
+        </div>
+        <div class="footer__col footer__col--pt"><a class="footer__link" href="#">Каталог</a><a class="footer__link" href="#">Акции</a><a class="footer__link" href="#">О компании</a><a class="footer__link" href="#">Новости</a><a class="footer__link footer--hidden" href="#">Доставка и оплата</a><a class="footer__link footer--hidden" href="#">Условия возврата</a><a class="footer__link footer--hidden" href="#">Корпоративным клиентам</a><a class="footer__link footer--hidden" href="#">Поставщикам</a>
+          <div class="footer__right-links footer__right-links--hidden"><a class="footer__right-link" href="#">Политика конфиденциальности</a><a class="footer__right-link" href="#">Договор оферты</a></div>
+        </div>
+        <div class="footer__col footer__col--pt footer__col--hidden"><a class="footer__link" href="#">Доставка и оплата</a><a class="footer__link" href="#">Условия возврата</a><a class="footer__link" href="#">Корпоративным клиентам</a><a class="footer__link" href="#">Поставщикам</a></div>
+      </div>
+      <div class="footer__col-info"><a class="footer__phone" href="tel:">+996 (552) 90 13 22</a><a class="footer__mail" href="mailto:">info@2proraba.kg</a>
+        <div class="footer__discription footer--hidden">Цены на сайте могут отличаться от цен в розничных магазинах.</div>
+        <div class="footer__right footer--hidden">2 прораба © 2020 <br> Все права защищены.</div>
+        <div class="footer__icons-box">
+          <div class="footer__icons-title">Мы в социальных сетях:</div>
+          <div class="footer__icons"><a class="footer__icon" href="#"><img class="footer__img" src="/src/images/icons/facebook.svg"></a><a class="footer__icon" href="#"><img class="footer__img" src="/src/images/icons/vk.svg"></a><a class="footer__icon" href="#"><img class="footer__img" src="/src/images/icons/twitter.svg"></a><a class="footer__icon" href="#"><img class="footer__img" src="/src/images/icons/odnoklassniki.svg"></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="libs.js"></script><script src="main.js"></script><script src="style.js"></script></body>
+</html>

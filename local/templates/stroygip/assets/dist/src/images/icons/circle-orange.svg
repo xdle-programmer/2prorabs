@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="223" height="104" viewBox="0 0 223 104">
+    <defs>
+        <linearGradient id="jm9a9czg3b" x1="10.703%" x2="90.395%" y1="19.386%" y2="79.644%">
+            <stop offset="0%" stop-color="#EAAD69"/>
+            <stop offset="100%" stop-color="#D95920"/>
+        </linearGradient>
+        <filter id="0qtlxxp7ka" width="229.6%" height="226.9%" x="-64.8%" y="-63.5%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="22 0"/>
+        </filter>
+    </defs>
+    <g fill="none">
+        <path fill="#EBBEA8" d="M63.936 0c28.132 0 50.937 23.281 50.937 52s-22.805 52-50.937 52C35.805 104 13 80.719 13 52S35.805 0 63.936 0zm0 30.715c-12.685 0-22.348 9.865-22.348 21.285s9.663 21.285 22.348 21.285c12.686 0 22.349-9.865 22.349-21.285s-9.663-21.285-22.349-21.285z" filter="url(#0qtlxxp7ka)" opacity=".465" transform="translate(51)"/>
+        <path fill="url(#jm9a9czg3b)" d="M50.936 0c28.132 0 50.937 23.281 50.937 52s-22.805 52-50.937 52C22.805 104 0 80.719 0 52S22.805 0 50.936 0zm0 30.715c-12.685 0-22.348 9.865-22.348 21.285s9.663 21.285 22.348 21.285c12.686 0 22.349-9.865 22.349-21.285s-9.663-21.285-22.349-21.285z" transform="translate(51)"/>
+    </g>
+</svg>

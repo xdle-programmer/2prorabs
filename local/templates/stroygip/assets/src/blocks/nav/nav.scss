@@ -1,0 +1,39 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.nav {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  justify-content: space-between;
+  @media #{$tablet-big-screen}{
+    justify-content: flex-end;
+    width: auto;
+    margin-left: 30px;
+  }
+  @media #{$mobile-big-screen}{
+    margin-left: 10px;
+  }
+  &__links {
+    font-size: 14px;
+    color: #87888e;
+  @media#{$tablet-big-screen}{
+    display: none;
+  }
+    &:hover {
+      color: #66666a;
+    }
+  }
+
+  &__phone {
+    font-size: 18px;
+    color: $blue;
+    @media #{$tablet-big-screen}{
+      margin-right: 20px;
+    }
+    @media #{$mobile-big-screen}{
+      display: none;
+    }
+  }
+}

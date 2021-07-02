@@ -1,0 +1,67 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.switch-language{
+  display: flex;
+  width: 81px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 0 2px 0 2px;
+  @media #{$mobile-big-screen}{
+    display: none;
+  }
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__switch{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  &__label{
+    cursor: pointer;
+    position: relative;
+    color: $blue;
+    font-style: normal;
+  }
+}
+.switch-language__switch+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.switch-language__switch+label::before {
+  content: '';
+  display: inline-block;
+  width: 37.5px;
+  height: 26.5px;
+  border-radius: 13.3px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.switch-language__switch:checked+label::before{
+  border-color: rgba(65, 90, 183, 0.05);
+  background-color: rgba(65, 90, 183, 0.05);
+  width: 37.5px;
+  height: 26.5px;
+  font-size: 14px;
+  font-style: normal;
+}
+.switch-language__name{
+  font-style: normal;
+  font-size: 16px;
+  top: 6px;
+  left: 9px;
+  z-index: 3;
+  position: absolute;
+}
+.switch-language__switch:checked+label span{
+  color: $blue;
+  font-weight: 500;
+  font-style: normal;
+}

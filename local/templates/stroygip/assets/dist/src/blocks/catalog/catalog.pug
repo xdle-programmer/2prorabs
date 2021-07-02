@@ -1,0 +1,49 @@
+.catalog
+    .container
+        .catalog__inner
+            .catalog__button
+                .catalog__button-icon
+                .catalog__button-text Весь каталог
+            .catalog__list
+                .catalog__list-item
+                    .catalog__list-item-icon.catalog__list-item-icon--flowers
+                    .catalog__list-item-text Сад и огород
+                    include catalog__submenu
+
+                .catalog__list-item
+                    .catalog__list-item-icon.catalog__list-item-icon--materials
+                    .catalog__list-item-text Строительные материалы
+                    include catalog__submenu
+
+                .catalog__list-item
+                    .catalog__list-item-icon.catalog__list-item-icon--electro
+                    .catalog__list-item-text Электроинструмент
+                    include catalog__submenu
+
+                .catalog__list-item
+                    .catalog__list-item-icon.catalog__list-item-icon--instruments
+                    .catalog__list-item-text Инструменты
+                    include catalog__submenu
+
+                .catalog__list-item
+                    .catalog__list-item-icon.catalog__list-item-icon--coverings
+                    .catalog__list-item-text Напольные покрытия
+                    include catalog__submenu
+
+                .catalog__list-item
+                    .catalog__list-item-icon.catalog__list-item-icon--plumbing
+                    .catalog__list-item-text Сантехника
+                    include catalog__submenu
+
+                .catalog__list-item
+                    .catalog__list-item-icon.catalog__list-item-icon--electrical
+                    .catalog__list-item-text Электротовары
+                    include catalog__submenu
+
+                .catalog__list-item
+                    .catalog__list-item-icon.catalog__list-item-icon--stock
+                    .catalog__list-item-text Акции
+                    include catalog__submenu
+
+    include ../../blocks/catalog-menu/catalog-menu
+

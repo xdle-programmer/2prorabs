@@ -1,0 +1,27 @@
+a(href="#").button.button--red.button--medium-style.product-card__button#basketOrder В корзину
+
+
+
+.modal-wrapper
+    .modal-overlay
+    .modal-position
+        .modal-basket
+            .modal-basket__close
+            .modal-basket__inner
+                .modal-basket__image-box
+                    img(src="/src/blocks/modals/modal-basket/assets/img/product-1.png").modal-basket__image
+                .modal-basket__information
+                    .modal-basket__title
+                        .modal-basket__title-icon
+                            img(src="/src/blocks/modals/modal-basket/assets/img/productadded.svg")
+                        | Товар добавлен в корзину
+                    .modal-basket__name GARDENA Комплект садовых инструментов
+                    .modal-basket__container
+                        .modal-basket__box
+                            .modal-basket__price 4 812 com
+                            .modal-basket__amount
+                                include ../../amount-input/amount-input_modal
+                        .modal-basket__buttons
+                            a(href="#").button.button--red.button--red-width.modal-basket__button Перейти в корзину
+                            a(href="#").button.button--white-blue.modal-basket__button Продолжить покупки
+            include ../../recommends/recommends_modal

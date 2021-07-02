@@ -1,0 +1,25 @@
+{
+    "name": "2proraba/2proraba",
+    "minimum-stability": "dev",
+    "require": {
+        "nav/debug": "dev-master",
+        "nav/uncached-area": "dev-master",
+        "ext-ftp": "*",
+        "ext-dom": "*",
+        "ext-simplexml": "*"
+    },
+    "config": {
+        "vendor-dir": "local/vendor",
+        "secure-http": false
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:unnamed777/debug.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:unnamed777/uncached-area.git"
+        }
+    ]
+}

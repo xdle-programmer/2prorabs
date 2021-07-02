@@ -1,0 +1,149 @@
+<Body>
+	<InformationRegisterRecordSet.ЦеныДляСайта>
+		<Filter>
+			<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">215f2255-1f1a-11eb-80bc-00505687f371</Recorder>
+		</Filter>
+		<Records>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>013fa100-cbf2-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>179</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>013fa102-cbf2-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>258</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>013fa104-cbf2-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>216</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>190f838f-09fb-11eb-80b7-000c2929cf37</Номенклатура>
+				<Цена>228</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>190f8395-09fb-11eb-80b7-000c2929cf37</Номенклатура>
+				<Цена>122</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>190f8397-09fb-11eb-80b7-000c2929cf37</Номенклатура>
+				<Цена>128</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>013fa10e-cbf2-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>245</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>190f8391-09fb-11eb-80b7-000c2929cf37</Номенклатура>
+				<Цена>189</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>a3dcf279-cbfd-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>303</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>a3dcf27b-cbfd-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>235</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>a3dcf27d-cbfd-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>341</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>a3dcf27f-cbfd-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>249</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>190f8393-09fb-11eb-80b7-000c2929cf37</Номенклатура>
+				<Цена>162</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>a3dcf285-cbfd-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>249</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">190f83a4-09fb-11eb-80b7-000c2929cf37</Recorder>
+				<Period>2020-10-09T16:17:13</Period>
+				<Active>true</Active>
+				<Номенклатура>a3dcf289-cbfd-11ea-80e9-000c291f9830</Номенклатура>
+				<Цена>288</Цена>
+			</Record>
+		</Records>
+	</InformationRegisterRecordSet.ЦеныДляСайта>
+	<InformationRegisterRecordSet.ЦеныДляСайта>
+		<Filter>
+			<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">205f2255-1f1a-11eb-80bc-00505687f371</Recorder>
+		</Filter>
+		<Records>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">205f2255-1f1a-11eb-80bc-00505687f371</Recorder>
+				<Period>2020-11-05T10:44:16</Period>
+				<Active>true</Active>
+				<Номенклатура>205f2252-1f1a-11eb-80bc-00505687f371</Номенклатура>
+				<Цена>46</Цена>
+			</Record>
+		</Records>
+	</InformationRegisterRecordSet.ЦеныДляСайта>
+	<InformationRegisterRecordSet.ЦеныДляСайта>
+		<Filter>
+			<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">3705ba64-1f5f-11eb-80bc-00505687f371</Recorder>
+		</Filter>
+		<Records>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">3705ba64-1f5f-11eb-80bc-00505687f371</Recorder>
+				<Period>2020-11-03T00:00:00</Period>
+				<Active>true</Active>
+				<Номенклатура>69e81407-1d36-11e8-80c6-000c291f9830</Номенклатура>
+				<Цена>62</Цена>
+			</Record>
+			<Record>
+				<Recorder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DocumentRef.ИзменениеЦен">3705ba64-1f5f-11eb-80bc-00505687f371</Recorder>
+				<Period>2020-11-03T00:00:00</Period>
+				<Active>true</Active>
+				<Номенклатура>3d525d93-10c4-11ea-80e2-000c291f9830</Номенклатура>
+				<Цена>80</Цена>
+			</Record>
+		</Records>
+	</InformationRegisterRecordSet.ЦеныДляСайта>
+</Body>

@@ -1,0 +1,11 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.buy-with{
+  padding: 0 0 64px 0;
+  overflow: hidden !important;
+  @media #{$mobile-big-screen}{
+    padding: 25px 0;
+  }
+}

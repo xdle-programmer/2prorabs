@@ -1,0 +1,16 @@
+.catalog__list-item-icon--stock:after {
+    content: "";
+    background: none !important;
+}
+.catalog__list-item-icon--stock:before {
+	width: calc(98% + 0px);
+    height: calc(98% + 0px);
+}
+.catalog-item1 .catalog-menu__item-link-icon.mask {
+    background: url(/local/templates/stroygip/assets/dist/src/blocks/catalog/assets/img/stock-background11.png);
+    background-size: 80% !important;
+    background-repeat: no-repeat!important;
+    background-position: 50%!important;
+	mask: none !important;
+    -webkit-mask: none !important;
+}

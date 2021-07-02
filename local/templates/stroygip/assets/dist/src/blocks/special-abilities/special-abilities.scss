@@ -1,0 +1,80 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.special-abilities{
+  padding: 56px 0 64px 0;
+  background: $white;
+  @media #{$mobile-big-screen}{
+	padding: 30px 0;
+  }
+  &__icon{
+	width: 96px;
+	height: 96px;
+	background-color: rgba(65, 90, 183, 0.05);
+	border-radius: 100%;
+	@include flex-row-center;
+	@media #{$mobile-big-screen}{
+	  height: 70px;
+	  width: 70px;
+	  img{
+		width: 70%;
+	  }
+	}
+  }
+  &__row{
+	display: flex;
+	width: 90%;
+	margin: 0 auto 112px auto;
+	@media #{$tablet-big-screen}{
+	  margin: 0 auto 60px auto;
+	}
+	@media #{$tablet-small-screen}{
+	  width: 100%;
+	}
+	@media #{$mobile-big-screen}{
+	  flex-direction: column;
+	  margin: 0 auto 40px auto;
+	}
+  }
+  &__title{
+	margin-bottom: 56px !important;
+	@media #{$mobile-big-screen}{
+	  margin-bottom: 30px !important;
+	}
+  }
+  &__item{
+	width: 25%;
+	margin-right: 112px;
+	&:last-child{
+	  margin-right: 0;
+	}
+	@media #{$tablet-small-screen}{
+	  margin-right: 50px;
+	  width: 50%;
+	}
+	@media #{$mobile-big-screen}{
+	  width: 100%;
+	  margin: 0 0 30px 0;
+	  &:last-child{
+		margin-bottom: 0;
+	  }
+	}
+  }
+  &__icon{
+	margin: 0 auto 24px auto;
+  }
+  &__description{
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.78;
+	color: $black;
+	@media #{$tablet-small-screen}{
+	  font-size: 17px;
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 16px;
+	}
+  }
+}

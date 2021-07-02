@@ -1,0 +1,135 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.previews-grid {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+
+  @include mobile-big-screen {
+    padding-top: 0;
+  }
+
+  $gap: 14px;
+  $height: 215px;
+
+  &--1-row {
+    min-height: calc(#{$height} * 2 + #{$gap});
+
+    @include tablet-big-screen {
+      min-height: 395px;
+    }
+  }
+
+  &--2-row {
+    min-height: calc((#{$height} * 2 + #{$gap}) * 2);
+
+    @include tablet-big-screen {
+      min-height: 395px;
+    }
+  }
+
+  &__slide {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: #{$gap};
+
+    @include tablet-big-screen {
+      display: block;
+    }
+  }
+
+  &__item {
+    padding: 1px;
+    display: none;
+
+    .previews-grid__slide & {
+      display: block;
+    }
+
+    &--big {
+      height: calc(#{$height} * 2 + #{$gap});
+    }
+
+    &--middle {
+      height: calc(#{$height} * 2 + #{$gap});
+    }
+
+    &--small {
+      height: #{$height};
+    }
+  }
+
+  &__nav {
+    position: static;
+  }
+
+  &__nav-button {
+    width: 50px;
+    height: 50px;
+    @include flex-row-center;
+    position: absolute;
+    top: calc(50% - 25px);
+    cursor: pointer;
+    z-index: 2;
+
+    &[aria-disabled="true"] {
+      opacity: .1;
+    }
+
+    &--prev {
+      left: -55px;
+      transform: scaleX(-1);
+
+      @include mobile-big-screen {
+        left: -10px;
+        border: 1px solid var(--light-gray-color);
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-right: none;
+        box-shadow: 0 0 10px 4px rgba(0, 0, 0, .05);
+      }
+    }
+
+    &--next {
+      right: -55px;
+
+      @include mobile-big-screen {
+        right: -10px;
+        border: 1px solid var(--light-gray-color);
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-right: none;
+        box-shadow: 0 0 10px 4px rgba(0, 0, 0, .05);
+      }
+    }
+
+    @include mobile-big-screen {
+      background: var(--white-color);
+    }
+  }
+
+  $nav-hover: '.previews-grid__nav-button:hover';
+
+  &__nav-button-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--black-color);
+
+    #{$nav-hover} & {
+      fill: var(--red-color);
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+}

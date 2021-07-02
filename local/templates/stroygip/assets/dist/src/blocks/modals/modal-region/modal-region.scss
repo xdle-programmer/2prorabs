@@ -1,0 +1,92 @@
+@import "../../../../../../libs/scss/mixins";
+@import "../../base/variables";
+@import "../../base/media-queries";
+
+
+.modal-region{
+  display: none;
+  position: relative;
+  z-index: 300;
+
+  border-radius: 4px;
+  width: 752px;
+  height: 312px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 56px 0 104px 0;
+  margin: 0 auto;
+  @media #{$tablet-small-screen}{
+	width: 550px;
+	height: auto;
+	padding: 40px;
+  }
+  @media #{$mobile-big-screen}{
+	width: 420px;
+	padding: 30px;
+  }
+  @media #{$mobile-small-screen}{
+	width: 300px;
+  }
+
+
+
+  &__title{
+	text-align: center;
+	font-size: 28px;
+	line-height: 42px;
+	color: $black;
+	margin-bottom: 56px;
+	@media #{$mobile-big-screen}{
+	  font-size: 24px;
+	  margin-bottom: 40px;
+	}
+	@media #{$mobile-small-screen}{
+	  font-size: 20px;
+	  margin-bottom: 30px;
+	}
+  }
+  &__buttons{
+	@include flex-row-center;
+  }
+  &__button{
+	display: block;
+	width: 232px;
+	height: 56px;
+	margin-right: 16px;
+	&:last-child{
+	  margin-right: 0;
+	}
+	@include flex-row-center;
+	border: 1px solid $blue;
+	background: $blue;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 32;
+	&:hover{
+	  background: $blue-hover;
+	}
+	&:active{
+	  background: $blue-active;
+	}
+	&--white{
+	  background: #fff;
+	  color: $blue;
+	  &:hover{
+		color: $blue-hover;
+		background: #fff;
+		border-color: $blue-hover;
+	  }
+	}
+	@media #{$mobile-big-screen} {
+	  width: 50%;
+	  height: 50px;
+	}
+  }
+  &__close{
+	position: absolute;
+	right: 24px;
+	top: 24px;
+  }
+}

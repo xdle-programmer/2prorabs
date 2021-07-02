@@ -1,0 +1,7 @@
+.tq_radio:checked + label{
+    background: #415ab7;
+    color: #fff;
+}
+.tq_errors{
+    color:red;
+}

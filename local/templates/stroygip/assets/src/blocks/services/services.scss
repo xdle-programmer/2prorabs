@@ -1,0 +1,126 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.services {
+  background-color: rgba(65, 90, 183, 0.05);
+  padding: 0 0px 64px 0;
+  @media #{$mobile-big-screen}{
+	padding-bottom: 30px;
+  }
+  &__tabs {
+	width: 70%;
+	margin: 0 auto 56px auto;
+	display: flex;
+	border: 1px solid $blue;
+	border-radius: 4px;
+	@media #{$tablet-big-screen}{
+	  width: 90%;
+	}
+	@media #{$tablet-small-screen}{
+	  width: 100%;
+	  flex-direction: column;
+	}
+	@media #{$mobile-big-screen}{
+
+	  margin-bottom: 25px;
+	}
+  }
+
+  &__tab {
+	border-right: 1px solid $blue;
+
+	&:last-child {
+	  border-right: transparent;
+	}
+	padding: 15px;
+	font-size: 18px;
+	color: $blue;
+	cursor: pointer;
+	height: 56px;
+	width: 288px;
+	@include flex-row-center;
+
+	&.active {
+	  box-shadow: 0 2px 12px rgba(131, 161, 201, 0.66);
+	  background: $blue;
+	  color: #fff;
+	  border: 1px solid $blue;
+	}
+	@media #{$tablet-big-screen}{
+	  font-size: 16px;
+	}
+	@media #{$tablet-small-screen}{
+	  width: 100%;
+	  border-right: none;
+	  border-bottom: 1px solid $blue;
+	  &:last-child{
+		border-bottom: none;
+	  }
+	}
+	@media #{$mobile-big-screen} {
+	  font-size: 14px;
+	  height: 50px;
+	  border-bottom: 1px solid $blue;
+	  &:last-child {
+		border-bottom: none;
+	  }
+	}
+  }
+
+  &__subtitle {
+	font-weight: 500;
+	font-size: 21px;
+	text-align: center;
+	margin-bottom: 32px;
+	color: $black;
+	@media #{$mobile-big-screen}{
+	  margin-bottom: 20px;
+	  font-size: 18px;
+	}
+  }
+
+  &__description {
+	font-size: 18px;
+	line-height: 1.78;
+	text-align: center;
+	font-weight: 400;
+	width: 45%;
+	margin: 0 auto 48px auto;
+	@media #{$tablet-small-screen}{
+	  width: 70%;
+	  br{
+		display: none;
+	  }
+	}
+	@media #{$tablet-big-screen}{
+	  width: 70%;
+	  margin: 20px auto 30px auto;
+	}
+	@media #{$mobile-big-screen}{
+	  width: 100%;
+	  margin-bottom: 25px;
+	  font-size: 14px;
+	}
+  }
+
+  &__carousel {
+	padding: 0 35px;
+
+	.owl-item .active {
+	  box-shadow: 0 6px 40px 0 rgba(158, 179, 198, 0.6);
+	}
+	@media #{$laptop-screen}{
+	  padding: 0 40px;
+	}
+	@media #{$mobile-big-screen}{
+	  padding: 0 10px;
+	}
+  }
+  &__content{
+	display: none;
+	&.active{
+	  display: block;
+	}
+  }
+}

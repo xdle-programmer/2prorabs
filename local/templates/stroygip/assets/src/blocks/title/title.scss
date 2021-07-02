@@ -1,0 +1,38 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.title {
+  font-size: 40px;
+  text-align: center;
+  color: #2f3137;
+  margin-bottom: 56px;
+
+  &--mb {
+	margin-bottom: 40px;
+  }
+
+  &--medium {
+	font-weight: 500;
+	font-size: 28px;
+  }
+  &--start{
+	text-align: start;
+  }
+  &--white{
+	color: $white;
+  }
+  @media #{$tablet-big-screen}{
+	font-size: 30px;
+	margin-bottom: 40px;
+  }
+  @media #{$tablet-small-screen}{
+	font-size: 25px;
+	margin-bottom: 30px;
+  }
+  @media #{$mobile-big-screen}{
+	font-size: 20px;
+	margin-bottom: 20px;
+  }
+}

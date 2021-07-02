@@ -1,0 +1,12 @@
+section.subscribe-mailing
+    .container
+        .subscribe-mailing__inner
+            .subscribe-mailing__title Подпишитесь на нашу еженедельную <br> e-mail рассылку
+            .subscribe-mailing__box
+                include ../../blocks/feedback-area/feedback-area.email.pug
+                .subscribe-mailing__checkbox
+                    input(type="checkbox").subscribe-mailing__input
+                    .subscribe-mailing__square
+                    .subscribe-mailing__text
+                        | Я даю согласие на обработку своих персональных данных согласно
+                        a(href="#").subscribe-mailing__right-link политике конфиденциальности

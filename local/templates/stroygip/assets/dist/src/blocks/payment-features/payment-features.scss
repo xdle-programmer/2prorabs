@@ -1,0 +1,75 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.payment-features{
+  padding: 56px;
+  background: $background-blue;
+  @media #{$mobile-big-screen}{
+	padding: 30px 0;
+  }
+  &__subtitle{
+	text-align: center;
+	margin-bottom: 56px;
+	font-size: 28px;
+	line-height: 1.5;
+	color: $black;
+	@media #{$tablet-big-screen}{
+	  font-size: 25px;
+	}
+	@media #{$tablet-small-screen}{
+	  font-size: 20px;
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 18px;
+	}
+  }
+  &__items-box{
+	display: flex;
+	justify-content: space-between;
+	width: 65%;
+	margin: 0 auto;
+	@media #{$tablet-big-screen}{
+	  width: 100%;
+	}
+	@media #{$mobile-big-screen}{
+	  flex-direction: column;
+	}
+  }
+  &__item{
+	width: 25%;
+	@media #{$mobile-big-screen}{
+	  width: 100%;
+	  margin: 0 0 30px 0;
+	  &:last-child{
+		margin-bottom: 0;
+	  }
+	}
+  }
+  &__item-icon{
+	@include flex-row-center;
+	margin: 0 auto 24px auto;
+	width: 96px;
+	height: 96px;
+	background-color: rgba(65, 90, 183, 0.05);
+	border-radius: 100%;
+	@media #{$mobile-big-screen}{
+	  margin: 0 auto 15px auto;
+	  width: 70px;
+	  height: 70px;
+	  img{
+		width: 60%;
+	  }
+	}
+  }
+  &__item-title{
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.78;
+	color: $black;
+	@media #{$mobile-big-screen}{
+	  font-size: 16px;
+	}
+  }
+}

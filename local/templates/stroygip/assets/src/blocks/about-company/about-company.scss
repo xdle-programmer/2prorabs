@@ -1,0 +1,72 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.about-company{
+	background: $sky-blue;
+  &__inner{
+	padding: 80px 0 64px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@media #{$mobile-big-screen}{
+	  flex-direction: column;
+	  padding: 30px 0;
+	}
+  }
+  &__image-box{
+	width: 432px;
+	height: auto;
+	@media #{$laptop-screen}{
+	  width: 340px;
+	}
+	@media #{$tablet-small-screen}{
+	  width: 280px;
+	}
+	@media #{$mobile-big-screen}{
+	  order: -1;
+	  margin-bottom: 30px;
+	  width: 280px;
+	}
+  }
+  &__image{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+  }
+  &__about{
+	width: 38%;
+	margin-right: 56px;
+	@media #{$laptop-screen}{
+	  margin-right: 45px;
+	}
+	@media #{$tablet-small-screen}{
+	  margin-right: 30px;
+	}
+	@media #{$mobile-big-screen}{
+	  width: 90%;
+	  margin-right: 0;
+	}
+  }
+  &__title{
+	margin-bottom: 48px !important;
+	@media #{$tablet-small-screen}{
+	  margin-bottom: 30px !important;
+	}
+	@media #{$mobile-big-screen}{
+	  margin-bottom: 25px !important;
+	}
+  }
+  &__text{
+	font-size: 21px;
+	line-height: 32px;
+	color: $black;
+	@media #{$tablet-small-screen}{
+	  font-size: 18px;
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 16px;
+	  line-height: 25px;
+	}
+  }
+}

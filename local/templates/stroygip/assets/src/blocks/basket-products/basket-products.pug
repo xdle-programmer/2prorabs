@@ -1,0 +1,203 @@
+.basket-products
+    .container
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Корзина
+        .basket-products__grid
+
+            // First container
+            .basket-products__container
+                .basket-products__header
+                    .basket-products__title Корзина
+                    .basket-products__in-basket
+                        | Товары в корзине:
+                        span.basket-products__in-basket-text 3
+                .basket-products__subtitle Товары:
+
+                // Start product item
+                .basket-products__item-container
+                    .basket-products__item
+                        .basket-products__item-inner
+                            .basket-products__image-box
+                                img(src="/src/blocks/basket-products/assets/img/item-1.png").basket-products__image
+
+                            .basket-products__information
+                                .basket-products__name Машина полировальная угловая Kolner KPM 180/1400V
+                                .basket-products__article Артикул: 25341648
+                                .basket-products__stock
+                                    | На складе:
+                                    span.basket-products__stock-amount 16 шт.
+
+                        .basket-products__item-box
+
+                            .basket-products__amount-container
+                                .basket-products__title-small Количество:
+                                .basket-products__amount-input
+                                    include ../../blocks/amount-input/amount-input
+
+                            .basket-products__sum-container
+                                .basket-products__title-small Сумма:
+                                .basket-products__sum-inner
+                                    .basket-products__final-cost
+                                        | 4 812
+                                        span.basket-products__final-cost-text com
+
+                                    .basket-products__old-price
+                                        | 4 812
+                                        span.basket-products__old-price-text com
+                                    .basket-products__your-discount
+                                        | Скидка составила 15%, экономия 500 com
+                    .basket-products__panel
+                        a(href="#").basket-products__panel-item
+                            .basket-products__panel-icon.basket-products__panel-icon--favourites
+                            .basket-products__panel-text В избранное
+                        a(href="#").basket-products__panel-item
+                            .basket-products__panel-icon.basket-products__panel-icon--remove
+                            .basket-products__panel-text Удалить
+                // End product item
+                // Start product item
+                .basket-products__item-container
+                    .basket-products__item
+                        .basket-products__item-inner
+                            .basket-products__image-box
+                                img(src="/src/blocks/basket-products/assets/img/item-1.png").basket-products__image
+
+                            .basket-products__information
+                                .basket-products__name Машина полировальная угловая Kolner KPM 180/1400V
+                                .basket-products__article Артикул: 25341648
+                                .basket-products__stock
+                                    | На складе:
+                                    span.basket-products__stock-amount 16 шт.
+
+                        .basket-products__item-box
+
+                            .basket-products__amount-container
+                                .basket-products__title-small Количество:
+                                .basket-products__amount-input
+                                    include ../../blocks/amount-input/amount-input
+
+                            .basket-products__sum-container
+                                .basket-products__title-small Сумма:
+                                .basket-products__sum-inner
+                                    .basket-products__final-cost
+                                        | 4 812
+                                        span.basket-products__final-cost-text com
+
+                                    .basket-products__old-price
+                                        | 4 812
+                                        span.basket-products__old-price-text com
+                                    .basket-products__your-discount
+                                        | Скидка составила 15%, экономия 500 com
+                    .basket-products__panel
+                        a(href="#").basket-products__panel-item
+                            .basket-products__panel-icon.basket-products__panel-icon--favourites
+                            .basket-products__panel-text В избранное
+                        a(href="#").basket-products__panel-item
+                            .basket-products__panel-icon.basket-products__panel-icon--remove
+                            .basket-products__panel-text Удалить
+                // End product item
+                // Start product item
+                .basket-products__item-container
+                    .basket-products__item
+                        .basket-products__item-inner
+                            .basket-products__image-box
+                                img(src="/src/blocks/basket-products/assets/img/item-1.png").basket-products__image
+
+                            .basket-products__information
+                                .basket-products__name Машина полировальная угловая Kolner KPM 180/1400V
+                                .basket-products__article Артикул: 25341648
+                                .basket-products__stock
+                                    | На складе:
+                                    span.basket-products__stock-amount.basket-products__stock-amount--red 2 шт.
+
+                        .basket-products__item-box
+
+                            .basket-products__amount-container
+                                .basket-products__title-small Количество:
+                                .basket-products__amount-input
+                                    include ../../blocks/amount-input/amount-input
+
+                            .basket-products__sum-container
+                                .basket-products__title-small Сумма:
+                                .basket-products__sum-inner
+                                    .basket-products__final-cost
+                                        | 4 812
+                                        span.basket-products__final-cost-text com
+
+                                    .basket-products__old-price
+                                        | 4 812
+                                        span.basket-products__old-price-text com
+                                    .basket-products__your-discount
+                                        | Скидка составила 15%, экономия 500 com
+                    .basket-products__panel
+                        a(href="#").basket-products__panel-item
+                            .basket-products__panel-icon.basket-products__panel-icon--favourites
+                            .basket-products__panel-text В избранное
+                        a(href="#").basket-products__panel-item
+                            .basket-products__panel-icon.basket-products__panel-icon--remove
+                            .basket-products__panel-text Удалить
+                // End product item
+
+
+
+            // Second container
+            .basket-products__container
+
+                .basket-products__document-box
+                    a(href="#").basket-products__document-item
+                        .basket-products__document-icon.basket-products__document-icon--download
+                        .basket-products__document-text Загрузить смету
+                    a(href="#").basket-products__document-item
+                        .basket-products__document-icon.basket-products__document-icon--printer
+                        .basket-products__document-text Версия для печати
+
+                .basket-products__free-delivery
+                    .basket-products__free-delivery-icon
+                    .basket-products__free-delivery-text
+                        | Для бесплатной доставки до двери, осталось добавить товаров на сумму:
+                        span 1 000 com
+                .basket-products__title-medium.basket-products__title-medium--mb Ваша корзина:
+
+                .basket-products__row
+                    .basket-products__row-name
+                        | Товары 3 шт.
+                    .basket-products__row-info
+                        | 23 645 com
+                .basket-products__row
+                    .basket-products__row-name
+                        | Вес заказа
+                    .basket-products__row-info
+                        | 2 кг
+                .basket-products__row
+                    .basket-products__row-name
+                        | Скидка 15%
+                    .basket-products__row-info.basket-products__row-info--red
+                        | -1 500 com
+                .basket-products__row
+                    .basket-products__row-name
+                        | Доставка (3 дня)
+                    .basket-products__row-info
+                        | 1 500 com
+
+                .basket-products__checkbox-box
+                    .basket-products__checkbox-item
+                        include ../../blocks/checkbox/checkbox_bonus
+                    .basket-products__checkbox-item
+                        include ../../blocks/checkbox/checkbox_promocode
+
+                .basket-products__total-cost
+                    .basket-products__total-cost-row
+                        .basket-products__total-cost-name Общая стоимость:
+                        .basket-products__total-cost-amount
+                            | 21 456 com
+                a(href="#").button.button--red.button--red-width.basket-products__button-red Оформить заказ
+                a(href="#").basket-products__save-us Сохранить как смету
+
+                .basket-products__fast-order
+                    .basket-products__fast-order-button
+                        .basket-products__fast-order-icon
+                        | Быстрый заказ
+                    .basket-products__fast-order-text Оставьте заявку и с вами свяжется менеджер для быстрого оформления заказа.
+

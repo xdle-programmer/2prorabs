@@ -1,0 +1,624 @@
+section.catalog-category
+    .container
+
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link(href="#") Плитка и напольные покрытия
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Керамическая плитка
+
+        .catalog-category__grid
+            .catalog-category__bar
+                .catalog-category__close
+                    img(src="/src/blocks/catalog-category/assets/img/close.svg")
+                .catalog-category__bar-title Плитка и напольные покрытия
+                .catalog-category__category-title Категория
+
+                .catalog-category__category-name
+                    | Керамическая плитка
+                    .catalog-category__category-arrow
+                .catalog-category__category-content
+                    a.catalog-category__category-link(href="#") Плитка для пола
+                    a.catalog-category__category-link(href="#") Плитка для стен
+
+                .catalog-category__category-name
+                    | Линолеум и ковровые покрытия
+                    .catalog-category__category-arrow
+                .catalog-category__category-content
+                    a.catalog-category__category-link(href="#") Плитка для пола
+                    a.catalog-category__category-link(href="#") Плитка для стен
+
+                .catalog-category__category-name
+                    | Напольные покрытия
+                    .catalog-category__category-arrow
+                .catalog-category__category-content
+                    a.catalog-category__category-link(href="#") Плитка для пола
+                    a.catalog-category__category-link(href="#") Плитка для стен
+
+
+                .catalog-category__category-title.catalog-category__category-price Цена
+
+                .catalog-category__range-slider
+                    .catalog-category__range-slider
+                        #slider-range
+                    .catalog-category__range-container
+                        .catalog-category__range-box
+                            input(type="text" value="850").catalog-category__range-input
+                            p.catalog-category__range-text От
+                            .catalog-category__range-reset
+                                img(src="/src/images/icons/reset.svg")
+                        .catalog-category__range-box
+                            input(type="text" value="1500").catalog-category__range-input
+                            p.catalog-category__range-text До
+                            .catalog-category__range-reset
+                                img(src="/src/images/icons/reset.svg")
+
+
+                .catalog-category__category-title.catalog-category__category-price Марка
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="mark-1").catalog-category__checkbox-input
+                    label(for="mark-1").catalog-category__checkbox-label Antarra
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="mark-2").catalog-category__checkbox-input
+                    label(for="mark-2").catalog-category__checkbox-label Mainzu
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="mark-3").catalog-category__checkbox-input
+                    label(for="mark-3").catalog-category__checkbox-label Imola Ceramica
+
+                .catalog-category__box-hidden
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="mark-4").catalog-category__checkbox-input
+                        label(for="mark-4").catalog-category__checkbox-label Antarra
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="mark-5").catalog-category__checkbox-input
+                        label(for="mark-5").catalog-category__checkbox-label Mainzu
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="mark-6").catalog-category__checkbox-input
+                        label(for="mark-6").catalog-category__checkbox-label Imola Ceramica
+                a.catalog-category__see-all
+                    | Посмотреть все
+                    img(src="/src/images/icons/select-bottom.svg").catalog-category__see-arrow
+
+                .catalog-category__category-title.catalog-category__category-price Страна производитель
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="manufacturer-1").catalog-category__checkbox-input
+                    label(for="manufacturer-1").catalog-category__checkbox-label Вьетнам
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="manufacturer-2").catalog-category__checkbox-input
+                    label(for="manufacturer-2").catalog-category__checkbox-label Испания
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="manufacturer-3").catalog-category__checkbox-input
+                    label(for="manufacturer-3").catalog-category__checkbox-label Китай
+
+                .catalog-category__box-hidden
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="manufacturer-4").catalog-category__checkbox-input
+                        label(for="manufacturer-4").catalog-category__checkbox-label Вьетнам
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="manufacturer-5").catalog-category__checkbox-input
+                        label(for="manufacturer-5").catalog-category__checkbox-label Испания
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="manufacturer-6").catalog-category__checkbox-input
+                        label(for="manufacturer-6").catalog-category__checkbox-label Китай
+                a.catalog-category__see-all
+                    | Посмотреть все
+                    img(src="/src/images/icons/select-bottom.svg").catalog-category__see-arrow
+
+
+
+                .catalog-category__category-title.catalog-category__category-price Выбор цвета
+                .catalog-category__color-box
+                    .catalog-category__select-color
+                        .catalog-category__checkbox-box
+                            input(type="checkbox" id="color-1").catalog-category__checkbox-input
+                            label(for="color-1").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                span.catalog-category__color
+                                | Белый
+                        .catalog-category__checkbox-box
+                            input(type="checkbox" id="color-2").catalog-category__checkbox-input
+                            label(for="color-2").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                span.catalog-category__color.catalog-category__color--grey
+                                | Серый
+                        .catalog-category__checkbox-box
+                            input(type="checkbox" id="color-3").catalog-category__checkbox-input
+                            label(for="color-3").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                span.catalog-category__color.catalog-category__color--blue
+                                | Голубой
+                    .catalog-category__select-color
+                        .catalog-category__checkbox-box
+                            input(type="checkbox" id="color-4").catalog-category__checkbox-input
+                            label(for="color-4").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                span.catalog-category__color.catalog-category__color--black
+                                | Черный
+                        .catalog-category__checkbox-box
+                            input(type="checkbox" id="color-5").catalog-category__checkbox-input
+                            label(for="color-5").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                span.catalog-category__color.catalog-category__color--browm
+                                | Коричневый
+                        .catalog-category__checkbox-box
+                            input(type="checkbox" id="color-6").catalog-category__checkbox-input
+                            label(for="color-6").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                span.catalog-category__color.catalog-category__color--green
+                                | Зеленый
+                        a.catalog-category__see-all
+                .catalog-category__box-hidden
+                    .catalog-category__color-box
+                        .catalog-category__select-color
+                            .catalog-category__checkbox-box
+                                input(type="checkbox" id="color-7").catalog-category__checkbox-input
+                                label(for="color-7").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                    span.catalog-category__color
+                                    | Белый
+                            .catalog-category__checkbox-box
+                                input(type="checkbox" id="color-8").catalog-category__checkbox-input
+                                label(for="color-8").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                    span.catalog-category__color.catalog-category__color--grey
+                                    | Серый
+                            .catalog-category__checkbox-box
+                                input(type="checkbox" id="color-9").catalog-category__checkbox-input
+                                label(for="color-9").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                    span.catalog-category__color.catalog-category__color--blue
+                                    | Голубой
+                        .catalog-category__select-color
+                            .catalog-category__checkbox-box
+                                input(type="checkbox" id="color-10").catalog-category__checkbox-input
+                                label(for="color-10").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                    span.catalog-category__color.catalog-category__color--black
+                                    | Черный
+                            .catalog-category__checkbox-box
+                                input(type="checkbox" id="color-11").catalog-category__checkbox-input
+                                label(for="color-11").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                    span.catalog-category__color.catalog-category__color--browm
+                                    | Коричневый
+                            .catalog-category__checkbox-box
+                                input(type="checkbox" id="color-12").catalog-category__checkbox-input
+                                label(for="color-12").catalog-category__checkbox-label.catalog-category__checkbox-label--pl
+                                    span.catalog-category__color.catalog-category__color--green
+                                    | Зеленый
+                            a.catalog-category__see-all
+                a.catalog-category__see-all
+                    | Посмотреть все
+                    img(src="/src/images/icons/select-bottom.svg").catalog-category__see-arrow
+
+                .catalog-category__category-title.catalog-category__category-price Рисунок
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="picture-1").catalog-category__checkbox-input
+                    label(for="picture-1").catalog-category__checkbox-label Геометрический
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="picture-2").catalog-category__checkbox-input
+                    label(for="picture-2").catalog-category__checkbox-label Волна
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="picture-3").catalog-category__checkbox-input
+                    label(for="picture-3").catalog-category__checkbox-label Декоративный
+                .catalog-category__box-hidden
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="picture-4").catalog-category__checkbox-input
+                        label(for="picture-4").catalog-category__checkbox-label Геометрический
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="picture-5").catalog-category__checkbox-input
+                        label(for="picture-5").catalog-category__checkbox-label Волна
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="picture-6").catalog-category__checkbox-input
+                        label(for="picture-6").catalog-category__checkbox-label Декоративный
+                a.catalog-category__see-all
+                    | Посмотреть все
+                    img(src="/src/images/icons/select-bottom.svg").catalog-category__see-arrow
+
+                .catalog-category__category-title.catalog-category__category-price Толщина плитки (ММ)
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="thickness-1").catalog-category__checkbox-input
+                    label(for="thickness-1").catalog-category__checkbox-label 0.9
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="thickness-2").catalog-category__checkbox-input
+                    label(for="thickness-2").catalog-category__checkbox-label 6.9
+                .catalog-category__checkbox-box
+                    input(type="checkbox" id="thickness-3").catalog-category__checkbox-input
+                    label(for="thickness-3").catalog-category__checkbox-label 7.0
+                .catalog-category__box-hidden
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="thickness-4").catalog-category__checkbox-input
+                        label(for="thickness-4").catalog-category__checkbox-label 0.9
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="thickness-5").catalog-category__checkbox-input
+                        label(for="thickness-5").catalog-category__checkbox-label 6.9
+                    .catalog-category__checkbox-box
+                        input(type="checkbox" id="thickness-6").catalog-category__checkbox-input
+                        label(for="thickness-6").catalog-category__checkbox-label 7.0
+                a.catalog-category__see-all
+                    | Посмотреть все
+                    img(src="/src/images/icons/select-bottom.svg").catalog-category__see-arrow
+
+                .catalog-category__filter-buttons
+                    a.button.button--red.catalog-category__filter-button.catalog-category__filter-button--order Применить
+                    a.button.button--sky-blue.catalog-category__filter-button.catalog-category__filter-button--small Очистить
+
+            .catalog-category__content
+                .catalog-category__title Керамическая плитка
+
+                .catalog-category__select-box
+                    form(action="#").catalog-category__select-form
+                        .catalog-category__select
+                            fieldset
+                                select(name="speed")#select1
+                                    option(selected="selected" disabled) Сначала: популярные
+                                    option Option 1
+                                    option Option 2
+                        .catalog-category__select
+                            fieldset
+                                select(name="speed")#select2
+                                    option(selected="selected" disabled) Показывать по: 16
+                                    option Option 1
+                                    option Option 2
+                    .catalog-category__button-filter
+                        .catalog-category__button-filter--icon
+                        | Фильтры
+
+                .catalog-category__products-grid
+
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-1.png").catalog-category__image
+                            .catalog-category__mark
+                                img(src="/src/images/icons/thebest.svg").catalog-category__mark-icon
+                                .catalog-category__mark-text Лучшая цена
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__discount
+                                | 4 812
+                                span.catalog-category__discount-span com
+
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name.catalog-category__name--small GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+
+
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-2.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-3.png").catalog-category__image
+                            .catalog-category__mark
+                                img(src="/src/images/icons/sale.svg").catalog-category__mark-icon
+                                .catalog-category__mark-text Акция на товар
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__discount
+                                | 4 812
+                                span.catalog-category__discount-span com
+
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-4.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+
+
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-5.png").catalog-category__image
+                            .catalog-category__mark
+                                img(src="/src/images/icons/sale.svg").catalog-category__mark-icon
+                                .catalog-category__mark-text Акция на товар
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__discount
+                                | 4 812
+                                span.catalog-category__discount-span com
+
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-6.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-7.png").catalog-category__image
+                            .catalog-category__mark
+                                img(src="/src/images/icons/sale.svg").catalog-category__mark-icon
+                                .catalog-category__mark-text Акция на товар
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__discount
+                                | 4 812
+                                span.catalog-category__discount-span com
+
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-8.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-1.png").catalog-category__image
+                            .catalog-category__mark
+                                img(src="/src/images/icons/sale.svg").catalog-category__mark-icon
+                                .catalog-category__mark-text Акция на товар
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__discount
+                                | 4 812
+                                span.catalog-category__discount-span com
+
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-8.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-9.png").catalog-category__image
+                            .catalog-category__mark
+                                img(src="/src/images/icons/thebest.svg").catalog-category__mark-icon
+                                .catalog-category__mark-text Лучшая цена
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__discount
+                                | 4 812
+                                span.catalog-category__discount-span com
+
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-4.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-5.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__discount
+                                | 4 812
+                                span.catalog-category__discount-span com
+
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-6.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-7.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__discount
+                                | 4 812
+                                span.catalog-category__discount-span com
+
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                    .catalog-category__item
+                        .catalog-category__button
+                            a.button.button--red(href="#") В корзину
+                        a(href="#").catalog-category__image-box
+                            img(src="/src/images/products/product-8.png").catalog-category__image
+                            .catalog-category__icon-box
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--favourite
+                                .catalog-category__icon
+                                    .catalog-category__icon-image.catalog-category__icon-image--comparison
+                        .catalog-category__price-box
+                            .catalog-category__price
+                                | 4 812
+                                span.catalog-category__price-span com
+                        .catalog-category__size 3 568 com / м²
+                        a(href="#").catalog-category__name GARDENA Комплект садовых инструментов
+                        .catalog-category__container
+                            include ../../blocks/rating/rating
+                            .catalog-category__article Арт. 30361709
+                .catalog-category__button-see
+                    a.button.button--light-blue(href="#") Показать еще 16
+                include ../../blocks/pagination/pagination
+

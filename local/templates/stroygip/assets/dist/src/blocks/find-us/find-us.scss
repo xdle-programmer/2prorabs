@@ -1,0 +1,136 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.find-us{
+  padding: 56px 0 50px 0;
+  background: linear-gradient(to bottom, #506dd8, $blue);
+  @media #{$tablet-big-screen}{
+    padding: 40px 0;
+  }
+  @media #{$mobile-big-screen}{
+    padding: 25px 0;
+  }
+  &--light-blue{
+    background: rgba(65, 90, 183, 0.05);
+  }
+  &__title{
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 40px;
+    @media #{$tablet-big-screen}{
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+    @media #{$tablet-small-screen}{
+      font-size: 25px;
+    }
+    @media #{$mobile-big-screen}{
+      font-size: 20px;
+    }
+    &--black{
+      color: $black;
+    }
+  }
+  &__carousel{
+    position: relative;
+    .owl-item{
+      &.center{
+        .find-us__item{
+          box-shadow: 0px 0px 20px 0px rgba(181,235,255,0.3);
+          &::after{
+            display: none;
+          }
+        }
+      }
+    }
+    .owl-item.active.center {
+      transform: scale(1.2, 1.25);
+    }
+    .owl-stage{
+      display: flex;
+      align-items: center;
+      height: 340px;
+      @media #{$mobile-big-screen}{
+        height: 300px;
+      }
+      @media #{$mobile-small-screen}{
+        height: auto;
+      }
+    }
+    .owl-dots{
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px !important;
+      .owl-dot{
+        &.active{
+          background: $white;
+          width: 12px;
+          height: 12px;
+        }
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background: rgba($white, 0.2);
+        margin-right: 13px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+    &--blue{
+      .owl-dots{
+        .owl-dot{
+          background: rgba(65, 90, 183, 0.25);
+          &.active{
+            background: $blue;
+          }
+        }
+      }
+    }
+  }
+  .owl-dot{
+    &.active{
+      span{
+        width: 12px;
+        height: 12px;
+        background: #fff !important;
+      }
+    }
+    span{
+      background: rgba(#fff, 0.2) !important;
+    }
+  }
+  &__item{
+    margin: 0 40px;
+    width: 432px;
+    height: 243px;
+    position: relative;
+    &::after{
+      content: '';
+      background: rgba(#fff, 0.5);
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+    }
+  }
+  &__video{
+    width: 100%;
+    height: 100%;
+  }
+  &__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 83%;
+    z-index: 10;
+    cursor: pointer;
+    background: url(assets/img/video-play.svg) 50% 62% no-repeat;
+  }
+}

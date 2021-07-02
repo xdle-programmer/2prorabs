@@ -1,0 +1,70 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.bestsellers{
+  overflow: hidden;
+  padding: 64px 0;
+  background: rgba(65, 90, 183, 0.05);
+
+  @media #{$tablet-small-screen}{
+    padding: 40px 0;
+  }
+  @media #{$mobile-big-screen}{
+    padding: 25px 0;
+  }
+  &__carousel{
+    padding: 0 15px;
+    .owl-prev {
+      width: 40px;
+      height: 40px;
+      top: 45%;
+      left: -1%;
+      position: absolute;
+      @media #{$mobile-big-screen}{
+        left: -10px;
+        width: 22px;
+        height: 22px;
+      }
+      &::after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: url(assets/img/slide-left.svg) no-repeat;
+        background-position: center;
+        @media #{$mobile-big-screen}{
+          background-size: 90%;
+        }
+      }
+    }
+
+    .owl-next {
+      width: 40px;
+      height: 40px;
+      top: 45%;
+      right: -1%;
+      position: absolute;
+      @media #{$mobile-big-screen}{
+        right: -10px;
+        width: 22px;
+        height: 22px;
+      }
+      &::after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: url(assets/img/slide-right.svg) no-repeat;
+        background-position: center;
+        @media #{$mobile-big-screen}{
+          background-size: 90%;
+        }
+      }
+    }
+    @media #{$mobile-big-screen}{
+      padding: 0 10px;
+    }
+  }
+}

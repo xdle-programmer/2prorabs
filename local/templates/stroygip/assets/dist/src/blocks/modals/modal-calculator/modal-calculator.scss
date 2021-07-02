@@ -1,0 +1,122 @@
+@import "../../../blocks/base/variables";
+@import "../../libs/scss/mixins";
+@import "../../../blocks/base/media-queries";
+.modal-calculator{
+  display: none;
+  background: #fff;
+  position: relative;
+  width: 944px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(169, 177, 197, 0.37);
+  margin: 0 auto;
+  @media #{$tablet-small-screen}{
+	width: 550px;
+	padding: 40px;
+  }
+  @media #{$mobile-big-screen}{
+	width: 420px;
+	padding: 30px;
+  }
+  @media #{$mobile-small-screen}{
+	width: 90%;
+	min-width: 300px;
+	padding: 15px;
+  }
+
+  &__title{
+	padding: 56px 0 72px 0;
+  }
+  &__input-box{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-bottom: 32px;
+	&:last-child{
+	  margin-bottom: 0;
+	}
+	@media #{$mobile-big-screen}{
+	  flex-direction: column;
+	  align-items: flex-start;
+	}
+  }
+  &__input-text{
+	font-size: 16px;
+	color: $black;
+	margin-right: 16px;
+	min-width: 120px;
+	text-align: right;
+	@media #{$mobile-big-screen}{
+	  text-align: start;
+	  margin: 0 0 5px 0;
+	}
+  }
+  &__container{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	@media #{$mobile-big-screen}{
+	  align-items: flex-start;
+	}
+  }
+  &__input{
+	font-weight: 500;
+	font-size: 18px;
+	color: $black;
+	border-radius: 4px;
+	padding: 16px 72px 16px 16px;
+	height: 56px;
+	width: 176px;
+	border: 1.6px solid rgba(65, 90, 183, 0.2);
+	&:hover{
+	  box-shadow: $shadow-input;
+	}
+	&:focus{
+	  border-color: $blue;
+	}
+	@media #{$mobile-big-screen}{
+	  height: 50px;
+	}
+  }
+  &__size{
+	font-size: 16px;
+	color: $black;
+	position: absolute;
+	right: 1px;
+	width: 56px;
+	height: 56px;
+	@include flex-row-center;
+	background: rgba(65, 90, 183, 0.05);
+	@media #{$mobile-big-screen}{
+	  height: 50px;
+	  top: 23px;
+	}
+  }
+  &__button{
+	width: 304px;
+	margin-top: 16px;
+	@media #{$mobile-big-screen}{
+	  width: 100%;
+	}
+  }
+  &__separator{
+	margin: 56px 0 39px 0;
+	width: 100%;
+	height: 1px;
+	background: rgba(65, 90, 183, 0.15);
+  }
+  &__amount{
+	font-size: 21px;
+	line-height: 42px;
+	color: $black;
+	text-align: center;
+	margin: 24px;
+	padding-bottom: 64px;
+  }
+  &__close{
+	@media #{$mobile-big-screen}{
+	  right: 15px !important;
+	  top: 15px !important;
+	}
+  }
+}

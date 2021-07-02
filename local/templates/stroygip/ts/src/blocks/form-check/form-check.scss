@@ -1,0 +1,47 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.form-check {
+
+  &__field {
+    position: relative;
+
+    &--error {
+      border: 1px solid #ff0000;
+    }
+  }
+
+  $error: '.form-check__error--show';
+
+  &__error {
+    color: var(--red-color);
+    cursor: text;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    padding-left: 0;
+    height: auto;
+    transition: transform 0.2s, opacity 0s;
+    transform-origin: left bottom;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(9px) scale(.75);
+
+    #{$error} & {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+  &__button {
+
+    &--disabled {
+    }
+
+  }
+}

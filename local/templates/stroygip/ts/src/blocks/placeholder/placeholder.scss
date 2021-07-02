@@ -1,0 +1,63 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.placeholder {
+  position: relative;
+  display: block;
+
+  $not-empty: '.placeholder--not-empty';
+  $error: '.form-check__error--show';
+  $search: '.main-banner__search';
+
+  &__item {
+    color: var(--gray-color);
+    cursor: text;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    padding-left: 0;
+    height: auto;
+    transform: translateY(22px) scale(1);
+    transition: transform 0.2s, opacity 0s;
+    transform-origin: left bottom;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 101;
+
+    #{$search} & {
+      font-size: 20px;
+      font-weight: 600;
+      left: 64px;
+      transform: translateY(18px) scale(1);
+
+      @include tablet-big-screen {
+        font-size: 16px;
+        font-weight: 400;
+        left: 41px;
+        transform: translateY(9px) scale(1);
+      }
+    }
+
+    #{$not-empty} & {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(9px) scale(.75)
+    }
+
+    #{$search} #{$not-empty} & {
+      transform: translateY(-2px) scale(.75);
+      font-weight: 400;
+    }
+
+    #{$error} & {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+  }
+
+}

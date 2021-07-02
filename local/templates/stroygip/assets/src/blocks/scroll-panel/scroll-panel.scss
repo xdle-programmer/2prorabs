@@ -1,0 +1,24 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.scroll-panel {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  z-index: 400;
+  transition: all 0ms linear;
+
+
+  &--scroll {
+    background: white;
+  }
+}
+
+.scroll-panel{
+  @media #{$mobile-big-screen}{
+    border-top: solid 1px #cbcfd7;
+  }
+}

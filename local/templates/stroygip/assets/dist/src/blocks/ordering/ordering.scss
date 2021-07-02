@@ -1,0 +1,11 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.ordering{
+  padding: 56px 15px 68px 15px;
+  background-color: rgba(65, 90, 183, 0.09);
+  @media #{$mobile-big-screen}{
+	padding: 30px 15px;
+  }
+}

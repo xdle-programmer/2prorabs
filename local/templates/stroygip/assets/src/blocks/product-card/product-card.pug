@@ -1,0 +1,119 @@
+section.product-card
+    .container
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link(href="#") Каталог
+                .breadcrumbs__separator
+                a.breadcrumbs__link(href="#") Электротовары
+                .breadcrumbs__separator
+                a.breadcrumbs__link(href="#") Освещение
+                .breadcrumbs__separator
+                .breadcrumbs__separator
+                a.breadcrumbs__link(href="#") Люстры
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Люстра Vitaluce
+        .product-card__item
+
+            .product-card__main-product
+
+                .product-card__box
+
+                    .product-card__slides
+                        .product-card__slide-small
+                            img(src="/src/images/product-card/small-image-2.png")
+                        .product-card__slide-small
+                            img(src="/src/images/product-card/small-image-2.png")
+                        .product-card__slide-small
+                            img(src="/src/images/product-card/small-image-2.png")
+                        .product-card__slide-small
+                            img(src="/src/images/product-card/small-image-2.png")
+
+                    //.wrapper
+                    //    .owl-carousel.owl-theme.owl-carousel-vertical
+                    //        img.vertical-item(src='http://placehold.it/320x240?text=Slide%200')
+                    //        img.vertical-item(src='http://placehold.it/320x240?text=Slide%200')
+                    //        img.vertical-item(src='http://placehold.it/320x240?text=Slide%200')
+                    //        img.vertical-item(src='http://placehold.it/320x240?text=Slide%200')
+
+
+                    .product-card__preview
+                        .product-card__preview-header
+                            .product-card__rating-box
+                                include ../../blocks/rating/rating
+                                .product-card__reviews-counter Нет отзывов
+                            .product-card__select-box
+                                a(href="#").product-card__select-button
+                                    .product-card__select-button-icon.product-card__select-button-icon--favourites
+                                    | В избранное
+                                a(href="#").product-card__select-button
+                                    .product-card__select-button-icon.product-card__select-button-icon--comparison
+                                    | В сравнение
+                        .product-card__main-image-box
+                            img(src="/src/images/product-card/main-image.png").product-card__main-image
+                            .product-card__mark
+                                img(src="/src/images/icons/sale.svg").product-card__mark-icon
+                                | Скидка 15%
+
+                .product-card__about
+                    .product-card__title Потолочная Люстра Vitaluce 3 х Е27, 60 Вт. V4313-1/3PL , E27, 60 Вт
+                    .product-card__subtitle.product-card__article Артикул: 30361709
+                    .product-card__subtitle.product-card__color
+                        | Цвет:
+                        span.product-card__text Белый
+
+                    .product-card__radio-container
+                        .product-card__radio-box
+                            input(type="radio" id="color-1" name="color").product-card__radio-input
+                            label(for="color-1").product-card__radio-label.product-card__radio-label--indent
+                                span.product-card__color-palette
+                        .product-card__radio-box
+                            input(type="radio" id="color-2" name="color").product-card__radio-input
+                            label(for="color-2").product-card__radio-label.product-card__radio-label--indent
+                                span.product-card__color-palette.product-card__color-palette--black
+                        .product-card__radio-box
+                            input(type="radio" id="color-3" name="color").product-card__radio-input
+                            label(for="color-3").product-card__radio-label.product-card__radio-label--indent
+                                span.product-card__color-palette.product-card__color-palette--grey
+
+                    .product-card__amount-box
+                        .product-card__subtitle Количество:
+                        a(href="#").product-card__calculator
+                            .product-card__calculator-icon
+                            | Рассчитать расход материалов
+
+                    .product-card__sum
+                        .product-card__sum-icon#minusSum -
+                        input.product-card__sum-input#calculatorSum(type="text" value="1")
+                        .product-card__sum-icon#plusSum +
+
+                    .product-card__price-box
+                        .product-card__discount
+                            | 4 812
+                            span.product-card__discount-prefix com
+                        .product-card__price
+                            | 4 812
+                            span.product-card__price-prefix com
+                    .product-card__nds 4 300 сом/шт без НДС
+                    .product-card__buttons
+                        a(href="#").button.button--red.button--medium-style.product-card__button#basketOrder В корзину
+                        a(href="#").button.button--white-red.button--medium-style.product-card__button Быстрый заказ
+
+                    .product-card__availability-box
+                        .product-card__item-availability
+                            .product-card__item-availability-icon
+                                img(src="/src/images/icons/availability.svg")
+                            | В наличии:
+                            a.product-card__item-availability-link(href="#") в 2 магазинах
+                        .product-card__item-availability
+                            .product-card__item-availability-icon
+                                img(src="/src/images/icons/courier.svg")
+                            | Доставка курьером:
+                            a.product-card__item-availability-courier 4 августа
+
+
+
+
+
+

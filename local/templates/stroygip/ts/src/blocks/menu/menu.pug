@@ -1,0 +1,148 @@
+mixin categoryItem
+    .menu__category-item.preload__area
+        img(data-src='/images/examples/category.jpg').preload__item.menu__category-icon
+        .menu__category
+            .menu__category-title(data-menu-target='category-1') Название категории
+            .menu__category-subtitle(data-menu-target='subcategory-1') Название подкатегории
+            .menu__category-subtitle(data-menu-target='subcategory-1') Название подкатегории
+            .menu__category-subtitle(data-menu-target='subcategory-1') Название подкатегории
+            .menu__category-more-link(data-menu-target='category-1') Еще 18
+            .menu__mobile-desc(data-menu-target='category-1') Название подкатегории, описание того, что внутри и еще указание количества на 18 подкатегорий
+                .menu__mobile-button(data-menu-target='category-1')
+                    +iconSvg('arrow','menu__mobile-button-icon')
+
+mixin subCategoryItem
+    .menu__category-item.preload__area
+        img(data-src='/images/examples/subcategory.jpg').preload__item.menu__category-icon
+        .menu__category
+            .menu__category-title(data-menu-target='subcategory-1') Название подкатегории
+            a(href='/catalog.html').menu__category-subtitle Название подподкатегории
+            a(href='/catalog.html').menu__category-subtitle Название подподкатегории
+            a(href='/catalog.html').menu__category-subtitle Название подподкатегории
+            a(href='/catalog.html').menu__category-subtitle Название подподкатегории
+            a(href='/catalog.html').menu__category-subtitle Название подподкатегории
+            a(href='/catalog.html').menu__category-subtitle Название подподкатегории
+            .menu__category-more-link(data-menu-target='subcategory-1') Еще 18
+            .menu__mobile-desc(data-menu-target='subcategory-1') Название подкатегории, описание того, что внутри и еще указание количества на 18 подкатегорий
+                .menu__mobile-button(data-menu-target='subcategory-1')
+                    +iconSvg('arrow','menu__mobile-button-icon')
+
+
+mixin subSubCategoryItem
+    .menu__category-item
+        .menu__category-icon
+        .menu__category
+            a(href='/catalog.html').menu__category-subtitle.menu__category-subtitle--mobile Название подподкатегории
+            a(href='/catalog.html').menu__category-subtitle.menu__category-subtitle--mobile Название подподкатегории
+            a(href='/catalog.html').menu__category-subtitle.menu__category-subtitle--mobile Название подподкатегории
+            a(href='/catalog.html').menu__category-subtitle.menu__category-subtitle--mobile Название подподкатегории
+
+
+.menu
+    .menu__wrapper.layout
+        .menu__header
+            a(href='/').menu__logo
+                img(src='/images/logo/logo-black.svg').menu__logo-img
+            .menu__close
+                +iconSvg('close','menu__close-icon')
+
+        .menu__block(data-menu-name='mobile-menu')
+            .menu__items
+                .menu__category-item.menu__category-item--small
+                    +iconSvg('catalog','menu__category-icon menu__category-icon--small')
+                    .menu__category
+                        .menu__category-title(data-menu-target='main') Каталог
+                        .menu__mobile-desc(data-menu-target='main') Удобный каталог 45 000 лучших товаров магазинов 2прораба
+                            .menu__mobile-button(data-menu-target='main')
+                                +iconSvg('arrow','menu__mobile-button-icon')
+                a(href='/').menu__category-item.menu__category-item--small
+                    +iconSvg('user','menu__category-icon menu__category-icon--small')
+                    .menu__category
+                        .menu__category-title Вход
+                        .menu__mobile-desc Вход в аккаунт для доступа к истории заказов и персональным скидкам
+                a(href='/').menu__category-item.menu__category-item--small
+                    +iconSvg('sale','menu__category-icon menu__category-icon--small')
+                    .menu__category
+                        .menu__category-title Акции
+                        .menu__mobile-desc Лучшие и самые выгодные акции в магазинах
+                a(href='/').menu__category-item.menu__category-item--small
+                    +iconSvg('compare','menu__category-icon menu__category-icon--small')
+                    .menu__category
+                        .menu__category-title Сравнение
+                        .menu__mobile-desc Удобное сравнение товаров по характеристикам
+                a(href='/').menu__category-item.menu__category-item--small
+                    +iconSvg('favorite','menu__category-icon menu__category-icon--small')
+                    .menu__category
+                        .menu__category-title Избранное
+                        .menu__mobile-desc Избранные товары, которые вы не хотели бы потерять
+
+
+                a(href='/').menu__category-item.menu__category-item--not-mobile-icon
+                    .menu__category
+                        .menu__category-title О компании
+                a(href='/').menu__category-item.menu__category-item--not-mobile-icon
+                    .menu__category
+                        .menu__category-title Доставка и оплата
+                a(href='/').menu__category-item.menu__category-item--not-mobile-icon
+                    .menu__category
+                        .menu__category-title Услуги
+                a(href='/').menu__category-item.menu__category-item--not-mobile-icon
+                    .menu__category
+                        .menu__category-title Вакансии
+                a(href='/').menu__category-item.menu__category-item--not-mobile-icon
+                    .menu__category
+                        .menu__category-title Сотрудничество
+
+
+        .menu__block(data-menu-name='main').preload.preload--not-ready
+            .menu__inner
+                .menu__inner-name Каталог
+            .menu__items
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+                +categoryItem
+
+        .menu__block(data-menu-name='category-1').preload.preload--not-ready
+            .menu__inner
+                .menu__inner-back-link(data-menu-target='main') Каталог
+                +iconSvg('arrow','menu__inner-separator')
+                .menu__inner-name Название категории
+            .menu__items
+                +subCategoryItem
+                +subCategoryItem
+                +subCategoryItem
+                +subCategoryItem
+                +subCategoryItem
+                +subCategoryItem
+        .menu__block(data-menu-name='subcategory-1').preload.preload--not-ready
+            .menu__inner
+                .menu__inner-back-link(data-menu-target='main') Каталог
+                +iconSvg('arrow','menu__inner-separator')
+                .menu__inner-back-link(data-menu-target='category-1') Название категории
+                +iconSvg('arrow','menu__inner-separator')
+                .menu__inner-name Название подкатегории
+            .menu__items
+                +subSubCategoryItem
+                +subSubCategoryItem
+                +subSubCategoryItem
+                +subSubCategoryItem
+                +subSubCategoryItem
+                +subSubCategoryItem

@@ -1,0 +1,55 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.watch-video{
+  padding: 55px 15px 60px 15px;
+  background: linear-gradient(#506dd8, #415ab7);
+  position: relative;
+  z-index: 0;
+  @media #{$mobile-big-screen}{
+	padding: 30px 15px 30px 15px;
+  }
+  &::after{
+	content: '';
+	background: url(assets/img/decor-1.svg) no-repeat center bottom;
+	width: 100%;
+	height: 433px;
+	bottom: 0;
+	left: 19%;
+	position: absolute;
+	transform: translateX(-30%);
+	z-index: -1;
+	@media #{$mobile-big-screen}{
+	  height: 100%;
+	  background-size: 70%;
+	}
+  }
+  &::before{
+	content: '';
+	width: 100%;
+	z-index: -1;
+	height: 100%;
+	bottom: 0;
+	left: 40%;
+	position: absolute;
+	transform: translateX(-40%);
+	background: url(assets/img/rectangle.svg) no-repeat center;
+  }
+  &__video-box{
+	width: 672px;
+	height: auto;
+	margin: 0 auto;
+	@media #{$tablet-small-screen}{
+	  width: 550px;
+	}
+	@media #{$mobile-big-screen}{
+	  width: 290px;
+	}
+  }
+  &__video{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+  }
+}

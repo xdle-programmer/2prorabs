@@ -1,0 +1,105 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.mobile-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, .9);
+  backdrop-filter: blur(7px);
+  padding: 10px 0;
+  box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, .1);
+  display: none;
+  z-index: 10000;
+
+  @include tablet-big-screen {
+    display: block;
+  }
+
+  &__block {
+    @include flex-row-center;
+    justify-content: space-between;
+  }
+
+  &__button {
+    @include flex-row;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
+
+  &__button-icon {
+    width: 24px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 3px;
+  }
+
+  &__catalog-button {
+    @include flex-row;
+    padding-left: 28px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__catalog-button-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--red-color);
+    position: absolute;
+    left: 0;
+    top: 1px;
+  }
+
+  &__catalog-button-text {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--black-color);
+  }
+
+  &__basket {
+    @include flex-row;
+    margin-left: auto;
+    position: relative;
+    padding-left: 19px;
+  }
+
+  &__basket-icon {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    fill: var(--red-color);
+  }
+
+  &__basket-text {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--black-color);
+    display: inline;
+  }
+
+  &__basket-count {
+    color: var(--red-color);
+    display: inline;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 5px;
+
+    &:before {
+      content: ' (';
+      color: var(--black-color);
+    }
+
+    &:after {
+      content: ')';
+      color: var(--black-color);
+    }
+  }
+}

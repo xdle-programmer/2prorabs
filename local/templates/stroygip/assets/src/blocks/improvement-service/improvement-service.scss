@@ -1,0 +1,112 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.improvement-service{
+  padding: 63px 0 70px 0;
+  border-bottom: 1px solid #cbcfd7;
+  @media #{$tablet-big-screen}{
+    padding: 50px 0 40px 0;
+  }
+  @media #{$mobile-big-screen} {
+    padding: 30px 0;
+  }
+  &__title{
+    margin-bottom: 72px;
+    @media #{$tablet-big-screen}{
+      margin-bottom: 50px;
+    }
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    @media(max-width: 1279px){
+      width: 100%;
+    }
+    &--direction{
+      @media #{$tablet-small-screen}{
+        flex-direction: column !important;
+        align-items: center;
+      }
+    }
+  }
+  &__item{
+    width: 20%;
+    text-align: center;
+    @media(max-width: 1023px){
+      min-width: 50%;
+      margin-bottom: 70px;
+    }
+    &--mb{
+      margin-bottom: 0 !important;
+    }
+    &--width{
+      width: 30%;
+    }
+    &--indent{
+      @media #{$mobile-big-screen}{
+        margin-bottom: 30px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &__item-icon{
+    img{
+      z-index: 2;
+      @media #{$mobile-big-screen}{
+        width: 40px;
+        height: 40px;
+      }
+    }
+    margin: 0 auto;
+    width: 88px;
+    height: 88px;
+    background: $blue;
+    border-radius: 100%;
+    @include flex-row-center;
+    position: relative;
+    &:after{
+      position: absolute;
+      content: '';
+      width: 88px;
+      height: 88px;
+      left: 6px;
+      z-index: -1;
+      background: #ffecde;
+      border-radius: 100%;
+      @include flex-row-center;
+
+      @media #{$mobile-big-screen}{
+        width: 70px;
+        height: 70px;
+      }
+    }
+    @media #{$mobile-big-screen}{
+      width: 70px;
+      height: 70px;
+    }
+  }
+  &__item-text{
+    font-size: 18px;
+    font-weight: 500;
+    color: #1c1c1d;
+    margin-top: 24px;
+    @media #{$mobile-big-screen}{
+      font-size: 16px;
+    }
+    @media #{$mobile-small-screen}{
+      font-size: 12px;
+    }
+  }
+  &__text{
+    margin-top: 16px;
+    color: $black;
+    line-height: 24px;
+  }
+}

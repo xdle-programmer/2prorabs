@@ -1,0 +1,83 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.button {
+  width: 250px;
+  min-width: 250px;
+  height: 56px;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--white-color);
+  background: var(--blue-color);
+  @include flex-row-center;
+  border: 1px solid var(--blue-color);
+  @include unselectable;
+  border-radius: 5px;
+  position: relative;
+  @include active-button-effect;
+  cursor: pointer;
+  padding: 0 20px;
+
+  &.form-check__button--disabled {
+    background: var(--light-gray-color);
+    border-color: var(--light-gray-color);
+    color: var(--gray-color);
+    cursor: default;
+
+    &:hover {
+      background: var(--light-gray-color);
+      border-color: var(--light-gray-color);
+      color: var(--gray-color);
+    }
+
+    @include active-disabled-button-effect;
+  }
+
+  &--invert {
+    color: var(--blue-color);
+    background: var(--white-color);
+
+    &.form-check__button--disabled {
+
+    }
+
+    &:hover {
+      color: var(--white-color);
+      background: var(--blue-color);
+    }
+  }
+
+  &--auto-width {
+    width: fit-content;
+  }
+
+  &--small {
+    height: 48px;
+  }
+
+  &:hover {
+    color: var(--blue-color);
+    background: var(--white-color);
+  }
+
+  $hover: '.button:hover';
+
+  &__icon {
+    margin-left: 10px;
+    fill: var(--white-color);
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+
+    &--small {
+      width: 16px;
+      height: 16px;
+    }
+
+    #{$hover} & {
+      fill: var(--blue-color);
+    }
+  }
+}

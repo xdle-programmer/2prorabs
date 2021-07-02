@@ -1,0 +1,21 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.your-country {
+  display: inline-flex;
+  align-items: center;
+  color: $blue;
+  @media #{$mobile-big-screen}{
+    display: none;
+  }
+  &__img {
+    margin-right: 8px;
+  }
+  &__text{
+    @media #{$mobile-big-screen}{
+      display: none;
+    }
+  }
+}

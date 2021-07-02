@@ -1,0 +1,68 @@
+a.button.button--red#buttonReg Авторизация
+
+.modal-overlay
+.modal-position
+    .modal-registration-container
+        .modal-registration
+            .modal-registration__close
+                img(src="/src/blocks/modals/modal-registration/assets/img/close-mod.svg")
+
+            .modal-registration__inner
+
+                .modal-registration__tabs
+                    .modal-registration__tab.modal-registration__tab--active Вход
+                    .modal-registration__tab Регистрация
+
+                .modal-registration__box.modal-registration__box--active
+
+                    .modal-registration__sign-block.modal-registration__sign-block--active
+                        .modal-registration__sign-text Мы пришлем SMS с кодом для подтверждения на ваш номер телефона
+                        .modal-registration__inner
+                            include ../../input-styled/input-styled_sign
+
+                            .modal-registration__captcha
+                                .modal-registration__captcha-text Подтвердите, что вы не робот
+                            a(href="#").button.button--red.button--red-width.modal-registration__button-red Получить код
+
+                            a(href="#").modal-registration__sign-link#signEmail Войти по почте
+
+                    .modal-registration__sign-block
+                        .modal-registration__sign-text Только для зарегистрированных пользователей
+                        .modal-registration__inner
+                            include ../../input-styled/input-styled_sign-email
+
+                            .modal-registration__captcha
+                                .modal-registration__captcha-text Подтвердите, что вы не робот
+                            a(href="#").button.button--red.button--red-width.modal-registration__button-red Войти
+
+                            a(href="#").modal-registration__sign-link#signTel Войти по номеру телефона
+
+                .modal-registration__box
+                    .modal-registration__input-box
+                        include ../../input-styled/input-styled_reg
+                    .modal-registration__checkbox
+                        include ../../checkbox/checkbox_prorab
+                    .modal-registration__text С вами свяжется менеджер для подтверждения.
+                    a(href="#").modal-registration__button#addCompany
+                        .modal-registration__button-icon
+                        | Добавить Компанию
+                    .modal-registration__add-company-block
+                        include ../../input-styled/input-styled_company
+
+                    .modal-registration__text Добавить можно позднее в личном кабинете.
+                    .modal-registration__checkbox-rights
+                        include ../../checkbox/checkbox_rights
+                    a(href="#").button.button--red.button--red-width.modal-registration__button-red Получить код
+
+
+
+        .modal-registration__code
+            .modal-registration__code-inner
+                .modal-registration__code-title Введите код
+                .modal-registration__code-text Мы отправили код подтверждения на номер <br> +7 (926) 546-00-83
+                .modal-registration__code-container
+                    input(type="text" value="1").modal-registration__code-input
+                .modal-registration__code-timer Получить новый код можно через 00:56
+include ../modal-basket/modal-basket
+
+

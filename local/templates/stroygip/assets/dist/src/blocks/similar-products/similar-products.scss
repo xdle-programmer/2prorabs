@@ -1,0 +1,17 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.similar-products{
+  padding: 0 0 80px 0;
+  overflow: hidden !important;
+  @media #{$mobile-big-screen}{
+    padding: 25px 0;
+  }
+  &--background-blue{
+    background: $background-blue;
+  }
+  &--padding{
+    padding: 56px 0 37px 0;
+  }
+}

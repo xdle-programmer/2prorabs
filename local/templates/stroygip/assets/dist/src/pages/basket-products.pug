@@ -1,0 +1,11 @@
+extends ../templates/main
+
+block variables
+    - var title = 'Корзина'
+
+block content
+
+    include ../../src/blocks/basket-products/basket-products
+    include ../../src/blocks/ordering/ordering
+    include ../../src/blocks/recommends/recommends_for-buy
+    include ../blocks/subscribe-mailing/subscribe-mailing

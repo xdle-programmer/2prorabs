@@ -1,0 +1,1 @@
+<img class="watch-video__video" src="<?=SITE_TEMPLATE_PATH?>/assets/dist/src/blocks/watch-video/assets/img/video.png">

@@ -1,0 +1,14 @@
+<div class="news__carousel-box">
+                <div class="owl-carousel owl-carousel-style" id="owl-slider">
+                    <div class="news__carousel-item"><img src="/local/templates/stroygip/assets/src/blocks/news/assets/test/1.jpg"></div>
+                    <div class="news__carousel-item"><img src="/local/templates/stroygip/assets/src/blocks/news/assets/test/2.jpg"></div>
+                    <div class="news__carousel-item"><img src="/local/templates/stroygip/assets/src/blocks/news/assets/test/3.jpg"></div>
+                    <div class="news__carousel-item"><img src="/local/templates/stroygip/assets/src/blocks/news/assets/test/4.jpeg"></div>
+                </div>
+                <div class="owl-carousel" id="owl-carousel">
+                    <div class="news__carousel-nav"><img src="/local/templates/stroygip/assets/src/blocks/news/assets/test/1.jpg"></div>
+                    <div class="news__carousel-nav"><img src="/local/templates/stroygip/assets/src/blocks/news/assets/test/2.jpg"></div>
+                    <div class="news__carousel-nav"><img src="/local/templates/stroygip/assets/src/blocks/news/assets/test/3.jpg"></div>
+                    <div class="news__carousel-nav"><img src="/local/templates/stroygip/assets/src/blocks/news/assets/test/4.jpeg"></div>
+                </div>
+            </div>

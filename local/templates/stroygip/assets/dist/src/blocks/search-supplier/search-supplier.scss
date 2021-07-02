@@ -1,0 +1,83 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.search-supplier {
+  background: $background-blue;
+  padding-bottom: 63px;
+  @media #{$mobile-big-screen}{
+	padding-bottom: 30px;
+  }
+  &__text{
+	font-size: 18px;
+	line-height: 1.78;
+	color: $black;
+	margin-bottom: 8px;
+	&:last-child{
+	  margin-bottom: 0;
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 16px;
+	}
+  }
+  &__link{
+	display: flex;
+	align-items: center;
+	margin-top: 16px;
+	font-size: 16px;
+	color: $blue;
+	&:hover{
+	  color: $blue-hover;
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 14px;
+	}
+  }
+  &__inner{
+	display: flex;
+	justify-content: center;
+	@media #{$mobile-big-screen}{
+	  flex-direction: column;
+	}
+  }
+  &__information{
+	width: 36%;
+	margin-right: 112px;
+	@media #{$tablet-small-screen}{
+	  margin-right: 60px;
+	  width: 50%;
+	}
+	@media #{$mobile-big-screen}{
+	  width: 100%;
+	  margin: 0 0 40px 0;
+	}
+  }
+  &__link-icon{
+	margin-right: 8px;
+	width: 24px;
+	height: 24px;
+	background: $blue;
+	@include mask-contain-center;
+	mask: url(assets/img/mail.svg);
+	-webkit-mask: url(assets/img/mail.svg);
+	.search-supplier__link{
+	  &:hover{
+		background: $blue-hover;
+	  }
+	}
+  }
+  &__image-box{
+	width: 273px;
+	height: auto;
+	object-fit: contain;
+	img{
+	  width: 100%;
+	  height: 100%;
+	  object-fit: contain;
+	}
+	@media #{$mobile-big-screen}{
+	  width: 50%;
+	  margin: 0 auto;
+	}
+  }
+}

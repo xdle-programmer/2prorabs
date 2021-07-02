@@ -1,0 +1,47 @@
+section.select-party
+    .select-party__inner
+        .container
+            .select-party__box
+                .select-party__title Доставка закусок и аксессуаров для вашего мероприятия
+                .select-party__description Алгоритм подберет для вас лучший набор блюд, наши закуски сервированы на красивых подносах, а аксессуары тщательно подобраны для лучших вечеринок
+            .select-party__choice
+                .select-party__choice-title
+                    img(src='/src/blocks/select-party/assets/img/restaurant.svg').select-party__choice-icon
+                    | Выберите ваш повод и количество гостей
+
+                .select-party__choice-inner
+
+                    .select-party__container
+                        .select-party__title-small
+                            | Введите кол-во гостей
+                        input(type="text").select-party__input
+
+                    .select-party__container
+                        .select-party__title-small Выберите категорию:
+                        .select-party__select-box
+                            .select-party__select.select-party__select--mr
+                                input(type="radio" name="select-party").select-party__select-input
+                                .select-party__select-button
+                                    | Частный случай
+                            .select-party__select
+                                input(type="radio" name="select-party").select-party__select-input
+                                .select-party__select-button
+                                    | Деловой повод
+                        .select-party__select-box.select-party__select-box--column
+                            .select-party__select.select-party__select--width.select-party__select--mb
+                                input(type="radio" name="select-party").select-party__select-input
+                                .select-party__select-button
+                                    | Деловой кофе-брейк
+                            a(href="#").select-party__button
+                                .button
+                                    | Далее
+                                    .button__arrow
+                                        img(src='/src/blocks/button/assets/img/arrow-right.svg')
+            .select-party__box
+                .select-party__title Собрать с нуля
+                .select-party__description Если вы хотите с нуля собрать заказ - можете <br> это сделать из каталога
+                .select-party__button-catalog
+                    a(href="#").button.button--white
+                        .button__dots
+                            img(src='/src/blocks/button/assets/img/dots.svg')
+                        | Выбрать из каталога

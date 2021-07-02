@@ -1,0 +1,74 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "abd405450f3a0cb40d8abf0d4fb2aefa",
+    "packages": [
+        {
+            "name": "nav/debug",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:unnamed777/debug.git",
+                "reference": "e2faf762c7d9a5d6909bc5b58db1d783694b7364"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "nav\\Debug\\": ""
+                }
+            },
+            "authors": [
+                {
+                    "name": "Andrey Neyman",
+                    "email": "andrey@neyman.tel"
+                }
+            ],
+            "description": "Send data and sql query via socket to remote machine",
+            "keywords": [
+                "bitrix"
+            ],
+            "time": "2020-02-25T06:21:39+00:00"
+        },
+        {
+            "name": "nav/uncached-area",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:unnamed777/uncached-area.git",
+                "reference": "bad3c8f6685da7e99b70bb047fa93f465cc99312"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "nav\\": ""
+                }
+            },
+            "authors": [
+                {
+                    "name": "Andrey Neyman",
+                    "email": "andrey@neyman.tel"
+                }
+            ],
+            "description": "Uncached Area",
+            "keywords": [
+                "bitrix"
+            ],
+            "time": "2017-05-02T08:10:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "nav/debug": 20,
+        "nav/uncached-area": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

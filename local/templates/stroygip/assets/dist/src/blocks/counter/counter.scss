@@ -1,0 +1,30 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.timer{
+  display: flex;
+  margin-right: 26px;
+  @media #{$tablet-big-screen}{
+    margin: 0 0 20px 0;
+  }
+  &__number{
+    border: 5px solid #fff;
+    border-radius: 2px;
+    background: #f6f6f6;
+    margin-right: 15px;
+    color: $dark-black;
+    font-size: 32px;
+    font-weight: 500;
+    padding: 15px 10px;
+    box-shadow: inset 0px 0px 12px 6px rgba(235,242,255,1);
+    &:last-child{
+      margin-right: 0;
+    }
+    @media #{$mobile-big-screen}{
+      font-size: 25px;
+      margin-right: 10px;
+      padding: 10px 5px;
+    }
+  }
+}

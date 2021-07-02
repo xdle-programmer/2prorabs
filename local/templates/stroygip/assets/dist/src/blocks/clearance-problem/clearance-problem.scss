@@ -1,0 +1,65 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.clearance-problem{
+  padding: 64px 0;
+  @media #{$mobile-big-screen} {
+    padding: 25px 0;
+  }
+  &__item{
+    width: 1136px;
+    height: 100%;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #697a96, #5b6d8b);
+    padding: 48px 128px 48px 32px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 0;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: url(assets/img/clearance-problem.svg) no-repeat;
+      background-position: right;
+      z-index: -1;
+      @media(max-width: 1279px){
+        width: 100%;
+      }
+    }
+    @media(max-width: 1279px){
+      padding: 40px;
+      width: 100%;
+    }
+    @media #{$mobile-big-screen}{
+      padding: 25px 20px !important;
+    }
+  }
+  &__item-title{
+    font-size: 34px;
+    color: #fff;
+    margin-bottom: 16px;
+    @media #{$tablet-big-screen}{
+      font-size: 30px;
+    }
+    @media #{$tablet-small-screen}{
+      font-size: 25px;
+    }
+    @media #{$mobile-big-screen}{
+      font-size: 23px !important;
+    }
+  }
+  &__item-text{
+    margin: 16px 0 32px 0;
+    font-size: 14px;
+    color: #fff;
+    @media #{$mobile-big-screen}{
+      margin-bottom: 20px;
+      line-height: 20px;
+    }
+  }
+}

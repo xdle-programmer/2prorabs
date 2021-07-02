@@ -1,0 +1,93 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../../blocks/base/fonts/ubuntulight.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../../blocks/base/fonts/ubuntulightitalic.ttf");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../../blocks/base/fonts/ubuntu.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../../blocks/base/fonts/ubuntuitalic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../../blocks/base/fonts/ubuntumedium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../../blocks/base/fonts/ubuntumediumitalic.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../../blocks/base/fonts/ubuntubold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../../blocks/base/fonts/ubuntubolditalic.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  transition: all 100ms linear;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 0 15px;
+  @media #{$mobile-big-screen}{
+	padding: 0 10px;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: none;
+  text-rendering: optimizeLegibility;
+  padding-top: 250px;
+}

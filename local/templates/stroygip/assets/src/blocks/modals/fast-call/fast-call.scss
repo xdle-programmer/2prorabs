@@ -1,0 +1,78 @@
+@import "../../../../../../libs/scss/mixins";
+@import "../../base/variables";
+@import "../../base/media-queries";
+
+.fast-call{
+  margin: 0 auto;
+  display: none;
+  position: relative;
+  padding: 56px 15px 64px 15px;
+  width: 752px;
+  border-radius: 4px;
+  border: 1px solid rgba(169, 177, 197, 0.37);
+  background-color: $white;
+  @media #{$tablet-small-screen}{
+	width: 650px;
+  }
+  @media #{$mobile-big-screen}{
+	width: 90%;
+	min-width: 300px;
+  }
+  &__img-box{
+	margin: 0 auto 20px auto;
+	width: 96px;
+	height: auto;
+	@media #{$mobile-big-screen}{
+	  width: 80px;
+	}
+  }
+  &__img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+  }
+  &__title{
+	font-size: 28px;
+	font-weight: 500;
+	color: $black;
+	text-align: center;
+	margin-bottom: 40px;
+	@media #{$tablet-small-screen}{
+	  font-size: 25px;
+	  margin-bottom: 30px;
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 23px;
+	  margin-bottom: 25px;
+	}
+  }
+  &__input-box{
+	width: 368px;
+	margin: 0 auto;
+	@media #{$mobile-big-screen}{
+	  width: 100%;
+	}
+  }
+  &__button{
+	cursor: pointer;
+	height: 56px;
+	font-size: 16px;
+	margin-top: 48px;
+	@media #{$tablet-small-screen}{
+	  margin-top: 35px;
+	}
+	@media #{$mobile-big-screen}{
+	  height: 45px;
+	}
+  }
+  &__close{
+	position: absolute;
+	right: 24px;
+	top: 24px;
+	cursor: pointer;
+	@media #{$mobile-big-screen}{
+	  right: 15px;
+	  top: 15px;
+	}
+  }
+}

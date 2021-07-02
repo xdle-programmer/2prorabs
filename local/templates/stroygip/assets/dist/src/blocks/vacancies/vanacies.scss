@@ -1,0 +1,81 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.vacancies{
+  background: $background-blue;
+  padding-bottom: 64px;
+  @media #{$mobile-big-screen}{
+	padding-bottom: 30px;
+  }
+  &__subtitle{
+	font-size: 18px;
+	color: rgba(47, 49, 55, 0.7);
+	text-align: center;
+	margin-bottom: 64px;
+	@media #{$tablet-small-screen}{
+	  margin-bottom: 40px;
+	}
+	@media #{$mobile-big-screen}{
+	  margin-bottom: 30px;
+	}
+  }
+  &__title{
+	margin-bottom: 16px;
+  }
+  &__grid{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 16px;
+	@media #{$tablet-big-screen}{
+	  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	}
+  }
+  &__item{
+	padding: 24px 16px 16px 16px;
+	border-radius: 4px;
+	box-shadow: 0 0 3px 0 rgba(169, 177, 197, 0.37);
+	background-color: $white;
+	&:hover{
+	  box-shadow: 0 6px 40px 0 rgba(158, 179, 198, 0.6);
+	}
+  }
+  &__item-title{
+	font-size: 21px;
+	font-weight: 500;
+	color: $black;
+	line-height: 1.52;
+	margin-bottom: 16px;
+	@media #{$mobile-big-screen}{
+	  font-size: 18px;
+	}
+  }
+  &__item-amount{
+	font-size: 21px;
+	line-height: 1.52;
+	margin-bottom: 16px;
+	@media #{$mobile-big-screen}{
+	  font-size: 18px;
+	}
+  }
+  &__item-description{
+	line-height: 1.71;
+	font-size: 14px;
+	color: $black;
+	margin-bottom: 32px;
+  }
+  &__item-button{
+	width: 136px;
+	height: 40px;
+	@media #{$mobile-big-screen}{
+	  width: 100%;
+	}
+  }
+  &__button-all{
+	margin: 32px auto 32px auto;
+  }
+  &__pagination{
+	display: flex;
+	justify-content: center;
+  }
+}

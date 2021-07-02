@@ -1,0 +1,101 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.benefit {
+  overflow: hidden;
+  background: rgba(65, 90, 183, 0.05);
+  padding: 64px 0;
+
+  @media #{$tablet-small-screen}{
+	padding: 30px 0;
+  }
+  @media #{$mobile-big-screen}{
+	padding: 25px 0;
+  }
+
+  &__carousel {
+	padding: 0 30px;
+	@media #{$laptop-screen}{
+	  padding: 0 40px;
+	}
+	@media #{$mobile-big-screen}{
+	  padding: 0 10px ;
+	}
+
+	.owl-stage-outer {
+	  overflow: visible;
+	}
+
+	.owl-item {
+	  opacity: 0;
+	  transition: opacity 500ms;
+	}
+
+	.owl-item.active {
+	  opacity: 1;
+	}
+
+	button {
+	  &:hover {
+		background: transparent !important;
+	  }
+	}
+
+	.owl-nav {
+	  margin: 0;
+	}
+
+	.disabled {
+	  opacity: 1 !important;
+	}
+
+	.owl-prev {
+	  width: 40px;
+	  height: 40px;
+	  top: 45%;
+	  left: -1%;
+	  position: absolute;
+	  @media #{$mobile-big-screen}{
+		left: -10px;
+		width: 22px;
+		height: 22px;
+	  }
+	  &::after {
+		content: '';
+		display: block;
+		height: 100%;
+		width: 100%;
+		background: url(assets/img/slide-left.svg) no-repeat;
+		background-position: center;
+		@media #{$mobile-big-screen}{
+		  background-size: 90%;
+		}
+	  }
+	}
+
+	.owl-next {
+	  width: 40px;
+	  height: 40px;
+	  top: 45%;
+	  right: -1%;
+	  position: absolute;
+	  @media #{$mobile-big-screen}{
+		right: -10px;
+		width: 22px;
+		height: 22px;
+	  }
+	  &::after {
+		content: '';
+		display: block;
+		height: 100%;
+		width: 100%;
+		background: url(assets/img/slide-right.svg) no-repeat;
+		background-position: center;
+		@media #{$mobile-big-screen}{
+		  background-size: 90%;
+		}
+	  }
+	}
+  }
+}

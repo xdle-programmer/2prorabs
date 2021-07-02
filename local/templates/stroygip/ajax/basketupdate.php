@@ -1,0 +1,58 @@
+<?require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
+use Bitrix\Main\Application;
+use Bitrix\Main\Loader;
+use Bitrix\Sale;
+?>
+<?$APPLICATION->IncludeComponent(
+    "bitrix:sale.basket.basket",
+    "basket",
+    Array(
+        "ACTION_VARIABLE" => "basketAction",
+        "ADDITIONAL_PICT_PROP_1" => "-",
+        "AUTO_CALCULATION" => "Y",
+        "BASKET_IMAGES_SCALING" => "adaptive",
+        "COLUMNS_LIST_EXT" => array(0=>"PREVIEW_PICTURE",1=>"DISCOUNT",2=>"DELETE",3=>"DELAY",4=>"TYPE",5=>"SUM",),
+        "COLUMNS_LIST_MOBILE" => array(0=>"PREVIEW_PICTURE",1=>"DISCOUNT",2=>"DELETE",3=>"DELAY",4=>"TYPE",5=>"SUM",),
+        "COMPATIBLE_MODE" => "Y",
+        "COMPONENT_TEMPLATE" => "basket",
+        "CORRECT_RATIO" => "Y",
+        "DEFERRED_REFRESH" => "N",
+        "DELIVERY_FREE" => "5000",
+        "DELIVERY_PRICE" => "1 500 com",
+        "DISCOUNT_PERCENT_POSITION" => "bottom-right",
+        "DISPLAY_MODE" => "extended",
+        "EMPTY_BASKET_HINT_PATH" => "/",
+        "FAVORITES" => $_SESSION["FAVORITES"],
+        "GIFTS_BLOCK_TITLE" => "Выберите один из подарков",
+        "GIFTS_CONVERT_CURRENCY" => "N",
+        "GIFTS_HIDE_BLOCK_TITLE" => "N",
+        "GIFTS_HIDE_NOT_AVAILABLE" => "N",
+        "GIFTS_MESS_BTN_BUY" => "Выбрать",
+        "GIFTS_MESS_BTN_DETAIL" => "Подробнее",
+        "GIFTS_PAGE_ELEMENT_COUNT" => "4",
+        "GIFTS_PLACE" => "BOTTOM",
+        "GIFTS_PRODUCT_PROPS_VARIABLE" => "prop",
+        "GIFTS_PRODUCT_QUANTITY_VARIABLE" => "quantity",
+        "GIFTS_SHOW_DISCOUNT_PERCENT" => "Y",
+        "GIFTS_SHOW_OLD_PRICE" => "N",
+        "GIFTS_TEXT_LABEL_GIFT" => "Подарок",
+        "HIDE_COUPON" => "N",
+        "LABEL_PROP" => "",
+        "PATH_TO_ORDER" => "/order/",
+        "PRICE_DISPLAY_MODE" => "Y",
+        "PRICE_VAT_SHOW_VALUE" => "N",
+        "PRODUCT_BLOCKS_ORDER" => "props,sku,columns",
+        "QUANTITY_FLOAT" => "Y",
+        "SET_TITLE" => "Y",
+        "SHOW_DISCOUNT_PERCENT" => "Y",
+        "SHOW_FILTER" => "Y",
+        "SHOW_RESTORE" => "Y",
+        "TEMPLATE_THEME" => "blue",
+        "TOTAL_BLOCK_DISPLAY" => array(0=>"top",),
+        "USE_DYNAMIC_SCROLL" => "Y",
+        "USE_ENHANCED_ECOMMERCE" => "N",
+        "USE_GIFTS" => "Y",
+        "USE_PREPAYMENT" => "N",
+        "USE_PRICE_ANIMATION" => "Y"
+    )
+);?>

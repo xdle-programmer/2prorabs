@@ -1,0 +1,50 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.button{
+  padding: 18px 48px;
+  background: $green;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover{
+	//background: $green-hover;
+  }
+  &__arrow{
+    margin-left: 22px;
+    @media #{$mobile-big-screen}{
+      margin-left: 10px;
+      img{
+        width: 19px;
+        height: auto;
+      }
+    }
+  }
+  &__dots{
+    margin-right: 12px;
+    @media #{$mobile-big-screen}{
+      img{
+        width: 15px;
+        height: auto;
+      }
+    }
+  }
+  &--white{
+    background: $white;
+    color: $black;
+    &:hover{
+      //background: $white-hover;
+    }
+  }
+  @media #{$mobile-big-screen}{
+    padding: 12px;
+    font-size: 16px;
+  }
+}

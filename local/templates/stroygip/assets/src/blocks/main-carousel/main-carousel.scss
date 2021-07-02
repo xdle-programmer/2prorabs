@@ -1,0 +1,151 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.main-owl-carousel{
+  .owl-dots{
+    position: absolute;
+    left: 49%;
+    bottom: 17px;
+  }
+  .owl-prev{
+    border-radius: 4px;
+    width: 56px;
+    height: 72px;
+    background: rgba(#fff, 0.4) !important;
+    top: 50%;
+    left: 10%;
+    position: absolute;
+    &::after{
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: url(../../images/icons/arrow-white-left.svg) no-repeat;
+      background-position: center;
+    }
+  }
+  .owl-next{
+    border-radius: 4px;
+    width: 56px;
+    height: 72px;
+    background: rgba(#fff, 0.4) !important;
+    top: 50%;
+    right: 10%;
+    position: absolute;
+    &::after{
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: url(../../images/icons/arrow-white-right.svg) no-repeat;
+      background-position: center;
+    }
+  }
+  .owl-dot{
+    span{
+      background: rgba(#fff, 0.3) !important;
+    }
+    &.active{
+      span{
+        background: white !important;
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+  .owl-item{
+    img{
+      width: auto;
+    }
+  }
+  .owl-nav{
+    margin: 0;
+  }
+}
+.main-item{
+  background: linear-gradient(to bottom, #5f78d1, $blue);
+  padding-left: 121px;
+  position: relative;
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    background: url(../../images/background-main.svg);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 55%;
+  }
+  &__inner{
+    min-height: 568px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  &__about{
+    padding-top: 50px;
+  }
+  &__title{
+    font-size: 52px;
+    color: #fff;
+  }
+  &__name{
+    font-size: 32px;
+    color: #fff;
+    margin-top: 24px;
+  }
+  &__might{
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 48px;
+  }
+  &__button{
+    width: 208px;
+    margin-top: 56px;
+  }
+  &__price{
+    position: absolute;
+    right: 160px;
+    top: 250px;
+  }
+  &__img{
+    padding-left: 45px;
+  }
+  &__discount{
+    font-size: 34px;
+    color: rgba(#fff, 0.6);
+    font-weight: 500;
+    font-style: italic;
+    padding-left: 20px;
+    position: relative;
+    &::after{
+      position: absolute;
+      content: '';
+      display: block;
+      width: 47%;
+      height: 3px;
+      background: #fff;
+      transform: rotate(-2deg);
+      top: 21px;
+    }
+  }
+  &__cost{
+    font-weight: 500;
+    font-style: italic;
+    font-size: 52px;
+    color: #fff;
+    margin-top: 5px;
+    span{
+      font-size: 28px;
+      margin-left: 10px;
+    }
+  }
+}

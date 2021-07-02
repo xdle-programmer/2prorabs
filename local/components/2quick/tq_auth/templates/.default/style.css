@@ -1,0 +1,7 @@
+.tq_error{
+    color: red;
+}
+
+#tq_confirm_code{
+    display: none;
+}

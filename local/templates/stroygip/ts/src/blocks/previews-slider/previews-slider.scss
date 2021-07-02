@@ -1,0 +1,81 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.previews-slider {
+  position: relative;
+
+  &__wrapper {
+  }
+
+  &__nav {
+    position: static;
+  }
+
+  &__nav-button {
+    width: 50px;
+    height: 50px;
+    @include flex-row-center;
+    position: absolute;
+    top: calc(50% - 25px);
+    cursor: pointer;
+    z-index: 2;
+
+    &[aria-disabled="true"] {
+      opacity: .1;
+    }
+
+    &--prev {
+      left: -55px;
+      transform: scaleX(-1);
+
+      @include mobile-big-screen {
+        left: -10px;
+        border: 1px solid var(--light-gray-color);
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-right: none;
+        box-shadow: 0 0 10px 4px rgba(0, 0, 0, .05);
+      }
+    }
+
+    &--next {
+      right: -55px;
+
+      @include mobile-big-screen {
+        right: -10px;
+        border: 1px solid var(--light-gray-color);
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-right: none;
+        box-shadow: 0 0 10px 4px rgba(0, 0, 0, .05);
+      }
+    }
+
+    @include mobile-big-screen {
+      background: var(--white-color);
+    }
+  }
+
+  $nav-hover: '.previews-slider__nav-button:hover';
+
+  &__nav-button-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--black-color);
+
+    #{$nav-hover} & {
+      fill: var(--red-color);
+    }
+  }
+
+
+  &__item {
+    height: 490px;
+
+    @include tablet-big-screen {
+      height: 395px;
+    }
+  }
+}

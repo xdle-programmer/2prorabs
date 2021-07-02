@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="690" height="472" viewBox="0 0 690 472">
+    <defs>
+        <linearGradient id="fsv2n6fakb" x1="17.769%" x2="79.483%" y1="13.828%" y2="68.649%">
+            <stop offset="0%" stop-color="#6290FF"/>
+            <stop offset="100%" stop-color="#1F5EC1"/>
+        </linearGradient>
+        <filter id="lzxyoq80ha" width="114.6%" height="114.3%" x="-7.3%" y="-7.2%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4.78921838 14.2149002"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" opacity=".84" transform="translate(0 39)">
+        <ellipse cx="369.067" cy="314.5" stroke="#3B6DED" stroke-opacity=".628" stroke-width="124" filter="url(#lzxyoq80ha)" opacity=".334" rx="246.067" ry="252.5"/>
+        <ellipse cx="308.067" cy="347.5" stroke="url(#fsv2n6fakb)" stroke-width="136" opacity=".718" rx="240.067" ry="246.5"/>
+    </g>
+</svg>

@@ -1,0 +1,52 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.amount-input{
+  &__sum{
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	color: $black;
+  }
+  &__sum-icon{
+	cursor: pointer;
+	font-size: 23px;
+	height: 40px;
+	width: 24px;
+	@include flex-row-center;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	@media #{$tablet-big-screen}{
+	  margin: 0 10px;
+	}
+	@media #{$tablet-small-screen}{
+	  font-size: 28px;
+	}
+  }
+  &__sum-input{
+	padding: 8px;
+	text-align: center;
+	font-size: 18px;
+	border-radius: 4px;
+	width: 56px;
+	height: 56px;
+	border: 1.6px solid rgba(65, 90, 183, 0.2);
+	margin: 0 auto;
+	&:hover{
+	  box-shadow: $shadow-input;
+	}
+	&:focus{
+	  border-color: $blue-active;
+	}
+	@media #{$mobile-big-screen}{
+	  width: 50px;
+	  height: 50px;
+	}
+	&--small{
+	  width: 48px;
+	  height: 48px;
+	  margin: 0 8px;
+	}
+  }
+}

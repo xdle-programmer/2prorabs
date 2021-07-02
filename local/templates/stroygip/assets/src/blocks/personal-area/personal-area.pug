@@ -1,0 +1,95 @@
+.personal-area.personal-area--pb-big
+    .container
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Личный кабинет
+        .title.personal-area__title Добрый день Иван!
+        .personal-area__grid
+
+            // panel container
+            .personal-area__panel-container
+                a(href="#").personal-area__panel-item.personal-area__panel-item-home.personal-area__panel-item--active
+                    .personal-area__panel-icon.personal-area__panel-icon--home
+                    .personal-area__panel-text Главная
+
+                .personal-area__panel-title Заказы
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--orders
+                        .personal-area__panel-text Мои заказы
+
+
+                .personal-area__panel-title Профиль
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--organization
+                        .personal-area__panel-text Мои организации
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--estimate
+                        .personal-area__panel-text Сметы
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--info
+                        .personal-area__panel-text Личные данные
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--bonuses
+                        .personal-area__panel-text Бонусы
+
+                        .personal-area__bonuses-notification
+                            .personal-area__bonuses-notification-text 245
+                            .personal-area__bonuses-notification-icon
+                                img(src="/src/blocks/personal-area/assets/img/bonus-star.svg")
+
+
+
+                a(href="#").personal-area__panel-item
+                    .personal-area__panel-icon.personal-area__panel-icon--exit
+                    .personal-area__panel-text Выход
+            // end panel container
+
+            .personal-area__container
+                .personal-area__who-you-grid
+                    .personal-area__who-you
+                        .personal-area__who-you-title Стали прорабом?
+                        .personal-area__who-you-text
+                            a(href="#").personal-area__who-you-link Подтвердите лицензию
+                            | и получайте дополнительные скидки!
+                    .personal-area__who-you
+                        .personal-area__who-you-title Вы представитель организации?
+                        .personal-area__who-you-text
+                            a(href="#").personal-area__who-you-link Добавьте юридическое лицо
+                            | и получите доступ к специальным ценам в нашем магазине!
+                .personal-area__cards-grid
+
+                    .personal-area__card
+                        .personal-area__card-icon
+                            img(src="/src/blocks/personal-area/assets/img/bonuses-1.svg").personal-area__card-icon-img
+                        .personal-area__card-inner
+                            .personal-area__card-title Ваши баллы:
+                            .personal-area__card-scores 456
+
+                    .personal-area__card
+                        .personal-area__card-icon
+                            img(src="/src/blocks/personal-area/assets/img/bonuses-2.svg").personal-area__card-icon-img
+                        .personal-area__card-inner
+                            .personal-area__card-title Как получать и использовать баллы
+                            a(href="#").personal-area__card-link Подробнее об условиях
+
+                    .personal-area__card.personal-area__card--column
+                        .personal-area__card-title.personal-area__card-title--mb Использовать промокод
+                        .personal-area__card-input-box
+                            .input-styled
+                                label.input-styled__label(for="input-bonuses") Введите промокод
+                                input.input-styled__input(type="phone" id="input-bonuses")
+                        .button.button--red.button--red-width.personal-area__card-button Применить
+
+
+                .personal-area__bonuses-item
+                    .personal-area__bonuses-inner
+                        .personal-area__bonuses-title
+                            | Делай больше заказов — получай <br>
+                            | больше бонусов!
+                        a(href="#").personal-area__bonuses-link
+                            | Подробнее об условиях
+                            .personal-area__bonuses-link-icon

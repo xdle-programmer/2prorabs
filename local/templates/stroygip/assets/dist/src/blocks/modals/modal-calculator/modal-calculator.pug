@@ -1,0 +1,20 @@
+.modal-wrapper
+    .modal-overlay
+    .modal-position
+        .modal-calculator
+            .modal-title.modal-calculator__title Онлайн калькулятор расчета расхода герметика
+            .modal-calculator__container
+                .modal-calculator__input-box
+                    p.modal-calculator__input-text Длина шва
+                    input(type="text" value="3").modal-calculator__input
+                    .modal-calculator__size м
+                .modal-calculator__input-box
+                    p.modal-calculator__input-text Сечение шва
+                    input(type="text" value="0").modal-calculator__input
+                    .modal-calculator__size мм2
+                a.button.button--blue.modal-calculator__button Рассчитать расход
+            .modal-calculator__separator
+            .modal-title.modal-title__small Ваш расход составит:
+            .modal-calculator__amount 120 мл.
+            a.modal-close.modal-calculator__close
+                img(src="/src/images/icons/close-modal.svg")

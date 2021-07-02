@@ -1,0 +1,88 @@
+@import "~frontend-scss-mixins/mixins";
+@import "./mixins";
+@import "./variables";
+@import "./media-queries";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import "~tiny-slider/src/tiny-slider";
+
+:root {
+  --white-color: #fff;
+  --black-color: #353636;
+  --blue-color: #1158A1;
+  --dark-blue-color: #0A2667;
+  --middle-blue-color: #1569c0;
+  --light-blue-color: #BACCE5;
+  --extra-light-blue-color: #F1F6FD;
+  --super-light-blue-color: #f8fbff;
+  --dark-gray-color: #4e5055;
+  --gray-color: #999999;
+  --light-gray-color: #e7eaee;
+  --extra-light-gray-color: #f5f6f6;
+  --light-gray-color-hover: #e6e6e6;
+  --red-color: #e52311;
+  --green-color: #52B69A;
+  --middle-green-color: #11a176;
+  --gold-color: #fcbf49;
+
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  transition: all 150ms linear;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+
+}
+
+body {
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: none;
+  margin: 0;
+  color: var(--black-color);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-top: 180px;
+
+  @include tablet-big-screen {
+    padding-top: 50px;
+  }
+
+  &.open-menu {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+button, input, textarea {
+  border: none;
+  background: none;
+}
+
+button:active, input:active, textarea:active,
+button:focus, input:focus, textarea:focus {
+  outline: none;
+}

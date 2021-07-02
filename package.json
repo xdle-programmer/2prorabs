@@ -1,0 +1,40 @@
+{
+    "name": "2proraba",
+    "version": "1.0.0",
+    "description": "2proraba",
+    "main": "index.js",
+    "repository": {},
+    "scripts": {
+        "test": ""
+    },
+    "author": "Andrey Neyman <andrey@neyman.tel>",
+    "license": "",
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/plugin-proposal-class-properties": "^7.3.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@babel/plugin-transform-classes": "^7.2.2",
+        "@babel/plugin-transform-runtime": "^7.2.0",
+        "@babel/polyfill": "^7.2.5",
+        "@babel/preset-env": "^7.3.1",
+        "babel-loader": "^8.0.5",
+        "gulp": "^4.0.2",
+        "gulp-concat": "^2.6.0",
+        "gulp-dart-sass": "^1.0.2",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^1.7.3",
+        "gulp-stylus": "^2.5.0",
+        "gulp-wrapper": "^1.0.0",
+        "lib-sass-data-uri": "0.0.4",
+        "node-bash-title": "0.0.2",
+        "node-notifier": "^5.3.0",
+        "node-sass": "^4.10.0",
+        "run-sequence": "^1.2.2",
+        "webpack": "^4.23.1",
+        "webpack-cli": "^3.1.2",
+        "webpack-notifier": "^1.7.0"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.3.1"
+    }
+}

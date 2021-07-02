@@ -1,0 +1,14 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+
+.text {
+  font-size: 16px;
+  color: #2f3137;
+  line-height: 32px;
+  @media #{$mobile-big-screen}{
+	font-size: 14px;
+  }
+}

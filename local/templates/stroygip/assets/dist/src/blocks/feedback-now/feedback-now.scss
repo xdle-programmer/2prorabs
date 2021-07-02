@@ -1,0 +1,66 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.feedback-now{
+  &__inner{
+    border-radius: 4px;
+    width: 73%;
+    margin: 0 auto;
+    background: url(assets/img/feedback-background.svg) no-repeat;
+    background-size: cover;
+    padding: 48px 145px 40px 29px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media #{$tablet-big-screen}{
+      background-position: center;
+      padding: 40px;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    @media #{$mobile-big-screen}{
+      padding: 25px;
+    }
+    &--padding{
+      padding: 32px 112px 32px 32px;
+      @media #{$tablet-big-screen}{
+        padding: 32px;
+      }
+      @media #{$mobile-big-screen}{
+        padding: 20px;
+      }
+    }
+  }
+  &--mt{
+    margin-top: 57px;
+  }
+  &__title{
+    display: block;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    @media #{$mobile-big-screen}{
+      font-size: 20px;
+    }
+  }
+  &__text{
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    @media #{$tablet-big-screen}{
+      margin-bottom: 20px;
+    }
+  }
+  &__button{
+    width: 264px;
+    @media #{$mobile-big-screen}{
+      width: 100%;
+    }
+  }
+}

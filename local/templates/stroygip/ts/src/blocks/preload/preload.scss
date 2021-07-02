@@ -1,0 +1,41 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.preload {
+
+  $not-ready: '.preload--not-ready';
+
+  #{$not-ready} &__area {
+    position: relative;
+    $speed:3;
+    overflow: hidden;
+    border-radius: 10px;
+
+    &:before,
+    &:after {
+      @include pseudo-absolute;
+      @include absolute-fill;
+      background: linear-gradient(90deg, var(--extra-light-gray-color), var(--light-gray-color), var(--extra-light-gray-color));
+      z-index: 5000;
+      animation: gradient #{$speed}s linear;
+      animation-iteration-count: infinite;
+      //display: none;
+    }
+
+    &:before {
+      left: -99%;
+    }
+
+    @keyframes gradient {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+  }
+}

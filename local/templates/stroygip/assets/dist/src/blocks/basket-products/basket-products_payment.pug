@@ -1,0 +1,88 @@
+.basket-products
+    .container
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link(href="#") Корзина
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Оформление заказа
+
+        .basket-products__grid
+            // First container
+            .basket-products__container
+                .basket-products__title Оформление заказа
+
+                .basket-products__steps
+                    .basket-products__step-item.basket-products__step-item--active
+                        .basket-products__step-icon 1
+                        .basket-products__step-text Доставка
+                    .basket-products__step-arrow.basket-products__step-arrow--active
+                    .basket-products__step-item
+                        .basket-products__step-icon 2
+                        .basket-products__step-text Оплата
+                    .basket-products__step-arrow
+                    .basket-products__step-item.basket-products__step-item--disable
+                        .basket-products__step-icon 3
+                        .basket-products__step-text Подтверждение
+
+                .basket-products__title.basket-products__title--medium-center.basket-products__title--mb Оплата
+                .basket-products__registration-inner
+
+                    .basket-products__registration-title.basket-products__registration-title--mb Выберите способ оплаты
+
+                    .basket-products__radio-box
+                        .basket-products__radio-inner
+                            input(type="radio" name="radio-basket").basket-products__radio-input
+                            .basket-products__radio-circle
+                            .basket-products__radio-text Картой онлайн (дополнительная скидка 3%)
+                        .basket-products__radio-info
+                            .basket-products__radio-info-title Безопасность онлайн-платежей.
+                            | Ваши имя, адрес, телефон,e-mail, номер кредитной карты конфиденциальны и не подлежат разглашению. Данные кредитной карты передаются в зашифрованном виде и не сохраняются на нашем Web-сервере.
+
+                    .basket-products__radio-box
+                        .basket-products__radio-inner
+                            input(type="radio" name="radio-basket").basket-products__radio-input
+                            .basket-products__radio-circle
+                            .basket-products__radio-text Наличными при получении
+                        .basket-products__radio-info
+                            .basket-products__radio-info-title Безопасность онлайн-платежей.
+                            | Можно оплатить наличными или банковской картой
+
+
+                // Start next button
+                a(href="#").basket-products__next-button
+                    | Далее
+                    .basket-products__next-button-icon
+                // End next button
+
+            // Second container
+            .basket-products__container.basket-products__container--pb
+                .basket-products__title-medium.basket-products__title-medium--mb Ваш заказ:
+
+                .basket-products__row
+                    .basket-products__row-name
+                        | Товары 3 шт.
+                    .basket-products__row-info
+                        | 23 645 com
+                .basket-products__row
+                    .basket-products__row-name
+                        | Вес заказа
+                    .basket-products__row-info
+                        | 2 кг
+                .basket-products__row
+                    .basket-products__row-name
+                        | Скидка 15%
+                    .basket-products__row-info.basket-products__row-info--red
+                        | -1 500 com
+                .basket-products__row
+                    .basket-products__row-name
+                        | Доставка (3 дня)
+                    .basket-products__row-info
+                        | Бесплатно
+
+                .basket-products__total-cost
+                    .basket-products__total-cost-row
+                        .basket-products__total-cost-name Общая стоимость:
+                        .basket-products__total-cost-amount
+                            | 21 456 com

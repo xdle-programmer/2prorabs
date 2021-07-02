@@ -1,0 +1,335 @@
+.personal-area
+    .container
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Личный кабинет
+        .title.personal-area__title Добрый день Иван!
+        .personal-area__grid
+
+            // panel container
+            .personal-area__panel-container
+                a(href="#").personal-area__panel-item.personal-area__panel-item-home
+                    .personal-area__panel-icon.personal-area__panel-icon--home
+                    .personal-area__panel-text Главная
+
+                .personal-area__panel-title Заказы
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item.personal-area__panel-item--active
+                        .personal-area__panel-icon.personal-area__panel-icon--orders
+                        .personal-area__panel-text Мои заказы
+
+
+                .personal-area__panel-title Профиль
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--organization
+                        .personal-area__panel-text Мои организации
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--estimate
+                        .personal-area__panel-text Сметы
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--info
+                        .personal-area__panel-text Личные данные
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--bonuses
+                        .personal-area__panel-text Бонусы
+
+                        .personal-area__bonuses-notification
+                            .personal-area__bonuses-notification-text 245
+                            .personal-area__bonuses-notification-icon
+                                img(src="/src/blocks/personal-area/assets/img/bonus-star.svg")
+
+
+
+                a(href="#").personal-area__panel-item
+                    .personal-area__panel-icon.personal-area__panel-icon--exit
+                    .personal-area__panel-text Выход
+            // end panel container
+
+            .personal-area__block
+                .personal-area__block-inner
+                    .personal-area__block-title Здесь хранится история ваших заказов.
+                    .personal-area__text.personal-area__text--mb Вы можете просмотреть их, распечатать чек и повторить.
+                    .personal-area__list-box
+                        .personal-area__tabs
+                            .personal-area__tab Все
+                            .personal-area__tab.personal-area__tab--active В работе
+                            .personal-area__tab Ожидают оплаты
+                            .personal-area__tab Полученные
+                            .personal-area__tab Отмененные
+
+                        .personal-area__select-box
+                            fieldset
+                                select(name="speed")#selectArea
+                                    option(selected="selected" disabled) Сначала новые
+                                    option Option 1
+                                    option Option 2
+
+                        .personal-area__list
+                            // list item
+                            .personal-area__list-item
+                                .personal-area__list-header
+                                    .personal-area__list-header-box
+                                        .personal-area__list-order-date Заказ от 24 мая 2020
+                                        .personal-area__list-header-text
+                                            .personal-area__list-header-status
+                                            | В доставке
+                                    a(href='#').personal-area__list-header-detail
+                                        | Детали заказа
+                                        .personal-area__list-detail-arrow
+                                .personal-area__list-inner
+                                    .personal-area__list-row
+                                        .personal-area__list-container
+                                            .personal-area__list-title Дата доставки:
+                                            .personal-area__list-text 27.05.2020
+                                        .personal-area__list-container
+                                            .personal-area__list-title Номер заказа:
+                                            .personal-area__list-text № 23833548
+                                        .personal-area__list-container
+                                            .personal-area__list-title Сумма:
+                                            .personal-area__list-text 19 856 com
+                                        .personal-area__list-container
+                                            .personal-area__list-title Начислено баллов:
+                                            .personal-area__list-text 256
+                            // end list item
+
+                            // list item
+                            .personal-area__list-item
+                                .personal-area__list-header
+                                    .personal-area__list-header-box
+                                        .personal-area__list-order-date Заказ от 24 мая 2020
+                                        .personal-area__list-header-text
+                                            .personal-area__list-header-status
+                                            | В доставке
+                                    .personal-area__list-header-detail
+                                        | Детали заказа
+                                        .personal-area__list-detail-arrow
+
+
+
+                                .personal-area__list-inner
+                                    .personal-area__history
+                                        .personal-area__history-icon
+                                        | История заказа
+                                        .personal-area__history-list
+                                            .personal-area__history-list-title История заказа
+
+                                            .personal-area__history-list-info
+                                                .personal-area__history-notification
+                                                    img(src="/src/blocks/personal-area/assets/img/check-2.svg").personal-area__history-notification-icon
+                                                .personal-area__history-status
+                                                    .personal-area__history-status-title Создано
+                                                    .personal-area__history-status-text Заказ прошел проверку
+                                                .personal-area__history-date 24.05.2020  13:05
+
+                                            .personal-area__history-list-info
+                                                .personal-area__history-notification
+                                                    img(src="/src/blocks/personal-area/assets/img/check-2.svg").personal-area__history-notification-icon
+                                                .personal-area__history-status
+                                                    .personal-area__history-status-title Подтверждение опаты
+                                                    .personal-area__history-status-text Заказ оплачен
+                                                .personal-area__history-date 24.05.2020  13:05
+
+                                            .personal-area__history-list-info
+                                                .personal-area__history-notification
+                                                    img(src="/src/blocks/personal-area/assets/img/check-2.svg").personal-area__history-notification-icon
+                                                .personal-area__history-status
+                                                    .personal-area__history-status-title Сортировка заказа
+                                                    .personal-area__history-status-text Комплектация товаров
+                                                .personal-area__history-date 24.05.2020  13:05
+
+                                            .personal-area__history-list-info.personal-area__history-list-info--disable
+                                                .personal-area__history-notification
+                                                    img(src="/src/blocks/personal-area/assets/img/check-2.svg").personal-area__history-notification-icon
+                                                .personal-area__history-status
+                                                    .personal-area__history-status-title Предано в доставку
+                                                    .personal-area__history-status-text Доставка курьером
+                                                .personal-area__history-date 24.05.2020  13:05
+
+                                            .personal-area__history-list-info.personal-area__history-list-info--disable
+                                                .personal-area__history-notification
+                                                    img(src="/src/blocks/personal-area/assets/img/check-2.svg").personal-area__history-notification-icon
+                                                .personal-area__history-status
+                                                    .personal-area__history-status-title Получено
+                                                    .personal-area__history-status-text Оставьте отзыв о товарах
+                                                .personal-area__history-date 24.05.2020  13:05
+
+                                    .personal-area__list-row
+                                        .personal-area__list-container
+                                            .personal-area__list-title Дата доставки:
+                                            .personal-area__list-text 27.05.2020
+                                        .personal-area__list-container
+                                            .personal-area__list-title Номер заказа:
+                                            .personal-area__list-text № 23833548
+                                        .personal-area__list-container
+                                            .personal-area__list-title Сумма:
+                                            .personal-area__list-text 19 856 com
+                                        .personal-area__list-container
+                                            .personal-area__list-title Начислено баллов:
+                                            .personal-area__list-text 256
+
+                                    .personal-area__history-box
+                                        // history items container
+                                        .personal-area__history-items-container
+                                            // history item
+                                            .personal-area__history-item
+                                                a(href="#").personal-area__history-image-box
+                                                    img(src="/src/blocks/personal-area/assets/img/history-1.png").personal-area__history-img
+                                                .personal-area__history-item-about
+                                                    a(href='#a(href="#)').personal-area__history-item-name Безынерционный молоток DEKO
+                                                    .personal-area__history-item-article Артикул: 25341648
+                                                    .personal-area__history-item-icons
+                                                        a(href="#").personal-area__history-item-icon.personal-area__history-item-icon--favourites
+                                                        a(href="#").personal-area__history-item-icon.personal-area__history-item-icon--comparison
+                                                        a(href="#").personal-area__history-item-icon.personal-area__history-item-icon--basket
+                                                .personal-area__history-name-box
+                                                    .personal-area__history-item-name 1 шт
+                                                .personal-area__history-name-box
+                                                    .personal-area__history-item-name 1 856 com
+                                            // end history item
+                                            // history item
+                                            .personal-area__history-item
+                                                a(href="#").personal-area__history-image-box
+                                                    img(src="/src/blocks/personal-area/assets/img/history-1.png").personal-area__history-img
+                                                .personal-area__history-item-about
+                                                    a(href='#a(href="#)').personal-area__history-item-name Безынерционный молоток DEKO
+                                                    .personal-area__history-item-article Артикул: 25341648
+                                                    .personal-area__history-item-icons
+                                                        a(href="#").personal-area__history-item-icon.personal-area__history-item-icon--favourites
+                                                        a(href="#").personal-area__history-item-icon.personal-area__history-item-icon--comparison
+                                                        a(href="#").personal-area__history-item-icon.personal-area__history-item-icon--basket
+                                                .personal-area__history-name-box
+                                                    .personal-area__history-item-name 1 шт
+                                                .personal-area__history-name-box
+                                                    .personal-area__history-item-name 1 856 com
+                                            // end history item
+                                            // history item
+                                            .personal-area__history-item
+                                                a(href="#").personal-area__history-image-box
+                                                    img(src="/src/blocks/personal-area/assets/img/history-1.png").personal-area__history-img
+                                                .personal-area__history-item-about
+                                                    a(href='#a(href="#)').personal-area__history-item-name Безынерционный молоток DEKO
+                                                    .personal-area__history-item-article Артикул: 25341648
+                                                    .personal-area__history-item-icons
+                                                        a(href="#").personal-area__history-item-icon.personal-area__history-item-icon--favourites
+                                                        a(href="#").personal-area__history-item-icon.personal-area__history-item-icon--comparison
+                                                        a(href="#").personal-area__history-item-icon.personal-area__history-item-icon--basket
+                                                .personal-area__history-name-box
+                                                    .personal-area__history-item-name 1 шт
+                                                .personal-area__history-name-box
+                                                    .personal-area__history-item-name 1 856 com
+                                            // end history item
+                                        // end history items container
+                                        .personal-area__info
+                                            .personal-area__info-col
+                                                .personal-area__info-title Получатель:
+                                                .personal-area__info-text
+                                                    | Иван Иванович Петров <br>
+                                                    | +7 987 645 76 76 <br>
+                                                    | ivanov34@mail.ru
+                                            .personal-area__info-col
+                                                .personal-area__info-title Доставка:
+                                                .personal-area__info-text Способ доставки: Курьерская доставка
+                                                .personal-area__info-text Дата и время: 27.06.2020
+                                                .personal-area__info-text Адрес: Бишкек, ул. Южная, д 2A
+                                            .personal-area__info-col
+                                                .personal-area__info-title Оплата:
+                                                .personal-area__info-text Наличными
+                                                .personal-area__info-text Товары: 19 856 com
+                                                .personal-area__info-text Доставка: 500 com
+                                                .personal-area__info-text.personal-area__info-text--bold Итого: 19 865 com
+                                        .personal-area__info-buttons
+                                            a(href="#").button.button--white-small.personal-area__info-button Повторить заказ
+                                            a(href="#").personal-area__print-button
+                                                .personal-area__print-icon
+                                                | Распечатать
+
+
+
+                            // end list item
+
+                            // list item
+                            .personal-area__list-item
+                                .personal-area__list-header
+                                    .personal-area__list-header-box
+                                        .personal-area__list-order-date Заказ от 24 мая 2020
+                                        .personal-area__list-header-text
+                                            .personal-area__list-header-status
+                                            | В доставке
+                                    a(href='#').personal-area__list-header-detail
+                                        | Детали заказа
+                                        .personal-area__list-detail-arrow
+                                .personal-area__list-inner
+                                    .personal-area__list-row
+                                        .personal-area__list-container
+                                            .personal-area__list-title Дата доставки:
+                                            .personal-area__list-text 27.05.2020
+                                        .personal-area__list-container
+                                            .personal-area__list-title Номер заказа:
+                                            .personal-area__list-text № 23833548
+                                        .personal-area__list-container
+                                            .personal-area__list-title Сумма:
+                                            .personal-area__list-text 19 856 com
+                                        .personal-area__list-container
+                                            .personal-area__list-title Начислено баллов:
+                                            .personal-area__list-text 256
+                            // end list item
+
+                            // list item
+                            .personal-area__list-item
+                                .personal-area__list-header
+                                    .personal-area__list-header-box
+                                        .personal-area__list-order-date Заказ от 24 мая 2020
+                                        .personal-area__list-header-text
+                                            .personal-area__list-header-status
+                                            | В доставке
+                                    a(href='#').personal-area__list-header-detail
+                                        | Детали заказа
+                                        .personal-area__list-detail-arrow
+                                .personal-area__list-inner
+                                    .personal-area__list-row
+                                        .personal-area__list-container
+                                            .personal-area__list-title Дата доставки:
+                                            .personal-area__list-text 27.05.2020
+                                        .personal-area__list-container
+                                            .personal-area__list-title Номер заказа:
+                                            .personal-area__list-text № 23833548
+                                        .personal-area__list-container
+                                            .personal-area__list-title Сумма:
+                                            .personal-area__list-text 19 856 com
+                                        .personal-area__list-container
+                                            .personal-area__list-title Начислено баллов:
+                                            .personal-area__list-text 256
+                            // end list item
+
+                            // list item
+                            .personal-area__list-item
+                                .personal-area__list-header
+                                    .personal-area__list-header-box
+                                        .personal-area__list-order-date Заказ от 24 мая 2020
+                                        .personal-area__list-header-text
+                                            .personal-area__list-header-status
+                                            | В доставке
+                                    a(href='#').personal-area__list-header-detail
+                                        | Детали заказа
+                                        .personal-area__list-detail-arrow
+                                .personal-area__list-inner
+                                    .personal-area__list-row
+                                        .personal-area__list-container
+                                            .personal-area__list-title Дата доставки:
+                                            .personal-area__list-text 27.05.2020
+                                        .personal-area__list-container
+                                            .personal-area__list-title Номер заказа:
+                                            .personal-area__list-text № 23833548
+                                        .personal-area__list-container
+                                            .personal-area__list-title Сумма:
+                                            .personal-area__list-text 19 856 com
+                                        .personal-area__list-container
+                                            .personal-area__list-title Начислено баллов:
+                                            .personal-area__list-text 256
+                            // end list item
+                .personal-area__pagination
+                    include ../pagination/pagination-pages
+

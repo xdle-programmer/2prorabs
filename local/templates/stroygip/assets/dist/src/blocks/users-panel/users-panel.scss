@@ -1,0 +1,115 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.users-panel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @media #{$tablet-big-screen}{
+    justify-content: space-around;
+  }
+  @media #{$mobile-big-screen}{
+    display: none;
+  }
+  &__item {
+    @include flex-column-center;
+    cursor: pointer;
+    position: relative;
+
+  }
+  $item-hover: '.users-panel__item:hover';
+
+  &__icon {
+    background-color: #2f3137;
+    margin-bottom: 4px;
+    width: 24px;
+    height: 24px;
+    @include mask-contain-center;
+    @media #{$mobile-big-screen}{
+      width: 20px;
+      height: 20px;
+    }
+
+    #{$scroll-panel} & {
+      transition: all .1s linear;
+      margin-bottom: 0;
+    }
+
+    #{$item-hover} & {
+      background-color: $blue;
+    }
+
+    &--stat {
+      mask: url(assets/img/comparison.svg);
+      -webkit-mask: url(assets/img/comparison.svg);
+    }
+
+    &--basket {
+      mask: url(assets/img/basket.svg);
+      -webkit-mask: url(assets/img/basket.svg);
+    }
+
+    &--heart {
+      mask: url(assets/img/favorites-copy-2.svg);
+      -webkit-mask: url(assets/img/favorites-copy-2.svg);
+    }
+
+    &--user {
+      mask: url(assets/img/user.svg);
+      -webkit-mask: url(assets/img/user.svg);
+    }
+
+  }
+
+  &__text {
+    font-size: 15px;
+    color: #2f3137;
+
+    #{$item-hover} & {
+      color: $blue;
+    }
+
+    #{$scroll-panel} & {
+      height: 0;
+      overflow: hidden;
+    }
+
+    @media #{$mobile-big-screen}{
+      display: none;
+   }
+  }
+
+  &__notification {
+    position: absolute;
+    left: calc(100% - 18px);
+    top: -5px;
+    font-size: 14px;
+    color: #1b1b1d;
+    font-weight: 500;
+    @include flex-row-center;
+    border-radius: 100%;
+  }
+
+  &__notification-value {
+    position: relative;
+    z-index: 1;
+    padding: 0 3px;
+  }
+
+  &__notification-background {
+    position: absolute;
+    width: calc(100% + 5px);
+    @include absolute-center;
+
+    &:after {
+      @include after-absolute;
+      width: 100%;
+      padding-bottom: 100%;
+      background-color: #ffecde;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+}

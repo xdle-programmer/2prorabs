@@ -1,0 +1,60 @@
+.personal-area.personal-area--indent-bottom
+    .container
+        .breadcrumbs
+            .breadcrumbs__inner
+                a.breadcrumbs__link(href="#") Главная
+                .breadcrumbs__separator
+                a.breadcrumbs__link.active(href="#") Личный кабинет
+        .title.personal-area__title Добрый день Иван!
+        .personal-area__grid
+
+
+            // panel container
+            .personal-area__panel-container
+                a(href="#").personal-area__panel-item.personal-area__panel-item-home
+                    .personal-area__panel-icon.personal-area__panel-icon--home
+                    .personal-area__panel-text Главная
+
+                .personal-area__panel-title Заказы
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--orders
+                        .personal-area__panel-text Мои заказы
+
+
+                .personal-area__panel-title Профиль
+                .personal-area__panel-items-box
+                    a(href="#").personal-area__panel-item.personal-area__panel-item--active
+                        .personal-area__panel-icon.personal-area__panel-icon--organization
+                        .personal-area__panel-text Мои организации
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--estimate
+                        .personal-area__panel-text Сметы
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--info
+                        .personal-area__panel-text Личные данные
+                    a(href="#").personal-area__panel-item
+                        .personal-area__panel-icon.personal-area__panel-icon--bonuses
+                        .personal-area__panel-text Бонусы
+
+                        .personal-area__bonuses-notification
+                            .personal-area__bonuses-notification-text 245
+                            .personal-area__bonuses-notification-icon
+                                img(src="/src/blocks/personal-area/assets/img/bonus-star.svg")
+
+
+
+                a(href="#").personal-area__panel-item
+                    .personal-area__panel-icon.personal-area__panel-icon--exit
+                    .personal-area__panel-text Выход
+            // end panel container
+
+            .personal-area__block
+                .personal-area__block-inner
+                    .personal-area__block-title.personal-area__block-title--indent-bottom У вас пока нет организаций
+                    .personal-area__button-organizations.button.button--red.button--red-width Добавить организацию
+
+
+
+
+

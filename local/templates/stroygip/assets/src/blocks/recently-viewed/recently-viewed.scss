@@ -1,0 +1,15 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.recently-viewed{
+  padding: 55px 0 64px 0;
+  background: #f5f7fa;
+  overflow: hidden !important;
+  @media #{$mobile-big-screen}{
+    padding: 25px 0;
+  }
+  &--white{
+    background: $white;
+  }
+}

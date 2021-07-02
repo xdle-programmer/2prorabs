@@ -1,0 +1,60 @@
+header.header
+    .header__main-wrapper
+        .header__main-block.layout.preload__area
+            .header__main-menu
+                a(href='#').header__main-menu-item Контакты
+                a(href='#').header__main-menu-item О компании
+                a(href='#').header__main-menu-item Доставка и оплата
+                a(href='#').header__main-menu-item Услуги
+                a(href='#').header__main-menu-item Вакансии
+                a(href='#').header__main-menu-item Сотрудничество
+            .header__buttons
+                a(href='#').header__button.header__button--sale
+                    +iconSvg('sale','header__button-icon')
+                    span.header__button-text Акции
+                a(href='#').header__button.header__button--compare
+                    +iconSvg('compare','header__button-icon')
+                    span.header__button-text Сравнение
+                a(href='#').header__button.header__button--favorits
+                    +iconSvg('favorite','header__button-icon')
+                    span.header__button-text Избранное
+                .header__user-group
+                    a(href='#').header__user-button
+                        +iconSvg('user','header__user-button-icon')
+                        span.header__user-button-text Вход
+                    a(href='#').header__user-button
+                        +iconSvg('basket','header__user-button-icon')
+                        span.header__user-button-text Корзина
+                        span.header__user-button-count 214
+
+    .header__catalog-wrapper
+        .header__catalog-block.layout.preload__area
+            a(href='/').header__logo
+                img(src='/images/logo/logo-black.svg').header__logo-img
+            .header__catalog
+                .header__catalog-button(data-menu-target='main')
+                    +iconSvg('catalog','header__catalog-button-icon')
+                    .header__catalog-button-text Все товары
+                .header__catalog-slider-wrapper
+                    .header__catalog-slider-wrapper-plug
+                    .header__catalog-slider
+                        .header__catalog-slider-item(data-menu-target='category-1')
+                            .header__catalog-slider-item-inner Сад и огород
+                        .header__catalog-slider-item(data-menu-target='category-1')
+                            .header__catalog-slider-item-inner Стройматериалы
+                        .header__catalog-slider-item(data-menu-target='category-1')
+                            .header__catalog-slider-item-inner Водоснабжение
+                        .header__catalog-slider-item(data-menu-target='category-1')
+                            .header__catalog-slider-item-inner Электротовары
+                        .header__catalog-slider-item(data-menu-target='category-1')
+                            .header__catalog-slider-item-inner Напольные покрытия
+                        .header__catalog-slider-item(data-menu-target='category-1')
+                            .header__catalog-slider-item-inner Освещение
+                        .header__catalog-slider-item(data-menu-target='category-1')
+                            .header__catalog-slider-item-inner Категория
+                        .header__catalog-slider-item(data-menu-target='category-1')
+                            .header__catalog-slider-item-inner Категория
+                        .header__catalog-slider-item(data-menu-target='category-1')
+                            .header__catalog-slider-item-inner Категория
+                .header__catalog-slider-button
+                    +iconSvg('arrow','header__catalog-slider-button-icon')

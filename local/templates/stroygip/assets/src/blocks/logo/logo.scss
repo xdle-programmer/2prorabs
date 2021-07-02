@@ -1,0 +1,21 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.logo {
+  width: 179px;
+  height: 58px;
+  background: url(assets/img/logo.png);
+  @include background-contain-center;
+  background-position: left center!important;
+  transition: all .1s linear;
+
+  #{$scroll-panel} & {
+    height: 30px;
+  }
+
+  @media #{$mobile-big-screen}{
+    width: 90px;
+    height: 30px;
+  }
+}

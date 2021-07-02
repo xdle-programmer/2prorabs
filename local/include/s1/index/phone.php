@@ -1,0 +1,1 @@
+Позвоните нам <a class="shop-news__help-link" href="tel:+996552901322"> +996 552 90 13 22</a>

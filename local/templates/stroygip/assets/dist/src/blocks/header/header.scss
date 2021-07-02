@@ -1,0 +1,74 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.header {
+  z-index: 300;
+  background: #f5f7fb;
+  height: 64px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: all .1s linear;
+
+  @media #{$mobile-big-screen}{
+    padding: 5px 0;
+  }
+
+  &__inner {
+    @include flex-row-center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+
+  &__logo-hidden {
+    display: none;
+    margin-right: 20px;
+    @media #{$tablet-big-screen}{
+      display: block;
+      margin-right: auto;
+    }
+  }
+
+  &__logo-img-hidden {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__burger-menu {
+    display: none;
+    @media #{$mobile-big-screen}{
+      display: block;
+    }
+  }
+
+  &__icon {
+    display: none;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    width: 20px;
+    height: 20px;
+    background: $black;
+    @include mask-contain-center;
+
+    &--user {
+      mask: url(assets/img/user.svg);
+      -webkit-mask: url(assets/img/user.svg);
+    }
+
+    &--basket {
+      mask: url(assets/img/basket.svg);
+      -webkit-mask: url(assets/img/basket.svg);
+    }
+
+    @media #{$mobile-big-screen}{
+      display: block;
+    }
+  }
+}

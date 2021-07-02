@@ -1,0 +1,79 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.requisites{
+  padding: 64px 15px;
+  border-top: 1px solid #cbcfd7;
+  @media #{$mobile-big-screen}{
+	padding: 30px 15px;
+  }
+  &__inner{
+	@include flex-row-center;
+	@media #{$tablet-small-screen}{
+	  flex-direction: column;
+	}
+  }
+  &__title{
+	font-size: 40px;
+	color: $black;
+	margin-right: 120px;
+	@media #{$tablet-big-screen}{
+	  font-size: 30px;
+	  margin-right: 80px;
+	}
+	@media #{$tablet-small-screen}{
+	  font-size: 25px;
+	  margin: 0 0 30px 0;
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 20px;
+	}
+  }
+  &__data{
+	width: 624px;
+	height: auto;
+	border-radius: 25px;
+	background: url(assets/img/background.svg);
+	@include background-cover-center;
+	padding: 48px 15px;
+	@media #{$mobile-big-screen}{
+	  max-width: 100%;
+	}
+  }
+  &__data-item{
+	display: flex;
+	margin-bottom: 16px;
+	&:last-child{
+	  margin-bottom: 0;
+	}
+	&--direction{
+	  flex-direction: column;
+	}
+  }
+  &__data-box{
+	max-width: 310px;
+	margin: 0 auto;
+
+  }
+  &__data-text{
+	font-size: 18px;
+	font-weight: 400;
+	color: $black;
+	@media #{$mobile-big-screen}{
+	  font-size: 14px;
+	}
+  }
+  &__data-title{
+	font-weight: 500;
+	font-size: 18px;
+	color: $black;
+	margin-right: 5px;
+	&--mb{
+	  margin-bottom: 16px;
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 14px;
+	}
+  }
+}

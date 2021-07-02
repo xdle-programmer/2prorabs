@@ -1,0 +1,10 @@
+extends ../templates/main
+
+block variables
+    - var title = 'Корзина пуста'
+
+block content
+
+    include ../../src/blocks/basket-empty/basket-empty
+    include ../../src/blocks/recommends/recommends
+    include ../blocks/subscribe-mailing/subscribe-mailing

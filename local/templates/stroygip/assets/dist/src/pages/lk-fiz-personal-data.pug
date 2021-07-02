@@ -1,0 +1,9 @@
+extends ../templates/main
+
+block variables
+    - var title = 'Личные данные'
+
+block content
+    include ../blocks/personal-area/personal-area_personal-data
+    include ../blocks/modals/modal-add-address
+    include ../blocks/subscribe-mailing/subscribe-mailing

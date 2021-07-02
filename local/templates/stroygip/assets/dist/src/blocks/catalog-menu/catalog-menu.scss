@@ -1,0 +1,143 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.catalog-menu {
+  z-index: 100;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: none;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+  }
+
+  &__box {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  $item-width: 286px;
+  $item-open: '.catalog-menu__item--open';
+
+  &__item {
+    height: 44px;
+    margin-left: -24px;
+    width: calc(#{$item-width} + 24px);
+    padding-left: 24px;
+    @include flex-row;
+    align-items: center;
+    transition: none;
+
+    &--open {
+      background: $white;
+    }
+  }
+
+  &__item-link {
+    font-size: 14px;
+    color: $black;
+
+    #{$item-open} & {
+      font-weight: 600;
+    }
+  }
+
+  &__item-button {
+    display: none;
+  }
+
+  &__submenu {
+    position: absolute;
+    width: calc(100% - #{$item-width});
+    min-height: 100%;
+    top: 0;
+    left: $item-width;
+    background: $white;
+    opacity: 0;
+    visibility: hidden;
+    padding: 30px;
+    padding-right: 100px;
+    transition: none;
+
+    &:after {
+      @include after-absolute;
+      width: 1000vw;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      background-color: #f5f7fb;
+      background: linear-gradient(to right, #f5f7fb 0%, #f5f7fb 50%, #fff 50%, #fff 100%);
+      top: 0;
+      z-index: -1;
+      box-shadow: 0 0 4px 0 rgba(181, 191, 201, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transition: none;
+
+      #{$item-open} & {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    #{$item-open} & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__submenu-img {
+    width: 170px;
+    height: 115px;
+    display: block;
+    object-fit: contain;
+    object-position: center center;
+    margin-bottom: 30px;
+  }
+
+  &__submenu-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;
+  }
+
+  &__submenu-item {
+  }
+
+  &__submenu-item-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: $black;
+    margin-bottom: 32px;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__submenu-item-button {
+    display: none;
+  }
+
+  &__submenu-inner {
+  }
+
+  &__submenu-inner-link {
+    font-size: 14px;
+    color: $black;
+    margin-bottom: 19px;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}

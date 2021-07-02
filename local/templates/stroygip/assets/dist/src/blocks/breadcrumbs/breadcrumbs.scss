@@ -1,0 +1,60 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.breadcrumbs {
+  padding: 32px 0;
+  @media #{$mobile-big-screen}{
+	padding: 20px 0;
+  }
+  &__inner {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+  }
+
+  &__separator {
+	margin: 0 15px;
+	width: 7px;
+	height: 11px;
+	background: #2f3137;
+	mask: url("../../images/icons/separator-breadcrumbs.svg");
+	-webkit-mask: url("../../images/icons/separator-breadcrumbs.svg");
+	@include mask-contain-center;
+	&--white{
+	  background: rgba(255, 255, 255, 0.5);
+	}
+	@media #{$mobile-big-screen}{
+	  margin: 0 7px;
+	}
+  }
+
+  &__link {
+	font-size: 14px;
+	color: $blue;
+	&:hover {
+	  color: #2f428c;
+	}
+	&--white{
+	  color: $white;
+	  &:hover{
+		color: $white;
+	  }
+	}
+	@media #{$mobile-big-screen}{
+	  font-size: 12px;
+	  line-height: 17px;
+	}
+
+
+
+	&.active {
+	  &.active--white{
+		color: rgba(255, 255, 255, 0.5);
+	  }
+	  color: rgba(47, 49, 55, 0.6);
+	  cursor: default;
+	}
+  }
+}

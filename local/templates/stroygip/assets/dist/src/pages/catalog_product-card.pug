@@ -1,0 +1,14 @@
+extends ../templates/main
+
+block variables
+    - var title = 'Карточка товара';
+
+block content
+    include ../../src/blocks/product-card/product-card
+    include ../../src/blocks/product-description/product-description
+    include ../../src/blocks/similar-products/similar-products
+    include ../../src/blocks/buy-with/buy-with
+    include ../../src/blocks/recently-viewed/recently-viewed
+    include ../blocks/subscribe-mailing/subscribe-mailing
+    include ../blocks/modals/modal-calculator/modal-calculator
+    include ../blocks/modals/modal-basket/modal-basket

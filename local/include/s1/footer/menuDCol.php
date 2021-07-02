@@ -1,0 +1,2 @@
+<a class="footer__right-link" target="_blank" href="/privacy-policy/">Политика конфиденциальности</a>
+                        <a class="footer__right-link" target="_blank" href="/oferta/">Договор оферты</a>

@@ -1,0 +1,10 @@
+.checkout {
+    &__unavailable-products-text {
+        margin-top: 8px;
+        color: $red;
+    }
+
+    &__unavailable-product {
+        color: $red;
+    }
+}

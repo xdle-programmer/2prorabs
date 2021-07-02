@@ -1,0 +1,122 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.best-product{
+  padding: 56px 0 64px 0;
+  @media #{$mobile-big-screen}{
+    padding: 25px 0;
+  }
+  &__title{
+    margin-bottom: 50px;
+    @media #{$tablet-small-screen}{
+      margin-bottom: 35px;
+    }
+    @media #{$mobile-big-screen}{
+      br{
+        display: none;
+      }
+    }
+  }
+  &__item{
+    width: 215px;
+    cursor: pointer;
+    margin: 0 auto;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 6px rgba(169, 177, 197, 0.37);
+    &:hover{
+      box-shadow: 0 6px 29px rgba(158, 179, 198, 0.49);
+    }
+    @media #{$mobile-big-screen}{
+      height: 100px;
+      width: 142px;
+    }
+  }
+  &__button{
+    margin-top: 16px;
+  }
+  &__carousel{
+    padding: 0 25px;
+    margin: 0 auto;
+    @media #{$mobile-big-screen} {
+      padding: 0;
+      width: 100%;
+    }
+    .owl-stage{
+      padding: 20px 0;
+    }
+    .owl-item{
+      img{
+        object-fit: contain;
+        width: 60%;
+      }
+    }
+    .owl-prev{
+      width: 40px;
+      height: 40px;
+      top: 35%;
+      left: -1%;
+      position: absolute;
+      &::after{
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: url(assets/img/slide-left.svg) no-repeat;
+        background-position: center;
+        @media #{$mobile-big-screen}{
+          background-size: 90%;
+        }
+      }
+      @media #{$mobile-big-screen}{
+        left: 0;
+        width: 22px;
+        height: 22px;
+        top: 45%;
+      }
+    }
+    .owl-next{
+      border-radius: 4px;
+      width: 40px;
+      height: 40px;
+      top: 35%;
+      right: -1%;
+      position: absolute;
+      &::after{
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: url(assets/img/slide-right.svg) no-repeat;
+        background-position: center;
+        @media #{$mobile-big-screen}{
+          background-size: 90%;
+        }
+      }
+      @media #{$mobile-big-screen}{
+        right: 0;
+        width: 22px;
+        height: 22px;
+        top: 45%;
+      }
+    }
+    .owl-nav{
+      margin: 0;
+    }
+    .disabled{
+      opacity: 1 !important;
+    }
+    button{
+      &:hover{
+        background: transparent !important;
+      }
+    }
+    @media #{$mobile-big-screen}{
+      padding: 0 25px;
+    }
+  }
+
+}

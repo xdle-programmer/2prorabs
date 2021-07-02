@@ -1,0 +1,61 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.logo {
+  width: 100%;
+  position: relative;
+
+  $hover: '.logo:hover';
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__line {
+    position: absolute;
+    background: var(--blue-color);
+    left: 0;
+    top: 51%;
+    width: 79%;
+    height: 10%;
+    transform-origin: top;
+    transform: scaleY(1);
+
+    #{$hover} & {
+      @keyframes logo-scale {
+        0% {
+          transform: scaleY(1);
+          background: var(--blue-color);
+        }
+        50% {
+          transform: scaleY(.5);
+          background: var(--black-color);
+        }
+        100% {
+          transform: scaleY(1);
+          background: var(--blue-color);
+        }
+      }
+
+      animation: logo-scale .3s ease-in;
+    }
+  }
+
+  &__text {
+    color: var(--gray-color);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-top: 6%;
+    margin-bottom: -10%;
+
+    #{$hover} & {
+      color: var(--black-color);
+    }
+  }
+
+}

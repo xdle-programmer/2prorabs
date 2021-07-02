@@ -1,0 +1,17 @@
+.catalog-category__filter-buttons input.button {
+    cursor: pointer;
+}
+
+/*.catalog__list, .catalog__list-item {display:none!important}*/
+
+.catalog {
+    z-index: 100;
+}
+
+.feedback-area__checkbox-input {
+    visibility: hidden;
+}
+
+.button {
+    white-space: nowrap;
+}

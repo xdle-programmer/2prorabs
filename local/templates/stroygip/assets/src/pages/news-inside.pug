@@ -1,0 +1,11 @@
+extends ../templates/main
+
+block variables
+    - var title = 'Новости'
+
+block content
+
+    include ../blocks/news/news_inside
+    include ../blocks/read-blogs/read-blogs_news
+    include ../blocks/similar-products/similar-products_news
+    include ../blocks/subscribe-mailing/subscribe-mailing

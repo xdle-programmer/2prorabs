@@ -1,0 +1,91 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.search-panel {
+  position: relative;
+  height: 48px;
+  border-radius: 4px 0 0 4px;
+  display: grid;
+  grid-template-columns: 1fr 128px;
+  width: 100%;
+  transition: all .1s linear;
+
+  #{$scroll-panel} & {
+    height: 38px;
+  }
+
+  @media #{$mobile-big-screen}{
+    grid-template-columns: 1fr 50px;
+    height: 30px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    width: 20px;
+    height: 20px;
+    background-color: #d6dae1;
+    mask: url(assets/img/search.svg);
+    -webkit-mask: url(assets/img/search.svg);
+    @include mask-contain-center;
+
+    &--mobile-hidden {
+      @media #{$mobile-big-screen}{
+        display: none;
+      }
+    }
+
+    &--mobile-show {
+      display: none;
+      position: static;
+      margin: 0 auto;
+      width: 15px;
+      height: 18px;
+      background-color: #afd6f6;
+      @media #{$mobile-big-screen}{
+        display: block;
+        transform: translateY(-5%);
+      }
+    }
+  }
+
+  &__input {
+    font-size: 20px;
+    padding-left: 50px;
+    height: 100%;
+    border: 1px solid #dce0e5;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    @media #{$mobile-big-screen}{
+      padding-left: 15px;
+      font-size: 14px;
+    }
+  }
+
+  &__button {
+    background: $blue;
+    border-radius: 0 4px 4px 0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    height: 100%;
+
+    &:hover {
+      background: $blue-hover;
+    }
+
+    &:active {
+      background: $blue-active;
+    }
+  }
+
+  &__text {
+    @media #{$mobile-big-screen}{
+      display: none;
+    }
+  }
+}

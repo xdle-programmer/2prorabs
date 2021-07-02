@@ -1,0 +1,1 @@
+<a class="button button--red-width button button--red special-conditions__button" href="javascript:void(0)" id="buttonReg">Зарегистрироваться</a>

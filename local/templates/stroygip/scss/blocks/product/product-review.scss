@@ -1,0 +1,51 @@
+.product-review-form {
+    $el: &;
+
+    width: 500px;
+    margin-bottom: 40px;
+
+    .product-review-form {
+        @media #{$mobile-big-screen} {
+            width: 100%;
+        }
+    }
+
+    &__row1 {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__row2 {
+    }
+
+    &__control-wrapper {
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+    &__textarea {
+        height: 100px;
+    }
+
+    &__actions {
+    }
+}
+
+.product-reviews {
+}
+
+.product-review {
+    margin-bottom: 20px;
+
+    &__name {
+        font-weight: bold;
+    }
+
+    &__text {
+        margin-top: 5px;
+    }
+}

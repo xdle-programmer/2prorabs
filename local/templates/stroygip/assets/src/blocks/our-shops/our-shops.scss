@@ -1,0 +1,101 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.our-shops{
+  overflow: hidden;
+  &__info{
+	width: 57%;
+	padding: 56px 0 50px 0;
+	background: $background-blue;
+	@media #{$tablet-small-screen}{
+	  width: 100%;
+	}
+	@media #{$mobile-big-screen}{
+	  padding: 30px 0;
+	}
+  }
+  &__row{
+	display: flex;
+	position: relative;
+	@media #{$tablet-small-screen}{
+	  flex-direction: column;
+	}
+  }
+  &__inner{
+	padding-left: 190px;
+	margin: 0 auto;
+	flex-shrink: 0;
+	@media #{$laptop-screen}{
+	  padding-left: 30px;
+	}
+	@media #{$mobile-big-screen}{
+	  padding: 0 10px;
+	}
+  }
+  &__map{
+	height: 632px;
+	width: 100%;
+	position: absolute;
+	right: -40%;
+	@media #{$tablet-small-screen}{
+	  position: static;
+	  height: 400px;
+	}
+  }
+  &__title{
+	display: flex;
+	align-items: center;
+	line-height: 2;
+	font-size: 16px;
+	font-weight: 500;
+	color: $black;
+
+  }
+  &__title-icon{
+	position: absolute;
+	left: 0;
+	margin-right: 16px;
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+	@include mask-contain-center;
+	background: $black;
+	&--address{
+	  mask: url(assets/img/adres.svg);
+	  -webkit-mask: url(assets/img/adres.svg);
+	}
+	&--tel{
+	  mask: url(assets/img/tel.svg);
+	  -webkit-mask: url(assets/img/tel.svg);
+	}
+	&--clock{
+	  mask: url(assets/img/clock.svg);
+	  -webkit-mask: url(assets/img/clock.svg);
+	}
+	&--mail{
+	  mask: url(assets/img/mail.svg);
+	  -webkit-mask: url(assets/img/mail.svg);
+	}
+	@media #{$mobile-big-screen}{
+	  width: 20px;
+	  height: 20px;
+	}
+  }
+  &__information{
+	position: relative;
+	padding-left: 40px;
+	margin-bottom: 24px;
+	&:last-child{
+	  margin-bottom: 0;
+	}
+  }
+  &__text{
+	font-size: 16px;
+	color: $black;
+	line-height: 2;
+	@media #{$mobile-big-screen}{
+	  font-size: 14px;
+	}
+  }
+}

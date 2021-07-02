@@ -1,0 +1,214 @@
+@media (min-width: 1200px){
+	/*lg*/
+	/*6*/
+	.product-item-list-col-6   > .col-xs-12 > .row > .col-md-2:nth-child(6n+1),
+	.product-item-list-col-1-6 > .col-sm-6:nth-child(2n+1),
+	.product-item-list-col-6-1 > .col-sm-6:nth-child(2n+1),
+	.product-item-list-col-1-6 > .col-sm-6  > .row > .col-md-4:nth-child(3n+1),
+	.product-item-list-col-6-1 > .col-sm-6  > .row > .col-md-4:nth-child(3n+1),
+	/*4*/
+	.product-item-list-col-4   > .col-xs-12 > .row > .col-md-3:nth-child(4n+1),
+	.product-item-list-col-1-4 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	.product-item-list-col-4-1 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	/*3*/
+	.product-item-list-col-3   > .col-xs-12 > .row > .col-sm-4:nth-child(3n+1),
+	/*2*/
+	.product-item-list-col-2   > .col-xs-12 > .row > .col-xs-6:nth-child(2n+1),
+	/*1*/
+	.product-item-list-col-1   > .col-xs-12 > .row > .col-xs-12:nth-child(1n){clear: both}
+}
+@media (min-width: 992px) and (max-width:1199px){
+	/*md*/
+	/*6*/
+	.product-item-list-col-6   > .col-xs-12 > .row > .col-md-2:nth-child(6n+1),
+	.product-item-list-col-1-6 > .col-sm-6:nth-child(2n+1),
+	.product-item-list-col-6-1 > .col-sm-6:nth-child(2n+1),
+	.product-item-list-col-1-6 > .col-sm-6 > .row > .col-md-4:nth-child(3n+1),
+	.product-item-list-col-6-1 > .col-sm-6 > .row > .col-md-4:nth-child(3n+1),
+	/*4*/
+	.product-item-list-col-4   > .col-xs-12 > .row > .col-md-3:nth-child(4n+1),
+	.product-item-list-col-1-4 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	.product-item-list-col-4-1 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	/*3*/
+	.product-item-list-col-3   > .col-xs-12 > .row > .col-sm-4:nth-child(3n+1),
+	/*2*/
+	.product-item-list-col-2   > .col-xs-12 > .row > .col-xs-6:nth-child(2n+1),
+	/*1*/
+	.product-item-list-col-1   > .col-xs-12 > .row > .col-xs-12:nth-child(1n){clear: both}
+}
+@media (min-width: 768px) and (max-width: 991px){
+	/*sm*/
+	/*6*/
+	.product-item-list-col-6   > .col-xs-12 > .row > .col-sm-4:nth-child(3n+1),
+	.product-item-list-col-1-6 > .col-sm-6:nth-child(2n+1),
+	.product-item-list-col-6-1 > .col-sm-6:nth-child(2n+1),
+	.product-item-list-col-1-6 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	.product-item-list-col-6-1 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	/*4*/
+	.product-item-list-col-4   > .col-xs-12 > .row > .col-xs-6:nth-child(2n+1),
+	.product-item-list-col-1-4 > .col-sm-6:nth-child(2n+1),
+	.product-item-list-col-4-1 > .col-sm-6:nth-child(2n+1),
+	.product-item-list-col-1-4 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	.product-item-list-col-4-1 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	/*3*/
+	.product-item-list-col-3   > .col-xs-12 > .row > .col-sm-4:nth-child(3n+1),
+	/*2*/
+	.product-item-list-col-2   > .col-xs-12 > .row > .col-xs-6:nth-child(2n+1),
+	/*1*/
+	.product-item-list-col-1   > .col-xs-12 > .row > .col-xs-12:nth-child(1n){clear: both}
+}
+@media (max-width: 767px){
+	/*xs*/
+	/*6*/
+	.product-item-list-col-6   > .col-xs-12 > .row > .col-xs-6:nth-child(2n+1),
+	.product-item-list-col-1-6 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	.product-item-list-col-6-1 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	/*4*/
+	.product-item-list-col-4   > .col-xs-12 > .row > .col-xs-6:nth-child(2n+1),
+	.product-item-list-col-1-4 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	.product-item-list-col-4-1 > .col-sm-6 >  .row > .col-xs-6:nth-child(2n+1),
+	/*3*/
+	.product-item-list-col-3   > .col-xs-12 > .row > .col-sm-4:nth-child(3n+1),
+	/*2*/
+	.product-item-list-col-2   > .col-xs-12 > .row > .col-xs-6:nth-child(2n+1),
+	/*1*/
+	.product-item-list-col-1   > .col-xs-12 > .row > .col-xs-12:nth-child(1n){clear: both}
+}
+
+.catalog-section-header{
+	font-size:14px;
+	font-weight: bold;
+	text-align: left;
+	margin:5px 0;
+	padding:5px 15px;
+	border-bottom: 2px solid #d9dee6;
+	color: #000;
+}
+
+.row::before {
+	display: initial;
+}
+
+
+
+
+
+
+.best-price-2 .best-price__grid{
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.best-price-2 .imp-item-button{
+	display: block;
+	width:90%;
+	height:55px;
+}
+.best-price-2 .imp-item-button-fcb{
+	display: block;
+	float: left;
+	width:40px;
+	height:22px;
+	margin-top:10px;
+}
+.best-price-2 .best-price__item-select{
+	opacity: 1;
+	background: none;
+	margin-bottom: 0px;
+}
+.best-price-2 .imp-item-button-favorite{
+	background: url(/local/templates/stroygip/img/icon-favorite2.png) center center no-repeat;
+	background-size: contain;
+}
+.best-price-2 .imp-item-button-compare {
+    background: url(/local/templates/stroygip/img/icon-compare.png) center center no-repeat;
+	background-size: contain;
+}
+.best-price-2 .imp-item-button-tobasket {
+    background: url(/local/templates/stroygip/img/icon-basket.png) center center no-repeat;
+	background-size: contain;
+}
+.best-price-2 .imp-item-price{
+	display: flex;
+	float: left;
+	width:60%;
+	height:50px;
+	margin-top:10%;
+	margin-bottom:6%;
+	background:#f33829;
+	border:1px solid #f33829;
+	border-radius:15px;
+	color:#fff;
+	font-size:34px;
+	font-weight:600;
+	align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.best-price-2 .imp-item-button{
+	display: block;
+	float: left;
+	width:40%;
+	height:35px;
+	margin-top:9%;
+	padding-top: 10px;
+}
+.best-price-2 .imp-item-button-quantity{
+	display: block;
+	text-align:center;
+}
+.best-price-2 .imp-item-button-quantity span{
+	font-size:32px;
+	font-weight:600;
+	margin-right: 3px;
+	cursor:pointer;
+}
+.best-price-2 .imp-item-name-bottom{
+	display: block;
+	float: left;
+	width:100%;
+	height: 60px;
+	margin-bottom:5%;
+}
+.best-price-2 .imp-item-name{
+	display: block;
+	font-size:18px;
+	font-weight: 100;
+}
+
+
+@media (max-width: 767px){
+
+	.best-price-2 .best-price__item-image-box{
+		height: 180px;
+	}
+	.best-price-2 .best-price__item-image {
+		height: 75%;
+		max-height: 180px;
+	}
+	.best-price-2 .imp-item-button-fcb{
+		width:30px;
+		height:18px;
+	}
+
+	.best-price-2 .imp-item-price{
+		height:35px;
+		font-size:16px;
+		border-radius: 10px;
+	}
+	.best-price-2 .imp-item-button{
+		height:35px;
+		margin-top:7%;
+	}
+	.best-price-2 .imp-item-button-quantity span{
+		font-size:20px;
+	}
+	.best-price-2 .imp-item-name{
+		font-size:14px;
+	}
+	
+}
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.contacts{
+  background: $background-blue;
+  padding-bottom: 64px;
+  @media #{$mobile-big-screen}{
+	padding-bottom: 30px;
+  }
+  &__grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	grid-gap: 16px;
+	@media #{$mobile-big-screen}{
+	  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	}
+  }
+  &__item{
+	padding: 24px 44px;
+	display: flex;
+	align-items: center;
+	background: $white;
+	box-shadow: 0 0 3px 0 rgba(169, 177, 197, 0.37);
+	@media #{$mobile-big-screen}{
+	  flex-direction: column;
+	  align-items: flex-start;
+	  padding: 20px
+	}
+  }
+  &__item-icon{
+	width: 88px;
+	height: 88px;
+	margin-right: 60px;
+	background-color: rgba(65, 90, 183, 0.05);
+	@include flex-row-center;
+	border-radius: 100%;
+	@media #{$mobile-big-screen}{
+	  margin: 0 auto 20px auto;
+	}
+  }
+  &__item-text-icon{
+	width: 16px;
+	height: 16px;
+	@include mask-contain-center;
+	margin-right: 16px;
+	&--tel{
+	  background: $black;
+	  mask: url(assets/img/tel-2.svg);
+	  -webkit-mask: url(assets/img/tel-2.svg);
+	}
+	&--mail{
+	  background: $black;
+	  mask: url(assets/img/mail.svg);
+	  -webkit-mask: url(assets/img/mail.svg);
+	}
+  }
+  &__item-title{
+	font-size: 18px;
+	font-weight: 500;
+	color: $black;
+	margin-bottom: 24px;
+	@media #{$mobile-big-screen}{
+	  font-size: 16px;
+	  margin-bottom: 16px;
+	}
+  }
+  &__item-text{
+	line-height: 2.29;
+	display: flex;
+	align-items: center;
+  }
+}
