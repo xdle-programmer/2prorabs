@@ -22,13 +22,13 @@ let getFiles = function (dir, files_, extension) {
 };
 
 // Js файлы
-let jsEntryArray = [path.resolve(__dirname, './src/index.js')];
-getFiles(path.resolve(__dirname, './src/blocks'), jsEntryArray, 'js');
+let jsEntryArray = [path.resolve(__dirname, './local/templates/stroygip/ts/src/index.js')];
+getFiles(path.resolve(__dirname, './local/templates/stroygip/ts/src/blocks'), jsEntryArray, 'js');
 
 // Файлы стилей
 let styleEntryArray = [];
-getFiles(path.resolve(__dirname, './src/blocks'), styleEntryArray, 'scss');
-getFiles(path.resolve(__dirname, './src/blocks'), styleEntryArray, 'css');
+getFiles(path.resolve(__dirname, './local/templates/stroygip/ts/src/blocks'), styleEntryArray, 'scss');
+getFiles(path.resolve(__dirname, './local/templates/stroygip/ts/src/blocks'), styleEntryArray, 'css');
 
 let fullArray = jsEntryArray.concat(styleEntryArray);
 
@@ -39,8 +39,8 @@ module.exports = {
         // style: styleEntryArray,
     },
     output: {
-        filename: '[name].[hash].js',
-        path: path.resolve(__dirname, './')
+        filename: '[name].js',
+        path: path.resolve(__dirname, './local/templates/stroygip/ts/')
     },
     devtool: "source-map",
     module: {
@@ -91,13 +91,9 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[hash].css',
+            filename: '[name].css',
         }),
     ],
-    externals: {
-        jquery: 'jQuery',
-        jqueryui: 'jquery-ui'
-    },
     devServer: {
         overlay: true,
     }

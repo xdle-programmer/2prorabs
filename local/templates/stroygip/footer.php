@@ -336,7 +336,7 @@ $APPLICATION->IncludeFile("/local/include/" . SITE_ID . "/footer/footer_contacts
 <?}?>
 
 
-<script src="<?=SITE_TEMPLATE_PATH?>/ts/main.2719122dbda8af010857.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/ts/main.js"></script>
 
 <div class="modal-overlay"></div>
 <? \nav\AppData::show() ?>

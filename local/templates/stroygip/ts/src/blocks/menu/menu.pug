@@ -1,6 +1,6 @@
 mixin categoryItem
     .menu__category-item.preload__area
-        img(data-src='/images/examples/category.jpg').preload__item.menu__category-icon
+        img(data-src='/local/templates/stroygip/ts/images/examples/category.jpg').preload__item.menu__category-icon
         .menu__category
             .menu__category-title(data-menu-target='category-1') Название категории
             .menu__category-subtitle(data-menu-target='subcategory-1') Название подкатегории
@@ -13,7 +13,7 @@ mixin categoryItem
 
 mixin subCategoryItem
     .menu__category-item.preload__area
-        img(data-src='/images/examples/subcategory.jpg').preload__item.menu__category-icon
+        img(data-src='/local/templates/stroygip/ts/images/examples/subcategory.jpg').preload__item.menu__category-icon
         .menu__category
             .menu__category-title(data-menu-target='subcategory-1') Название подкатегории
             a(href='/catalog.html').menu__category-subtitle Название подподкатегории
@@ -42,7 +42,7 @@ mixin subSubCategoryItem
     .menu__wrapper.layout
         .menu__header
             a(href='/').menu__logo
-                img(src='/images/logo/logo-black.svg').menu__logo-img
+                img(src='/local/templates/stroygip/ts/images/logo/logo-black.svg').menu__logo-img
             .menu__close
                 +iconSvg('close','menu__close-icon')
 

@@ -61,7 +61,7 @@ global $USER;
         <? $APPLICATION->ShowHead(); ?>
         <title><? $APPLICATION->ShowTitle(); ?></title>
 		
-		<link href="<?=SITE_TEMPLATE_PATH?>/ts/main.2719122dbda8af010857.css" rel="stylesheet"></head>
+		<link href="<?=SITE_TEMPLATE_PATH?>/ts/main.css" rel="stylesheet"></head>
 		
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >

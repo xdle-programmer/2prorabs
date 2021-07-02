@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.config.base');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
-    src: path.resolve(__dirname, './src'),
+    src: path.resolve(__dirname, './local/templates/stroygip/ts/src'),
 };
 
 const PAGES_DIR = `${PATHS.src}/pages/`;
