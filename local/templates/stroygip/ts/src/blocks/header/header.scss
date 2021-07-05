@@ -199,6 +199,10 @@
     color: var(--black-color);
     display: inline;
 
+    @include desktop-small-screen {
+      font-size: 13px;
+    }
+
     #{$user-button-hover} & {
       color: var(--red-color);
     }
@@ -211,7 +215,7 @@
     font-size: 14px;
 
     &:before {
-      content: ' (';
+      content: '\00a0(';
       color: var(--black-color);
     }
 

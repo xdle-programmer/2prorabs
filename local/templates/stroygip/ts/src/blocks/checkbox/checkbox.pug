@@ -1,0 +1,7 @@
+mixin checkbox(text, checked,type)
+    if !type
+        label.checkbox
+            input(type='checkbox' checked=checked).checkbox__input
+            span.checkbox__item
+                +iconSvg('check','checkbox__icon')
+                span.checkbox__text=text
