@@ -13,7 +13,6 @@
 $this->setFrameMode(true);
 ?>
 <!--b><?print_r($arResult);?></b-->
-<div style="partners_empty"></div>
 <div class="partners__nav">
 	<div class="partners__nav-button partners__nav-button--prev">
 		<svg class="partners__nav-button-icon">
