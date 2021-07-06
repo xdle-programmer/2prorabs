@@ -12,8 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<!--b><?print_r($arResult);?></b-->
-<!--b><?print_r($arParams);?></b-->
+<!--b> <?print_r($arResult);?></b-->
 <div class="partners__nav">
 	<div class="partners__nav-button partners__nav-button--prev">
 		<svg class="partners__nav-button-icon">
