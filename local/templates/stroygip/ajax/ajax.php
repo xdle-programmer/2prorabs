@@ -30,12 +30,16 @@ if($request->isPost()) {
             $id = $request->getPost('id');
             $result = \DDS\Basketclass::delete($id);
 			
-			unset($_SESSION["BASKET_LIST"][$id]);
+			$product_id = $request->getPost('productid');
+			unset($_SESSION["BASKET_LIST"][$product_id]);
 			
             echo json_encode($result);
             break;
         case 'clear_basket':
             $result = \DDS\Basketclass::clearBasket();
+			
+			unset($_SESSION["BASKET_LIST"]);
+			
             echo json_encode($result);
             break;
         case 'changeOffer':

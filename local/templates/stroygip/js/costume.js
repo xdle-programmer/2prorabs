@@ -157,6 +157,7 @@ $(document).on('click change submit','[data-action]',function(e){
 
                 case 'delete':
                     data['id'] = $this.attr('data-id');
+					data['productid'] = $this.attr('data-productid');
                     break;
                 case 'compfav':
                     data['id'] = $this.attr('data-id');

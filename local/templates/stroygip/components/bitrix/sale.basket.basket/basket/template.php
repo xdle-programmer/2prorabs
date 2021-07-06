@@ -84,7 +84,7 @@ $APPLICATION->AddViewContent('basket_class', 'basket-products');
                         <a class="basket-products__panel-item<?=$fav_act?>" href="javascript:void(0)" data-action="<?=$fav_action?>" data-id="<?=$arItem['PRODUCT_ID']?>" data-add="FAVORITES">
                             <div class="basket-products__panel-icon basket-products__panel-icon--favourites"></div>
                             <div class="basket-products__panel-text"><?=$fav_text?></div></a>
-                        <a class="basket-products__panel-item" href="javascript:void(0)" data-action="delete" data-id="<?=$arItem['ID']?>">
+                        <a class="basket-products__panel-item" href="javascript:void(0)" data-action="delete" data-productid="<?=$arItem['PRODUCT_ID']?>" data-id="<?=$arItem['ID']?>">
                             <div class="basket-products__panel-icon basket-products__panel-icon--remove"></div>
                             <div class="basket-products__panel-text">Удалить</div></a>
                     </div>
