@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<!--b> <?print_r($arResult);?></b-->
 <div class="partners__nav">
 	<div class="partners__nav-button partners__nav-button--prev">
 		<svg class="partners__nav-button-icon">
@@ -26,12 +25,13 @@ $this->setFrameMode(true);
 	</div>
 </div>
 <div class="partners__slider">
-<?foreach ($arResult['ITEMS'] as $arItem): 
-	if(empty($arItem['PREVIEW_PICTURE']['SRC'])) continue; ?>
+<?foreach ($arResult['ITEMS'] as $arItem):?>
+	<?if( strlen($arItem["PROPERTIES"]['FILE']['ARR']['SRC'])>0 ):?>
 	<div class="partners__slider-item-wrapper">
 		<div class="partners__slider-item">
-			<img class="partners__slider-item-img preload__item" data-src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>">
+			<img class="partners__slider-item-img preload__item" data-src="<?=$arItem["PROPERTIES"]['FILE']['ARR']['SRC']?>">
 		</div>
 	</div>
+	<?endif;?>
 <?endforeach;?>
 </div>
