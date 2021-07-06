@@ -145,6 +145,10 @@ $(document).on('click change submit','[data-action]',function(e){
                     data['id'] = id;
                     data['quantity'] = $('.ddsQuantity').val();
 					
+					if( !$(this).hasClass("product-cart__button--active") ){
+						$(this).addClass('product-cart__button--active');
+					}
+					
 					if( $('.imp-item-quantity-value[data-id="'+ id +'"]').length  ){
 						data['quantity'] = parseInt( $('.imp-item-quantity-value[data-id="'+ id +'"]').html() );
 					}
@@ -157,6 +161,11 @@ $(document).on('click change submit','[data-action]',function(e){
                 case 'compfav':
                     data['id'] = $this.attr('data-id');
                     data['add'] = $this.attr('data-add');
+					
+					if( !$(this).hasClass("product-cart__button--active") ){
+						$(this).addClass('product-cart__button--active');
+					}
+					
                     break;
                 case 'compfavdelete':
                     data['id'] = $this.attr('data-id');

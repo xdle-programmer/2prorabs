@@ -15,6 +15,9 @@ if($request->isPost()) {
             $id = $request->getPost('id');
             $quantity = $request->getPost('quantity');
             $result = \DDS\Basketclass::add2basket($id,$quantity);
+			
+			$_SESSION["BASKET_LIST"][$id] = $id;
+			
             echo json_encode('Y');
             break;
         case 'updatebasket':
@@ -26,6 +29,9 @@ if($request->isPost()) {
         case 'delete':
             $id = $request->getPost('id');
             $result = \DDS\Basketclass::delete($id);
+			
+			unset($_SESSION["BASKET_LIST"][$id]);
+			
             echo json_encode($result);
             break;
         case 'clear_basket':
