@@ -357,14 +357,14 @@ global $USER;
                         </a>
                         <div class="header__user-group">
                             <? if (!$USER->IsAuthorized()): ?>
-                                <a class="header__user-button" id="buttonReg" href="#">
+                                <a class="header__user-button" href="#" data-modal-open='login'>
                                     <svg class="header__user-button-icon">
                                         <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#user"></use>
                                     </svg>
                                     <span class="header__user-button-text">Вход</span>
                                 </a>
                             <? else: ?>
-                                <a class="header__user-button" <? if (!$USER->IsAuthorized()): ?>id="buttonReg"<? endif; ?> href="/personal/orders/">
+                                <a class="header__user-button" href="/personal/orders/">
                                     <svg class="header__user-button-icon">
                                         <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#user"></use>
                                     </svg>

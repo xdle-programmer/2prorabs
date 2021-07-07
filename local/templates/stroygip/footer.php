@@ -172,92 +172,6 @@ $page = $APPLICATION->GetCurPage();
 </div> <!-- natural-group -->
 
 
-<div class="modal" id="login">
-    <div class="modal__content form-check">
-        <div class="modal__header">
-            <div class="modal__header-title">Вход</div>
-            <div class="modal__header-close" data-modal-close>
-                <svg class="modal__header-close-icon">
-                    <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#close"></use>
-                </svg>
-            </div>
-        </div>
-        <div class="modal__content-items">
-            <div class="modal__content-item">
-                <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-                    <input class="input placeholder__input" placeholder="Телефон">
-                    <div class="placeholder__item">Телефон</div>
-                </div>
-            </div>
-            <div class="modal__content-item">
-                <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-                    <input class="input placeholder__input" placeholder="Пароль">
-                    <div class="placeholder__item">Пароль</div>
-                </div>
-            </div>
-            <div class="modal__content-item">
-                <div class="modal__link">Не помню пароль</div>
-            </div>
-            <div class="modal__content-item">
-                <div class="modal__two-buttons">
-                    <div class="modal__button button button--invert">Зарегистрироваться</div>
-                    <div class="modal__button button button--invert form-check__button">Войти</div>
-                </div>
-            </div>
-        </div>
-        <div class="modal__footer">
-            <div class="modal__link">Политика конфиденцальности</div>
-        </div>
-    </div>
-</div>
-
-<div class="modal" id="register">
-    <div class="modal__content form-check">
-        <div class="modal__header">
-            <div class="modal__header-title">Регистрация</div>
-            <div class="modal__header-close" data-modal-close>
-                <svg class="modal__header-close-icon">
-                    <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#close"></use>
-                </svg>
-            </div>
-        </div>
-        <div class="modal__content-items">
-            <div class="modal__content-item">
-                <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-                    <input class="input placeholder__input" placeholder="Имя">
-                    <div class="placeholder__item">Имя</div>
-                </div>
-            </div>
-            <div class="modal__content-item">
-                <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-                    <input class="input placeholder__input" placeholder="Телефон">
-                    <div class="placeholder__item">Телефон</div>
-                </div>
-            </div>
-            <div class="modal__content-item">
-                <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-                    <input class="input placeholder__input" placeholder="Пароль">
-                    <div class="placeholder__item">Пароль</div>
-                </div>
-            </div>
-            <div class="modal__content-item">
-                <label class="checkbox">
-                    <input class="checkbox__input" type="checkbox"><span class="checkbox__item">
-                <svg class="checkbox__icon">
-                  <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#check"></use>
-                </svg><span class="checkbox__text">Я согласен на обработку Персональных данных</span></span>
-                </label>
-            </div>
-            <div class="modal__content-item">
-                <div class="modal__button button button--invert form-check__button">Зарегистрироваться</div>
-            </div>
-        </div>
-        <div class="modal__footer">
-            <div class="modal__link">Политика конфиденцальности</div>
-        </div>
-    </div>
-</div>
-
 <? if ($APPLICATION->GetCurPage() != "/") { ?>
     <div class="modal-region" id="modal-region">
         <div class="modal-region__title">Ваш город Бишкек?</div>
@@ -274,11 +188,11 @@ $page = $APPLICATION->GetCurPage();
         array(),
         false
     ); ?>
-    <? $APPLICATION->IncludeComponent(
+    <?/* $APPLICATION->IncludeComponent(
         "2quick:tq_forgot",
         "",
         array()
-    ); ?>
+    ); */?>
 <? } ?>
 
 
