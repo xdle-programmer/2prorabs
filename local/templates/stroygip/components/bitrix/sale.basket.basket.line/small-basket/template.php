@@ -18,7 +18,19 @@ else
 {
 	$cartStyle .= ' bx-opener';
 }
-?><script>
+?>
+
+<?
+use Bitrix\Sale;
+$arBasketData = array();
+$basket = Sale\Basket::loadItemsForFUser(Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
+foreach ($basket as $basketItem) {
+	$product_id = $basketItem->getField('PRODUCT_ID');
+	$_SESSION["BASKET_LIST"][$product_id] = $product_id;
+}
+?>
+
+<script>
 var <?=$cartId?> = new BitrixSmallCart;
 </script>
 <div id="<?=$cartId?>" class="<?=$cartStyle?>"><?

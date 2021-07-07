@@ -333,7 +333,7 @@ global $USER;
                         <a class="header__main-menu-item" href="/vacancy/">Вакансии</a>
                         <a class="header__main-menu-item" href="/clients/">Сотрудничество</a>
                     </div>
-
+					
                     <div class="header__buttons">
                         <a class="header__button header__button--sale" href="/catalog/sale/">
                             <svg class="header__button-icon">
@@ -346,14 +346,14 @@ global $USER;
                                 <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#compare"></use>
                             </svg>
                             <span class="header__button-text">Сравнение</span>
-                            <span class="header__user-button-count">1</span>
+                            <span class="header__user-button-count"><?if( is_array($_SESSION["COMPARE"]) ): echo count($_SESSION["COMPARE"]); else: echo "0"; endif;?></span>
                         </a>
                         <a class="header__button header__button--favorits" href="/favorites/">
                             <svg class="header__button-icon">
                                 <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#favorite"></use>
                             </svg>
                             <span class="header__button-text">Избранное</span>
-                            <span class="header__user-button-count">1</span>
+                            <span class="header__user-button-count"><?if( is_array($_SESSION["FAVORITES"]) ): echo count($_SESSION["FAVORITES"]); else: echo "0"; endif;?></span>
                         </a>
                         <div class="header__user-group">
                             <? if (!$USER->IsAuthorized()): ?>

@@ -165,8 +165,18 @@ $(document).on('click change submit','[data-action]',function(e){
 					
 					if( !$(this).hasClass("product-cart__button--active") ){
 						$(this).addClass('product-cart__button--active');
+						
+						var compare_num = parseInt( $('.header__button--compare .header__user-button-count').html() );
+						var favorite_num = parseInt( $('.header__button--favorits .header__user-button-count').html() );
+						
+						if( $this.attr('data-add') == "COMPARE" ){
+							$('.header__button--compare .header__user-button-count').html( compare_num + 1 );
+						}else if( $this.attr('data-add') == "FAVORITES" ){
+							$('.header__button--favorits .header__user-button-count').html( favorite_num + 1 );
+						}
 					}
 					
+
                     break;
                 case 'compfavdelete':
                     data['id'] = $this.attr('data-id');
