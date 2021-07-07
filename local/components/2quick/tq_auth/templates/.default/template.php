@@ -107,13 +107,19 @@ Asset::getInstance()->addJs($templateFolder . "/script.js");
 							<div class="placeholder__item" for="input-reg-password">Пароль</div>
 						</div>
 					</div>
+					<div class="input-styled input-styled--indent">
+						<div class="g-recaptcha" data-sitekey="6LdOWNYZAAAAAHiY6FC-IrK-hDGYlekgyVq3MLoj"></div>
+					</div>
+					<div class="tq_error"></div>
 					<div class="modal__content-item">
 						<label class="checkbox">
-							<input class="checkbox__input" type="checkbox"><span class="checkbox__item">
-							<svg class="checkbox__icon">
-							  <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#check"></use>
-							</svg>
-							<span class="checkbox__text">Я согласен на обработку Персональных данных</span></span>
+							<input class="checkbox__input" type="checkbox" name="confirm" value="1">
+							<span class="checkbox__item">
+								<svg class="checkbox__icon">
+								  <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#check"></use>
+								</svg>
+								<span class="checkbox__text">Я согласен на обработку Персональных данных</span>
+							</span>
 						</label>
 					</div>
 					<div class="modal__content-item">

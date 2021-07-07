@@ -62,6 +62,11 @@ $(document).on('submit','#tq_auth_phone',function () {
     return false
 });
 
+
+$(document).on('click','#tq_form_registration .modal-registration__button-red',function () {
+	$('form#tq_form_registration').submit();
+});
+
 $('#tq_form_registration').on('submit', function (e) {
     const formData = new FormData(e.currentTarget);
     formData.append('captcha_word', $(this).find('[name="g-recaptcha-response"]').val());
@@ -95,6 +100,11 @@ $('#tq_form_registration').on('submit', function (e) {
     });
 
     return false
+});
+
+
+$(document).on('click','#tq_auth_email .modal-registration__button-red',function () {
+	$('form#tq_auth_email').submit();
 });
 
 $(document).on('submit','#tq_auth_email',function () {
