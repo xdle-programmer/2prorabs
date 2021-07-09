@@ -1,4 +1,6 @@
 extends ../templates/main
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
 
 block variables
     - var title = '2Прораба'
@@ -10,5 +12,220 @@ block content
         include ../blocks/mobile-header/mobile-header
         include ../blocks/header/header
 
-        .layout
-            div(style='width:100%;padding:50px;text-align:center;font-size:50px') Каталог
+
+        section.section.section--gray
+            .layout
+                include ../blocks/breadcrumbs/breadcrumbs
+                .catalog-category
+                    .catalog-category__filter
+                        .catalog-category__filter-header
+                            .catalog-category__filter-title Фильтры
+                            .catalog-category__filter-close
+                                +iconSvg('close','catalog-category__filter-close-icon')
+
+
+                        .catalog-category__filter-items.catalog-category__filter-items--only-mobile
+                            select.custom-select
+                                option(selected disabled hidden) Сортировка
+                                option Значение сортировки 1
+                                option Значение сортировки 2
+                                option Значение сортировки 3
+                                option Значение сортировки 4
+                                option Значение сортировки 5
+                                option Значение сортировки 6
+
+                        .catalog-category__filter-items.catalog-category__filter-items--only-mobile
+                            select.custom-select
+                                option(selected) Показать по 16
+                                option Показать по 24
+                                option Показать по 48
+
+
+                        .catalog-category__filter-items
+                            .catalog-category__filter-items-title Цена
+                            .catalog-category__filter-items-range
+                                .catalog-category__filter-items-range-item
+                                    .placeholder.placeholder--small
+                                        input(placeholder='От').input.input--small.placeholder__input
+                                        .placeholder__item От
+                                .catalog-category__filter-items-range-separator
+                                .catalog-category__filter-items-range-item
+                                    .placeholder.placeholder--small
+                                        input(placeholder='До').input.input--small.placeholder__input
+                                        .placeholder__item До
+
+
+                        .catalog-category__filter-items
+                            .catalog-category__filter-items-button
+                                .catalog-category__filter-items-button-text Название категории
+                                +iconSvg('arrow','catalog-category__filter-items-button-icon')
+                            .catalog-category__filter-list
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+
+                        .catalog-category__filter-items
+                            .catalog-category__filter-items-button
+                                .catalog-category__filter-items-button-text Название фильтра
+                                +iconSvg('arrow','catalog-category__filter-items-button-icon')
+                            .catalog-category__filter-list
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                        .catalog-category__filter-items
+                            .catalog-category__filter-items-button
+                                .catalog-category__filter-items-button-text Название фильтра
+                                +iconSvg('arrow','catalog-category__filter-items-button-icon')
+                            .catalog-category__filter-list
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+
+                        .catalog-category__filter-items
+                            .catalog-category__filter-items-button
+                                .catalog-category__filter-items-button-text Название категории
+                                +iconSvg('arrow','catalog-category__filter-items-button-icon')
+                            .catalog-category__filter-list
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+                                a(href='#').catalog-category__filter-list-item Название подкатегории
+
+                        .catalog-category__filter-items
+                            .catalog-category__filter-items-button
+                                .catalog-category__filter-items-button-text Название фильтра
+                                +iconSvg('arrow','catalog-category__filter-items-button-icon')
+                            .catalog-category__filter-list
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                        .catalog-category__filter-items
+                            .catalog-category__filter-items-button
+                                .catalog-category__filter-items-button-text Название фильтра
+                                +iconSvg('arrow','catalog-category__filter-items-button-icon')
+                            .catalog-category__filter-list
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                        .catalog-category__filter-items
+                            .catalog-category__filter-items-button
+                                .catalog-category__filter-items-button-text Название фильтра
+                                +iconSvg('arrow','catalog-category__filter-items-button-icon')
+                            .catalog-category__filter-list
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                                +checkbox('Значение фильтра')
+                        .catalog-category__filter-footer
+                            .catalog-category__filter-footer-button.button.button--small.button--fill.button--gray.button--invert Очистить
+                            .catalog-category__filter-footer-button.button.button--small.button--fill.button--gray Применить
+
+
+
+                    .catalog-category__items
+                        .catalog-category__items-header
+                            .catalog-category__items-header-title Название категории
+                            .catalog-category__items-header-filter
+                                +iconSvg('settings','catalog-category__items-header-filter-icon')
+                            .catalog-category__items-header-options
+                                .catalog-category__items-header-options-item
+                                    select.custom-select
+                                        option(selected disabled hidden) Сортировка
+                                        option Значение сортировки 1
+                                        option Значение сортировки 2
+                                        option Значение сортировки 3
+                                        option Значение сортировки 4
+                                        option Значение сортировки 5
+                                        option Значение сортировки 6
+                                .catalog-category__items-header-options-item
+                                    select.custom-select
+                                        option(selected) Показать по 16
+                                        option Показать по 24
+                                        option Показать по 48
+                        .catalog-category__items-grid
+                            .catalog-category__items-grid-item
+                                +productSingleNotLoad({
+                                    name: 'Водонагреватель thermex er 200v',
+                                    price: '40 606',
+                                    img: '/local/templates/stroygip/ts/images/examples/product-1.jpg',
+                                    rating: 0
+                                })
+                            .catalog-category__items-grid-item
+                                +productSingleNotLoad({
+                                    name: 'Водонагреватель thermex er 200v',
+                                    price: '40 606',
+                                    img: '/local/templates/stroygip/ts/images/examples/product-2.jpg',
+                                    rating: 0
+                                })
+                            .catalog-category__items-grid-item
+                                +productSingleNotLoad({
+                                    name: 'Водонагреватель thermex er 200v',
+                                    price: '40 606',
+                                    img: '/local/templates/stroygip/ts/images/examples/product-3.jpg',
+                                    rating: 0
+                                })
+                            .catalog-category__items-grid-item
+                                +productSingleNotLoad({
+                                    name: 'Водонагреватель thermex er 200v',
+                                    price: '40 606',
+                                    img: '/local/templates/stroygip/ts/images/examples/product-4.jpg',
+                                    rating: 0
+                                })
+                            .catalog-category__items-grid-item
+                                +productSingleNotLoad({
+                                    name: 'Водонагреватель thermex er 200v',
+                                    price: '40 606',
+                                    img: '/local/templates/stroygip/ts/images/examples/product-5.jpg',
+                                    rating: 0
+                                })
+                            .catalog-category__items-grid-item
+                                +productSingleNotLoad({
+                                    name: 'Водонагреватель thermex er 200v',
+                                    price: '40 606',
+                                    img: '/local/templates/stroygip/ts/images/examples/product-6.jpg',
+                                    rating: 0
+                                })
+                            .catalog-category__items-grid-item
+                                +productSingleNotLoad({
+                                    name: 'Водонагреватель thermex er 200v',
+                                    price: '40 606',
+                                    img: '/local/templates/stroygip/ts/images/examples/product-1.jpg',
+                                    rating: 0
+                                })
+                        .catalog-category__items-footer
+                            .catalog-category__items-footer-more
+                                .button Показать еще 16
+                            .catalog-category__items-footer-pagination
+                                include ../blocks/pagination/pagination
+        include ../blocks/footer/footer

@@ -1,51 +1,37 @@
-$(document).ready(function() {
+let catalogFilterButtons = Array.from(document.querySelectorAll('.catalog-category__filter-items-button'));
 
-    // Открытие фильтров
-    $('.catalog-category__category-name').click(function (){
-        $(this).toggleClass('catalog-category__category-name--active').next().slideToggle(100);
-    })
-    $('.catalog-category__see-all').click(function (){
-        $(this).toggleClass('catalog-category__see-all--active').prev($('.catalog-category__box-hidden')).slideToggle(100);
-    })
+if (catalogFilterButtons.length > 0) {
+    toggleCatalogFilter();
+    toggleFilter();
+}
 
+function toggleCatalogFilter() {
+    let $buttons = Array.from(document.querySelectorAll('.catalog-category__filter-items-button'));
+    let itemsActiveClass = 'catalog-category__filter-items--active'
 
-    // Показать и скрыть крестик в инпуте
-    $(".catalog-category__range-input").keypress(function() {
-        if($(this).val().length >= 0) {
-            $('.catalog-category__range-reset').show();
-        }
-    });
-    $(".catalog-category__range-input").keyup(function() {
-        if($(this).val().length <= 0) {
-            $('.catalog-category__range-reset').hide();
-        }
-    });
-    // Крестик удаляет содержимое инпута
-    $('.catalog-category__range-reset').click(function(){
-        $('.catalog-category__range-input').val('').change();
-    });
+    for (let $button of $buttons) {
+        $button.addEventListener('click', toggleFilter);
+    }
 
-    $('.catalog-category__button-filter').click(function (){
-        $('.catalog-category__bar').show();
-    })
-    $('.catalog-category__close').click(function (){
-        $('.catalog-category__bar').hide();
-    })
+    function toggleFilter(event) {
+        let $items = event.target.closest('.catalog-category__filter-items')
 
-    $( function() {
-        $( "#slider-range" ).slider({
-            range: true,
-            min: 0,
-            max: 500,
-            values: [ 75, 300 ],
-            slide: function( event, ui ) {
-                $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-            }
-        });
-        $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-            " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-    });
-    $( function() {
-        $( "#select1, #select2" ).selectmenu();
-    } );
-});
+        $items.classList.toggle(itemsActiveClass)
+
+    }
+}
+
+function toggleFilter() {
+    let $openButton = document.querySelector('.catalog-category__items-header-filter');
+    let $closeButton = document.querySelector('.catalog-category__filter-close');
+    let $wrapper = document.querySelector('.catalog-category__filter');
+    let activeClass = 'catalog-category__filter--active'
+
+    $openButton.addEventListener('click', toggleFilterClass);
+    $closeButton.addEventListener('click', toggleFilterClass);
+
+    function toggleFilterClass() {
+        $wrapper.classList.toggle(activeClass)
+
+    }
+}

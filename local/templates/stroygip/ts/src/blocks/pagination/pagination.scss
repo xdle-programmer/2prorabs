@@ -1,0 +1,105 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.pagination {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile-big-screen {
+      flex-direction: column;
+    }
+  }
+
+  &__prev {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 14px;
+    color: var(--black-color);
+
+    @include mobile-big-screen {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+  }
+
+  &__next {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    font-size: 14px;
+    color: var(--black-color);
+
+    @include mobile-big-screen {
+      margin-left: 10px;
+      font-size: 12px;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--black-color);
+  }
+
+  &__pages {
+    display: flex;
+  }
+
+  &__icon-prev {
+    margin-right: 8px;
+    transform: scaleX(-1);
+
+    @include mobile-big-screen {
+      margin-right: 5px;
+    }
+  }
+
+  &__icon-next {
+    margin-left: 8px;
+
+    @include mobile-big-screen {
+      margin-left: 5px;
+    }
+  }
+
+  &__button {
+    margin-left: 5px;
+
+    &:last-child {
+      margin-left: 0;
+    }
+
+    font-size: 14px;
+    color: var(--black-color);
+    @include flex-row-center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+
+    &.active {
+      font-weight: 500;
+      color: #fff;
+      background: var(--black-color);
+    }
+
+    @include mobile-big-screen {
+      width: 25px;
+      height: 25px;
+      font-size: 12px;
+    }
+  }
+
+  &__info {
+    font-size: 14px;
+    color: rgba(47, 49, 55, 0.6);
+
+    @include mobile-big-screen {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  }
+}

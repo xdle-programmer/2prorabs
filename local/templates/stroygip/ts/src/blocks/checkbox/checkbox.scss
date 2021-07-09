@@ -34,6 +34,7 @@
 
   &__text {
     @include unselectable;
+    color: var(--black-color);
 
     &:before {
 

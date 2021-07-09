@@ -10,6 +10,7 @@
   $not-empty: '.placeholder--not-empty';
   $error: '.form-check__error--show';
   $search: '.main-banner__search';
+  $small: '.placeholder--small';
 
   &__item {
     color: var(--gray-color);
@@ -27,6 +28,10 @@
     opacity: 0;
     visibility: hidden;
     z-index: 101;
+
+    #{$small} & {
+      transform: translateY(12px) scale(1);
+    }
 
     #{$search} & {
       font-size: 20px;
@@ -51,6 +56,10 @@
     #{$search} #{$not-empty} & {
       transform: translateY(-2px) scale(.75);
       font-weight: 400;
+    }
+
+    #{$small}#{$not-empty} & {
+      transform: translateY(-2px) scale(.75);
     }
 
     #{$error} & {

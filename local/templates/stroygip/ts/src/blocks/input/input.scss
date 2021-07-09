@@ -19,6 +19,10 @@
   color: var(--black-color);
   transition: none !important;
 
+  &--small {
+    height: 46px;
+  }
+
   @include tablet-big-screen {
     height: 40px;
   }

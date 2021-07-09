@@ -83,3 +83,45 @@ mixin productSingle(options)
                     +iconSvg('favorite','product-cart__button-img product-cart__button-img--favorite')
                 .product-cart__button.product-cart__button--basket
                     +iconSvg('basket','product-cart__button-img product-cart__button-img--basket')
+
+mixin productSingleNotLoad(options)
+    -let name = options.name
+    -let price = options.price
+    -let img = options.img
+    -let rating = options.rating
+
+
+
+    .previews-slider__item.product-cart.preload__area
+        .product-cart__block
+            .product-cart__name=name
+            .product-cart__reviews
+
+                if rating === 0
+                    +rating0
+                else if rating === 1
+                    +rating1
+                else if rating === 2
+                    +rating2
+                else if rating === 3
+                    +rating3
+                else if rating === 4
+                    +rating4
+                else if rating === 5
+                    +rating5
+            img(src=img).product-cart__img.preload__item
+            .product-cart__price
+                .product-cart__price-number=price
+                .product-cart__price-currency сом
+            .product-cart__code Артикул: 90553057
+            .product-cart__counter
+                .product-cart__counter-button.product-cart__counter-button--minus
+                .product-cart__counter-value 1
+                .product-cart__counter-button.product-cart__counter-button--plus
+            .product-cart__buttons
+                .product-cart__button
+                    +iconSvg('compare','product-cart__button-img product-cart__button-img--compare')
+                .product-cart__button
+                    +iconSvg('favorite','product-cart__button-img product-cart__button-img--favorite')
+                .product-cart__button.product-cart__button--basket
+                    +iconSvg('basket','product-cart__button-img product-cart__button-img--basket')

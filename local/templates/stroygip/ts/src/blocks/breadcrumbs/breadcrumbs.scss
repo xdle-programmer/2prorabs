@@ -1,37 +1,37 @@
-//@import "~frontend-scss-mixins/mixins";
-//@import "../base/mixins";
-//@import "../base/variables";
-//@import "../base/media-queries";
-//
-//
-//.breadcrumbs {
-//  padding: 32px 0;
-//
-//  &__inner {
-//    //display: flex;
-//    //align-items: center;
-//    //flex-wrap: wrap;
-//  }
-//
-//  &__separator {
-//    margin: 0 15px;
-//    display: block;
-//    width: 7px;
-//    height: 11px;
-//    fill: #2f3137;
-//  }
-//
-//  &__link {
-//    font-size: 14px;
-//    color: var(--red-color);
-//
-//    &:hover {
-//      color: #2f428c;
-//    }
-//
-//    &--active {
-//      color: var(--dark-blue-color);
-//      cursor: default;
-//    }
-//  }
-//}
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+
+.breadcrumb {
+  padding: 30px 0;
+  @include flex-row;
+  align-items: center;
+  flex-wrap: wrap;
+
+
+  &__item {
+    color: var(--black-color);
+
+    &:hover {
+      color: var(--blue-color);
+    }
+
+    &--active {
+      color: var(--gray-color);
+
+      &:hover {
+        color: var(--gray-color);
+      }
+    }
+  }
+
+  &__separator {
+    width: 8px;
+    height: 8px;
+    display: block;
+    margin: 0 5px;
+    fill: var(--gray-color);
+  }
+}
