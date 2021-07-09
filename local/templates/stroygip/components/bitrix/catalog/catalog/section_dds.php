@@ -22,8 +22,8 @@ $sortItems = \nav\Catalog\Sort::getTemplateData();
 $currentPageSize = \nav\Catalog\PageSize::getCurrent();
 $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 ?>
-    <section class="catalog-category">
-        <div class="container">
+    <section class="section section--gray catalog-category">
+        <div class="layout">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:breadcrumb",
                 "bread",

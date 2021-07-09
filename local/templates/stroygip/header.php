@@ -168,7 +168,7 @@ global $USER;
         </div>
 
 
-        <div class="menu__block preload <? if ($APPLICATION->GetCurPage() == "/"): ?>preload--not-ready<? endif; ?>" data-menu-name="main">
+        <div class="menu__block preload preload--not-ready" data-menu-name="main">
             <div class="menu__inner">
                 <div class="menu__inner-name">Каталог</div>
             </div>

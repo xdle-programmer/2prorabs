@@ -37,6 +37,7 @@ const catalogSlider = () => {
         controls: false,
         nav: false,
         onInit: (event) => {
+            document.querySelector('.header__catalog-slider-wrapper').classList.add('header__catalog-slider-wrapper--active');
         },
         responsive: {
             1720: {

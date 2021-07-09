@@ -288,7 +288,7 @@
     cursor: pointer;
   }
 
-  $catalog-button-hover:'.header__catalog-button:hover';
+  $catalog-button-hover: '.header__catalog-button:hover';
 
   &__catalog-button-icon {
     width: 20px;
@@ -320,6 +320,11 @@
     width: 1065px;
     height: 44px;
     position: relative;
+    opacity: 0;
+
+    &--active {
+      opacity: 1;
+    }
 
     @include desktop-small-screen {
       width: 735px;
