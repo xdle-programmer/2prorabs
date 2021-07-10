@@ -1,0 +1,74 @@
+include ../../blocks/rating/rating
+
+.product-page
+
+    .product-page__main-product
+
+        .product-page__preview-wrapper
+
+            .product-page__preview
+                .product-page__preview-header
+                    .product-page__rating-box
+                        +rating4
+
+                    .product-page__select-box
+
+                .product-page__main-image-box
+                    img(src='local/templates/stroygip/ts/images/examples/product-page/1.jpg').product-page__main-image
+                    .product-page__mark
+                        +iconSvg('sale','product-page__mark-icon')
+                        .product-page__mark-text Скидка 15%
+
+        .product-page__about
+            .product-page__title Рулетка professional измерительная 25мм 10м
+            .product-page__code Артикул: 30361709
+
+            .product-page__buttons.product-cart__buttons
+                .product-cart__button
+                    +iconSvg('compare','product-cart__button-img product-cart__button-img--compare')
+                .product-cart__button
+                    +iconSvg('favorite','product-cart__button-img product-cart__button-img--favorite')
+
+
+            .product-page__price-block
+                .product-page__price-block-item
+                    .product-page__price-number 1 233
+                    .product-page__price-currency сом/шт.
+
+                .product-page__price-block-count
+                    .product-page__counter(data-counter-max='5' data-price='1233')
+                        .product-page__counter-button.product-page__counter-button--minus
+                        .product-page__counter-value 1
+                        .product-page__counter-button.product-page__counter-button--plus
+                    .product-page__price-block-count-price
+                        .product-page__price-block-count-price-number 1 233
+                        .product-page__price-block-count-price-currency сом
+
+            //.product-page__sum
+            //    .product-page__sum-icon#minusSum -
+            //    input.product-page__sum-input#calculatorSum(type="text" value="1")
+            //    .product-page__sum-icon#plusSum +
+            //
+            //.product-page__price-box
+            //    .product-page__discount
+            //        | 4 812
+            //        span.product-page__discount-prefix com
+            //    .product-page__price
+            //        | 4 812
+            //        span.product-page__price-prefix com
+            //.product-page__nds 4 300 сом/шт без НДС
+            //.product-page__buttons
+            //    a(href="#").button.button--red.button--medium-style.product-page__button#basketOrder В корзину
+            //    a(href="#").button.button--white-red.button--medium-style.product-page__button Быстрый заказ
+            //
+            //.product-page__availability-box
+            //    .product-page__item-availability
+            //        .product-page__item-availability-icon
+            //            img(src="/src/images/icons/availability.svg")
+            //        | В наличии:
+            //        a.product-page__item-availability-link(href="#") в 2 магазинах
+            //    .product-page__item-availability
+            //        .product-page__item-availability-icon
+            //            img(src="/src/images/icons/courier.svg")
+            //        | Доставка курьером:
+            //        a.product-page__item-availability-courier 4 августа
