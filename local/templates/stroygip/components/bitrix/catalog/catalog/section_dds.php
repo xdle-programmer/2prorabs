@@ -58,12 +58,18 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
                         "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
                         "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
                         "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
+						"SORT1_DATA" => $sortItems,
+						"SHOW1_DATA" => $pageSizeItems,
                     ),
                     $component,
                     array('HIDE_ICONS' => 'Y')
                 );?>
                 <?}?>
-
+				
+				<!--b><?//print_r($_SESSION);?></b-->
+				<!--b><?//print_r($sortItems);?></b-->
+				<!--b><?//print_r($currentSort);?></b-->
+				
                 <div class="catalog-category__items">
 				
 					<div class="catalog-category__items-header">
@@ -76,7 +82,7 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 						<div class="catalog-category__items-header-options">
 							<form class="catalog-category__select-form" action="#">
 								<div class="catalog-category__items-header-options-item">
-									<select class="custom-select">
+									<select class="custom-select catalog-sort__select" name="sort">
 										<option selected disabled hidden>Сортировка</option>
 										<? foreach ($sortItems as $item): ?>
 										<option value="<?=$item['CODE']?>" <?if ($item['ACTIVE'] === 'Y'):?>selected="selected"<?endif;?>><?=$item['NAME']?></option>
@@ -84,7 +90,7 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 									</select>
 								</div>
 								<div class="catalog-category__items-header-options-item">
-									<select class="custom-select">
+									<select class="custom-select catalog-page-size__select" name="pageSize">
 										<? foreach ($pageSizeItems as $item): ?>
 										<option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показать по <?=$item['NAME']?></option>
 										<? endforeach; ?>

@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-
 <div class="catalog-category__filter">
 	<div class="catalog-category__filter-header">
 		<div class="catalog-category__filter-title">Фильтры</div>
@@ -22,26 +21,25 @@ $this->setFrameMode(true);
 			</svg>
 		</div>
 	</div> 
+
 	<div class="catalog-category__filter-items catalog-category__filter-items--only-mobile">
-		<select class="custom-select">
+		<select class="custom-select" name="sort">
 			<option selected disabled hidden>Сортировка</option>
-			<option>Значение сортировки 1</option>
-			<option>Значение сортировки 2</option>
-			<option>Значение сортировки 3</option>
-			<option>Значение сортировки 4</option>
-			<option>Значение сортировки 5</option>
-			<option>Значение сортировки 6</option>
+			<?foreach($arParams["SORT1_DATA"] as $item):?>
+			<option value="<?=$item['CODE']?>" <?if ($item['ACTIVE'] === 'Y'):?>selected="selected"<?endif;?>><?=$item['NAME']?></option>
+			<?endforeach;?>
 		</select>
 	</div>
 	<div class="catalog-category__filter-items catalog-category__filter-items--only-mobile">
-		<select class="custom-select">
-			<option selected>Показать по 16</option>
-			<option>Показать по 24</option>
-			<option>Показать по 48</option>
+		<select class="custom-select" name="pageSize">
+			<?foreach($arParams["SHOW1_DATA"] as $item):?>
+			<option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показать по <?=$item['NAME']?></option>
+			<?endforeach;?>
 		</select>
 	</div>
 	
 	<form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get" class="smartfilter">
+	
 	    <?foreach($arResult["HIDDEN"] as $arItem):?>
             <input type="hidden" name="<?echo $arItem["CONTROL_NAME"]?>" id="<?echo $arItem["CONTROL_ID"]?>" value="<?echo $arItem["HTML_VALUE"]?>" />
         <?endforeach;?>
@@ -149,8 +147,16 @@ $this->setFrameMode(true);
 				echo "&nbsp;";
 			}else{
 				$cnt = 0;
+				
+				$property_display_expanded = false;
+				foreach ($arItem["VALUES"] as $key1=>$val1):
+					if( $val1["CHECKED"] == "1" ){
+						$property_display_expanded = true;
+						break;
+					}
+				endforeach;
 			?>
-		<div class="catalog-category__filter-items">
+		<div class="catalog-category__filter-items<?if($property_display_expanded):?> catalog-category__filter-items--active <?endif;?>">
 			<div class="catalog-category__filter-items-button">
 				<div class="catalog-category__filter-items-button-text"><?=$arItem['NAME']?></div>
 				<svg class="catalog-category__filter-items-button-icon">
