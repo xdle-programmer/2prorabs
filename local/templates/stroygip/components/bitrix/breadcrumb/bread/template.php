@@ -14,7 +14,7 @@ if(empty($arResult))
 $strReturn = '';
 
 //we can't use $APPLICATION->SetAdditionalCSS() here because we are inside the buffered function GetNavChain()
-$strReturn .= '<div class="breadcrumbs"><div class="breadcrumbs__inner">';
+$strReturn .= '<div class="breadcrumb">';
 
 $itemSize = count($arResult);
 for($index = 0; $index < $itemSize; $index++)
@@ -24,14 +24,17 @@ for($index = 0; $index < $itemSize; $index++)
 
 	if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1)
 	{
-		$strReturn .= $arrow.'<a class="breadcrumbs__link" href="'.$arResult[$index]["LINK"].'">'.$title.'</a>';
+		$strReturn .= '<a class="breadcrumb__item" href="'.$arResult[$index]["LINK"].'">'.$title.'</a>
+		<svg class="breadcrumb__separator">
+            <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+        </svg>';
 	}
 	else
 	{
-        $strReturn .= $arrow.'<a class="breadcrumbs__link active" href="'.$arResult[$index]["LINK"].'">'.$title.'</a>';
+        $strReturn .= '<div class="breadcrumb__item breadcrumb__item--active">'.$title.'</div>';
 	}
 }
 
-$strReturn .= '</div></div>';
+$strReturn .= '</div>';
 
 return $strReturn;
