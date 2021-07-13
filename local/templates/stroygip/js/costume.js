@@ -88,7 +88,31 @@ function dataShowMore() {
 }
 
 
-
+function orderHelpCall() {
+	var user_name = document.getElementById('ohf_name').value;
+	var user_contact = document.getElementById('ohf_mailphone').value;
+		
+	if( user_name.length <= 0 || user_contact.length <= 0 ){
+		console.log('empty fields');
+	}else{
+		var params = "name="+user_name+"&mail_phone="+user_contact;
+		
+		var request = new XMLHttpRequest();
+		request.open('POST', '/local/public/call_me2.php', true);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4 && request.status == 200) {
+				//console.log(request.responseText);
+				document.getElementById('ohf_name').value = '';
+				document.getElementById('ohf_mailphone').value = '';
+			}
+		}
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.send(params);
+	}
+}
+	
+	
+	
 function ajaxUpdate(){
     $.get( "/local/templates/stroygip/ajax/basketupdate.php", function( data ) {
         $('#basket').html(data);

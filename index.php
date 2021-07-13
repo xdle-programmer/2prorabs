@@ -429,7 +429,7 @@ $APPLICATION->IncludeComponent(
 						<div class="placeholder__item">Телефон или емейл</div>
 					</div>
 				</div>
-				<div id="order_help_call" class="lead__form-input-block">
+				<div onclick="orderHelpCall()" id="order_help_call" class="lead__form-input-block">
 					<div id="order_help_button" class="lead__form-button form-check__button">Отправить</div>
 				</div>
 			</div>
