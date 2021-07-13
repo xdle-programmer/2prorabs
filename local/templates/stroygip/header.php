@@ -30,11 +30,6 @@ global $USER;
 
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 
-
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/libs.js");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/main.js");
-
-
     Asset::getInstance()->addJs('https://www.google.com/recaptcha/api.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/costume.js");
     ?>

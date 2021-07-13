@@ -359,31 +359,5 @@
 })();
 
 
-$(document).ready(function(){
-	
-	$(document).on('click','.imp-item-button-quantity .imp-item-quantity-minus, .imp-item-button-quantity .imp-item-quantity-plus',function(){
-		var e_change = $(this).attr('data-action');
-		var e_id = $(this).attr('data-id');
-		var e_qnt, e_qnt2;
-		
-		if( e_change == "minus" ){
-			e_qnt = parseInt( $(this).next().attr('data-qnt') );
-			if( e_qnt > 1 ){
-				e_qnt2 = e_qnt - 1;
-				$(this).next().attr('data-qnt', e_qnt2).html( e_qnt2 );
-			}
-		}
-
-		if( e_change == "plus" ){
-			e_qnt = parseInt( $(this).prev().attr('data-qnt') );
-
-			e_qnt2 = e_qnt + 1;
-			$(this).prev().attr('data-qnt', e_qnt2).html( e_qnt2 );
-		}
-		
-	});
-	
-});
-
 
 

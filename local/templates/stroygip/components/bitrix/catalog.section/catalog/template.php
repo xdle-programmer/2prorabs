@@ -70,7 +70,7 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 					<div class="product-cart__price-currency">сом</div>
 				</div>
 				<div class="product-cart__code">Артикул: <?=$arItem['PROPERTIES']['ART_NUMBER']['VALUE']?></div>
-				<div class="product-cart__counter">
+				<div class="product-cart__counter" data-counter-max="<?=$arItem["PRODUCT"]["QUANTITY"]?>">
 					<div class="product-cart__counter-button product-cart__counter-button--minus"></div>
 					<div class="product-cart__counter-value">1</div>
 					<div class="product-cart__counter-button product-cart__counter-button--plus"></div>
