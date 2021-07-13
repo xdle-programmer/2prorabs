@@ -37,27 +37,27 @@ Asset::getInstance()->addJs($templateFolder . "/script.js");
 				<div class="modal__content-items">
 					<div class="modal__content-item">
 						<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-							<input class="input placeholder__input" placeholder="Ваш e-mail" type="email" id="input-email" name="EMAIL" required>
-							<div class="placeholder__item" for="input-email">Ваш e-mail</div>
+							<input class="input placeholder__input" placeholder="Ваш e-mail" type="email" id="input-auth-email" name="EMAIL" required>
+							<div class="placeholder__item" for="input-auth-email">Ваш e-mail</div>
 						</div>
 					</div>
 					<div class="modal__content-item">
 						<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-							<input class="input placeholder__input" placeholder="Пароль" type="password" id="input-phone4" name="PASSWORD" required>
-							<div class="placeholder__item" for="input-phone4">Пароль</div>
+							<input class="input placeholder__input" placeholder="Пароль" type="password" id="input-auth-password" name="PASSWORD" required>
+							<div class="placeholder__item" for="input-auth-password">Пароль</div>
 						</div>
 					</div>
 					<div class="input-styled input-styled--indent">
 						<div class="g-recaptcha" data-sitekey="6LdOWNYZAAAAAHiY6FC-IrK-hDGYlekgyVq3MLoj"></div>
 					</div>
-					<div class="tq_error"></div>
+					<div class="tq_error tq_error_auth"></div>
 					<div class="modal__content-item">
 						<div class="modal__link">Не помню пароль</div>
 					</div>
 					<div class="modal__content-item">
 						<div class="modal__two-buttons">
-							<div class="modal__button button button--invert" data-modal-open='register'>Зарегистрироваться</div>
-							<div class="modal__button button button--invert form-check__button  modal-registration__button-red">Войти</div>
+							<div onclick="modalUserReg()" class="modal__button button button--invert" data-modal-open='register'>Зарегистрироваться</div>
+							<div onclick="modalUserAuth()" class="modal__button button button--invert form-check__button  modal-registration__button-red">Войти</div>
 						</div>
 					</div>
 				</div>
@@ -110,7 +110,7 @@ Asset::getInstance()->addJs($templateFolder . "/script.js");
 					<div class="input-styled input-styled--indent">
 						<div class="g-recaptcha" data-sitekey="6LdOWNYZAAAAAHiY6FC-IrK-hDGYlekgyVq3MLoj"></div>
 					</div>
-					<div class="tq_error"></div>
+					<div class="tq_error tq_error_reg"></div>
 					<div class="modal__content-item">
 						<label class="checkbox">
 							<input class="checkbox__input" type="checkbox" name="confirm" value="1">

@@ -103,6 +103,27 @@ $('#tq_form_registration').on('submit', function (e) {
 });
 
 
+
+
+function modalUserAuth() {
+	let email = document.getElementById('input-auth-email').value,
+	password = document.getElementById('input-auth-password').value,
+	captcha_word = document.querySelector("textarea[name='g-recaptcha-response']").value;
+
+	BX.ajax.runComponentAction('2quick:tq_auth',
+		'Auth', {
+			mode: 'class',
+			data: {email: email,password:password,captcha_word:captcha_word},
+	}).then(function (response) {
+		if (response.data.STATUS === 'SUCCESS') {
+			location.reload();
+		} else {
+			var d1 = document.querySelector('div.tq_error_auth');
+			d1.innerHTML = response.data.MESSAGE;
+		}
+	});
+}
+
 $(document).on('click','#tq_auth_email .modal-registration__button-red',function () {
 	$('form#tq_auth_email').submit();
 });
