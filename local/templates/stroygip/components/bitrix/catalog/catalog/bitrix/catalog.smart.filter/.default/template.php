@@ -22,21 +22,6 @@ $this->setFrameMode(true);
 		</div>
 	</div> 
 
-	<div class="catalog-category__filter-items catalog-category__filter-items--only-mobile">
-		<select class="custom-select" name="sort">
-			<option selected disabled hidden>Сортировка</option>
-			<?foreach($arParams["SORT1_DATA"] as $item):?>
-			<option value="<?=$item['CODE']?>" <?if ($item['ACTIVE'] === 'Y'):?>selected="selected"<?endif;?>><?=$item['NAME']?></option>
-			<?endforeach;?>
-		</select>
-	</div>
-	<div class="catalog-category__filter-items catalog-category__filter-items--only-mobile">
-		<select class="custom-select" name="pageSize">
-			<?foreach($arParams["SHOW1_DATA"] as $item):?>
-			<option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показать по <?=$item['NAME']?></option>
-			<?endforeach;?>
-		</select>
-	</div>
 	
 	<form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get" class="smartfilter">
 	
@@ -44,6 +29,23 @@ $this->setFrameMode(true);
             <input type="hidden" name="<?echo $arItem["CONTROL_NAME"]?>" id="<?echo $arItem["CONTROL_ID"]?>" value="<?echo $arItem["HTML_VALUE"]?>" />
         <?endforeach;?>
 		
+		
+		<div class="catalog-category__filter-items catalog-category__filter-items--only-mobile">
+			<select class="custom-select" name="sort">
+				<option selected disabled hidden>Сортировка</option>
+				<?foreach($arParams["SORT1_DATA"] as $item):?>
+				<option value="<?=$item['CODE']?>" <?if ($item['ACTIVE'] === 'Y'):?>selected="selected"<?endif;?>><?=$item['NAME']?></option>
+				<?endforeach;?>
+			</select>
+		</div>
+		<div class="catalog-category__filter-items catalog-category__filter-items--only-mobile">
+			<select class="custom-select" name="pageSize">
+				<?foreach($arParams["SHOW1_DATA"] as $item):?>
+				<option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показать по <?=$item['NAME']?></option>
+				<?endforeach;?>
+			</select>
+		</div>
+	
 		<?foreach($arResult["ITEMS"] as $key=>$arItem):?>
 			<?
 		    $key = $arItem["ENCODED_ID"];
