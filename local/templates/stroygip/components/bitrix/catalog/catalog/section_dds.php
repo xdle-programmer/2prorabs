@@ -66,10 +66,6 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
                 );?>
                 <?}?>
 				
-				<!--b><?//print_r($_SESSION);?></b-->
-				<!--b><?//print_r($sortItems);?></b-->
-				<!--b><?//print_r($currentSort);?></b-->
-				
                 <div class="catalog-category__items">
 				
 					<div class="catalog-category__items-header">
@@ -237,6 +233,7 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
         </div>
     </section>
 <?
+/*
 global $arrRecFilter;
 $arrRecFilter['PROPERTY_RECOMEND_VALUE'] = 'Y';
 $arrRecFilter['>CATALOG_PRICE_1'] = 0;
@@ -369,4 +366,5 @@ $APPLICATION->IncludeComponent(
     ),
     $component
 );
+*/
 ?>

@@ -21,16 +21,24 @@ $APPLICATION->SetPageProperty('h1','Акции');
 $APPLICATION->AddChainItem("Акции", $APPLICATION->GetCurPage());
 
 $GLOBALS['arrSaleFilter'] = ['PROPERTY_MARK' => \site\PRODUCT_MARK_PROMO];
+
+\nav\Catalog\Sort::setFromRequest();
+$currentSort = \nav\Catalog\Sort::getCurrent();
+$sortItems = \nav\Catalog\Sort::getTemplateData();
+
+\nav\Catalog\PageSize::setFromRequest();
+$currentPageSize = \nav\Catalog\PageSize::getCurrent();
+$pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 ?>
-    <section class="catalog-category">
-        <div class="container">
+    <section class="section section--gray">
+        <div class="layout">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:breadcrumb",
                 "bread",
                 Array(),
                 false
             );?>
-            <div class="catalog-category__grid">
+            <div class="catalog-category">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:catalog.smart.filter",
                         "",
@@ -57,23 +65,46 @@ $GLOBALS['arrSaleFilter'] = ['PROPERTY_MARK' => \site\PRODUCT_MARK_PROMO];
                             "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
                             "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
                             "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
+							"SORT1_DATA" => $sortItems,
+							"SHOW1_DATA" => $pageSizeItems,
                             "SHOW_ALL_WO_SECTIONS" => 'Y',
                         ),
                         $component,
                         array('HIDE_ICONS' => 'Y')
                     );?>
-                <div class="catalog-category__content">
-                    <div class="catalog-category__title"><?=$APPLICATION->ShowTitle(false)?></div>
-                    <!--<div class="catalog-category__select-box">
-                        <select class="js-select-slider" name="state">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">WYabama</option>
-                        </select>
-                        <select class="js-select-slider" name="state">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">WYabama</option>
-                        </select>
-                    </div>-->
+					
+					
+                <div class="catalog-category__items">
+				
+					<div class="catalog-category__items-header">
+						<div class="catalog-category__items-header-title"><?=$APPLICATION->ShowTitle(false)?></div>
+						
+						<div class="catalog-category__items-header-filter">
+							<svg class="catalog-category__items-header-filter-icon">
+								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#settings"></use>
+							</svg>
+						</div>
+						<div class="catalog-category__items-header-options">
+							<form class="catalog-category__select-form" action="#">
+								<div class="catalog-category__items-header-options-item">
+									<select onchange="catalogSort()" id="catalog-sort-select" class="custom-select" name="sort">
+										<option selected disabled hidden>Сортировка</option>
+										<? foreach ($sortItems as $item): ?>
+										<option value="<?=$item['CODE']?>" <?if ($item['ACTIVE'] === 'Y'):?>selected="selected"<?endif;?>><?=$item['NAME']?></option>
+										<? endforeach; ?>
+									</select>
+								</div>
+								<div class="catalog-category__items-header-options-item">
+									<select onchange="catalogPageSize()" id="catalog-pagesize-select" class="custom-select" name="pageSize">
+										<? foreach ($pageSizeItems as $item): ?>
+										<option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показать по <?=$item['NAME']?></option>
+										<? endforeach; ?>
+									</select>
+								</div>
+							</form>
+						</div>
+						
+					</div>
 
                     <?
                     $GLOBALS[$arParams["FILTER_NAME"]]['>CATALOG_PRICE_1'] = 0;
@@ -84,8 +115,8 @@ $GLOBALS['arrSaleFilter'] = ['PROPERTY_MARK' => \site\PRODUCT_MARK_PROMO];
                             "AJAX_MODE"=>'Y',
                             "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
                             "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-                            "ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
-                            "ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
+                            "ELEMENT_SORT_FIELD" => $currentSort['FIELD'][0],
+                            "ELEMENT_SORT_ORDER" => $currentSort['ORDER'][0],
                             "ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
                             "ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
                             "PROPERTY_CODE" => $arParams["LIST_PROPERTY_CODE"],
@@ -112,7 +143,7 @@ $GLOBALS['arrSaleFilter'] = ['PROPERTY_MARK' => \site\PRODUCT_MARK_PROMO];
                             "SHOW_404" => $arParams["SHOW_404"],
                             "FILE_404" => $arParams["FILE_404"],
                             "DISPLAY_COMPARE" => $arParams["USE_COMPARE"],
-                            "PAGE_ELEMENT_COUNT" => $arParams["PAGE_ELEMENT_COUNT"],
+                            "PAGE_ELEMENT_COUNT" => $currentPageSize, //$arParams["PAGE_ELEMENT_COUNT"],
                             "LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
                             "PRICE_CODE" => $arParams["~PRICE_CODE"],
                             "USE_PRICE_COUNT" => $arParams["USE_PRICE_COUNT"],
@@ -212,6 +243,7 @@ $GLOBALS['arrSaleFilter'] = ['PROPERTY_MARK' => \site\PRODUCT_MARK_PROMO];
         </div>
     </section>
 <?
+/*
 global $arrRecFilter;
 $arrRecFilter['PROPERTY_RECOMEND_VALUE'] = 'Y';
 $arrRecFilter['>CATALOG_PRICE_1'] = 0;
@@ -344,4 +376,5 @@ $APPLICATION->IncludeComponent(
     ),
     $component
 );
+*/
 ?>
