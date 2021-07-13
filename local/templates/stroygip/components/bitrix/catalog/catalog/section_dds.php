@@ -82,7 +82,7 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 						<div class="catalog-category__items-header-options">
 							<form class="catalog-category__select-form" action="#">
 								<div class="catalog-category__items-header-options-item">
-									<select class="custom-select catalog-sort__select" name="sort">
+									<select onchange="catalogSort()" id="catalog-sort-select" class="custom-select" name="sort">
 										<option selected disabled hidden>Сортировка</option>
 										<? foreach ($sortItems as $item): ?>
 										<option value="<?=$item['CODE']?>" <?if ($item['ACTIVE'] === 'Y'):?>selected="selected"<?endif;?>><?=$item['NAME']?></option>
@@ -90,7 +90,7 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 									</select>
 								</div>
 								<div class="catalog-category__items-header-options-item">
-									<select class="custom-select catalog-page-size__select" name="pageSize">
+									<select onchange="catalogPageSize()" id="catalog-pagesize-select" class="custom-select" name="pageSize">
 										<? foreach ($pageSizeItems as $item): ?>
 										<option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показать по <?=$item['NAME']?></option>
 										<? endforeach; ?>
