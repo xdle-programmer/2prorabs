@@ -72,21 +72,21 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 				<div class="product-cart__code">Артикул: <?=$arItem['PROPERTIES']['ART_NUMBER']['VALUE']?></div>
 				<div class="product-cart__counter" data-counter-max="<?=$arItem["PRODUCT"]["QUANTITY"]?>">
 					<div class="product-cart__counter-button product-cart__counter-button--minus"></div>
-					<div class="product-cart__counter-value">1</div>
+					<div id="item_<?=$arItem['ID']?>_qnt" class="product-cart__counter-value">1</div>
 					<div class="product-cart__counter-button product-cart__counter-button--plus"></div>
 				</div>
 				<div class="product-cart__buttons">
-					<div class="product-cart__button">
+					<div onclick="catalogAction('COMPARE', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--compare<?if( in_array($arItem['ID'], $_SESSION['COMPARE']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arItem['ID']?>" data-action="COMPARE">
 						<svg class="product-cart__button-img product-cart__button-img--compare">
 							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#compare"></use>
 						</svg>
 					</div>
-					<div class="product-cart__button">
+					<div onclick="catalogAction('FAVORITES', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--favorite<?if( in_array($arItem['ID'], $_SESSION['FAVORITES']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arItem['ID']?>" data-action="FAVORITES">
 						<svg class="product-cart__button-img product-cart__button-img--favorite">
 							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#favorite"></use>
 						</svg>
 					</div>
-					<div class="product-cart__button product-cart__button--basket">
+					<div onclick="catalogAction('add2basket', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--basket<?if( in_array($arItem['ID'], $_SESSION['BASKET_LIST']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arItem['ID']?>" data-action="add2basket">
 						<svg class="product-cart__button-img product-cart__button-img--basket">
 							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#basket"></use>
 						</svg>

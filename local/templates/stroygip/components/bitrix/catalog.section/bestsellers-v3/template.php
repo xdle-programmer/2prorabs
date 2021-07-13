@@ -104,17 +104,17 @@ $this->setFrameMode(true);?>
 							<div class="product-cart__counter-button product-cart__counter-button--plus"></div>
 						</div>
 						<div class="product-cart__buttons">
-							<div class="product-cart__button <?if( in_array($arElement['ID'], $_SESSION['COMPARE']) ):?>product-cart__button--active<?endif;?>" data-action="<?=$comp_action?>" data-id="<?=$arElement['ID']?>" data-add="COMPARE">
+							<div onclick="catalogAction('COMPARE', <?=$arElement['ID']?>)" class="product-cart__button product-cart__button--compare<?if( in_array($arElement['ID'], $_SESSION['COMPARE']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arElement['ID']?>" data-action="COMPARE">
 								<svg class="product-cart__button-img product-cart__button-img--compare">
 									<use xlink:href="<?=SITE_TEMPLATE_PATH?>/ts/images/icons/icons-sprite.svg#compare"></use>
 								</svg>
 							</div>
-							<div class="product-cart__button <?if( in_array($arElement['ID'], $_SESSION['FAVORITES']) ):?>product-cart__button--active<?endif;?>" data-action="<?=$fav_action?>" data-id="<?=$arElement['ID']?>" data-add="FAVORITES">
+							<div onclick="catalogAction('FAVORITES', <?=$arElement['ID']?>)" class="product-cart__button product-cart__button--favorite<?if( in_array($arElement['ID'], $_SESSION['FAVORITES']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arElement['ID']?>" data-action="FAVORITES">
 								<svg class="product-cart__button-img product-cart__button-img--favorite">
 									<use xlink:href="<?=SITE_TEMPLATE_PATH?>/ts/images/icons/icons-sprite.svg#favorite"></use>
 								</svg>
 							</div>
-							<div class="product-cart__button product-cart__button--basket <?if( in_array($arElement['ID'], $_SESSION['BASKET_LIST']) ):?>product-cart__button--active<?endif;?>" data-action="add2basket" data-id="<?=$arElement['ID']?>">
+							<div onclick="catalogAction('add2basket', <?=$arElement['ID']?>)" class="product-cart__button product-cart__button--basket <?if( in_array($arElement['ID'], $_SESSION['BASKET_LIST']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arElement['ID']?>" data-action="add2basket">
 								<svg class="product-cart__button-img product-cart__button-img--basket">
 									<use xlink:href="<?=SITE_TEMPLATE_PATH?>/ts/images/icons/icons-sprite.svg#basket"></use>
 								</svg>

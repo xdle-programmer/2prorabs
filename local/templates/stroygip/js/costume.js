@@ -1,3 +1,60 @@
+function catalogAction(action, element_id) {
+	var params = "";
+	
+	switch (action){
+		case 'add2basket':
+		    var qnt = document.getElementById('item_'+element_id+'_qnt').innerHTML;
+			params = "action=add2basket&quantity="+qnt+"&id="+element_id;
+			
+			var el = document.querySelector("div.product-cart__button--basket[data-id='"+element_id+"']");
+			if( !el.classList.contains('product-cart__button--active') ){
+				el.className += " product-cart__button--active";
+			}
+			
+			break;
+		case 'COMPARE':
+			params = "action=compfav&add=COMPARE&id="+element_id;
+			
+			var el = document.querySelector("div.product-cart__button--compare[data-id='"+element_id+"']");
+			if( !el.classList.contains('product-cart__button--active') ){
+				el.className += " product-cart__button--active";
+			}
+
+			break;
+		case 'FAVORITES':
+			params = "action=compfav&add=FAVORITES&id="+element_id;
+			
+			var el = document.querySelector("div.product-cart__button--favorite[data-id='"+element_id+"']");
+			if( !el.classList.contains('product-cart__button--active') ){
+				el.className += " product-cart__button--active";
+			}
+			
+			break;
+		case 'compfavdelete':
+			params = "action=compfavdelete&add="+action+"&id="+element_id;
+			
+			break;
+		default:
+			return false;
+			break;
+	}
+	
+	
+	
+	var request = new XMLHttpRequest();
+    request.open('POST', '/local/templates/stroygip/ajax/ajax.php', true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			console.log(request.responseText);
+		}
+	}
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	var sd = request.send(params);
+
+
+}
+
+
 function ajaxUpdate(){
     $.get( "/local/templates/stroygip/ajax/basketupdate.php", function( data ) {
         $('#basket').html(data);
