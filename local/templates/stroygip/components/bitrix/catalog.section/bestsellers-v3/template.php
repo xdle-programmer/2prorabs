@@ -98,9 +98,9 @@ $this->setFrameMode(true);?>
 							<div class="product-cart__price-currency">сом</div>
 						</div>
 						<div class="product-cart__code">Артикул: <?=$arElement['PROPERTIES']['ART_NUMBER']['VALUE']?></div>
-						<div class="product-cart__counter" data-counter-max="<?= $arElement["PRODUCT"]["QUANTITY"] ?>">
+						<div class="product-cart__counter" data-counter-max="<?=$arElement["PRODUCT"]["QUANTITY"]?>">
 							<div class="product-cart__counter-button product-cart__counter-button--minus"></div>
-							<div class="product-cart__counter-value imp-item-quantity-value" data-id="<?=$arElement['ID']?>" data-action="add">1</div>
+							<div class="product-cart__counter-value imp-item-quantity-value" id="item_<?=$arElement['ID']?>_qnt">1</div>
 							<div class="product-cart__counter-button product-cart__counter-button--plus"></div>
 						</div>
 						<div class="product-cart__buttons">
