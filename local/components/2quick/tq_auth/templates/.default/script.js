@@ -63,6 +63,31 @@ $(document).on('submit','#tq_auth_phone',function () {
 });
 
 
+
+function modalUserReg() {
+	var formData = new FormData(document.getElementById('tq_form_registration'));
+	formData.append('captcha_word', document.querySelector("textarea[name='g-recaptcha-response']").value );
+	
+	BX.ajax.runComponentAction('2quick:tq_auth', 'sendCodeReg', {
+        mode: 'class',
+        data: formData,
+    }).then(function (response) {
+		if (response.data.STATUS === 'SUCCESS') {
+			if(response.data.BACK_URL){
+				location.href = response.data.BACK_URL
+			}else{
+				location.reload();
+			}
+		} else {
+			var d1 = document.querySelector('div.tq_error_reg');
+			d1.innerHTML = response.data.MESSAGE;
+			document.getElementById('tq_confirm_code').style.display = 'none';
+			document.getElementById('tq_register_container').style.display = 'inline-block';
+		}
+    });
+
+}
+
 $(document).on('click','#tq_form_registration .modal-registration__button-red',function () {
 	$('form#tq_form_registration').submit();
 });

@@ -56,7 +56,7 @@ Asset::getInstance()->addJs($templateFolder . "/script.js");
 					</div>
 					<div class="modal__content-item">
 						<div class="modal__two-buttons">
-							<div onclick="modalUserReg()" class="modal__button button button--invert" data-modal-open='register'>Зарегистрироваться</div>
+							<div class="modal__button button button--invert" data-modal-open='register'>Зарегистрироваться</div>
 							<div onclick="modalUserAuth()" class="modal__button button button--invert form-check__button  modal-registration__button-red">Войти</div>
 						</div>
 					</div>
@@ -123,7 +123,7 @@ Asset::getInstance()->addJs($templateFolder . "/script.js");
 						</label>
 					</div>
 					<div class="modal__content-item">
-						<div class="modal__button button button--invert form-check__button modal-registration__button-red">Зарегистрироваться</div>
+						<div onclick="modalUserReg()" class="modal__button button button--invert form-check__button modal-registration__button-red">Зарегистрироваться</div>
 					</div>
 				</div>
 				<div class="modal__footer">		
