@@ -99,15 +99,16 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 </div>
 
 
-
 <div id="btn_<?= $bxajaxid ?>" class="catalog-category__items-footer">
 	<?if ($arResult["NAV_RESULT"]->nEndPage > 1 && $arResult["NAV_RESULT"]->NavPageNomer < $arResult["NAV_RESULT"]->nEndPage):?>
 	<div class="catalog-category__items-footer-more">
 		<a class="button" 
-			data-ajax-id="<?= $bxajaxid ?>" href="javascript:void(0)"
+			data-ajax-id="<?=$bxajaxid?>" href="javascript:void(0)"
 			data-show-more-catalog="<?= $arResult["NAV_RESULT"]->NavNum ?>"
 			data-next-page="<?= ($arResult["NAV_RESULT"]->NavPageNomer + 1) ?>"
-			data-max-page="<?= $arResult["NAV_RESULT"]->nEndPage ?>"
+			data-max-page="<?= $arResult["NAV_RESULT"]->nEndPage ?>" 
+			onclick="dataShowMore()" 
+			id="catalogSectionShowMore" 
 		>Показать еще <?= $showMoreText ?></a>
 	</div>
 	<?endif;?>
