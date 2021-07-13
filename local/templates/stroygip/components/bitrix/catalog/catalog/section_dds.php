@@ -22,7 +22,7 @@ $sortItems = \nav\Catalog\Sort::getTemplateData();
 $currentPageSize = \nav\Catalog\PageSize::getCurrent();
 $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 ?>
-    <section class="section section--gray catalog-category">
+    <section class="section section--gray">
         <div class="layout">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:breadcrumb",
@@ -30,7 +30,7 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
                 Array(),
                 false
             );?>
-            <div class="catalog-category__grid">
+            <div class="catalog-category">
                 <?if($cntElems>0){?>
                     <?$APPLICATION->IncludeComponent(
                     "bitrix:catalog.smart.filter",
@@ -58,42 +58,43 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
                         "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
                         "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
                         "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
+						"SORT1_DATA" => $sortItems,
+						"SHOW1_DATA" => $pageSizeItems,
                     ),
                     $component,
                     array('HIDE_ICONS' => 'Y')
                 );?>
                 <?}?>
-
-                <div class="catalog-category__content">
-                    <div class="catalog-category__title"><?=$APPLICATION->ShowTitle(false)?></div>
-
-                    <div class="catalog-category__select-box">
-                        <form class="catalog-category__select-form" action="#">
-                            <div class="catalog-sort catalog-category__select">
-                                <fieldset>
-                                    <select class="catalog-sort__select" name="sort" data-selectmenu="true">
-                                        <? foreach ($sortItems as $item): ?>
-                                            <option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>><?=$item['NAME']?></option>
-                                        <? endforeach; ?>
-                                    </select>
-                                </fieldset>
-                            </div>
-
-                            <div class="catalog-page-size catalog-category__select">
-                                <fieldset>
-                                    <select class="catalog-page-size__select" name="pageSize" data-selectmenu="true">
-                                        <? foreach ($pageSizeItems as $item): ?>
-                                            <option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показывать по <?=$item['NAME']?></option>
-                                        <? endforeach; ?>
-                                    </select>
-                                </fieldset>
-                            </div>
-                        </form>
-                        <div class="catalog-category__button-filter">
-                            <div class="catalog-category__button-filter--icon"></div>
-                            Фильтры
-                        </div>
-                    </div>
+				
+                <div class="catalog-category__items">
+				
+					<div class="catalog-category__items-header">
+						<div class="catalog-category__items-header-title"><?=$APPLICATION->ShowTitle(false)?></div>
+						<div class="catalog-category__items-header-filter">
+							<svg class="catalog-category__items-header-filter-icon">
+								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#settings"></use>
+							</svg>
+						</div>
+						<div class="catalog-category__items-header-options">
+							<form class="catalog-category__select-form" action="#">
+								<div class="catalog-category__items-header-options-item">
+									<select onchange="catalogSort()" id="catalog-sort-select" class="custom-select" name="sort">
+										<option selected disabled hidden>Сортировка</option>
+										<? foreach ($sortItems as $item): ?>
+										<option value="<?=$item['CODE']?>" <?if ($item['ACTIVE'] === 'Y'):?>selected="selected"<?endif;?>><?=$item['NAME']?></option>
+										<? endforeach; ?>
+									</select>
+								</div>
+								<div class="catalog-category__items-header-options-item">
+									<select onchange="catalogPageSize()" id="catalog-pagesize-select" class="custom-select" name="pageSize">
+										<? foreach ($pageSizeItems as $item): ?>
+										<option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показать по <?=$item['NAME']?></option>
+										<? endforeach; ?>
+									</select>
+								</div>
+							</form>
+						</div>
+					</div>
 
                     <?
                     $GLOBALS[$arParams["FILTER_NAME"]]['>CATALOG_PRICE_1'] = 0;
@@ -232,6 +233,7 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
         </div>
     </section>
 <?
+/*
 global $arrRecFilter;
 $arrRecFilter['PROPERTY_RECOMEND_VALUE'] = 'Y';
 $arrRecFilter['>CATALOG_PRICE_1'] = 0;
@@ -364,17 +366,5 @@ $APPLICATION->IncludeComponent(
     ),
     $component
 );
+*/
 ?>
-
-<?
-
-if($arCurSection['ID']){
-    $res = CIBlockSection::GetByID($arCurSection['ID']);
-    if($ar_res = $res->GetNext()){
-        ?>
-        <section class="description-text">
-            <div class="container">
-                <?=$ar_res['DESCRIPTION']?>
-            </div>
-        </section>
-        <?}}?>

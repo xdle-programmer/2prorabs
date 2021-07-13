@@ -20,47 +20,19 @@ global $USER;
 
     <?
     if ($APPLICATION->GetCurPage() != "/") {
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.carousel.min.css");
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.theme.default.min.css");
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/select2/dist/css/select2.min.css");
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/fancybox-master/dist/jquery.fancybox.min.css");
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/range-slider/css/ion.rangeSlider.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/libs.css");
-
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/style.css");
 
         // This stylesheet should become main
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/index.css");
-
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/lightbox.min.css");
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/costume.css");
     }
 
 
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 
-
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/libs.js");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/main.js");
-
-    if ($APPLICATION->GetCurPage() != "/") {
-        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/lightbox.min.js");
-        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/plugins/jquery.inputmask.js");
-        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/style.js");
-    }
-
-
     Asset::getInstance()->addJs('https://www.google.com/recaptcha/api.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/costume.js");
     ?>
-
-    <? if ($_SERVER['REMOTE_ADDR'] !== '37.193.179.101'): ?>
-        <style>#bx-panel {
-                position: fixed !important;
-                left: 0;
-                bottom: 0;
-            }</style>
-    <? endif; ?>
 
     <? $APPLICATION->ShowHead(); ?>
     <title><? $APPLICATION->ShowTitle(); ?></title>
@@ -240,7 +212,9 @@ global $USER;
 </div>
 
 <div class="preload <? if ($APPLICATION->GetCurPage() == "/"): ?>preload--not-ready<? endif; ?>" id="main-group">
-    <div class="section">
+    <? if ($APPLICATION->GetCurPage() == "/"): ?>
+	<div class="section">
+	<? endif; ?>
         <div class="mobile-header">
             <div class="mobile-header__block layout preload__area">
                 <div class="mobile-header__button" data-menu-target="mobile-menu">
@@ -561,8 +535,12 @@ global $USER;
             </div>
         <? endif; ?>
 
+
+<? if ($APPLICATION->GetCurPage() == "/"): ?>
     </div>
 </div>
 
+
 <div class="preload <? if ($APPLICATION->GetCurPage() == "/"): ?>preload--not-ready<? endif; ?>" id="natural-group">
+<? endif; ?>
 		

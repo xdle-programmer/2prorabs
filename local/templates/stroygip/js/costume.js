@@ -1,3 +1,94 @@
+function catalogAction(action, element_id) {
+	var params = "";
+	
+	switch (action){
+		case 'add2basket':
+		    var qnt = document.getElementById('item_'+element_id+'_qnt').innerHTML;
+			params = "action=add2basket&quantity="+qnt+"&id="+element_id;
+			
+			var el = document.querySelector("div.product-cart__button--basket[data-id='"+element_id+"']");
+			if( !el.classList.contains('product-cart__button--active') ){
+				el.className += " product-cart__button--active";
+			}
+			
+			break;
+		case 'COMPARE':
+			params = "action=compfav&add=COMPARE&id="+element_id;
+			
+			var el = document.querySelector("div.product-cart__button--compare[data-id='"+element_id+"']");
+			if( !el.classList.contains('product-cart__button--active') ){
+				el.className += " product-cart__button--active";
+			}
+
+			break;
+		case 'FAVORITES':
+			params = "action=compfav&add=FAVORITES&id="+element_id;
+			
+			var el = document.querySelector("div.product-cart__button--favorite[data-id='"+element_id+"']");
+			if( !el.classList.contains('product-cart__button--active') ){
+				el.className += " product-cart__button--active";
+			}
+			
+			break;
+		case 'compfavdelete':
+			params = "action=compfavdelete&add="+action+"&id="+element_id;
+			
+			break;
+		default:
+			return false;
+			break;
+	}
+	
+	
+	
+	var request = new XMLHttpRequest();
+    request.open('POST', '/local/templates/stroygip/ajax/ajax.php', true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			console.log(request.responseText);
+		}
+	}
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.send(params);
+
+}
+
+
+function dataShowMore() {
+	
+    var page = document.getElementById('catalogSectionShowMore').getAttribute("data-next-page");
+    var id = document.getElementById('catalogSectionShowMore').getAttribute("data-show-more-catalog");
+    var bx_ajax_id = document.getElementById('catalogSectionShowMore').getAttribute("data-ajax-id");
+    var block_id = "#comp_"+bx_ajax_id;
+	var url = window.location.href+"?bxajaxid="+bx_ajax_id+"&PAGEN_"+id+"="+page;
+	
+	var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {			
+			var resp = request.responseText;
+			
+			var temp1 = document.createElement('div');
+			temp1.innerHTML = resp;
+			var items_html = temp1.getElementsByClassName("catalog-category__items-grid")[0].innerHTML;
+			
+			var d1 = document.querySelector('div.catalog-category__items-grid');
+			d1.insertAdjacentHTML('beforeend', items_html);
+
+			var temp2 = document.createElement('div');
+			temp2.innerHTML = resp;
+			var pagination_html = temp2.getElementsByClassName("catalog-category__items-footer")[0].innerHTML;
+			
+			var d2 = document.querySelector('div.catalog-category__items-footer');
+			d2.innerHTML = pagination_html;
+		}
+	}
+	request.send();
+
+}
+
+
+
 function ajaxUpdate(){
     $.get( "/local/templates/stroygip/ajax/basketupdate.php", function( data ) {
         $('#basket').html(data);
