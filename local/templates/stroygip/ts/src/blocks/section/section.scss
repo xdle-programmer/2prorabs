@@ -10,4 +10,10 @@
     background: #f6f7fc;
   }
 
+  &--mobile-white {
+    @include tablet-small-screen {
+      background: var(--white-color);
+    }
+  }
+
 }

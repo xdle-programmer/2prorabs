@@ -10,10 +10,13 @@
   grid-gap: 12px;
   align-items: center;
 
+  $editable: '.rating--editable';
+
   &__stars {
     display: grid;
     grid-template-columns: repeat(5, 15px);
     grid-gap: 10px;
+    transition: none !important;
   }
 
   &__star {
@@ -21,13 +24,24 @@
     height: 15px;
     fill: var(--light-gray-color);
 
+    &,
+    & * {
+      transition: none !important;
+    }
+
+    #{$editable} & {
+      cursor: pointer;
+    }
+
     &--active {
+      fill: var(--red-color);
     }
   }
 
   &__text {
     white-space: nowrap;
     font-size: 15px;
-    color: var(--black-color);font-weight: 600;
+    color: var(--black-color);
+    font-weight: 600;
   }
 }

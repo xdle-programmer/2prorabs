@@ -15,7 +15,7 @@ const partnersSlider = () => {
         swipeAngle: false,
         speed: 400,
         controls: false,
-        controlsContainer:$nav,
+        controlsContainer: $nav,
         nav: false,
         responsive: {
             1000: {
@@ -34,7 +34,6 @@ const partnersSlider = () => {
 
         },
     });
-
 };
 
 if (Array.from(document.querySelectorAll('.partners')).length > 0) {

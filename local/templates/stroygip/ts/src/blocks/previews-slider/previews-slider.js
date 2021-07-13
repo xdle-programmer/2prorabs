@@ -13,6 +13,8 @@ export function initPreviewsSlider() {
         const $slider = $wrapper.querySelector('.previews-slider__wrapper');
         const $nav = $wrapper.querySelector('.previews-slider__nav');
 
+        console.log($wrapper);
+
         const slider = tns({
             container: $slider,
             autoWidth: false,
@@ -52,4 +54,10 @@ export function initPreviewsSlider() {
             },
         });
     }
+}
+
+let initialSliders = Array.from(document.querySelectorAll('.previews-slider--self-initial'));
+
+if (initialSliders.length > 0) {
+    initPreviewsSlider();
 }

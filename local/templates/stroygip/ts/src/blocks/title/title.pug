@@ -1,4 +1,6 @@
 mixin title(text,desc)
     .title
         .title__text=text
-        .title__desc=desc
+
+        if desc
+            .title__desc=desc

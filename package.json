@@ -49,6 +49,7 @@
     "form-validation-expandable": "^1.0.9",
     "frontend-scss-mixins": "^1.0.6",
     "get-viewport-options": "^1.0.0",
+    "glightbox": "^3.0.9",
     "modals-toggle": "^1.0.1",
     "nouislider": "^15.0.0",
     "progressbar.js": "^1.1.0",

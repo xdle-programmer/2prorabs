@@ -38,3 +38,5 @@ function counterHandler($counter) {
         $value.innerText = value;
     });
 }
+
+

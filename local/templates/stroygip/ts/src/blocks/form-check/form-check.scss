@@ -31,6 +31,12 @@
     visibility: hidden;
     transform: translateY(9px) scale(.75);
 
+    .product-page__desc-reviews-list-form-rating & {
+      position: static;
+      transform: scale(.75);
+      transform-origin: left center;
+    }
+
     #{$error} & {
       opacity: 1;
       visibility: visible;

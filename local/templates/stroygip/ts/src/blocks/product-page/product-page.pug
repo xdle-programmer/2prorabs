@@ -3,6 +3,9 @@ include ../../blocks/rating/rating
 .product-page
 
     .product-page__main-product
+        .product-page__main-product-mobile-title
+            .product-page__title Рулетка professional измерительная 25мм 10м
+            .product-page__code Артикул: 30361709
 
         .product-page__preview-wrapper
 
@@ -11,24 +14,48 @@ include ../../blocks/rating/rating
                     .product-page__rating-box
                         +rating4
 
-                    .product-page__select-box
+                    .product-page__slider-wrapper
+                        .product-page__slider-nav
+                            .product-page__slider-nav-button.product-page__slider-nav-button--prev
+                                +iconSvg('arrow','product-page__slider-nav-button-icon product-page__slider-nav-button-icon--prev')
+                            .product-page__slider-nav-button.product-page__slider-nav-button--next
+                                +iconSvg('arrow','product-page__slider-nav-button-icon product-page__slider-nav-button-icon--next')
+                        .product-page__slider-items
+                            .product-page__slider-item.product-page__slider-item--active(data-preview='/local/templates/stroygip/ts/images/examples/product-page/1.jpg' data-active-number-target='0')
+                                img(src='/local/templates/stroygip/ts/images/examples/product-page/1.jpg').product-page__slider-item-img
+                            .product-page__slider-item(data-preview='/local/templates/stroygip/ts/images/examples/product-page/2.jpg' data-active-number-target='1')
+                                img(src='/local/templates/stroygip/ts/images/examples/product-page/2.jpg').product-page__slider-item-img
+                            .product-page__slider-item(data-preview='/local/templates/stroygip/ts/images/examples/product-page/3.jpg' data-active-number-target='2')
+                                img(src='/local/templates/stroygip/ts/images/examples/product-page/3.jpg').product-page__slider-item-img
+                            .product-page__slider-item(data-preview='/local/templates/stroygip/ts/images/examples/product-page/4.jpg' data-active-number-target='3')
+                                img(src='/local/templates/stroygip/ts/images/examples/product-page/4.jpg').product-page__slider-item-img
+                            .product-page__slider-item(data-preview='/local/templates/stroygip/ts/images/examples/product-page/5.jpg' data-active-number-target='4')
+                                img(src='/local/templates/stroygip/ts/images/examples/product-page/5.jpg').product-page__slider-item-img
+                            .product-page__slider-item(data-preview='/local/templates/stroygip/ts/images/examples/product-page/6.jpg' data-active-number-target='5')
+                                img(src='/local/templates/stroygip/ts/images/examples/product-page/6.jpg').product-page__slider-item-img
+                            .product-page__slider-item(data-preview='/local/templates/stroygip/ts/images/examples/product-page/7.jpg' data-active-number-target='6')
+                                img(src='/local/templates/stroygip/ts/images/examples/product-page/7.jpg').product-page__slider-item-img
+
 
                 .product-page__main-image-box
-                    img(src='local/templates/stroygip/ts/images/examples/product-page/1.jpg').product-page__main-image
+                    img(
+                        src='/local/templates/stroygip/ts/images/examples/product-page/1.jpg'
+                        data-active-number='0'
+                        data-images-array='/local/templates/stroygip/ts/images/examples/product-page/1.jpg,/local/templates/stroygip/ts/images/examples/product-page/2.jpg,/local/templates/stroygip/ts/images/examples/product-page/3.jpg,/local/templates/stroygip/ts/images/examples/product-page/4.jpg,/local/templates/stroygip/ts/images/examples/product-page/5.jpg,/local/templates/stroygip/ts/images/examples/product-page/6.jpg,/local/templates/stroygip/ts/images/examples/product-page/7.jpg'
+                        ).product-page__main-image
                     .product-page__mark
                         +iconSvg('sale','product-page__mark-icon')
                         .product-page__mark-text Скидка 15%
 
         .product-page__about
-            .product-page__title Рулетка professional измерительная 25мм 10м
-            .product-page__code Артикул: 30361709
+            .product-page__title.product-page__title--mobile-hidden Рулетка professional измерительная 25мм 10м
+            .product-page__code.product-page__code--mobile-hidden Артикул: 30361709
 
             .product-page__buttons.product-cart__buttons
                 .product-cart__button
                     +iconSvg('compare','product-cart__button-img product-cart__button-img--compare')
                 .product-cart__button
                     +iconSvg('favorite','product-cart__button-img product-cart__button-img--favorite')
-
 
             .product-page__price-block
                 .product-page__price-block-item
@@ -43,32 +70,133 @@ include ../../blocks/rating/rating
                     .product-page__price-block-count-price
                         .product-page__price-block-count-price-number 1 233
                         .product-page__price-block-count-price-currency сом
+            .product-page__buy-buttons
+                .product-page__buy-button.product-page__buy-button--main.button В корзину
+                .product-page__buy-button.product-page__buy-button--natural.button Быстрый заказ
+            .product-page__delivery
+                .product-page__delivery-store В наличии 3 шт.
+            .product-page__delivery-price
+                +iconSvg('delivery','product-page__delivery-price-icon')
+                .product-page__delivery-price-text Доставка по городу: от 120 Сом, доставка ежедневно с 09:00 до 21:00
 
-            //.product-page__sum
-            //    .product-page__sum-icon#minusSum -
-            //    input.product-page__sum-input#calculatorSum(type="text" value="1")
-            //    .product-page__sum-icon#plusSum +
-            //
-            //.product-page__price-box
-            //    .product-page__discount
-            //        | 4 812
-            //        span.product-page__discount-prefix com
-            //    .product-page__price
-            //        | 4 812
-            //        span.product-page__price-prefix com
-            //.product-page__nds 4 300 сом/шт без НДС
-            //.product-page__buttons
-            //    a(href="#").button.button--red.button--medium-style.product-page__button#basketOrder В корзину
-            //    a(href="#").button.button--white-red.button--medium-style.product-page__button Быстрый заказ
-            //
-            //.product-page__availability-box
-            //    .product-page__item-availability
-            //        .product-page__item-availability-icon
-            //            img(src="/src/images/icons/availability.svg")
-            //        | В наличии:
-            //        a.product-page__item-availability-link(href="#") в 2 магазинах
-            //    .product-page__item-availability
-            //        .product-page__item-availability-icon
-            //            img(src="/src/images/icons/courier.svg")
-            //        | Доставка курьером:
-            //        a.product-page__item-availability-courier 4 августа
+            .product-page__delivery-price
+                +iconSvg('info','product-page__delivery-price-icon')
+                .product-page__delivery-price-text Внешний вид товара может отличаться от фотографии.
+
+
+    .product-page__desc
+        .product-page__desc-item
+            .product-page__desc-item-title Описание и характеристики
+            .product-page__desc-item-desc
+                .product-page__desc-item-desc-text Описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара
+                .product-page__desc-item-characteristics
+                    .product-page__desc-item-characteristics-item
+                        .product-page__desc-item-characteristics-item-name Длинное название характеристики
+                        .product-page__desc-item-characteristics-item-value Длинное значение характеристики
+                    .product-page__desc-item-characteristics-item
+                        .product-page__desc-item-characteristics-item-name Название характеристики
+                        .product-page__desc-item-characteristics-item-value Значение
+                    .product-page__desc-item-characteristics-item
+                        .product-page__desc-item-characteristics-item-name Название характеристики
+                        .product-page__desc-item-characteristics-item-value Значение
+                    .product-page__desc-item-characteristics-item
+                        .product-page__desc-item-characteristics-item-name Название характеристики
+                        .product-page__desc-item-characteristics-item-value Значение
+                    .product-page__desc-item-characteristics-item
+                        .product-page__desc-item-characteristics-item-name Название характеристики
+                        .product-page__desc-item-characteristics-item-value Значение
+                    .product-page__desc-item-characteristics-item
+                        .product-page__desc-item-characteristics-item-name Название характеристики
+                        .product-page__desc-item-characteristics-item-value Значение
+                    .product-page__desc-item-characteristics-item
+                        .product-page__desc-item-characteristics-item-name Название характеристики
+                        .product-page__desc-item-characteristics-item-value Значение
+                    .product-page__desc-item-characteristics-item
+                        .product-page__desc-item-characteristics-item-name Название характеристики
+                        .product-page__desc-item-characteristics-item-value Значение
+
+
+        .product-page__desc-item
+            .product-page__desc-item-title Отзывы
+            .product-page__desc-item-desc
+                .product-page__desc-reviews
+                    .product-page__desc-reviews-subtitle Средняя оценка
+                    .product-page__desc-reviews-item
+                        +rating4
+
+                    .product-page__desc-reviews-subtitle Рейтинг
+                    .product-page__desc-reviews-item
+                        .product-page__desc-reviews-line-wrapper
+                            .product-page__desc-reviews-line-name 5 звезд
+                            .product-page__desc-reviews-line
+                                .product-page__desc-reviews-line-item(style='width:80%')
+                            .product-page__desc-reviews-line-count 5 отзывов
+                        .product-page__desc-reviews-line-wrapper
+                            .product-page__desc-reviews-line-name 4 звезды
+                            .product-page__desc-reviews-line
+                                .product-page__desc-reviews-line-item(style='width:10%')
+                            .product-page__desc-reviews-line-count 5 отзывов
+                        .product-page__desc-reviews-line-wrapper
+                            .product-page__desc-reviews-line-name 3 звезды
+                            .product-page__desc-reviews-line
+                                .product-page__desc-reviews-line-item(style='width:20%')
+                            .product-page__desc-reviews-line-count 5 отзывов
+                        .product-page__desc-reviews-line-wrapper
+                            .product-page__desc-reviews-line-name 2 звезды
+                            .product-page__desc-reviews-line
+                                .product-page__desc-reviews-line-item(style='width:0%')
+                            .product-page__desc-reviews-line-count 0 отзывов
+                        .product-page__desc-reviews-line-wrapper
+                            .product-page__desc-reviews-line-name 1 звезда
+                            .product-page__desc-reviews-line
+                                .product-page__desc-reviews-line-item(style='width:40%')
+                            .product-page__desc-reviews-line-count 5 отзывов
+
+                    .product-page__desc-reviews-subtitle Отзывы
+                    .product-page__desc-reviews-item
+                        .product-page__desc-reviews-list
+
+                            .product-page__desc-reviews-list-item
+                                .product-page__desc-reviews-list-item-name Владимир К.
+                                .product-page__desc-reviews-list-item-stars
+                                    +rating5empty
+                                .product-page__desc-reviews-list-item-text Отличный товар
+                            .product-page__desc-reviews-list-item
+                                .product-page__desc-reviews-list-item-name Владимир К.
+                                .product-page__desc-reviews-list-item-stars
+                                    +rating1empty
+                                .product-page__desc-reviews-list-item-text Ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар
+
+                    //.product-page__desc-reviews-subtitle Оставить отзыв
+
+                    .product-page__desc-reviews-hidden-form-wrapper
+                        .product-page__desc-reviews-hidden-form-button.button Оставить отзыв
+                        .product-page__desc-reviews-hidden-form
+                            #review-form.product-page__desc-reviews-list-form.form-check
+                                .product-page__desc-reviews-list-form-rating.form-check__field(data-elem='input' data-rule='input-empty')
+                                    .rating.rating--editable
+                                        .rating__stars
+                                            +iconSvg('star','rating__star')
+                                            +iconSvg('star','rating__star')
+                                            +iconSvg('star','rating__star')
+                                            +iconSvg('star','rating__star')
+                                            +iconSvg('star','rating__star')
+                                            input(type='hidden')
+                                .product-page__desc-reviews-list-form-name
+                                    .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
+                                        input(placeholder='Имя').input.placeholder__input
+                                        .placeholder__item Имя
+                                .product-page__desc-reviews-list-form-contact
+                                    .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
+                                        input(placeholder='Телефон или емейл').input.placeholder__input
+                                        .placeholder__item Телефон или емейл
+
+                                .product-page__desc-reviews-list-form-text
+                                    .placeholder.form-check__field(data-elem='textarea' data-rule='input-empty')
+                                        textarea(placeholder='Отзыв').input.input--textarea.placeholder__input
+                                        .placeholder__item Отзыв
+                                .product-page__desc-reviews-list-form-button-block
+                                    .product-page__desc-reviews-list-form-button.form-check__button.button Отправить
+
+
+

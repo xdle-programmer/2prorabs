@@ -1,6 +1,7 @@
 extends ../templates/main
 include ../blocks/product-cart/product-cart
 include ../blocks/checkbox/checkbox
+include ../blocks/title/title
 
 block variables
     - var title = '2Прораба'
@@ -13,13 +14,122 @@ block content
         include ../blocks/header/header
 
 
-        section.section.section--gray
+        section.section.section--gray.section--mobile-white
             .layout
                 include ../blocks/breadcrumbs/breadcrumbs
 
                 include ../blocks/product-page/product-page
 
+        section.section
+            .layout
+                +title('Похожие товары')
+                .previews-slider.previews-slider--self-initial
+                    .previews-slider__nav
+                        .previews-slider__nav-button.previews-slider__nav-button--prev
+                            +iconSvg('arrow','previews-slider__nav-button-icon')
+                        .previews-slider__nav-button.previews-slider__nav-button--next
+                            +iconSvg('arrow','previews-slider__nav-button-icon')
+                    .previews-slider__wrapper
 
+                        +productSingleNotLoad({
+                            name: 'Газонокосилка электрическая huter elm-1100 70/4/2',
+                            price: '47 785',
+                            img: '/local/templates/stroygip/ts/images/examples/product-3.jpg',
+                            rating: 0
+                        })
+
+                        +productSingleNotLoad({
+                            name: 'Водонагреватель thermex er 200v',
+                            price: '40 606',
+                            img: '/local/templates/stroygip/ts/images/examples/product-2.jpg',
+                            rating: 0
+                        })
+
+                        +productSingleNotLoad({
+                            name: 'Рулетка Total steel measuring tape 3мx16mm tmt126031m',
+                            price: '47 785',
+                            img: '/local/templates/stroygip/ts/images/examples/product-3.jpg',
+                            rating: 0
+                        })
+
+                        +productSingleNotLoad({
+                            name: 'Культиватор ручной торнадо',
+                            price: '1 985',
+                            img: '/local/templates/stroygip/ts/images/examples/product-6.jpg',
+                            rating: 0
+                        })
+
+                        +productSingleNotLoad({
+                            name: 'Мастерок Silk plaster/dekoring прозрачный (ручка на планке)',
+                            price: '285',
+                            img: '/local/templates/stroygip/ts/images/examples/product-4.jpg',
+                            rating: 0
+                        })
+
+                        +productSingleNotLoad({
+                            name: 'Палатка Palisad однослойная двухместная 200*140*115см 69523',
+                            price: '2 285',
+                            img: '/local/templates/stroygip/ts/images/examples/product-5.jpg',
+                            rating: 0
+                        })
+
+
+
+
+        section.section.section--gray
+            .layout
+                +title('Просмотренные товары')
+                .previews-slider.previews-slider--self-initial
+                    .previews-slider__nav
+                        .previews-slider__nav-button.previews-slider__nav-button--prev
+                            +iconSvg('arrow','previews-slider__nav-button-icon')
+                        .previews-slider__nav-button.previews-slider__nav-button--next
+                            +iconSvg('arrow','previews-slider__nav-button-icon')
+                    .previews-slider__wrapper
+
+                        +productSingleNotLoad({
+                            name: 'Рулетка Total steel measuring tape 3мx16mm tmt126031m',
+                            price: '47 785',
+                            img: '/local/templates/stroygip/ts/images/examples/product-3.jpg',
+                            rating: 0
+                        })
+
+                        +productSingleNotLoad({
+                            name: 'Культиватор ручной торнадо',
+                            price: '1 985',
+                            img: '/local/templates/stroygip/ts/images/examples/product-6.jpg',
+                            rating: 0
+                        })
+
+
+                        +productSingleNotLoad({
+                            name: 'Газонокосилка электрическая huter elm-1100 70/4/2',
+                            price: '47 785',
+                            img: '/local/templates/stroygip/ts/images/examples/product-3.jpg',
+                            rating: 0
+                        })
+
+                        +productSingleNotLoad({
+                            name: 'Водонагреватель thermex er 200v',
+                            price: '40 606',
+                            img: '/local/templates/stroygip/ts/images/examples/product-2.jpg',
+                            rating: 0
+                        })
+
+
+                        +productSingleNotLoad({
+                            name: 'Мастерок Silk plaster/dekoring прозрачный (ручка на планке)',
+                            price: '285',
+                            img: '/local/templates/stroygip/ts/images/examples/product-4.jpg',
+                            rating: 0
+                        })
+
+                        +productSingleNotLoad({
+                            name: 'Палатка Palisad однослойная двухместная 200*140*115см 69523',
+                            price: '2 285',
+                            img: '/local/templates/stroygip/ts/images/examples/product-5.jpg',
+                            rating: 0
+                        })
 
 
         include ../blocks/footer/footer
