@@ -66,7 +66,7 @@ $(document).on('submit','#tq_auth_phone',function () {
 
 function modalUserReg() {
 	var formData = new FormData(document.getElementById('tq_form_registration'));
-	formData.append('captcha_word', document.querySelector("textarea[name='g-recaptcha-response']").value );
+	formData.append('captcha_word', document.getElementsByClassName('g-recaptcha-response')[1].value );
 	
 	BX.ajax.runComponentAction('2quick:tq_auth', 'sendCodeReg', {
         mode: 'class',
@@ -133,7 +133,7 @@ $('#tq_form_registration').on('submit', function (e) {
 function modalUserAuth() {
 	let email = document.getElementById('input-auth-email').value,
 	password = document.getElementById('input-auth-password').value,
-	captcha_word = document.querySelector("textarea[name='g-recaptcha-response']").value;
+	captcha_word = document.getElementsByClassName('g-recaptcha-response')[0].value;
 
 	BX.ajax.runComponentAction('2quick:tq_auth',
 		'Auth', {
