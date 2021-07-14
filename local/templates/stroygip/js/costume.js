@@ -112,7 +112,7 @@ function orderHelpCall() {
 }
 	
 	
-	
+/*
 function ajaxUpdate(){
     $.get( "/local/templates/stroygip/ajax/basketupdate.php", function( data ) {
         $('#basket').html(data);
@@ -353,15 +353,15 @@ $(document).on('click change submit','[data-action]',function(e){
                    location.href = '/compare/';
                     break;
                 case 'setCoupon':
-                    /*$.ajax({
-                        url: "/local/templates/stroygip/ajax/ajax.php",
-                        type: "POST",
-                        dataType: 'json',
-                        data: {action:'getCouponList'},
-                        success: function (result) {
-                           console.log(result);
-                        }
-                    });*/
+                    //$.ajax({
+                     //   url: "/local/templates/stroygip/ajax/ajax.php",
+                     //   type: "POST",
+                     //   dataType: 'json',
+                     //   data: {action:'getCouponList'},
+                     //   success: function (result) {
+                     //      console.log(result);
+                      //  }
+                    //});
                         break;
             }
             ajaxUpdate();
@@ -670,4 +670,4 @@ $(document).on('click','#order_help_call ',function () {
 		});
 	}
 });
-
+*/
