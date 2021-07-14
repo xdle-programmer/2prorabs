@@ -56,6 +56,8 @@ $this->setFrameMode(true);
                             "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
                             "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
                             "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
+							"SORT1_DATA" => $sortItems,
+							"SHOW1_DATA" => $pageSizeItems,
                             "SHOW_ALL_WO_SECTIONS" => 'Y',
                         ),
                         $component,
