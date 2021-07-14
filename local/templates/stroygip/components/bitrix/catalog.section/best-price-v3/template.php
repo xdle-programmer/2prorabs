@@ -64,6 +64,11 @@ $this->setFrameMode(true); ?>
                             $comp_action = 'compfav';
                             $comp_act = '';
                         }
+						
+						$element_img = "/local/templates/stroygip/img/no-image.png";
+						if( isset($arElement["PREVIEW_PICTURE"]["SRC"]) && strlen($arElement["PREVIEW_PICTURE"]["SRC"])>0 ){
+							$element_img = $arElement["PREVIEW_PICTURE"]["SRC"];
+						}
                         ?>
                         <div class="previews-grid__item product-cart preload__area">
                             <div class="product-cart__block">
@@ -94,7 +99,7 @@ $this->setFrameMode(true); ?>
                                         <div class="rating__text">Нет отзывов</div>
                                     </div>
                                 </div>
-                                <img class="product-cart__img preload__item" data-src="<?= $arElement["PREVIEW_PICTURE"]["SRC"] ?>">
+                                <img class="product-cart__img preload__item" data-src="<?=$element_img?>">
                                 <div class="product-cart__price">
                                     <div class="product-cart__price-number"><? echo number_format($arElement['MIN_PRICE']['VALUE'], 0, '.', ' '); ?></div>
                                     <div class="product-cart__price-currency">сом</div>
