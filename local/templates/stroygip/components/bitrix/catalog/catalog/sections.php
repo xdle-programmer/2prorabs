@@ -12,9 +12,17 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
+\nav\Catalog\Sort::setFromRequest();
+$currentSort = \nav\Catalog\Sort::getCurrent();
+$sortItems = \nav\Catalog\Sort::getTemplateData();
+
+\nav\Catalog\PageSize::setFromRequest();
+$currentPageSize = \nav\Catalog\PageSize::getCurrent();
+$pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
+
 $this->setFrameMode(true);
 ?>
-    <section class="section section--gray catalog-category">
+    <section class="section section--gray">
         <div class="layout">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:breadcrumb",
@@ -22,7 +30,7 @@ $this->setFrameMode(true);
                 Array(),
                 false
             );?>
-            <div class="catalog-category__grid">
+            <div class="catalog-category">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:catalog.smart.filter",
                         "",
@@ -53,19 +61,37 @@ $this->setFrameMode(true);
                         $component,
                         array('HIDE_ICONS' => 'Y')
                     );?>
-                <div class="catalog-category__content">
-                    <div class="catalog-category__title"><?=$APPLICATION->ShowTitle(false)?></div>
-                    <!--<div class="catalog-category__select-box">
-                        <select class="js-select-slider" name="state">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">WYabama</option>
-                        </select>
-                        <select class="js-select-slider" name="state">
-                            <option value="AL">Alabama</option>
-                            <option value="WY">WYabama</option>
-                        </select>
-                    </div>-->
-
+					
+                <div class="catalog-category__items">
+				
+					<div class="catalog-category__items-header">
+						<div class="catalog-category__items-header-title"><?=$APPLICATION->ShowTitle(false)?></div>
+						<div class="catalog-category__items-header-filter">
+							<svg class="catalog-category__items-header-filter-icon">
+								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#settings"></use>
+							</svg>
+						</div>
+						<div class="catalog-category__items-header-options">
+							<form class="catalog-category__select-form" action="#">
+								<div class="catalog-category__items-header-options-item">
+									<select onchange="catalogSort()" id="catalog-sort-select" class="custom-select" name="sort">
+										<option selected disabled hidden>Сортировка</option>
+										<? foreach ($sortItems as $item): ?>
+										<option value="<?=$item['CODE']?>" <?if ($item['ACTIVE'] === 'Y'):?>selected="selected"<?endif;?>><?=$item['NAME']?></option>
+										<? endforeach; ?>
+									</select>
+								</div>
+								<div class="catalog-category__items-header-options-item">
+									<select onchange="catalogPageSize()" id="catalog-pagesize-select" class="custom-select" name="pageSize">
+										<? foreach ($pageSizeItems as $item): ?>
+										<option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показать по <?=$item['NAME']?></option>
+										<? endforeach; ?>
+									</select>
+								</div>
+							</form>
+						</div>
+					</div>
+					
                     <?
                     $GLOBALS[$arParams["FILTER_NAME"]]['>CATALOG_PRICE_1'] = 0;
                     $intSectionID = $APPLICATION->IncludeComponent(
@@ -203,7 +229,7 @@ $this->setFrameMode(true);
         </div>
     </section>
 <?
-global $arrRecFilter;
+/*global $arrRecFilter;
 $arrRecFilter['PROPERTY_RECOMEND_VALUE'] = 'Y';
 $arrRecFilter['>CATALOG_PRICE_1'] = 0;
 $APPLICATION->IncludeComponent(
@@ -334,5 +360,5 @@ $APPLICATION->IncludeComponent(
         'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : '')
     ),
     $component
-);
+);*/
 ?>
