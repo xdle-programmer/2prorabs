@@ -1,4 +1,5 @@
 import {tns} from 'tiny-slider/src/tiny-slider';
+import {setWidthImgPreview} from '../set-width-img-preview/set-width-img-preview';
 
 export function initOrderPreviewsGrid() {
     const previewsGrids = Array.from(document.querySelectorAll('.previews-grid'));
@@ -249,6 +250,12 @@ export function initOrderPreviewsGrid() {
             },
             onInit: () => {
                 window.addEventListener('resize', resizeHandler);
+
+                let previews = $wrapper.querySelectorAll('.product-cart__block')
+
+                for (let $preview of previews) {
+                    setWidthImgPreview($preview)
+                }
             },
         });
 
