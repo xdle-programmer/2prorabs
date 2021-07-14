@@ -35,6 +35,28 @@ if($request->isPost()) {
 			
             echo json_encode($result);
             break;
+		case 'delete_basket_item':
+			$product_id = $request->getPost('productid');
+			
+			$basket_id = "";
+			$basket_storage = \Bitrix\Sale\Basket\Storage::getInstance(\Bitrix\Sale\Fuser::getId(), SITE_ID);
+			$basket = $basket_storage->getBasket();
+
+			foreach ($basket as $basket_item) {
+				$arr_product = $basket_item->getFieldValues();
+				if( $product_id == $arr_product["PRODUCT_ID"] ){
+					$basket_id = $arr_product["ID"];
+				}
+			}
+
+			if( $basket_id > 0 ){
+				$result = \DDS\Basketclass::delete($basket_id);
+				unset($_SESSION["BASKET_LIST"][$product_id]);
+				
+				echo json_encode($result);
+			}
+            
+            break;
         case 'clear_basket':
             $result = \DDS\Basketclass::clearBasket();
 			
