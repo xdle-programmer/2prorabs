@@ -17,8 +17,8 @@ use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);
 ?>
-<section class="product-card">
-    <div class="container">
+<section class="section section--gray section--mobile-white">
+    <div class="layout">
       <?$APPLICATION->IncludeComponent(
         "bitrix:breadcrumb",
         "bread",
@@ -211,12 +211,12 @@ $this->setFrameMode(true);
           $SECTION['PROPERTIES'] = $ob->GetProperties();
       }
     }?>
-<?
-    /* close tags in template
-     * div class="container"
-     * section class="product-card"
-    */
-?>
+	
+	</div>
+</section>
+
+
+
 <section class="similar-products">
   <?$GLOBALS['similarFilter']['=SECTION_ID'] = $SECTION['IBLOCK_SECTION_ID']?>
   <?$GLOBALS['similarFilter']['>CATALOG_PRICE_1'] = 0;?>

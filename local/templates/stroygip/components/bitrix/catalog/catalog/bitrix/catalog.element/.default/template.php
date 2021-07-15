@@ -97,7 +97,391 @@ $hiddenProperties = [
 ];
 
 ?>
+<!--b><?print_r($arResult);?></b-->
+<div class="product-page">
+	<div class="product-page__main-product">
+		<div class="product-page__main-product-mobile-title">
+			<div class="product-page__title"><?=$arResult['NAME']?></div>
+			<div class="product-page__code">Артикул: <?=$arResult['PROPERTIES']['ART_NUMBER']['VALUE']?></div>
+		</div>
+		<div class="product-page__preview-wrapper">
+			<div class="product-page__preview">
+				<div class="product-page__preview-header">
+					<div class="product-page__rating-box">
+						<div class="rating">
+							<div class="rating__stars">
+								<svg class="rating__star rating__star--active">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+								<svg class="rating__star rating__star--active">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+								<svg class="rating__star rating__star--active">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+								<svg class="rating__star rating__star--active">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+								<svg class="rating__star">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+							</div>
+							<div class="rating__text">17 отзывов</div>
+						</div>
+					</div>
+					<div class="product-page__slider-wrapper">
+						<div class="product-page__slider-nav">
+							<div class="product-page__slider-nav-button product-page__slider-nav-button--prev">
+								<svg class="product-page__slider-nav-button-icon product-page__slider-nav-button-icon--prev">
+								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+								</svg>
+							</div>
+							<div class="product-page__slider-nav-button product-page__slider-nav-button--next">
+								<svg class="product-page__slider-nav-button-icon product-page__slider-nav-button-icon--next">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="product-page__slider-items">
+						<?
+						$images_string = "";
+						$main_image_string = "";
 
+						if( $arResult['DETAIL_PICTURE']['URL'] ){ 
+							$main_image_string = $arResult['DETAIL_PICTURE']['URL'];
+							$images_string .= $main_image_string.",";
+						}elseif ( $arResult['PREVIEW_PICTURE']['URL'] ){ 
+							$main_image_string = $arResult['PREVIEW_PICTURE']['URL'];
+							$images_string .= $main_image_string.",";
+						}else{ 
+							$main_image_string = SITE_TEMPLATE_PATH."/img/no-image.png";
+						}
+						?>
+
+						<?if( strlen($arResult['DETAIL_PICTURE']['URL'])>0 || strlen($arResult['PREVIEW_PICTURE']['URL'])>0 ):?>
+							<div class="product-page__slider-item product-page__slider-item--active" data-preview="<?=$main_image_string?>" data-active-number-target="0">
+								<img class="product-page__slider-item-img" src="<?=$main_image_string?>">
+							</div>
+						<?endif;?>
+							
+						<?if( $arResult['PROPERTIES']['GALLERY']['VALUE'] ){?>
+							<?foreach ($arResult["GALLERY"] as $key=>$photo):?>
+							<?$images_string .= $photo['BIG'].",";?>
+							<div class="product-page__slider-item" data-preview="<?=$photo['BIG']?>" data-active-number-target="<?echo ($key+1);?>">
+								<img class="product-page__slider-item-img" src="<?=$photo['THUMBNAIL']?>">
+							</div>
+							<?endforeach;?>
+						<?}?>
+						</div>
+					</div>
+				</div>
+				<div class="product-page__main-image-box">
+					<img 
+						class="product-page__main-image" 
+						src="<?=$main_image_string?>" 
+						data-active-number="0" 
+						data-images-array="<?=$images_string?>"
+					>
+					
+					<?if( $arResult['MIN_PRICE']["DISCOUNT_DIFF_PERCENT"] > 0 ){?>
+					<div class="product-page__mark">
+						<svg class="product-page__mark-icon">
+							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#sale"></use>
+						</svg>
+						<div class="product-page__mark-text">Скидка <?= $arResult['MIN_PRICE']["DISCOUNT_DIFF_PERCENT"]?>%</div>
+					</div>
+                    <?}?>
+				</div>
+			</div>
+		</div>
+		<div class="product-page__about">
+			<div class="product-page__title product-page__title--mobile-hidden"><?=$arResult['NAME']?></div>
+			<div class="product-page__code product-page__code--mobile-hidden">Артикул: <?=$arResult['PROPERTIES']['ART_NUMBER']['VALUE']?></div>
+			<div class="product-page__buttons product-cart__buttons">
+				<div class="product-cart__button product-cart__button--compare" onclick="catalogAction('COMPARE', <?=$arResult['ID']?>)" data-id="<?=$arResult['ID']?>">
+					<svg class="product-cart__button-img product-cart__button-img--compare">
+						<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#compare"></use>
+					</svg>
+				</div>
+				<div class="product-cart__button product-cart__button--favorite" onclick="catalogAction('FAVORITES', <?=$arResult['ID']?>)" data-id="<?=$arResult['ID']?>" data-action="FAVORITES">
+					<svg class="product-cart__button-img product-cart__button-img--favorite">
+						<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#favorite"></use>
+					</svg>
+				</div>
+			</div>
+			<div class="product-page__price-block">
+				<div class="product-page__price-block-item">
+					<div class="product-page__price-number">
+					<? if ($arResult['MIN_PRICE']["DISCOUNT_DIFF"] > 0) { ?>
+						<?=$arResult['MIN_PRICE']["DISCOUNT_VALUE"]?>
+					<? } else { ?>
+						<?=$arResult['MIN_PRICE']["VALUE"]?>
+					<? } ?>
+					</div>
+					<div class="product-page__price-currency">сом/шт.</div>
+				</div>
+				<div class="product-page__price-block-count">
+					<div class="product-page__counter" data-counter-max="<?=$arResult["PRODUCT"]["QUANTITY"]?>" data-price="<?echo ( $arResult['MIN_PRICE']["DISCOUNT_DIFF"] > 0 ? intval($arResult['MIN_PRICE']["DISCOUNT_VALUE"]) : intval($arResult['MIN_PRICE']["VALUE"]) );?>">
+						<div class="product-page__counter-button product-page__counter-button--minus"></div>
+						<div class="product-page__counter-value" id="item_<?=$arResult['ID']?>_qnt">1</div>
+						<div class="product-page__counter-button product-page__counter-button--plus"></div>
+					</div>
+					<div class="product-page__price-block-count-price">
+						<div class="product-page__price-block-count-price-number">
+						<? if ($arResult['MIN_PRICE']["DISCOUNT_DIFF"] > 0) { ?>
+							<?= $arResult['MIN_PRICE']["DISCOUNT_VALUE"] ?>
+						<? } else { ?>
+							<?= $arResult['MIN_PRICE']["VALUE"] ?>
+						<? } ?>
+						</div>
+						<div class="product-page__price-block-count-price-currency">сом</div>
+					</div>
+				</div>
+			</div>
+			<div class="product-page__buy-buttons">
+				<div class="product-page__buy-button product-page__buy-button--main button product-cart__button--basket" onclick="catalogAction('add2basket', <?=$arResult['ID']?>)" data-id="<?=$arResult['ID']?>" data-action="add2basket">В корзину</div>
+				<div class="product-page__buy-button product-page__buy-button--natural button">Быстрый заказ</div>
+			</div>
+			<div class="product-page__delivery">
+				<div class="product-page__delivery-store">В наличии <?=$arResult["PRODUCT"]["QUANTITY"]?> шт.</div>
+			</div>
+			<div class="product-page__delivery-price">
+				<svg class="product-page__delivery-price-icon">
+					<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#delivery"></use>
+				</svg>
+				<div class="product-page__delivery-price-text">Доставка по городу: от 120 Сом, доставка ежедневно с 09:00 до 21:00</div>
+			</div>
+			<div class="product-page__delivery-price">
+				<svg class="product-page__delivery-price-icon">
+					<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#info"></use>
+				</svg>
+				<div class="product-page__delivery-price-text">Внешний вид товара может отличаться от фотографии.</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="product-page__desc">
+		<div class="product-page__desc-item">
+			<div class="product-page__desc-item-title">Описание и характеристики</div>
+			<div class="product-page__desc-item-desc">
+				<div class="product-page__desc-item-desc-text">Описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара</div>
+				<div class="product-page__desc-item-characteristics">
+					<div class="product-page__desc-item-characteristics-item">
+						<div class="product-page__desc-item-characteristics-item-name">Длинное название характеристики</div>
+						<div class="product-page__desc-item-characteristics-item-value">Длинное значение характеристики</div>
+					</div>
+					<div class="product-page__desc-item-characteristics-item">
+						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
+						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
+					</div>
+					<div class="product-page__desc-item-characteristics-item">
+						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
+						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
+					</div>
+					<div class="product-page__desc-item-characteristics-item">
+						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
+						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
+					</div>
+					<div class="product-page__desc-item-characteristics-item">
+						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
+						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
+					</div>
+					<div class="product-page__desc-item-characteristics-item">
+						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
+						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
+					</div>
+					<div class="product-page__desc-item-characteristics-item">
+						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
+						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
+					</div>
+					<div class="product-page__desc-item-characteristics-item">
+						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
+						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="product-page__desc-item">
+			<div class="product-page__desc-item-title">Отзывы</div>
+			<div class="product-page__desc-item-desc">
+				<div class="product-page__desc-reviews">
+					<div class="product-page__desc-reviews-subtitle">Средняя оценка</div>
+					<div class="product-page__desc-reviews-item">
+						<div class="rating">
+							<div class="rating__stars">
+								<svg class="rating__star rating__star--active">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+								<svg class="rating__star rating__star--active">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+								<svg class="rating__star rating__star--active">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+								<svg class="rating__star rating__star--active">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+								<svg class="rating__star">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+								</svg>
+							</div>
+							<div class="rating__text">17 отзывов</div>
+						</div>
+					</div>
+					<div class="product-page__desc-reviews-subtitle">Рейтинг</div>
+					<div class="product-page__desc-reviews-item">
+						<div class="product-page__desc-reviews-line-wrapper">
+							<div class="product-page__desc-reviews-line-name">5 звезд</div>
+							<div class="product-page__desc-reviews-line">
+								<div class="product-page__desc-reviews-line-item" style="width:80%"></div>
+							</div>
+							<div class="product-page__desc-reviews-line-count">5 отзывов</div>
+						</div>
+						<div class="product-page__desc-reviews-line-wrapper">
+							<div class="product-page__desc-reviews-line-name">4 звезды</div>
+							<div class="product-page__desc-reviews-line">
+								<div class="product-page__desc-reviews-line-item" style="width:10%"></div>
+							</div>
+							<div class="product-page__desc-reviews-line-count">5 отзывов</div>
+						</div>
+						<div class="product-page__desc-reviews-line-wrapper">
+							<div class="product-page__desc-reviews-line-name">3 звезды</div>
+							<div class="product-page__desc-reviews-line">
+								<div class="product-page__desc-reviews-line-item" style="width:20%"></div>
+							</div>
+							<div class="product-page__desc-reviews-line-count">5 отзывов</div>
+						</div>
+						<div class="product-page__desc-reviews-line-wrapper">
+							<div class="product-page__desc-reviews-line-name">2 звезды</div>
+							<div class="product-page__desc-reviews-line">
+								<div class="product-page__desc-reviews-line-item" style="width:0%"></div>
+							</div>
+							<div class="product-page__desc-reviews-line-count">0 отзывов</div>
+						</div>
+						<div class="product-page__desc-reviews-line-wrapper">
+							<div class="product-page__desc-reviews-line-name">1 звезда</div>
+							<div class="product-page__desc-reviews-line">
+								<div class="product-page__desc-reviews-line-item" style="width:40%"></div>
+							</div>
+							<div class="product-page__desc-reviews-line-count">5 отзывов</div>
+						</div>
+					</div>
+					<div class="product-page__desc-reviews-subtitle">Отзывы</div>
+					<div class="product-page__desc-reviews-item">
+						<div class="product-page__desc-reviews-list">
+							<div class="product-page__desc-reviews-list-item">
+								<div class="product-page__desc-reviews-list-item-name">Владимир К.</div>
+								<div class="product-page__desc-reviews-list-item-stars">
+									<div class="rating">
+										<div class="rating__stars">
+											<svg class="rating__star rating__star--active">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star rating__star--active">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star rating__star--active">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star rating__star--active">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star rating__star--active">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="product-page__desc-reviews-list-item-text">Отличный товар</div>
+							</div>
+							<div class="product-page__desc-reviews-list-item">
+								<div class="product-page__desc-reviews-list-item-name">Владимир К.</div>
+								<div class="product-page__desc-reviews-list-item-stars">
+									<div class="rating">
+										<div class="rating__stars">
+											<svg class="rating__star rating__star--active">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="product-page__desc-reviews-list-item-text">Ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар ужасный товар</div>
+							</div>
+						</div>
+					</div>
+					<!--.product-page__desc-reviews-subtitle Оставить отзыв-->
+					<div class="product-page__desc-reviews-hidden-form-wrapper">
+						<div class="product-page__desc-reviews-hidden-form-button button">Оставить отзыв</div>
+						<div class="product-page__desc-reviews-hidden-form">
+							<div class="product-page__desc-reviews-list-form form-check" id="review-form">
+								<div class="product-page__desc-reviews-list-form-rating form-check__field" data-elem="input" data-rule="input-empty">
+									<div class="rating rating--editable">
+										<div class="rating__stars">
+											<svg class="rating__star">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<svg class="rating__star">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
+											</svg>
+											<input type="hidden">
+										</div>
+									</div>
+								</div>
+								<div class="product-page__desc-reviews-list-form-name">
+									<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+										<input class="input placeholder__input" placeholder="Имя">
+										<div class="placeholder__item">Имя</div>
+									</div>
+								</div>
+								<div class="product-page__desc-reviews-list-form-contact">
+									<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+										<input class="input placeholder__input" placeholder="Телефон или емейл">
+										<div class="placeholder__item">Телефон или емейл</div>
+									</div>
+								</div>
+								<div class="product-page__desc-reviews-list-form-text">
+									<div class="placeholder form-check__field" data-elem="textarea" data-rule="input-empty">
+										<textarea class="input input--textarea placeholder__input" placeholder="Отзыв"></textarea>
+										<div class="placeholder__item">Отзыв</div>
+									</div>
+								</div>
+								<div class="product-page__desc-reviews-list-form-button-block">
+									<div class="product-page__desc-reviews-list-form-button form-check__button button">Отправить</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		  
+		  
+		  
+<?/*		  
 <div class="product-card__item">
     <div class="product-card__main-product">
         <div class="product-card__box">
@@ -248,8 +632,7 @@ $hiddenProperties = [
     </div>
 </div>
 
-</div>
-</section>
+
 <section class="product-description">
     <div class="container">
         <div class="product-description__grid">
@@ -370,3 +753,4 @@ $hiddenProperties = [
         </div>
     </div>
 </section>
+*/?>
