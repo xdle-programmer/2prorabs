@@ -126,7 +126,7 @@ $hiddenProperties = [
 									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
 								</svg>
 							</div>
-							<div class="rating__text">17 отзывов</div>
+							<div class="rating__text"><?\nav\UncachedArea::show('productReviewsCount')?></div>
 						</div>
 					</div>
 					<div class="product-page__slider-wrapper">
@@ -146,32 +146,27 @@ $hiddenProperties = [
 						<?
 						$images_string = "";
 						$main_image_string = "";
-
-						if( $arResult['DETAIL_PICTURE']['URL'] ){ 
-							$main_image_string = $arResult['DETAIL_PICTURE']['URL'];
-							$images_string .= $main_image_string.",";
-						}elseif ( $arResult['PREVIEW_PICTURE']['URL'] ){ 
-							$main_image_string = $arResult['PREVIEW_PICTURE']['URL'];
-							$images_string .= $main_image_string.",";
-						}else{ 
+						?>
+						
+						<?if( is_array($arResult["GALLERY"]) && count($arResult["GALLERY"])>0 ){?>
+							<?foreach ($arResult["GALLERY"] as $key=>$photo):?>
+								<?
+								$images_string .= $photo['BIG'].",";
+								if( $key == 0 ):
+									$main_image_string = $photo['BIG'];
+								endif;
+								?>
+								<div class="product-page__slider-item<?if( $key == 0 ):?> product-page__slider-item--active<?endif;?>" data-preview="<?=$photo['BIG']?>" data-active-number-target="<?echo $key;?>">
+									<img class="product-page__slider-item-img" src="<?=$photo['THUMBNAIL']?>">
+								</div>
+							<?endforeach;?>
+							<?$images_string = substr($images_string, 0, -1);?>
+						<?
+						}else{
 							$main_image_string = SITE_TEMPLATE_PATH."/img/no-image.png";
+							$images_string = $main_image_string;
 						}
 						?>
-
-						<?if( strlen($arResult['DETAIL_PICTURE']['URL'])>0 || strlen($arResult['PREVIEW_PICTURE']['URL'])>0 ):?>
-							<div class="product-page__slider-item product-page__slider-item--active" data-preview="<?=$main_image_string?>" data-active-number-target="0">
-								<img class="product-page__slider-item-img" src="<?=$main_image_string?>">
-							</div>
-						<?endif;?>
-							
-						<?if( $arResult['PROPERTIES']['GALLERY']['VALUE'] ){?>
-							<?foreach ($arResult["GALLERY"] as $key=>$photo):?>
-							<?$images_string .= $photo['BIG'].",";?>
-							<div class="product-page__slider-item" data-preview="<?=$photo['BIG']?>" data-active-number-target="<?echo ($key+1);?>">
-								<img class="product-page__slider-item-img" src="<?=$photo['THUMBNAIL']?>">
-							</div>
-							<?endforeach;?>
-						<?}?>
 						</div>
 					</div>
 				</div>
@@ -240,10 +235,16 @@ $hiddenProperties = [
 			</div>
 			<div class="product-page__buy-buttons">
 				<div class="product-page__buy-button product-page__buy-button--main button product-cart__button--basket" onclick="catalogAction('add2basket', <?=$arResult['ID']?>)" data-id="<?=$arResult['ID']?>" data-action="add2basket">В корзину</div>
-				<div class="product-page__buy-button product-page__buy-button--natural button">Быстрый заказ</div>
+				<div class="product-page__buy-button product-page__buy-button--natural button" data-modal-open="fastOrderModal">Быстрый заказ</div>
 			</div>
 			<div class="product-page__delivery">
-				<div class="product-page__delivery-store">В наличии <?=$arResult["PRODUCT"]["QUANTITY"]?> шт.</div>
+				<div class="product-page__delivery-store">
+				<?if( intval($arResult["PRODUCT"]["QUANTITY"]) > 0 ):?>
+					В наличии <?=$arResult["PRODUCT"]["QUANTITY"]?> шт.
+				<?else:?>
+					Нет в наличии
+				<?endif;?>
+				</div>
 			</div>
 			<div class="product-page__delivery-price">
 				<svg class="product-page__delivery-price-icon">
@@ -264,40 +265,40 @@ $hiddenProperties = [
 		<div class="product-page__desc-item">
 			<div class="product-page__desc-item-title">Описание и характеристики</div>
 			<div class="product-page__desc-item-desc">
-				<div class="product-page__desc-item-desc-text">Описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара описание товара</div>
+				<div class="product-page__desc-item-desc-text">
+				<?=$arResult['DETAIL_TEXT'];?>
+				</div>
 				<div class="product-page__desc-item-characteristics">
+					<? if ($arResult["PROPERTIES"]['COLOR']['VALUE']) { ?>
 					<div class="product-page__desc-item-characteristics-item">
-						<div class="product-page__desc-item-characteristics-item-name">Длинное название характеристики</div>
-						<div class="product-page__desc-item-characteristics-item-value">Длинное значение характеристики</div>
+						<div class="product-page__desc-item-characteristics-item-name">Цвет</div>
+						<div class="product-page__desc-item-characteristics-item-value"><?=$arResult["PROPERTIES"]['COLOR']['VALUE']?></div>
 					</div>
-					<div class="product-page__desc-item-characteristics-item">
-						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
-						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
-					</div>
-					<div class="product-page__desc-item-characteristics-item">
-						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
-						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
-					</div>
-					<div class="product-page__desc-item-characteristics-item">
-						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
-						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
-					</div>
-					<div class="product-page__desc-item-characteristics-item">
-						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
-						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
-					</div>
-					<div class="product-page__desc-item-characteristics-item">
-						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
-						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
-					</div>
-					<div class="product-page__desc-item-characteristics-item">
-						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
-						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
-					</div>
-					<div class="product-page__desc-item-characteristics-item">
-						<div class="product-page__desc-item-characteristics-item-name">Название характеристики</div>
-						<div class="product-page__desc-item-characteristics-item-value">Значение</div>
-					</div>
+					<? } ?>
+
+					<? foreach ($arResult['PROPERTIES'] as $property): ?>
+						<?
+						if (in_array($property['CODE'], $hiddenProperties)) {
+							continue;
+						}
+
+						if (empty($property['VALUE'])) {
+							continue;
+						}
+
+						if (!empty($property['LINK_ELEMENT_VALUE'])) {
+							$value = reset($property['LINK_ELEMENT_VALUE']);
+							$value = $value['NAME'];
+						} else {
+							$value = $property['VALUE'];
+						}
+						?>
+						<div class="product-page__desc-item-characteristics-item">
+							<div class="product-page__desc-item-characteristics-item-name"><?=$property['NAME']?></div>
+							<div class="product-page__desc-item-characteristics-item-value"><?=$value?></div>
+						</div>
+					<? endforeach; ?>
+
 				</div>
 			</div>
 		</div>
@@ -325,7 +326,7 @@ $hiddenProperties = [
 									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
 								</svg>
 							</div>
-							<div class="rating__text">17 отзывов</div>
+							<div class="rating__text"><?\nav\UncachedArea::show('productReviewsCount')?></div>
 						</div>
 					</div>
 					<div class="product-page__desc-reviews-subtitle">Рейтинг</div>
@@ -425,51 +426,9 @@ $hiddenProperties = [
 					<div class="product-page__desc-reviews-hidden-form-wrapper">
 						<div class="product-page__desc-reviews-hidden-form-button button">Оставить отзыв</div>
 						<div class="product-page__desc-reviews-hidden-form">
-							<div class="product-page__desc-reviews-list-form form-check" id="review-form">
-								<div class="product-page__desc-reviews-list-form-rating form-check__field" data-elem="input" data-rule="input-empty">
-									<div class="rating rating--editable">
-										<div class="rating__stars">
-											<svg class="rating__star">
-												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
-											</svg>
-											<svg class="rating__star">
-												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
-											</svg>
-											<svg class="rating__star">
-												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
-											</svg>
-											<svg class="rating__star">
-												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
-											</svg>
-											<svg class="rating__star">
-												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#star"></use>
-											</svg>
-											<input type="hidden">
-										</div>
-									</div>
-								</div>
-								<div class="product-page__desc-reviews-list-form-name">
-									<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-										<input class="input placeholder__input" placeholder="Имя">
-										<div class="placeholder__item">Имя</div>
-									</div>
-								</div>
-								<div class="product-page__desc-reviews-list-form-contact">
-									<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-										<input class="input placeholder__input" placeholder="Телефон или емейл">
-										<div class="placeholder__item">Телефон или емейл</div>
-									</div>
-								</div>
-								<div class="product-page__desc-reviews-list-form-text">
-									<div class="placeholder form-check__field" data-elem="textarea" data-rule="input-empty">
-										<textarea class="input input--textarea placeholder__input" placeholder="Отзыв"></textarea>
-										<div class="placeholder__item">Отзыв</div>
-									</div>
-								</div>
-								<div class="product-page__desc-reviews-list-form-button-block">
-									<div class="product-page__desc-reviews-list-form-button form-check__button button">Отправить</div>
-								</div>
-							</div>
+							<?$APPLICATION->IncludeComponent("nav:form", "product_review", [
+								"PRODUCT_ID" => $arResult['ID'],
+							])?>
 						</div>
 					</div>
 				</div>
@@ -478,9 +437,42 @@ $hiddenProperties = [
 	</div>
 </div>
 
-		  
-		  
-		  
+
+<div class="modal" id="fastOrderModal">
+	<div class="modal__content form-check">
+		<div class="modal__header">
+			<div class="modal__header-title">Оставьте заявку для быстрого заказа</div>
+			<div class="modal__header-close" data-modal-close>
+				<svg class="modal__header-close-icon">
+					<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#close"></use>
+				</svg>
+			</div>
+		</div>
+		<div class="modal__content-items">
+			<div class="modal__content-item">
+				<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+					<input class="input placeholder__input" placeholder="Имя" type="text" id="input_fo_name" name="name" required>
+					<div class="placeholder__item" for="input_fo_name">Имя</div>
+				</div>
+			</div>
+			<div class="modal__content-item">
+				<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+					<input class="input placeholder__input" placeholder="Телефон" type="text" id="input_fo_phone" name="phone" required>
+					<div class="placeholder__item" for="input_fo_phone">Телефон</div>
+				</div>
+			</div>
+			<div class="tq_error tq_error_auth"></div>
+			<div class="modal__content-item">
+				<div class="modal__one-buttons">
+					<div onclick="buttonFastOrder(<?=$arResult['ID']?>)" class="modal__button button button--invert form-check__button">Заказать</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 <?/*		  
 <div class="product-card__item">
     <div class="product-card__main-product">

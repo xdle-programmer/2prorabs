@@ -25,6 +25,11 @@ return [
             'required' => true,
             'caption' => 'Отзыв',
         ],
+		'raiting' => [
+            'field' => 'PROPERTY_RAITING',
+            'required' => true,
+            'caption' => 'Рейтинг',
+        ],
     ],
     'defaults' => [
         'ACTIVE' => 'N',

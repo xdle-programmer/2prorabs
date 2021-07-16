@@ -125,6 +125,79 @@ function orderHelpCall() {
 	}
 }
 	
+
+
+function buttonFastOrder(element_id) {	
+	var user_name = document.getElementById('input_fo_name').value;
+	var user_contact = document.getElementById('input_fo_phone').value;
+		
+	if( user_name.length <= 0 || user_contact.length <= 0 ){
+		console.log('empty fields');
+	}else{
+		var params = "formId=fast_order&name="+user_name+"&phone="+user_contact+"&productId="+element_id+"&_protect=XJuQ52GmKW&ajax=Y"+"&sessid="+app.sessid;
+		
+		var request = new XMLHttpRequest();
+		request.open('POST', '/local/public/fast_order.php', true);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4 && request.status == 200) {
+				//console.log(request.responseText);
+				document.getElementById('input_fo_name').value = '';
+				document.getElementById('input_fo_phone').value = '';
+				modals.close('fastOrderModal');
+			}
+		}
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.send(params);
+	}
+}
+
+
+
+function buttonSendReview(element_id) {	
+	var user_name = document.getElementById('input_rv_name').value;
+	var user_contact = document.getElementById('input_rv_contact').value;
+	var user_text = document.getElementById('input_rv_text').value;
+	var user_raiting = parseInt( document.getElementById('input_rv_stars').value )+1;
+	
+	if( user_name.length <= 0 || user_contact.length <= 0 ){
+		console.log('empty fields');
+	}else{
+		let formData = {
+			formId: 'product_review',
+			_protect: 'XJuQ52GmKW',
+			productId: element_id,
+			name: user_name,
+			email: user_contact,
+			text: user_text,
+			raiting: user_raiting,
+		};
+
+		BX.ajax.runComponentAction('nav:form', 'submit', {
+			mode: 'class',
+			data: formData,
+		}).then(response => {
+			if (!response.data) {
+				alert('Произошла ошибка, попробуйте ещё раз');
+				return;
+			}
+
+			if (response.data.status !== 'ok') {
+				alert(response.data.error);
+				return;
+			}
+
+			document.getElementById('input_rv_name').value = '';
+			document.getElementById('input_rv_contact').value = '';
+			document.getElementById('input_rv_text').value = '';
+			
+			var el = document.querySelector("div.product-review-form-success");
+			el.classList.remove("hidden");
+
+		});
+	}
+}
+
+
 	
 /*
 function ajaxUpdate(){
