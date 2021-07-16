@@ -1,3 +1,4 @@
+/*
 class ProductPage {
     constructor() {
         // To override component cache
@@ -68,3 +69,4 @@ class ProductPage {
 }
 
 $(() => { window.controller = new ProductPage(); });
+*/
