@@ -97,7 +97,6 @@ $hiddenProperties = [
 ];
 
 ?>
-<!--b><?print_r($arResult);?></b-->
 <div class="product-page">
 	<div class="product-page__main-product">
 		<div class="product-page__main-product-mobile-title">
