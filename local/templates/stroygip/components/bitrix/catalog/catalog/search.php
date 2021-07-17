@@ -139,15 +139,15 @@
   );
   unset($basketAction);
 } else {?>
-  <section class="catalog-category">
-    <div class="container">
+  <section class="section section--gray">
+    <div class="layout">
       <?$APPLICATION->IncludeComponent(
         "bitrix:breadcrumb",
         "bread",
         Array(),
         false
       );?>
-      <div class="catalog-category__grid">
+      <div class="catalog-category">
         <div class="catalog-category__content">
           Поисковой запрос пуст , введите ключевые слова в поле 'Поиск' и нажмите на &#128269;
         </div>

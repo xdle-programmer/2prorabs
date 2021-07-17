@@ -16,15 +16,23 @@ use Bitrix\Main\Loader;
 
 $this->setFrameMode(true);
 
+\nav\Catalog\Sort::setFromRequest();
+$currentSort = \nav\Catalog\Sort::getCurrent();
+$sortItems = \nav\Catalog\Sort::getTemplateData();
+
+\nav\Catalog\PageSize::setFromRequest();
+$currentPageSize = \nav\Catalog\PageSize::getCurrent();
+$pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
+
 global $searchFilter;
 
 $elementOrder = array();
 if ($arParams['USE_SEARCH_RESULT_ORDER'] === 'N') {
     $elementOrder = array(
-        "ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
-        "ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
-        "ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
-        "ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
+		"ELEMENT_SORT_FIELD" => $currentSort['FIELD'][0],
+		"ELEMENT_SORT_ORDER" => $currentSort['ORDER'][0],
+		"ELEMENT_SORT_FIELD2" => '',//$arParams["ELEMENT_SORT_FIELD2"],
+		"ELEMENT_SORT_ORDER2" => '',//$arParams["ELEMENT_SORT_ORDER2"],
     );
 }
 
@@ -68,7 +76,7 @@ if (Loader::includeModule('search')) {
     } else {
         if (is_array($arElements)) {
             ?>
-            <section class="section section--gray catalog-category">
+            <section class="section section--gray">
                 <div class="layout">
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:breadcrumb",
@@ -76,7 +84,7 @@ if (Loader::includeModule('search')) {
                         array(),
                         false
                     ); ?>
-                    <div class="catalog-category__grid">
+                    <div class="catalog-category">
                         <div class="catalog-category__content">
                             <?= GetMessage("CT_BCSE_NOT_FOUND"); ?>
                         </div>
@@ -100,10 +108,15 @@ if (Loader::includeModule('search')) {
 }
 
 if (!empty($searchFilter) && is_array($searchFilter)) {
+	
     $componentParams = array(
             "AJAX_MODE" => 'Y',
             "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
             "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+			"ELEMENT_SORT_FIELD" => $currentSort['FIELD'][0],
+			"ELEMENT_SORT_ORDER" => $currentSort['ORDER'][0],
+			"ELEMENT_SORT_FIELD2" => '',//$arParams["ELEMENT_SORT_FIELD2"],
+			"ELEMENT_SORT_ORDER2" => '',//$arParams["ELEMENT_SORT_ORDER2"],
             "PAGE_ELEMENT_COUNT" => $arParams["PAGE_ELEMENT_COUNT"],
             "LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
             "PROPERTY_CODE" => $arParams["PROPERTY_CODE"],
@@ -205,9 +218,10 @@ if (!empty($searchFilter) && is_array($searchFilter)) {
             'COMPARE_PATH' => (isset($arParams['COMPARE_PATH']) ? $arParams['COMPARE_PATH'] : ''),
             'COMPARE_NAME' => (isset($arParams['COMPARE_NAME']) ? $arParams['COMPARE_NAME'] : ''),
             'USE_COMPARE_LIST' => (isset($arParams['USE_COMPARE_LIST']) ? $arParams['USE_COMPARE_LIST'] : '')
-        ) + $elementOrder;
+        );
     ?>
-    <section class="section section--gray catalog-category">
+
+    <section class="section section--gray">
         <div class="layout">
             <? $APPLICATION->IncludeComponent(
                 "bitrix:breadcrumb",
@@ -215,7 +229,7 @@ if (!empty($searchFilter) && is_array($searchFilter)) {
                 array(),
                 false
             ); ?>
-            <div class="catalog-category__grid">
+            <div class="catalog-category">
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:catalog.smart.filter",
                     "",
@@ -241,13 +255,42 @@ if (!empty($searchFilter) && is_array($searchFilter)) {
                         "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
                         "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
                         "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
+						"SORT1_DATA" => $sortItems,
+						"SHOW1_DATA" => $pageSizeItems,
                         "SHOW_ALL_WO_SECTIONS" => 'Y',
                     ),
                     $component,
                     array('HIDE_ICONS' => 'Y')
                 ); ?>
-                <div class="catalog-category__content">
-                    <div class="catalog-category__title">Результаты поиска по запросу '<?= $_REQUEST['q'] ?>'</div>
+                <div class="catalog-category__items">
+					<div class="catalog-category__items-header">
+						<div class="catalog-category__items-header-title">Результаты поиска по запросу <?=$_REQUEST['q']?></div>
+						<div class="catalog-category__items-header-filter">
+							<svg class="catalog-category__items-header-filter-icon">
+								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#settings"></use>
+							</svg>
+						</div>
+						<div class="catalog-category__items-header-options">
+							<form class="catalog-category__select-form" action="#">
+								<div class="catalog-category__items-header-options-item">
+									<select onchange="catalogSort()" id="catalog-sort-select" class="custom-select" name="sort">
+										<option selected disabled hidden>Сортировка</option>
+										<? foreach ($sortItems as $item): ?>
+										<option value="<?=$item['CODE']?>" <?if ($item['ACTIVE'] === 'Y'):?>selected="selected"<?endif;?>><?=$item['NAME']?></option>
+										<? endforeach; ?>
+									</select>
+								</div>
+								<div class="catalog-category__items-header-options-item">
+									<select onchange="catalogPageSize()" id="catalog-pagesize-select" class="custom-select" name="pageSize">
+										<? foreach ($pageSizeItems as $item): ?>
+										<option value="<?=$item['CODE']?>" <? if ($item['ACTIVE'] === 'Y'): ?>selected="selected"<? endif; ?>>Показать по <?=$item['NAME']?></option>
+										<? endforeach; ?>
+									</select>
+								</div>
+							</form>
+						</div>
+					</div>
+					
                     <?
                     $GLOBALS['searchFilter']['>CATALOG_PRICE_1'] = 0;
                     $APPLICATION->IncludeComponent(

@@ -67,7 +67,8 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
                 <?}?>
 				
                 <div class="catalog-category__items">
-				
+					
+					<?if($cntElems>0){?>
 					<div class="catalog-category__items-header">
 						<div class="catalog-category__items-header-title"><?=$APPLICATION->ShowTitle(false)?></div>
 						<div class="catalog-category__items-header-filter">
@@ -95,6 +96,7 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 							</form>
 						</div>
 					</div>
+					<?}?>
 
                     <?
                     $GLOBALS[$arParams["FILTER_NAME"]]['>CATALOG_PRICE_1'] = 0;
