@@ -69,12 +69,19 @@ function catalogAction(action, element_id) {
 
 
 function dataShowMore() {
+	var url = "";
+	var url_pathname = window.location.pathname;
+	var url_params = window.location.search;
 	
     var page = document.getElementById('catalogSectionShowMore').getAttribute("data-next-page");
     var id = document.getElementById('catalogSectionShowMore').getAttribute("data-show-more-catalog");
     var bx_ajax_id = document.getElementById('catalogSectionShowMore').getAttribute("data-ajax-id");
     var block_id = "#comp_"+bx_ajax_id;
-	var url = window.location.href+"?bxajaxid="+bx_ajax_id+"&PAGEN_"+id+"="+page;
+	
+	url = url_pathname + "?bxajaxid="+bx_ajax_id+"&PAGEN_"+id+"="+page;
+	if( url_params.length > 0 ){
+		url = url_pathname + url_params + "&bxajaxid="+bx_ajax_id+"&PAGEN_"+id+"="+page;
+	}
 	
 	var request = new XMLHttpRequest();
     request.open('GET', url, true);
