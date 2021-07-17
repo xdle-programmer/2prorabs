@@ -21,7 +21,6 @@ use \Bitrix\Main\Localization\Loc;
  */
 
 $this->setFrameMode(true); ?>
-
 <? if ($arResult['ITEMS']) { ?>
     <div class="section section--gray">
         <div class="layout">
@@ -80,23 +79,23 @@ $this->setFrameMode(true); ?>
                                 <div class="product-cart__reviews">
                                     <div class="rating">
                                         <div class="rating__stars">
-                                            <svg class="rating__star">
+                                            <svg class="rating__star<?if( intval($arResult["REVIEWS_DATA_NUM"][$arElement["ID"]]["AVERAGE"]) > 0 ):?> rating__star--active<?endif;?>">
                                                 <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#star"></use>
                                             </svg>
-                                            <svg class="rating__star">
+                                            <svg class="rating__star<?if( intval($arResult["REVIEWS_DATA_NUM"][$arElement["ID"]]["AVERAGE"]) > 0 ):?> rating__star--active<?endif;?>">
                                                 <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#star"></use>
                                             </svg>
-                                            <svg class="rating__star">
+                                            <svg class="rating__star<?if( intval($arResult["REVIEWS_DATA_NUM"][$arElement["ID"]]["AVERAGE"]) > 0 ):?> rating__star--active<?endif;?>">
                                                 <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#star"></use>
                                             </svg>
-                                            <svg class="rating__star">
+                                            <svg class="rating__star<?if( intval($arResult["REVIEWS_DATA_NUM"][$arElement["ID"]]["AVERAGE"]) > 0 ):?> rating__star--active<?endif;?>">
                                                 <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#star"></use>
                                             </svg>
-                                            <svg class="rating__star">
+                                            <svg class="rating__star<?if( intval($arResult["REVIEWS_DATA_NUM"][$arElement["ID"]]["AVERAGE"]) > 0 ):?> rating__star--active<?endif;?>">
                                                 <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#star"></use>
                                             </svg>
                                         </div>
-                                        <div class="rating__text">Нет отзывов</div>
+                                        <div class="rating__text"><?echo ($arResult["REVIEWS_DATA_NUM"][$arElement["ID"]]["COUNT_TEXT"] ? $arResult["REVIEWS_DATA_NUM"][$arElement["ID"]]["COUNT_TEXT"] : "Нет отзывов");?></div>
                                     </div>
                                 </div>
                                 <img class="product-cart__img preload__item" data-src="<?=$element_img?>">
