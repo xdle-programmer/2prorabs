@@ -26,6 +26,23 @@ global $USER;
         // This stylesheet should become main
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/index.css");
     }
+	
+	
+	if ($APPLICATION->GetCurPage() != "/" && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
+		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.carousel.min.css");
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.theme.default.min.css");
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/select2/dist/css/select2.min.css");
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/fancybox-master/dist/jquery.fancybox.min.css");		
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/range-slider/css/ion.rangeSlider.min.css");
+
+		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/lightbox.min.css");
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/costume.css");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/libs.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/main.js");
+		Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/lightbox.min.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/plugins/jquery.inputmask.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/style.js");
+	}
 
 
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
