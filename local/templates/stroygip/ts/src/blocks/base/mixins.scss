@@ -3,7 +3,7 @@
   &:after {
     @include pseudo-absolute;
     @include absolute-fill;
-    background: var(--middle-blue-color);
+    background: var(--red-color);
     z-index: -1;
     transform: scale(0.9);
     border-radius: #{$border-radius};

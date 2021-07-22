@@ -71,6 +71,20 @@ body {
     padding-top: 50px;
   }
 
+  &.clear-page {
+    background: #f6f7fc;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include tablet-big-screen {
+      padding-top: 30px;
+    }
+
+    @media print {
+      padding-top: 15px;
+    }
+  }
+
   &.open-menu {
     height: 0;
     overflow: hidden;

@@ -1,0 +1,73 @@
+extends ../templates/clear-page
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    +header-clear('Корзина')
+
+    mixin basket-product
+        .basket__products-item
+            .basket__products-item-img-wrapper
+                img(src='/local/templates/stroygip/ts/images/examples/product-1.jpg').basket__products-item-img
+            .basket__products-item-desc
+                .basket__products-item-desc-title
+                    .basket__products-item-desc-title-item Газонокосилка электрическая huter elm-1100 70/4/2
+                    .basket__products-item-desc-title-count
+                        .basket__products-item-desc-title-count-text На складе:
+                        .basket__products-item-desc-title-count-number 42 шт.
+                .basket__products-item-desc-count(data-counter-max=5)
+                        .basket__products-item-desc-count-button.basket__products-item-desc-count-button--minus
+                        .basket__products-item-desc-count-value 1
+                        .basket__products-item-desc-count-button.basket__products-item-desc-count-button--plus
+                .basket__products-item-desc-price
+                    .basket__products-item-desc-price-number 122 342
+                    .basket__products-item-desc-price-currency сом
+                .basket__products-item-desc-del
+                    +iconSvg('trash','basket__products-item-desc-del-icon')
+
+
+
+
+    section.section
+        .layout.layout--small
+            .basket
+                .basket__products
+                    .basket__products-title Товары в корзине: 10
+                    .basket__products-items
+                        +basket-product
+                        +basket-product
+                        +basket-product
+                        +basket-product
+                        +basket-product
+                        +basket-product
+
+                .basket__order
+                    .basket__order-wrapper
+                        .basket__order-main
+                            .basket__order-title Заказ:
+                            .basket__order-desc
+                                .basket__order-desc-row
+                                    .basket__order-desc-row-item Товары 10 шт.
+                                    .basket__order-desc-row-value 76 625 сом
+                                .basket__order-desc-row
+                                    .basket__order-desc-row-item Вес заказа
+                                    .basket__order-desc-row-value 0 кг
+                                .basket__order-desc-row.basket__order-desc-row--result
+                                    .basket__order-desc-row-item Общая стоимость
+                                    .basket__order-desc-row-value 75 625 сом
+                        .basket__order-actions
+                            .basket__order-actions-buttons
+                                .basket__order-actions-button.basket__order-actions-button--bill
+                                    +iconSvg('bill','basket__order-actions-button-icon')
+                                    span.basket__order-actions-button-text Сохранить как смету
+                                .basket__order-actions-button.basket__order-actions-button--print(onclick='window.print()')
+                                    +iconSvg('print','basket__order-actions-button-icon')
+                                    span.basket__order-actions-button-text Версия для печати
+
+                    .basket__order-actions-main-button Перейти к оформлению заказа
+
+    //include ../blocks/footer/footer

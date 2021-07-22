@@ -22,4 +22,6 @@ const sliders = () => {
     initNaturalBannerSlider();
 };
 
-loadMain();
+if (!document.getElementsByTagName('body')[0].classList.contains('clear-page')) {
+    loadMain();
+}

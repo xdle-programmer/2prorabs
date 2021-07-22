@@ -1,6 +1,8 @@
 import {preload} from "../preload/preload";
 
-toggleMenu();
+if (document.querySelector('.menu')) {
+    toggleMenu();
+}
 
 function toggleMenu() {
     let buttons = Array.from(document.querySelectorAll('[data-menu-target]'));
