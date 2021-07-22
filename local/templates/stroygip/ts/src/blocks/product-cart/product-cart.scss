@@ -156,6 +156,11 @@
       height: 250px !important;
       object-position: center !important;
     }
+
+    .previews-grid__slide & {
+      transition: none!important;
+      opacity: 0;
+    }
   }
 
   &__price {
