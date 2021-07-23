@@ -222,6 +222,16 @@
     }
   }
 
+  &__select-form {
+    @include flex-row;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include tablet-big-screen {
+      display: none;
+    }
+  }
+
   &__items-header-options-item {
     margin-left: 20px;
     width: 250px;
