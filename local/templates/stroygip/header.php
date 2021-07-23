@@ -19,7 +19,7 @@ global $USER;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?
-    if ($APPLICATION->GetCurPage() != "/") {
+    if ($APPLICATION->GetCurPage() != "/" && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/libs.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/style.css");
 
