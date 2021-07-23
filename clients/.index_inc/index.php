@@ -63,24 +63,10 @@
         </div>
     </div>
 </div>
-<a class="button button--red-width button button--red special-conditions__button js-registration-popup" href="#">Зарегистрироваться</a>
+
 </div><!-- /.container in header -->
 </div><!-- /.special-conditions in header -->
-<div class="watch-video">
-    <div class="title title--white">Посмотрите видео о нашей компании</div>
-    <div class="watch-video__video-box">
-        <?$APPLICATION->IncludeComponent(
-            "bitrix:main.include",
-            "",
-            Array(
-                "AREA_FILE_SHOW" => "file",
-                "PATH" => ".index_inc/company_video.php",
-                "EDIT_TEMPLATE" => ""
-            ),
-            false
-        );?>
-    </div>
-</div>
+
 <div class="special-abilities">
     <div class="container">
         <div class="title special-abilities__title">
@@ -136,15 +122,7 @@
                 );?>
             </div>
         </div>
-        <div class="feedback-now feedback-now--mt">
-            <div class="feedback-now__inner feedback-now__inner--padding">
-                <div class="feedback-now__container">
-                    <div class="feedback-now__title">Воспользуйтесь специальными возможностями <br> личного кабинета</div>
-                    <div class="feedback-now__text">Откройте для себя дополнительные возможности личного кабинета.</div>
-                </div>
-                <div class="feedback-now__button"><a class="button" href="#">Зарегистрироваться</a></div>
-            </div>
-        </div>
+
     </div>
 </div>
 
@@ -282,25 +260,6 @@
         </div>
     </div>
 </div>
-<section class="find-us find-us--light-blue">
-    <div class="container">
-        <?$APPLICATION->IncludeComponent(
-            "bitrix:main.include",
-            "clients_more",
-            Array(
-                "VIDEO_URL" => Array(
-                    0 => "/local/templates/stroygip/assets/dist/src/videos/video.mp4",
-                    1 => "/local/templates/stroygip/assets/dist/src/videos/video.mp4",
-                    2 => "/local/templates/stroygip/assets/dist/src/videos/video.mp4",
-                ),
-                "AREA_FILE_SHOW" => "file",
-                "PATH" => ".index_inc/more.php",
-                "EDIT_TEMPLATE" => ""
-            ),
-            false
-        );?>
-    </div>
-</section>
 
 <div><!-- For closing .container in footer -->
     <div><!-- For closing .special-conditions in footer -->

@@ -31,7 +31,9 @@ $this->setFrameMode(true);
                             </div>
                         <?}?>
                     </div>
+					<?/*
                     <div class="for-you__image-box"><img class="for-you__image" src="<?=SITE_TEMPLATE_PATH?>/assets/src/blocks/for-you/assets/img/group.png"></div>
+					*/?>
                 </div>
             </div>
         </div>

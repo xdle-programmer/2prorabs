@@ -86,7 +86,7 @@ $page = $APPLICATION->GetCurPage();
                             <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#fb"></use>
                         </svg>
                     </a>
-                    <a class="footer__social-item" href="#">
+                    <a class="footer__social-item" href="https://www.instagram.com/2proraba_kg/" target="_blank">
                         <svg class="footer__social-item-icon">
                             <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#it"></use>
                         </svg>
