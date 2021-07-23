@@ -8,6 +8,6 @@
 $compositeStub = (isset($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STUB'] == 'Y');
 ?>
 <span class="header__user-button-text">Корзина</span>
-<span class="header__user-button-count"><?echo $arResult['NUM_PRODUCTS'];?></span>
+<span class="header__user-button-count top-basket-count"><?echo $arResult['NUM_PRODUCTS'];?></span>
 
 

@@ -7,6 +7,7 @@ use Bitrix\Sale;
 global $USER;
 $request = Application::getInstance()->getContext()->getRequest();
 $arResult = array();
+$arOutput = array();
 if($request->isPost()) {
     $action = $request->getPost('action');
     switch($action)
@@ -17,8 +18,9 @@ if($request->isPost()) {
             $result = \DDS\Basketclass::add2basket($id,$quantity);
 			
 			$_SESSION["BASKET_LIST"][$id] = $id;
+			echo count($_SESSION["BASKET_LIST"]);
 			
-            echo json_encode('Y');
+            //echo json_encode('Y');
             break;
         case 'updatebasket':
             $id = $request->getPost('id');
@@ -53,7 +55,8 @@ if($request->isPost()) {
 				$result = \DDS\Basketclass::delete($basket_id);
 				unset($_SESSION["BASKET_LIST"][$product_id]);
 				
-				echo json_encode($result);
+				echo count($_SESSION["BASKET_LIST"]);
+				//echo json_encode($result);
 			}
             
             break;
@@ -114,11 +117,21 @@ if($request->isPost()) {
             break;
         case 'compfav':
             $result = \DDS\Tools::compfav($request);
-            echo json_encode($result);
+			
+			$arOutput["FAV"] = count($_SESSION['FAVORITES']);
+			$arOutput["COMP"] = count($_SESSION['COMPARE']);
+			echo json_encode($arOutput);
+
+			//echo json_encode($result);
             break;
         case 'compfavdelete':
             $result = \DDS\Tools::compfavdelete($request);
-            echo json_encode($result);
+			
+			$arOutput["FAV"] = count($_SESSION['FAVORITES']);
+			$arOutput["COMP"] = count($_SESSION['COMPARE']);
+			echo json_encode($arOutput);
+			
+            //echo json_encode($result);
             break;
         case 'clearCompare':
             $ids = explode('/',$request->getPost('id'));
@@ -130,7 +143,7 @@ if($request->isPost()) {
             echo json_encode(true);
             break;
         case 'countfavcomp':
-            echo json_encode(array('FAV'=>count($_SESSION['FAVORITE']),'COMP'=>count($_SESSION['COMPARE'])));
+            echo json_encode(array('FAV'=>count($_SESSION['FAVORITES']),'COMP'=>count($_SESSION['COMPARE'])));
             break;
         case 'q_sort':
             $count=$request->getPost('count');

@@ -128,6 +128,8 @@ $hiddenProperties = [
 							<div class="rating__text"><?\nav\UncachedArea::show('productReviewsCount')?></div>
 						</div>
 					</div>
+					
+					<?if( is_array($arResult["GALLERY"]) && count($arResult["GALLERY"])>1 ):?>
 					<div class="product-page__slider-wrapper">
 						<div class="product-page__slider-nav">
 							<div class="product-page__slider-nav-button product-page__slider-nav-button--prev">
@@ -143,8 +145,8 @@ $hiddenProperties = [
 						</div>
 						<div class="product-page__slider-items">
 						<?
-						$images_string = "";
 						$main_image_string = "";
+						$images_string = "";
 						?>
 						
 						<?if( is_array($arResult["GALLERY"]) && count($arResult["GALLERY"])>0 ){?>
@@ -160,14 +162,21 @@ $hiddenProperties = [
 								</div>
 							<?endforeach;?>
 							<?$images_string = substr($images_string, 0, -1);?>
-						<?
-						}else{
-							$main_image_string = SITE_TEMPLATE_PATH."/img/no-image.png";
-							$images_string = $main_image_string;
-						}
-						?>
+						<?}?>
 						</div>
 					</div>
+					<?elseif( is_array($arResult["GALLERY"]) && count($arResult["GALLERY"])==1 ):?>
+						<?
+						$main_image_string = $arResult["GALLERY"][0]['BIG'];
+						$images_string = $main_image_string;
+						?>
+					<?else:?>
+						<?
+						$main_image_string = SITE_TEMPLATE_PATH."/img/no-image.png";
+						$images_string = $main_image_string;
+						?>
+					<?endif;?>
+					
 				</div>
 				<div class="product-page__main-image-box">
 					<img 

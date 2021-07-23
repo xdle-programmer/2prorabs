@@ -6,40 +6,44 @@ function catalogAction(action, element_id) {
 		case 'add2basket':
 		    var qnt = document.getElementById('item_'+element_id+'_qnt').innerHTML;
 			
-			var el = document.querySelector("div.product-cart__button--basket[data-id='"+element_id+"']");
-			if( !el.classList.contains('product-cart__button--active') ){
-				el.className += " product-cart__button--active";
-				
-				params = "action=add2basket&quantity="+qnt+"&id="+element_id;
-			}else{
-				el.classList.remove("product-cart__button--active");
-				
-				params = "action=delete_basket_item&productid="+element_id;
-			}
+			var el = document.querySelectorAll("div.product-cart__button--basket[data-id='"+element_id+"']");
+			el.forEach(function (el2,index) {
+				if( !el2.classList.contains('product-cart__button--active') ){
+					el2.className += " product-cart__button--active";
+					params = "action=add2basket&quantity="+qnt+"&id="+element_id;
+				}else{
+					el2.classList.remove("product-cart__button--active");
+					params = "action=delete_basket_item&productid="+element_id;
+				}
+			});
 			
 			break;
 		case 'COMPARE':			
-			var el = document.querySelector("div.product-cart__button--compare[data-id='"+element_id+"']");
-			if( !el.classList.contains('product-cart__button--active') ){
-				el.className += " product-cart__button--active";
-				action_name = "compfav";
-			}else{
-				el.classList.remove("product-cart__button--active");
-				action_name = "compfavdelete";
-			}
+			var el = document.querySelectorAll("div.product-cart__button--compare[data-id='"+element_id+"']");
+			el.forEach(function (el2,index) {
+				if( !el2.classList.contains('product-cart__button--active') ){
+					el2.className += " product-cart__button--active";
+					action_name = "compfav";
+				}else{
+					el2.classList.remove("product-cart__button--active");
+					action_name = "compfavdelete";
+				}
+			});
 			
 			params = "action="+action_name+"&add=COMPARE&id="+element_id;
 
 			break;
 		case 'FAVORITES':
-			var el = document.querySelector("div.product-cart__button--favorite[data-id='"+element_id+"']");
-			if( !el.classList.contains('product-cart__button--active') ){
-				el.className += " product-cart__button--active";
-				action_name = "compfav";
-			}else{
-				el.classList.remove("product-cart__button--active");
-				action_name = "compfavdelete";
-			}
+			var el = document.querySelectorAll("div.product-cart__button--favorite[data-id='"+element_id+"']");
+			el.forEach(function (el2,index) {
+				if( !el2.classList.contains('product-cart__button--active') ){
+					el2.className += " product-cart__button--active";
+					action_name = "compfav";
+				}else{
+					el2.classList.remove("product-cart__button--active");
+					action_name = "compfavdelete";
+				}
+			});
 			
 			params = "action="+action_name+"&add=FAVORITES&id="+element_id;
 			
@@ -59,6 +63,18 @@ function catalogAction(action, element_id) {
     request.open('POST', '/local/templates/stroygip/ajax/ajax.php', true);
 	request.onreadystatechange = function() {
 		if (request.readyState == 4 && request.status == 200) {
+			var obj = JSON.parse(request.responseText);
+			if( action == "COMPARE" ){
+				var compContainer = document.querySelector('.header__button--compare');
+				compContainer.querySelector('.header__user-button-count').innerHTML = obj["COMP"];
+			}else if( action == "FAVORITES" ){
+				var favContainer = document.querySelector('.header__button--favorits');
+				favContainer.querySelector('.header__user-button-count').innerHTML = obj["FAV"];
+			}else if( action == "add2basket" ){
+				document.querySelector('.top-basket-count').innerHTML = request.responseText;
+				document.querySelector('.mobile-header__basket-count').innerHTML = request.responseText;
+			}
+			
 			console.log(request.responseText);
 		}
 	}
