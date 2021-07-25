@@ -19,7 +19,7 @@ global $USER;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?
-    if ($APPLICATION->GetCurPage() != "/" && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
+    if ($APPLICATION->GetCurPage() != "/" && $APPLICATION->GetCurPage() != "/basket/" && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/libs.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/style.css");
 
@@ -28,7 +28,7 @@ global $USER;
     }
 	
 	
-	if ($APPLICATION->GetCurPage() != "/" && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
+	if ($APPLICATION->GetCurPage() != "/" && $APPLICATION->GetCurPage() != "/basket/" && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
 		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.carousel.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.theme.default.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/select2/dist/css/select2.min.css");

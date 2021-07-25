@@ -5,7 +5,7 @@ use Bitrix\Sale;
 ?>
 <?$APPLICATION->IncludeComponent(
     "bitrix:sale.basket.basket",
-    "basket",
+    "basket2",
     Array(
         "ACTION_VARIABLE" => "basketAction",
         "ADDITIONAL_PICT_PROP_1" => "-",

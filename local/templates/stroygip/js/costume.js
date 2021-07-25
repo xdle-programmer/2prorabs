@@ -18,6 +18,9 @@ function catalogAction(action, element_id) {
 			});
 			
 			break;
+		case 'delete_basket_item':
+			params = "action=delete_basket_item&productid="+element_id;
+			break;
 		case 'COMPARE':			
 			var el = document.querySelectorAll("div.product-cart__button--compare[data-id='"+element_id+"']");
 			el.forEach(function (el2,index) {
@@ -73,14 +76,65 @@ function catalogAction(action, element_id) {
 			}else if( action == "add2basket" ){
 				document.querySelector('.top-basket-count').innerHTML = request.responseText;
 				document.querySelector('.mobile-header__basket-count').innerHTML = request.responseText;
+			}else if( action == "delete_basket_item" ){
+				var bsk_element = document.getElementById('basket_'+element_id+'_item');
+				bsk_element.remove();
+				
+				basketRefresh();
 			}
-			
-			console.log(request.responseText);
 		}
 	}
 	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	request.send(params);
 
+}
+
+
+function basketUpdate(basket_id, change) {
+	var params = "";
+	var qnt =  parseInt( document.getElementById('basket_'+basket_id+'_qnt').innerHTML );
+	var qnt_max =  parseInt( document.getElementById('basket_'+basket_id+'_qnt').getAttribute("data-maxqnt") );
+	if( change == "minus" ){
+		qnt = qnt-1;
+	}else{
+		qnt = qnt+1;
+	}
+	
+	if( qnt > 0 && qnt <= qnt_max ){
+		params = "action=updatebasket&id="+basket_id+"&quantity="+qnt;
+		
+		var request = new XMLHttpRequest();
+		request.open('POST', '/local/templates/stroygip/ajax/ajax.php', true);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4 && request.status == 200) {
+				var obj = JSON.parse(request.responseText);
+				
+				basketRefresh();
+				console.log(request.responseText);
+			}
+		}
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.send(params);
+		
+	}
+}
+
+
+function basketRefresh() {	
+	var request = new XMLHttpRequest();
+	request.open('GET', '/local/templates/stroygip/ajax/basketupdate.php', true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			var resp = request.responseText;
+			var temp1 = document.createElement('div');
+			temp1.innerHTML = resp;
+			var basket_html = temp1.getElementsByClassName("basket")[0].innerHTML;
+		
+			document.getElementById("basket_ajax_template").innerHTML = basket_html;
+		}
+	}
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.send();		
 }
 
 
