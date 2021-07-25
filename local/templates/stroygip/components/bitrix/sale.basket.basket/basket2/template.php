@@ -15,7 +15,6 @@ use Bitrix\Main;
 
 <?
 if( empty($arResult["ERROR_MESSAGE"]) ){
-    $fullPrice = 0;
 ?>
 <div id="basket_ajax_template" class="basket">
 	<div class="basket__products">
@@ -59,10 +58,7 @@ if( empty($arResult["ERROR_MESSAGE"]) ){
 					</div>
 				</div>
 			</div>
-			<?
-				$fullPrice += $arItem['SUM_FULL_PRICE'];
-			}
-			?>
+			<?}?>
 
 		</div>
 	</div>
@@ -100,7 +96,7 @@ if( empty($arResult["ERROR_MESSAGE"]) ){
 				</div>
 			</div>
 		</div>
-		<a  href="/order/" class="basket__order-actions-main-button">Перейти к оформлению заказа</a>
+		<a href="/order/" <?if( !$USER->IsAuthorized() ):?>data-modal-open='login'<?endif;?> class="basket__order-actions-main-button">Перейти к оформлению заказа</a>
 	</div>
 </div>
 <?
