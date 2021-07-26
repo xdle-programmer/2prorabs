@@ -1,0 +1,20 @@
+extends ../templates/clear-page
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    +header-clear('Корзина')
+
+
+    section.section
+        .layout.layout--small
+            .basket.basket--empty
+                .basket__empty
+                    +iconSvg('empty-box','basket__empty-icon')
+                    .basket__empty-text-box
+                        .basket__empty-text Корзина пуста. Вы можете выбрать товары в
+                        a(href='#').basket__empty-text-link &nbsp;каталоге

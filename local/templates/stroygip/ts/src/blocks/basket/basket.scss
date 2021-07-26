@@ -8,6 +8,11 @@
   grid-template-columns: 1fr 350px;
   grid-gap: 30px;
 
+  &--empty {
+    @include flex-row-center;
+    padding: 50px 0;
+  }
+
   @include tablet-big-screen {
     grid-template-columns: 1fr;
   }
@@ -264,6 +269,11 @@
   &__products-item-desc-title-item {
     font-size: 17px;
     font-weight: 700;
+    color: var(--black-color);
+
+    &:hover {
+      color: var(--red-color);
+    }
   }
 
   &__products-item-desc-title-count {
@@ -394,6 +404,38 @@
     #{$del-hover} & {
       fill: var(--red-color);
     }
+  }
+
+
+  &__empty {
+    @include flex-column-center;
+    width: 100%;
+  }
+
+  &__empty-icon {
+    width: 100px;
+    height: 100px;
+    fill: var(--gray-color);
+    margin-bottom: 20px;
+  }
+
+  &__empty-text-box {
+    text-align: center;
+    color: var(--gray-color);
+    font-size: 20px;
+
+    @include mobile-big-screen {
+      font-size: 18px;
+    }
+  }
+
+  &__empty-text {
+    display: inline;
+  }
+
+  &__empty-text-link {
+    color: var(--red-color);
+    display: inline;
   }
 
 }
