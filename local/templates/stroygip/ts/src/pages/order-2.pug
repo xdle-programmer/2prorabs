@@ -1,0 +1,84 @@
+extends ../templates/clear-page
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    +header-clear('Доставка')
+
+    script.
+        deliveryPrice = {
+            bigDeliveryKm: 20,
+            bigDeliveryKmMinimal: 200,
+            smallDeliveryKm: 10,
+            smallDeliveryKmMinimal: 100,
+        }
+
+    section.section
+        .layout.layout--small
+            form#order-2.basket.form-check
+                .basket__products
+
+                    .order-status
+                        a(href='#').order-status__item.order-status__item--fill
+                            .order-status__item-number 1
+                            .order-status__item-name Доставка
+
+                        +iconSvg('long-arrow','order-status__separator')
+
+                        .order-status__item.order-status__item--active
+                            .order-status__item-number 2
+                            .order-status__item-name Оплата
+
+                        +iconSvg('long-arrow','order-status__separator')
+
+                        .order-status__item.order-status__item--unactive
+                            .order-status__item-number 3
+                            .order-status__item-name Подтверждение
+
+
+                    .order-form
+                        .order-form__group
+                            .order-form__payment
+                                label.order-form__radio.order-form__radio--big.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='payment').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Банковский перевод
+                                label.order-form__radio.order-form__radio--big.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='payment').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Электронной картой онлайн (Visa, Mastercard)
+                                            span.order-form__radio-button-desc Ваши имя, адрес, телефон,e-mail, номер кредитной карты конфиденциальны и не подлежат разглашению. Данные кредитной карты передаются в зашифрованном виде и не сохраняются на нашем Web-сервере.
+                                label.order-form__radio.order-form__radio--big.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='payment').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Электронный кошелёк (Элсом)
+                                label.order-form__radio.order-form__radio--big.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='payment').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Наличными при получении
+
+
+                .basket__order
+                    .basket__order-wrapper
+                        .basket__order-main
+                            .basket__order-title Заказ:
+                            .basket__order-desc
+                                .basket__order-desc-row
+                                    .basket__order-desc-row-item Товары 10 шт.
+                                    .basket__order-desc-row-value 76 625 сом
+                                .basket__order-desc-row
+                                    .basket__order-desc-row-item Вес заказа
+                                    .basket__order-desc-row-value 0 кг
+                                .basket__order-desc-row.basket__order-desc-row--result
+                                    .basket__order-desc-row-item Общая стоимость
+                                    .basket__order-desc-row-value 75 625 сом
+
+                    .basket__order-actions-main-button.form-check__button Далее

@@ -1,0 +1,129 @@
+extends ../templates/clear-page
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    +header-clear('Доставка')
+
+    script.
+        deliveryPrice = {
+            bigDeliveryKm: 20,
+            bigDeliveryKmMinimal: 200,
+            smallDeliveryKm: 10,
+            smallDeliveryKmMinimal: 100,
+        }
+
+    section.section
+        .layout.layout--small
+            form#order-1.basket.form-check
+                .basket__products
+
+                    .order-status
+                        .order-status__item.order-status__item--active
+                            .order-status__item-number 1
+                            .order-status__item-name Доставка
+
+                        +iconSvg('long-arrow','order-status__separator')
+
+                        .order-status__item.order-status__item--unactive
+                            .order-status__item-number 2
+                            .order-status__item-name Оплата
+
+                        +iconSvg('long-arrow','order-status__separator')
+
+                        .order-status__item.order-status__item--unactive
+                            .order-status__item-number 3
+                            .order-status__item-name Подтверждение
+
+
+                    .order-form
+                        .order-form__group
+                            .order-form__group-title Получатель
+                            .order-form__group-item.order-form__group-item--two-col
+                                .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
+                                    input(placeholder='ФИО').input.placeholder__input
+                                    .placeholder__item ФИО
+                                .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
+                                    input(placeholder='Телефон получателя').input.placeholder__input
+                                    .placeholder__item Телефон получателя
+                        .order-form__group
+                            .order-form__group-title Способ доставки
+                            .order-form__group-item.order-form__group-item--flex
+                                label.order-form__radio.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='delivery_id' value='2').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Забрать из магзина
+                                label.order-form__radio.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='delivery_id' value='3').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Курьерская доставка
+                        .order-form__group.order-form__group--hide(data-delivery='2')
+                            .order-form__store
+                                +iconSvg('map-pointer','order-form__store-icon')
+                                .order-form__store-desc
+                                    .order-form__store-desc-name Бишкек, ул. Льва Толстого 36к
+                                        .order-form__store-desc-hint Оплата наличными или банковской картой
+                                    .order-form__store-desc-time Магазин работает с 9.00 до 22.00
+                                    .order-form__store-desc-take Можно забрать во вторник, 27 Июля
+
+                        .order-form__group.order-form__group--hide(data-delivery='3')
+                            .order-form__address
+                                .order-form__address-input
+                                    .placeholder
+                                        input(placeholder='Адрес').input.placeholder__input
+                                        .placeholder__item Адрес
+                                .order-form__address-button(data-modal-open='delivery-map') Выбрать на карте
+                                .order-form__address-price
+                                    .order-form__address-price-item
+                                        .order-form__address-price-item-name Доставка до 200 кг:
+                                        .order-form__address-price-item-number 100
+                                        .order-form__address-price-item-currency сом
+                                    .order-form__address-price-item
+                                        .order-form__address-price-item-name Доставка свыше 200 кг:
+                                        .order-form__address-price-item-number 100
+                                        .order-form__address-price-item-currency сом
+
+
+
+
+
+                .basket__order
+                    .basket__order-wrapper
+                        .basket__order-main
+                            .basket__order-title Заказ:
+                            .basket__order-desc
+                                .basket__order-desc-row
+                                    .basket__order-desc-row-item Товары 10 шт.
+                                    .basket__order-desc-row-value 76 625 сом
+                                .basket__order-desc-row
+                                    .basket__order-desc-row-item Вес заказа
+                                    .basket__order-desc-row-value 0 кг
+                                .basket__order-desc-row.basket__order-desc-row--result
+                                    .basket__order-desc-row-item Общая стоимость
+                                    .basket__order-desc-row-value 75 625 сом
+
+                    .basket__order-actions-main-button.form-check__button Далее
+
+    #delivery-map.modal.modal--map
+        .modal__content.form-check
+            .modal__header
+                .modal__header-title Выберите адрес
+                .modal__header-close(data-modal-close)
+                    +iconSvg('close','modal__header-close-icon')
+            .modal__content-items
+                .delivery-map
+                    .delivery-map__item
+                    .delivery-map__form
+                        .delivery-map__form-input
+                            .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
+                                input.input.input--small.placeholder__input(placeholder='Адрес')
+                                .placeholder__item Адрес
+                        .delivery-map__form-button-save.form-check__button Сохранить
+                        .delivery-map__form-button-cancel
+                            +iconSvg('close','delivery-map__form-button-cancel-icon')

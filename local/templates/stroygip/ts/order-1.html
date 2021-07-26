@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Прораба</title>
+  <link href="main.css" rel="stylesheet"></head>
+  <body class="clear-page">
+        <div class="header-clear layout layout--small"><a class="header-clear__logo" href="/"><img class="header-clear__logo-img" src="/local/templates/stroygip/ts/images/logo/logo-black.svg"></a>
+          <div class="header-clear__title">Доставка</div>
+        </div>
+    <script>
+      deliveryPrice = {
+          bigDeliveryKm: 20,
+          bigDeliveryKmMinimal: 200,
+          smallDeliveryKm: 10,
+          smallDeliveryKmMinimal: 100,
+      }
+      
+    </script>
+    <section class="section">
+      <div class="layout layout--small">
+        <form class="basket form-check" id="order-1">
+          <div class="basket__products">
+            <div class="order-status">
+              <div class="order-status__item order-status__item--active">
+                <div class="order-status__item-number">1</div>
+                <div class="order-status__item-name">Доставка</div>
+              </div>
+              <svg class="order-status__separator">
+                <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#long-arrow"></use>
+              </svg>
+              <div class="order-status__item order-status__item--unactive">
+                <div class="order-status__item-number">2</div>
+                <div class="order-status__item-name">Оплата</div>
+              </div>
+              <svg class="order-status__separator">
+                <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#long-arrow"></use>
+              </svg>
+              <div class="order-status__item order-status__item--unactive">
+                <div class="order-status__item-number">3</div>
+                <div class="order-status__item-name">Подтверждение</div>
+              </div>
+            </div>
+            <div class="order-form">
+              <div class="order-form__group">
+                <div class="order-form__group-title">Получатель</div>
+                <div class="order-form__group-item order-form__group-item--two-col">
+                  <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+                    <input class="input placeholder__input" placeholder="ФИО">
+                    <div class="placeholder__item">ФИО</div>
+                  </div>
+                  <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+                    <input class="input placeholder__input" placeholder="Телефон получателя">
+                    <div class="placeholder__item">Телефон получателя</div>
+                  </div>
+                </div>
+              </div>
+              <div class="order-form__group">
+                <div class="order-form__group-title">Способ доставки</div>
+                <div class="order-form__group-item order-form__group-item--flex">
+                  <label class="order-form__radio form-check__field" data-elem="input" data-rule="radio-required">
+                    <input class="order-form__radio-input" type="radio" name="delivery_id" value="2"><span class="order-form__radio-button"><span class="order-form__radio-button-icon"></span><span class="order-form__radio-button-text">Забрать из магзина</span></span>
+                  </label>
+                  <label class="order-form__radio form-check__field" data-elem="input" data-rule="radio-required">
+                    <input class="order-form__radio-input" type="radio" name="delivery_id" value="3"><span class="order-form__radio-button"><span class="order-form__radio-button-icon"></span><span class="order-form__radio-button-text">Курьерская доставка</span></span>
+                  </label>
+                </div>
+              </div>
+              <div class="order-form__group order-form__group--hide" data-delivery="2">
+                <div class="order-form__store">
+                  <svg class="order-form__store-icon">
+                    <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#map-pointer"></use>
+                  </svg>
+                  <div class="order-form__store-desc">
+                    <div class="order-form__store-desc-name">Бишкек, ул. Льва Толстого 36к
+                      <div class="order-form__store-desc-hint">Оплата наличными или банковской картой</div>
+                    </div>
+                    <div class="order-form__store-desc-time">Магазин работает с 9.00 до 22.00</div>
+                    <div class="order-form__store-desc-take">Можно забрать во вторник, 27 Июля</div>
+                  </div>
+                </div>
+              </div>
+              <div class="order-form__group order-form__group--hide" data-delivery="3">
+                <div class="order-form__address">
+                  <div class="order-form__address-input">
+                    <div class="placeholder">
+                      <input class="input placeholder__input" placeholder="Адрес">
+                      <div class="placeholder__item">Адрес</div>
+                    </div>
+                  </div>
+                  <div class="order-form__address-button" data-modal-open="delivery-map">Рассчитать доставку</div>
+                  <div class="order-form__address-price">
+                    <div class="order-form__address-price-item">
+                      <div class="order-form__address-price-item-name">Доставка до 200 кг:</div>
+                      <div class="order-form__address-price-item-number order-form__address-price-item-number--small">100</div>
+                      <div class="order-form__address-price-item-currency">сом</div>
+                    </div>
+                    <div class="order-form__address-price-item">
+                      <div class="order-form__address-price-item-name">Доставка свыше 200 кг:</div>
+                      <div class="order-form__address-price-item-number order-form__address-price-item-number--big">100</div>
+                      <div class="order-form__address-price-item-currency">сом</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basket__order">
+            <div class="basket__order-wrapper">
+              <div class="basket__order-main">
+                <div class="basket__order-title">Заказ:</div>
+                <div class="basket__order-desc">
+                  <div class="basket__order-desc-row">
+                    <div class="basket__order-desc-row-item">Товары 10 шт.</div>
+                    <div class="basket__order-desc-row-value">76 625 сом</div>
+                  </div>
+                  <div class="basket__order-desc-row">
+                    <div class="basket__order-desc-row-item">Вес заказа</div>
+                    <div class="basket__order-desc-row-value">0 кг</div>
+                  </div>
+                  <div class="basket__order-desc-row basket__order-desc-row--result">
+                    <div class="basket__order-desc-row-item">Общая стоимость</div>
+                    <div class="basket__order-desc-row-value">75 625 сом</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basket__order-actions-main-button form-check__button">Далее</div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="modal modal--map" id="delivery-map">
+      <div class="modal__content form-check">
+        <div class="modal__header">
+          <div class="modal__header-title">Выберите адрес</div>
+          <div class="modal__header-close" data-modal-close>
+            <svg class="modal__header-close-icon">
+              <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="modal__content-items">
+          <div class="delivery-map">
+            <div class="delivery-map__item"></div>
+            <div class="delivery-map__form">
+              <div class="delivery-map__form-input">
+                <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+                  <input class="input input--small placeholder__input" placeholder="Адрес">
+                  <div class="placeholder__item">Адрес</div>
+                </div>
+              </div>
+              <div class="delivery-map__form-button-save form-check__button">Сохранить</div>
+              <div class="delivery-map__form-button-cancel">
+                <svg class="delivery-map__form-button-cancel-icon">
+                  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="main.js"></script></body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Прораба</title>
+  <link href="main.css" rel="stylesheet"></head>
+  <body class="clear-page">
+        <div class="header-clear layout layout--small"><a class="header-clear__logo" href="/"><img class="header-clear__logo-img" src="/local/templates/stroygip/ts/images/logo/logo-black.svg"></a>
+          <div class="header-clear__title">Доставка</div>
+        </div>
+    <script>
+      deliveryPrice = {
+          bigDeliveryKm: 20,
+          bigDeliveryKmMinimal: 200,
+          smallDeliveryKm: 10,
+          smallDeliveryKmMinimal: 100,
+      }
+      
+    </script>
+    <section class="section">
+      <div class="layout layout--small">
+        <form class="basket form-check" id="order-2">
+          <div class="basket__products">
+            <div class="order-status"><a class="order-status__item order-status__item--fill" href="#">
+                <div class="order-status__item-number">1</div>
+                <div class="order-status__item-name">Доставка</div></a>
+              <svg class="order-status__separator">
+                <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#long-arrow"></use>
+              </svg>
+              <div class="order-status__item order-status__item--active">
+                <div class="order-status__item-number">2</div>
+                <div class="order-status__item-name">Оплата</div>
+              </div>
+              <svg class="order-status__separator">
+                <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#long-arrow"></use>
+              </svg>
+              <div class="order-status__item order-status__item--unactive">
+                <div class="order-status__item-number">3</div>
+                <div class="order-status__item-name">Подтверждение</div>
+              </div>
+            </div>
+            <div class="order-form">
+              <div class="order-form__group">
+                <div class="order-form__payment">
+                  <label class="order-form__radio order-form__radio--big form-check__field" data-elem="input" data-rule="radio-required">
+                    <input class="order-form__radio-input" type="radio" name="payment"><span class="order-form__radio-button"><span class="order-form__radio-button-icon"></span><span class="order-form__radio-button-text">Банковский перевод</span></span>
+                  </label>
+                  <label class="order-form__radio order-form__radio--big form-check__field" data-elem="input" data-rule="radio-required">
+                    <input class="order-form__radio-input" type="radio" name="payment"><span class="order-form__radio-button"><span class="order-form__radio-button-icon"></span><span class="order-form__radio-button-text">Электронной картой онлайн (Visa, Mastercard)<span class="order-form__radio-button-desc">Ваши имя, адрес, телефон,e-mail, номер кредитной карты конфиденциальны и не подлежат разглашению. Данные кредитной карты передаются в зашифрованном виде и не сохраняются на нашем Web-сервере.</span></span></span>
+                  </label>
+                  <label class="order-form__radio order-form__radio--big form-check__field" data-elem="input" data-rule="radio-required">
+                    <input class="order-form__radio-input" type="radio" name="payment"><span class="order-form__radio-button"><span class="order-form__radio-button-icon"></span><span class="order-form__radio-button-text">Электронный кошелёк (Элсом)</span></span>
+                  </label>
+                  <label class="order-form__radio order-form__radio--big form-check__field" data-elem="input" data-rule="radio-required">
+                    <input class="order-form__radio-input" type="radio" name="payment"><span class="order-form__radio-button"><span class="order-form__radio-button-icon"></span><span class="order-form__radio-button-text">Наличными при получении</span></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basket__order">
+            <div class="basket__order-wrapper">
+              <div class="basket__order-main">
+                <div class="basket__order-title">Заказ:</div>
+                <div class="basket__order-desc">
+                  <div class="basket__order-desc-row">
+                    <div class="basket__order-desc-row-item">Товары 10 шт.</div>
+                    <div class="basket__order-desc-row-value">76 625 сом</div>
+                  </div>
+                  <div class="basket__order-desc-row">
+                    <div class="basket__order-desc-row-item">Вес заказа</div>
+                    <div class="basket__order-desc-row-value">0 кг</div>
+                  </div>
+                  <div class="basket__order-desc-row basket__order-desc-row--result">
+                    <div class="basket__order-desc-row-item">Общая стоимость</div>
+                    <div class="basket__order-desc-row-value">75 625 сом</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basket__order-actions-main-button form-check__button">Далее</div>
+          </div>
+        </form>
+      </div>
+    </section>
+  <script src="main.js"></script></body>
+</html>

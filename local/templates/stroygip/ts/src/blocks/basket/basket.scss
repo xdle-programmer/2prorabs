@@ -55,15 +55,7 @@
   }
 
   &__order-main {
-    border-bottom: 1px solid var(--light-gray-color);
-    padding-bottom: 20px;
-    margin-bottom: 20px;
 
-    @media print {
-      border-bottom: none;
-      padding-bottom: 0;
-      margin-bottom: 0;
-    }
   }
 
   &__order-title {
@@ -105,6 +97,15 @@
   }
 
   &__order-actions {
+    border-top: 1px solid var(--light-gray-color);
+    padding-top: 20px;
+    margin-top: 20px;
+
+    @media print {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
 
     @media print {
       display: none;

@@ -1,0 +1,97 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.order-status {
+  display: grid;
+  grid-template-columns: 1fr 30px 1fr 30px 1fr;
+  grid-gap: 30px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid var(--light-gray-color);
+  padding-bottom: 10px;
+
+  @include mobile-big-screen {
+    grid-template-columns: min-content 15px min-content 15px min-content;
+    grid-gap: 9px;
+    padding-top: 0;
+  }
+
+  &__item {
+    @include flex-column;
+    align-items: center;
+    cursor: default;
+
+    &--fill {
+      cursor: pointer;
+    }
+
+    &--active {
+    }
+
+    &--unactive {
+    }
+  }
+
+  $fill: '.order-status__item--fill';
+  $active: '.order-status__item--active';
+  $unactive: '.order-status__item--unactive';
+
+  &__item-number {
+    @include flex-row-center;
+    color: var(--white-color);
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+    @include mobile-big-screen {
+      display: none;
+    }
+
+    #{$active} & {
+      background: var(--red-color);
+    }
+
+    #{$unactive} & {
+      background: var(--light-gray-color);
+    }
+
+    #{$fill} & {
+      background: var(--light-red-color);
+    }
+  }
+
+  &__item-name {
+    font-size: 13px;
+    color: var(--black-color);
+
+    #{$active} & {
+      color: var(--red-color);
+    }
+
+    #{$fill} & {
+      color: var(--light-red-color);
+    }
+
+    #{$unactive} & {
+      color: var(--light-gray-color);
+    }
+
+
+  }
+
+  &__separator {
+    display: block;
+    width: 100%;
+    height: 50px;
+    fill: var(--light-gray-color);
+
+    @include mobile-big-screen {
+      height: 20px;
+    }
+  }
+}

@@ -37,6 +37,10 @@
       transform-origin: left center;
     }
 
+    .delivery-map__form-input & {
+      transform: translateY(0px) scale(.75);
+    }
+
     #{$error} & {
       opacity: 1;
       visibility: visible;

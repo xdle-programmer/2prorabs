@@ -46,6 +46,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.12.1",
     "form-validation-expandable": "^1.0.9",
     "frontend-scss-mixins": "^1.0.6",
     "get-viewport-options": "^1.0.0",

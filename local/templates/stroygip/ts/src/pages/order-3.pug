@@ -1,0 +1,83 @@
+extends ../templates/clear-page
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    +header-clear('Доставка')
+
+    script.
+        deliveryPrice = {
+            bigDeliveryKm: 20,
+            bigDeliveryKmMinimal: 200,
+            smallDeliveryKm: 10,
+            smallDeliveryKmMinimal: 100,
+        }
+
+    section.section
+        .layout.layout--small
+            form#order-3.basket.form-check
+                .basket__products
+
+                    .order-status
+                        a(href='#').order-status__item.order-status__item--fill
+                            .order-status__item-number 1
+                            .order-status__item-name Доставка
+
+                        +iconSvg('long-arrow','order-status__separator')
+
+                        a(href='#').order-status__item.order-status__item--fill
+                            .order-status__item-number 2
+                            .order-status__item-name Оплата
+
+                        +iconSvg('long-arrow','order-status__separator')
+
+                        .order-status__item.order-status__item--active
+                            .order-status__item-number 3
+                            .order-status__item-name Подтверждение
+
+
+                    .order-form
+                        .order-form__result
+                            .order-form__result-item
+                                .order-form__result-item-title Получатель
+                                .order-form__result-item-desc
+                                    .order-form__result-item-desc-text Устинов Юрий Викторович, +996 (559) 950 725
+                                    a(href='#').order-form__result-item-desc-button Изменить
+                            .order-form__result-item
+                                .order-form__result-item-title Доставка
+                                .order-form__result-item-desc
+                                    .order-form__result-item-desc-text Курьерская доставка
+                                    a(href='#').order-form__result-item-desc-button Изменить
+                            .order-form__result-item
+                                .order-form__result-item-title Способ оплаты
+                                .order-form__result-item-desc
+                                    .order-form__result-item-desc-text Электронной картой онлайн
+                                    a(href='#').order-form__result-item-desc-button Изменить
+                        .order-form__comment
+                            .placeholder.form-check__field(data-elem='textarea' data-rule='input-empty')
+                                textarea(placeholder='Комментарий к заказу').input.input--textarea.placeholder__input
+                                .placeholder__item Комментарий к заказу
+
+
+                .basket__order
+                    .basket__order-wrapper
+                        .basket__order-main
+                            .basket__order-title Заказ:
+                            .basket__order-desc
+                                .basket__order-desc-row
+                                    .basket__order-desc-row-item Товары 10 шт.
+                                    .basket__order-desc-row-value 76 625 сом
+                                .basket__order-desc-row
+                                    .basket__order-desc-row-item Вес заказа
+                                    .basket__order-desc-row-value 0 кг
+                                .basket__order-desc-row.basket__order-desc-row--result
+                                    .basket__order-desc-row-item Общая стоимость
+                                    .basket__order-desc-row-value 75 625 сом
+
+                    .basket__order-actions-main-button.form-check__button Оплатить
+
+
