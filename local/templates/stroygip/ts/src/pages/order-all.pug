@@ -19,26 +19,8 @@ block content
 
     section.section
         .layout.layout--small
-            form#order-1.basket.form-check
+            form#create-order.basket.form-check
                 .basket__products
-
-                    .order-status
-                        .order-status__item.order-status__item--active
-                            .order-status__item-number 1
-                            .order-status__item-name Доставка
-
-                        +iconSvg('long-arrow','order-status__separator')
-
-                        .order-status__item.order-status__item--unactive
-                            .order-status__item-number 2
-                            .order-status__item-name Оплата
-
-                        +iconSvg('long-arrow','order-status__separator')
-
-                        .order-status__item.order-status__item--unactive
-                            .order-status__item-number 3
-                            .order-status__item-name Подтверждение
-
 
                     .order-form
                         .order-form__group
@@ -78,7 +60,7 @@ block content
                                     .placeholder
                                         input(placeholder='Адрес').input.placeholder__input
                                         .placeholder__item Адрес
-                                .order-form__address-button(data-modal-open='delivery-map') Отметить на карте для расчета доставки
+                                .order-form__address-button(data-modal-open='delivery-map') Выбрать на карте
                                 .order-form__address-price
                                     .order-form__address-price-item
                                         .order-form__address-price-item-name Доставка до 200 кг:
@@ -91,6 +73,43 @@ block content
 
 
 
+
+
+
+                    .order-form
+                        .order-form__group
+                            .order-form__group-title Способ оплаты
+                            .order-form__payment
+                                label.order-form__radio.order-form__radio--big.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='payment').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Банковский перевод
+                                label.order-form__radio.order-form__radio--big.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='payment').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Электронной картой онлайн (Visa, Mastercard)
+                                            span.order-form__radio-button-desc Ваши имя, адрес, телефон,e-mail, номер кредитной карты конфиденциальны и не подлежат разглашению. Данные кредитной карты передаются в зашифрованном виде и не сохраняются на нашем Web-сервере.
+                                label.order-form__radio.order-form__radio--big.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='payment').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Электронный кошелёк (Элсом)
+                                label.order-form__radio.order-form__radio--big.form-check__field(data-elem='input' data-rule='radio-required')
+                                    input(type='radio' name='payment').order-form__radio-input
+                                    span.order-form__radio-button
+                                        span.order-form__radio-button-icon
+                                        span.order-form__radio-button-text Наличными при получении
+
+
+
+
+                    .order-form
+                        .order-form__comment
+                            .placeholder.form-check__field(data-elem='textarea' data-rule='input-empty')
+                                textarea(placeholder='Комментарий к заказу').input.input--textarea.placeholder__input
+                                .placeholder__item Комментарий к заказу
 
 
                 .basket__order
@@ -113,7 +132,7 @@ block content
     #delivery-map.modal.modal--map
         .modal__content.form-check
             .modal__header
-                .modal__header-title Кликните на карту
+                .modal__header-title Выберите адрес
                 .modal__header-close(data-modal-close)
                     +iconSvg('close','modal__header-close-icon')
             .modal__content-items
@@ -122,8 +141,8 @@ block content
                     .delivery-map__form
                         .delivery-map__form-input
                             .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
-                                input.input.input--small.placeholder__input(placeholder='Кликните на карту')
-                                .placeholder__item Кликните на карту
+                                input.input.input--small.placeholder__input(placeholder='Адрес')
+                                .placeholder__item Адрес
                         .delivery-map__form-button-save.form-check__button Сохранить
                         .delivery-map__form-button-cancel
                             +iconSvg('close','delivery-map__form-button-cancel-icon')
