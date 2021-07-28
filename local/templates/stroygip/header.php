@@ -19,7 +19,12 @@ global $USER;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?
-    if ($APPLICATION->GetCurPage() != "/" && $APPLICATION->GetCurPage() != "/basket/" && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
+    if (
+		$APPLICATION->GetCurPage() != "/" 
+		&& $APPLICATION->GetCurPage() != "/basket/" 
+		&& $APPLICATION->GetCurPage() != "/order/" 
+		&& strpos($APPLICATION->GetCurDir(), '/catalog/') === false 
+		) {
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/libs.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/style.css");
 
@@ -28,7 +33,11 @@ global $USER;
     }
 	
 	
-	if ($APPLICATION->GetCurPage() != "/" && $APPLICATION->GetCurPage() != "/basket/" && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
+	if (
+		$APPLICATION->GetCurPage() != "/" 
+		&& $APPLICATION->GetCurPage() != "/basket/" 
+		&& $APPLICATION->GetCurPage() != "/order/" 
+		&& strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
 		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.carousel.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.theme.default.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/select2/dist/css/select2.min.css");
@@ -57,26 +66,26 @@ global $USER;
     <link href="<?= SITE_TEMPLATE_PATH ?>/ts/main.css" rel="stylesheet">
 </head>
 
-<body <? if ($APPLICATION->GetCurPage() == "/basket/"): ?>class="clear-page"<? endif; ?>>
+<body <?if( $APPLICATION->GetCurPage() == "/basket/" || $APPLICATION->GetCurPage() == "/order/" ):?>class="clear-page"<? endif; ?>>
 <div id="panel">
-    <? $APPLICATION->ShowPanel(); ?>
+    <?$APPLICATION->ShowPanel();?>
 </div>
 
 
-<? if ($APPLICATION->GetCurPage() == "/basket/"): ?>
+<?if( $APPLICATION->GetCurPage() == "/basket/" || $APPLICATION->GetCurPage() == "/order/" ):?>
 	<div class="header-clear layout layout--small">
 		<a class="header-clear__logo" href="/">
 			<img class="header-clear__logo-img" src="/local/templates/stroygip/ts/images/logo/logo-black.svg">
 		</a>
-		<div class="header-clear__title">Корзина</div>
+		<div class="header-clear__title"><?$APPLICATION->ShowTitle(false);?></div>
 	</div>
 
 	<section class="section">
 		<div class="layout layout--small">
-<? endif; ?>
+<?endif;?>
 
 
-<? if ($APPLICATION->GetCurPage() != "/basket/"): ?>
+<?if( $APPLICATION->GetCurPage() != "/basket/" && $APPLICATION->GetCurPage() != "/order/" ){?>
 	<div class="menu">
 		<div class="menu__wrapper layout">
 			<div class="menu__header">
@@ -243,10 +252,12 @@ global $USER;
 		</div>
 	</div>
 
+	
 	<div class="preload <? if ($APPLICATION->GetCurPage() == "/"): ?>preload--not-ready<? endif; ?>" id="main-group">
-		<? if ($APPLICATION->GetCurPage() == "/"): ?>
+		<?if( $APPLICATION->GetCurPage() == "/" ){?>
 		<div class="section">
-		<? endif; ?>
+		<?}?>
+		
 			<div class="mobile-header">
 				<div class="mobile-header__block layout preload__area">
 					<div class="mobile-header__button" data-menu-target="mobile-menu">
@@ -424,7 +435,7 @@ global $USER;
 			</header>
 
 
-			<? if ($APPLICATION->GetCurPage() == "/"): ?>
+			<?if( $APPLICATION->GetCurPage() == "/" ){?>
 				<div class="main-banner layout preload__area">
 					<? $APPLICATION->IncludeComponent("bitrix:news.detail", "main-banner1", array(
 						"ACTIVE_DATE_FORMAT" => "d.m.Y",    // Формат показа даты
@@ -565,15 +576,20 @@ global $USER;
 					); ?>
 
 				</div>
-			<? endif; ?>
+			<?}?>
 
 
-	<? if ($APPLICATION->GetCurPage() == "/"): ?>
+		<? if ($APPLICATION->GetCurPage() == "/"){?>
 		</div>
+		<?}?>
+		
+		
 	</div>
-
-
+	
+	
+	<? if ($APPLICATION->GetCurPage() == "/"){?>
 	<div class="preload <? if ($APPLICATION->GetCurPage() == "/"): ?>preload--not-ready<? endif; ?>" id="natural-group">
-	<? endif; ?>
-<? endif; ?>
+	<?}?>
+	
+<?}?>
 		

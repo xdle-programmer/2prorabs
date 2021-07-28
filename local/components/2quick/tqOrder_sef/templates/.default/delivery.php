@@ -1,192 +1,244 @@
-<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+<?
+
+use nav\SiteOption;
+
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     die();
-}
-/** @var array $arParams */
-/** @global CMain $APPLICATION */
-/** @global CUser $USER */
-/** @global CDatabase $DB */
-/** @var CBitrixComponentTemplate $this */
-/** @var string $templateName */
-/** @var array $arResult */
-/** @var string $templateFile */
-/** @var string $templateFolder */
-/** @var string $componentPath */
-/** @var CBitrixComponent $component */
+$page = $APPLICATION->GetCurPage();
 ?>
-<div class="basket-products__grid">
-    <form class="basket-products__container" id="tq_order" data-tab="delivery" data-next="<?= $arResult['TABS']['1']['URL'] ?>">
-        <div class="basket-products__title"><?= $APPLICATION->ShowTitle(false) ?></div>
-        <? include 'tabs.php'; ?>
-        <div class="basket-products__title basket-products__title--medium-center basket-products__title--mb">Доставка</div>
-        <div class="basket-products__registration-inner">
-            <div class="basket-products__registration-title">Получатель</div>
-            <div class="basket-products__registration-forms">
-                <div class="basket-products__registration-input-box basket-products__registration-input-box--mr">
-                    <? $value = $arResult['SAVED']['delivery']['NAME'] ?>
-                    <label class="basket-products__registration-label <? if ($value): ?>basket-products__registration-label-active<? endif; ?>">ФИО</label>
-                    <input
-                        class="basket-products__registration-input <? if ($value): ?>basket-products__registration-label-active<? endif; ?>"
-                        type="text"
-                        name="NAME"
-                       value="<?=$value?>"
-                    />
-                </div>
 
-                <div class="basket-products__registration-input-box">
-                    <? $value = $arResult['SAVED']['delivery']['PHONE']; ?>
-                    <label class="basket-products__registration-label <? if ($value): ?>basket-products__registration-label-active<? endif; ?>">Телефон получателя</label>
-                    <input
-                        class="basket-products__registration-input <? if ($value): ?>basket-products__registration-label-active<? endif; ?>"
-                        type="text"
-                        name="PHONE"
-                        value="<?=$value?>"
-                        data-phone-mask
-                    />
-                </div>
-            </div>
-            <? /*<div class="basket-products__registration-forms">
-                        <div class="basket-products__registration-input-box basket-products__registration-input-box--mr">
-                            <label class="basket-products__registration-label">Телефон</label>
-                            <input class="basket-products__registration-input" type="text" name="PHONE" value="<?=$arResult['SAVED']['delivery']['PHONE']?>">
-                        </div>
-                        <div class="basket-products__registration-input-box">
-                            <label class="basket-products__registration-label">E-mail</label>
-                            <input class="basket-products__registration-input" type="text" name="EMAIL" value="<?=$arResult['SAVED']['delivery']['EMAIL']?>">
-                        </div>
-                    </div>*/ ?>
-            <div style="display: none" class="basket-products__registration-title">Город получения</div>
-            <div class="basket-products__select">
-                <div class="ui-widget ui-widget--mb">
-                    <!--                            <select id="combobox" name="LOCATION"></select>-->
-                </div>
-            </div>
-            <div class="basket-products__registration-title">Выберите способ получения заказа</div>
-            <div class="basket-products__container-tabs">
-                <div class="basket-products__delivery-buttons">
-                    <? foreach ($arResult['DELIVERIES'] as $arDelivery) { ?>
-                        <label class="basket-products__delivery-button<? if ($arDelivery['CHECKED'] == 'Y') echo ' basket-products__delivery-button--active' ?>">
-                            <input type="radio" hidden name="delivery_id" value="<?= $arDelivery['ID'] ?>"<? if ($arDelivery['CHECKED'] == 'Y') echo ' checked' ?>>
-                            <div class="basket-products__delivery-button-title"><?= $arDelivery['NAME'] ?></div>
-                            <!--                                <div class="basket-products__delivery-button-text">--><? //=$arDelivery['PRICE_FORMATED']?><!--</div>-->
-                        </label>
-                    <? } ?>
-                </div>
-                <? foreach ($arResult['DELIVERIES'] as $arDelivery) { ?>
-                    <div class="basket-products__content<? if ($arDelivery['CHECKED'] == 'Y') echo ' basket-products__content--active' ?>" data-delivery="<?= $arDelivery['ID'] ?>">
-                        <?
-                        if ($arDelivery['STORES']) {
-                            ?>
-                            <div class="basket-products__registration-title basket-products__registration-title--mb-small">Пункты самовывоза</div>
-                            <div class="basket-products__delivery-points">
-                                <? foreach ($arDelivery['STORES'] as $arItem) {
-                                    ?>
-                                    <div class="basket-products__delivery-point">
-                                        <div class="basket-products__delivery-point-container">
-                                            <div class="basket-products__delivery-point-position"><?=$arItem['NAME']?></div>
-                                            <div class="basket-products__delivery-point-time">
-                                                <? if ($arItem['PROPERTIES']['WORK_TIME']['VALUE']): ?>
-                                                    График работы: <?=$arItem['PROPERTIES']['WORK_TIME']['VALUE']?> <br>
-                                                <? endif; ?>
+<?if( $APPLICATION->GetCurPage() == "/basket/" || $APPLICATION->GetCurPage() == "/order/" ):?>
+		</div>
+    </section>
+<?endif;?>
 
-                                                <? if ($arItem['PROPERTIES']['DELIVERY_DAY']['VALUE']): ?>
-                                                    <?
-                                                    $date = new DateTime(date('d.m.Y'));
-                                                    $date->add(new DateInterval('P' . intval($arItem['PROPERTIES']['DELIVERY_DAY']['VALUE']) . 'D'));
-                                                    $day = FormatDate('l', MakeTimeStamp($date->format('d.m.Y h:i:s')))
-                                                    ?>
-                                                    Можно забрать <? if ($day == 'Вторник') echo 'во'; else echo 'в' ?> <?= strtolower($day) ?>, <?= FormatDate(' d F', MakeTimeStamp($date->format('d.m.Y h:i:s'))) ?>
-                                                <? endif; ?>
-                                            </div>
-                                            <div class="basket-products__delivery-pay-method"><?= $arItem['PREVIEW_TEXT'] ?></div>
 
-                                            <? if (count($arItem['UNAVAILABLE_PRODUCTS']) > 0): ?>
-                                                <div class="checkout__unavailable-products-text">
-                                                    На этом складе недостаточное количество следующих товаров (указан актуальный остаток):
-                                                </div>
-                                                <? foreach ($arItem['UNAVAILABLE_PRODUCTS'] as $product): ?>
-                                                    <div class="checkout__unavailable-product">
-                                                        <?=$product['NAME']?> &mdash; <?=$product['AVAILABLE']?> шт.
-                                                    </div>
-                                                <? endforeach; ?>
-                                            <? endif; ?>
-                                        </div>
-                                        <input class="tq_radio" type="radio" name="POINT" value="<?= $arItem['ID'] ?>" hidden
-                                               id="point-<?= $arItem['ID'] ?>"<? if ($arDelivery['CHECKED'] != 'Y') echo ' disabled' ?> <? if ($arResult['SAVED']['delivery']['POINT'] == $arItem['ID']) echo ' checked' ?>>
-                                        <label class="basket-products__delivery-point-button" for="point-<?= $arItem['ID'] ?>">Выбрать</label>
-                                    </div>
-                                <? } ?>
+<?if( $APPLICATION->GetCurPage() != "/basket/" && $APPLICATION->GetCurPage() != "/order/" ):?>
 
-                            </div>
-                        <? } else {
-                            ?>
-                            <div class="basket-products__tk">
-                                <div class="basket-products__registration-title basket-products__registration-title--mb-small">
-                                    <? if ($arDelivery['ID'] == '4') echo 'Введите адрес пункта ТК'; else echo 'Введите адрес доставки заказа' ?>
-                                </div>
-                                <? if ($arDelivery['DESCRIPTION']) {
-                                    ?>
-                                    <div class="basket-products__warning">
-                                        <div class="basket-products__warning-close"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/src/blocks/basket-products/assets/img/close.svg">
-                                        </div>
-                                        <div class="basket-products__warning-title">Внимание!</div>
-                                        <div class="basket-products__warning-text">
-                                            <?= $arDelivery['DESCRIPTION'] ?>
-                                        </div>
-                                    </div>
-                                <? } ?>
-                                <div class="basket-products__registration-forms basket-products__registration-forms--mb">
-                                    <div class="basket-products__registration-input-box basket-products__registration-input-box--mr basket-products__registration-input-box--address-1">
-                                        <? $value = $arResult['SAVED']['delivery']['CITY']; ?>
-                                        <label class="basket-products__registration-label <? if ($value): ?>basket-products__registration-label-active<? endif; ?>">Адрес</label>
-                                        <input class="basket-products__registration-input <? if ($value): ?>basket-products__registration-label-active<? endif; ?>" type="text"
-                                               name="CITY"<? if ($arDelivery['CHECKED'] != 'Y') echo ' disabled' ?> value="<?= $value ?>">
-                                    </div>
-                                    <div class="basket-products__registration-input-box basket-products__registration-input-box--address-2">
-                                        <div class="basket-products__registration-input-button open-basket-map">Указать на карте</div>
-                                    </div>
+	<? if ($page == '/personal/') { ?>
+		<section class="recently-viewed recently-viewed--white">
+			<? $APPLICATION->IncludeComponent(
+				"bitrix:catalog.products.viewed",
+				"",
+				array(
+					'TITLE' => 'Вы недавно смотрели',
+					"ACTION_VARIABLE" => "action_cpv",
+					"ADDITIONAL_PICT_PROP_1" => "-",
+					"ADD_PROPERTIES_TO_BASKET" => "Y",
+					"ADD_TO_BASKET_ACTION" => "ADD",
+					"BASKET_URL" => "/personal/basket.php",
+					"CACHE_GROUPS" => "Y",
+					"CACHE_TIME" => "3600",
+					"CACHE_TYPE" => "A",
+					"CONVERT_CURRENCY" => "N",
+					"DEPTH" => "2",
+					"DISPLAY_COMPARE" => "N",
+					"ENLARGE_PRODUCT" => "STRICT",
+					"HIDE_NOT_AVAILABLE" => "N",
+					"HIDE_NOT_AVAILABLE_OFFERS" => "N",
+					"IBLOCK_ID" => "1",
+					"IBLOCK_MODE" => "single",
+					"IBLOCK_TYPE" => "catalog",
+					"LABEL_PROP_1" => array(),
+					"LABEL_PROP_POSITION" => "top-left",
+					"MESS_BTN_ADD_TO_BASKET" => "В корзину",
+					"MESS_BTN_BUY" => "Купить",
+					"MESS_BTN_DETAIL" => "Подробнее",
+					"MESS_BTN_SUBSCRIBE" => "Подписаться",
+					"MESS_NOT_AVAILABLE" => "Нет в наличии",
+					"PAGE_ELEMENT_COUNT" => "9",
+					"PARTIAL_PRODUCT_PROPERTIES" => "N",
+					"PRICE_CODE" => array("BASE"),
+					"PRICE_VAT_INCLUDE" => "Y",
+					"PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+					"PRODUCT_ID_VARIABLE" => "id",
+					"PRODUCT_PROPS_VARIABLE" => "prop",
+					"PRODUCT_QUANTITY_VARIABLE" => "quantity",
+					"PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
+					"PRODUCT_SUBSCRIPTION" => "Y",
+					"SECTION_CODE" => "",
+					"SECTION_ELEMENT_CODE" => "",
+					"SECTION_ELEMENT_ID" => $GLOBALS["CATALOG_CURRENT_ELEMENT_ID"],
+					"SECTION_ID" => $GLOBALS["CATALOG_CURRENT_SECTION_ID"],
+					"SHOW_CLOSE_POPUP" => "N",
+					"SHOW_DISCOUNT_PERCENT" => "N",
+					"SHOW_FROM_SECTION" => "N",
+					"SHOW_MAX_QUANTITY" => "N",
+					"SHOW_OLD_PRICE" => "N",
+					"SHOW_PRICE_COUNT" => "1",
+					"SHOW_SLIDER" => "Y",
+					"SLIDER_INTERVAL" => "3000",
+					"SLIDER_PROGRESS" => "N",
+					"TEMPLATE_THEME" => "blue",
+					"USE_ENHANCED_ECOMMERCE" => "N",
+					"USE_PRICE_COUNT" => "N",
+					"USE_PRODUCT_QUANTITY" => "N"
+				)
+			); ?>
+		</section>
+	<? } ?>
 
-                                    <div class="basket-products__registration-input-box" style="display: none">
-                                        <label class="basket-products__registration-label">Улица</label>
-                                        <input class="basket-products__registration-input" type="text" name="STREET"<? if ($arDelivery['CHECKED'] != 'Y') echo ' disabled' ?>
-                                               value="&nbsp;<?= $arResult['SAVED']['delivery']['STREET'] ?>">
-                                    </div>
-                                </div>
-                                <div class="basket-delivery">
-                                    <div class="basket-products__registration-forms basket-products__registration-forms--mb">
-                                        <div class="basket-products__registration-title basket-products__registration-title--mb-small">Стоимость доставки до 200 кг:&nbsp;</div>
-                                        <div class="basket-products__registration-title basket-products__registration-title--mb-small price-small-delivery"></div>
-                                        <div class="basket-products__registration-title basket-products__registration-title--mb-small">&nbsp;Сом</div>
-                                    </div>
-                                    <div class="basket-products__registration-forms basket-products__registration-forms--mb">
-                                        <div class="basket-products__registration-title basket-products__registration-title--mb-small">Стоимость доставки свыше 200 кг:&nbsp;</div>
-                                        <div class="basket-products__registration-title basket-products__registration-title--mb-small price-big-delivery"></div>
-                                        <div class="basket-products__registration-title basket-products__registration-title--mb-small">&nbsp;Сом</div>
-                                    </div>
-                                </div>
 
-                                <div class="basket-products__registration-forms">
-                                    <div class="basket-products__registration-input-box basket-products__registration-input-box--mr" style="display: none">
-                                        <label class="basket-products__registration-label">Дом</label>
-                                        <input class="basket-products__registration-input" type="text" name="HOUSE"<? if ($arDelivery['CHECKED'] != 'Y') echo ' disabled' ?>
-                                               value="&nbsp;<?= $arResult['SAVED']['delivery']['HOUSE'] ?>">
-                                    </div>
-                                    <div class="basket-products__registration-input-box" style="display: none">
-                                        <label class="basket-products__registration-label">Квартира</label>
-                                        <input class="basket-products__registration-input" type="text" name="APARTMENT"<? if ($arDelivery['CHECKED'] != 'Y') echo ' disabled' ?>
-                                               value="&nbsp;<?= $arResult['SAVED']['delivery']['APARTMENT'] ?>">
-                                    </div>
-                                </div>
-                            </div>
-                        <? } ?>
-                    </div>
-                <? } ?>
-            </div>
-        </div>
-        <button class="basket-products__next-button">Далее
-            <div class="basket-products__next-button-icon"></div>
-        </button>
-        <div class="tq_errors"></div>
+	<footer class="footer">
+		<div class="layout footer__block">
+			<div class="footer__company">
+				<a class="footer__company-logo" href="#">
+					<img class="footer__company-logo" src="<?= SITE_TEMPLATE_PATH ?>/ts/images/logo/logo-white.svg">
+				</a>
+				<div class="footer__social">
+					<div class="footer__social-title">Мы в социальных сетях</div>
+					<div class="footer__social-items">
+						<a class="footer__social-item" href="#">
+							<svg class="footer__social-item-icon">
+								<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#fb"></use>
+							</svg>
+						</a>
+						<a class="footer__social-item" href="https://www.instagram.com/2proraba_kg/" target="_blank">
+							<svg class="footer__social-item-icon">
+								<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#it"></use>
+							</svg>
+						</a>
+						<a class="footer__social-item" href="#">
+							<svg class="footer__social-item-icon">
+								<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#tt"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="footer__copyright">
+					<div class="footer__copyright-text">2прораба 2021</div>
+					<div class="footer__copyright-text">Все права защищены</div>
+				</div>
+			</div>
+			<div class="footer__menu">
+				<div class="footer__menu-main">
+					<a class="footer__menu-link" href="/contacts/">Контакты</a>
+					<a class="footer__menu-link" href="/about/">О компании</a>
+					<a class="footer__menu-link" href="/delivery-payment/">Доставка и оплата</a>
+					<a class="footer__menu-link" href="/services/">Услуги</a>
+					<a class="footer__menu-link" href="/vacancy/">Вакансии</a>
+					<a class="footer__menu-link" href="/clients/">Сотрудничество</a>
+					<a class="footer__menu-link footer__menu-link--small" href="/privacy-policy/">Политика конфиденциальности</a>
+					<a class="footer__menu-link footer__menu-link--small" href="/oferta/">Договор оферты</a>
+				</div>
 
-    </form>
-    <? include 'order_info.php' ?>
-</div>
+				<? $APPLICATION->IncludeComponent("bitrix:catalog.section.list", "menu_main_footer", array(
+					"ADD_SECTIONS_CHAIN" => "N",    // Включать раздел в цепочку навигации
+					"CACHE_FILTER" => "N",    // Кешировать при установленном фильтре
+					"CACHE_GROUPS" => "Y",    // Учитывать права доступа
+					"CACHE_TIME" => "36000000",    // Время кеширования (сек.)
+					"CACHE_TYPE" => "A",    // Тип кеширования
+					"COUNT_ELEMENTS" => "N",    // Показывать количество элементов в разделе
+					"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",    // Показывать количество
+					"FILTER_NAME" => "sectionsFilter",    // Имя массива со значениями фильтра разделов
+					"IBLOCK_ID" => "1",    // Инфоблок
+					"IBLOCK_TYPE" => "catalog",    // Тип инфоблока
+					"SECTION_CODE" => "",    // Код раздела
+					"SECTION_FIELDS" => array(    // Поля разделов
+						0 => "",
+						1 => "",
+					),
+					"SECTION_ID" => $_REQUEST["SECTION_STMMID3"],    // ID раздела
+					"SECTION_URL" => "",    // URL, ведущий на страницу с содержимым раздела
+					"SECTION_USER_FIELDS" => array(    // Свойства разделов
+						0 => "",
+						1 => "",
+					),
+					"SHOW_PARENT_NAME" => "Y",    // Показывать название раздела
+					"TOP_DEPTH" => "1",    // Максимальная отображаемая глубина разделов
+					"VIEW_MODE" => "LIST",    // Вид списка подразделов
+				),
+					false
+				); ?>
+
+				<div class="footer__menu-contacts">
+					<div class="footer__menu-contacts-item">
+						<div class="footer__menu-contacts-title">Контакты</div>
+						<?
+						$APPLICATION->IncludeFile("/local/include/" . SITE_ID . "/footer/footer_contacts.php", array(), array(
+								"MODE" => "html",
+								"NAME" => "блок",
+								"TEMPLATE" => ""
+							)
+						);
+						?>
+					</div>
+					<div class="footer__menu-contacts-item">
+						<div class="footer__menu-contacts-title">Мы принимаем</div>
+						<div class="footer__menu-contacts-payments">
+							<img class="footer__menu-contacts-payments-img footer__menu-contacts-payments-img--visa" src="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/visa.svg">
+							<img class="footer__menu-contacts-payments-img footer__menu-contacts-payments-img--mastercard"
+								 src="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/mastercard.svg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	</div> <!-- natural-group -->
+
+
+
+	<? if (!$USER->IsAuthorized()) { ?>
+		<? $APPLICATION->IncludeComponent(
+			"2quick:tq_auth",
+			"",
+			array(),
+			false
+		); ?>
+		<?/* $APPLICATION->IncludeComponent(
+			"2quick:tq_forgot",
+			"",
+			array()
+		); */?>
+	<? } ?>
+
+<? endif; ?>
+
+
+<script src="<?= SITE_TEMPLATE_PATH ?>/ts/main.js"></script>
+
+<div class="modal-overlay"></div>
+<? \nav\AppData::show() ?>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () {
+            (m[i].a = m[i].a || []).push(arguments);
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(61269028, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        ecommerce: "dataLayer"
+    });
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/61269028" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160628157-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-160628157-1');
+</script>
+
+</body>
+</html>
