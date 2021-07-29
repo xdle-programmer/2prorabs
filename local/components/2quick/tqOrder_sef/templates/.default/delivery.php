@@ -20,6 +20,8 @@ deliveryPrice = {
 	smallDeliveryKm: 10,
 	smallDeliveryKmMinimal: 100,
 }
+
+
 </script>
 
 <?
@@ -37,13 +39,11 @@ $arr_month = [
   'ноября',
   'декабря'
 ];
-
-$sd = date('d m', strtotime("+" . $arItem["PROPERTIES"]["DELIVERY_DAY"]["VALUE"] . " day"));
 ?>
 
 
 <!--b><?print_r($arResult);?></b-->
-<form class="basket form-check" id="order-1">
+<form class="basket form-check" id="order-1" data-tab="delivery" data-next="<?=$arResult['TABS']['1']['URL']?>">
 	<div class="basket__products">
 		<div class="order-status">
 			<div class="order-status__item order-status__item--active">
@@ -111,8 +111,31 @@ $sd = date('d m', strtotime("+" . $arItem["PROPERTIES"]["DELIVERY_DAY"]["VALUE"]
 							<div class="order-form__store-desc-hint"><?=$arItem["PREVIEW_TEXT"]?></div>
 						</div>
 						<div class="order-form__store-desc-time">Магазин работает с <?=$arItem["PROPERTIES"]["WORK_TIME"]["VALUE"]?></div>
-						<div class="order-form__store-desc-take">Можно забрать во вторник, <?echo date('d m', strtotime("+" . $arItem["PROPERTIES"]["DELIVERY_DAY"]["VALUE"] . " day"));?></div>
+						<div class="order-form__store-desc-take">
+							Можно забрать во вторник, <?echo date('d', strtotime("+" . $arItem["PROPERTIES"]["DELIVERY_DAY"]["VALUE"] . " day"))." ".$arr_month[ date('m', strtotime("+" . $arItem["PROPERTIES"]["DELIVERY_DAY"]["VALUE"] . " day")) - 1 ];?>
+						</div>
 					</div>
+					
+					
+					<?if( count($arItem['UNAVAILABLE_PRODUCTS']) > 0 ):?>
+						<div class="checkout__unavailable-products-text">
+							На этом складе недостаточное количество следующих товаров (указан актуальный остаток):
+						</div>
+						<?foreach( $arItem['UNAVAILABLE_PRODUCTS'] as $product ):?>
+							<div class="checkout__unavailable-product">
+								<?=$product['NAME']?> &mdash; <?=$product['AVAILABLE']?> шт.
+							</div>
+						<?endforeach;?>
+					<?endif;?>
+					
+					<input class="tq_radio" type="radio" name="POINT" value="<?= $arItem['ID'] ?>" hidden
+						   id="point-<?=$arItem['ID']?>"
+						   <? if ($arDelivery['CHECKED'] != 'Y') echo ' disabled' ?> 
+						   <? if ($arResult['SAVED']['delivery']['POINT'] == $arItem['ID']) echo ' checked' ?>
+					>
+					<label class="basket-products__delivery-point-button" for="point-<?= $arItem['ID'] ?>">Выбрать</label>
+
+
 				</div>
 						<?}?>
 					<?}?>
@@ -122,10 +145,11 @@ $sd = date('d m', strtotime("+" . $arItem["PROPERTIES"]["DELIVERY_DAY"]["VALUE"]
 				<div class="order-form__address">
 					<div class="order-form__address-input">
 						<div class="placeholder">
-							<input class="input placeholder__input" placeholder="Адрес">
+							<input id="user_delivery_address" name="STREET" class="input placeholder__input" placeholder="Адрес">
 							<div class="placeholder__item">Адрес</div>
 						</div>
 					</div>
+					
 					<div class="order-form__address-button" data-modal-open="delivery-map">Отметить на карте для расчета доставки</div>
 					<div class="order-form__address-price">
 						<div class="order-form__address-price-item">
@@ -149,21 +173,21 @@ $sd = date('d m', strtotime("+" . $arItem["PROPERTIES"]["DELIVERY_DAY"]["VALUE"]
 				<div class="basket__order-title">Заказ:</div>
 				<div class="basket__order-desc">
 					<div class="basket__order-desc-row">
-						<div class="basket__order-desc-row-item">Товары 10 шт.</div>
-						<div class="basket__order-desc-row-value">76 625 сом</div>
+						<div class="basket__order-desc-row-item">Товары <?echo count($_SESSION["BASKET_LIST"]);?> шт.</div>
+						<div class="basket__order-desc-row-value"><?=$arResult["INFO_ORDER"]["FORMATED_BASKET_SUM"]?></div>
 					</div>
 					<div class="basket__order-desc-row">
 						<div class="basket__order-desc-row-item">Вес заказа</div>
-						<div class="basket__order-desc-row-value">0 кг</div>
+						<div class="basket__order-desc-row-value"><?=$arResult["INFO_ORDER"]["WEIGHT"]?> г</div>
 					</div>
 					<div class="basket__order-desc-row basket__order-desc-row--result">
 						<div class="basket__order-desc-row-item">Общая стоимость</div>
-						<div class="basket__order-desc-row-value">75 625 сом</div>
+						<div class="basket__order-desc-row-value"><?=$arResult["INFO_ORDER"]["FORMATED_BASE_PRICE"]?></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="basket__order-actions-main-button form-check__button">Далее</div>
+		<a href="/order/payment/" class="basket__order-actions-main-button form-check__button">Далее</a>
 	</div>
 </form>
 
@@ -184,11 +208,11 @@ $sd = date('d m', strtotime("+" . $arItem["PROPERTIES"]["DELIVERY_DAY"]["VALUE"]
 		<div class="delivery-map__form">
 		  <div class="delivery-map__form-input">
 			<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
-			  <input class="input input--small placeholder__input" placeholder="Кликните на карту">
+			  <input id="user_selected_adress" class="input input--small placeholder__input" placeholder="Кликните на карту">
 			  <div class="placeholder__item">Кликните на карту</div>
 			</div>
 		  </div>
-		  <div class="delivery-map__form-button-save form-check__button">Сохранить</div>
+		  <div onclick="setAdress()" class="delivery-map__form-button-save form-check__button">Сохранить</div>
 		  <div class="delivery-map__form-button-cancel">
 			<svg class="delivery-map__form-button-cancel-icon">
 			  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>

@@ -275,7 +275,14 @@ function buttonSendReview(element_id) {
 }
 
 
-	
+
+function setAdress() {	
+	var user_adress = document.getElementById('user_selected_adress').value;
+	document.getElementById('user_delivery_address').value = user_adress;
+	modals.close('delivery-map');
+}
+
+
 /*
 function ajaxUpdate(){
     $.get( "/local/templates/stroygip/ajax/basketupdate.php", function( data ) {

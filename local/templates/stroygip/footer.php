@@ -7,13 +7,13 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 $page = $APPLICATION->GetCurPage();
 ?>
 
-<?if( $APPLICATION->GetCurPage() == "/basket/" || $APPLICATION->GetCurPage() == "/order/" ):?>
+<?if( in_array($APPLICATION->GetCurPage(), $arr_ntu_clear) ):?>
 		</div>
     </section>
 <?endif;?>
 
 
-<?if( $APPLICATION->GetCurPage() != "/basket/" && $APPLICATION->GetCurPage() != "/order/" ):?>
+<?if( !in_array($APPLICATION->GetCurPage(), $arr_ntu_clear) ):?>
 
 	<? if ($page == '/personal/') { ?>
 		<section class="recently-viewed recently-viewed--white">

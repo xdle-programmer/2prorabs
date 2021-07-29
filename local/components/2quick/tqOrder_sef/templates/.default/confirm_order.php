@@ -15,6 +15,80 @@
 
 
 ?>
+
+<form class="basket form-check" id="order-3">
+	<div class="basket__products">
+		<div class="order-status"><a class="order-status__item order-status__item--fill" href="#">
+			<div class="order-status__item-number">1</div>
+			<div class="order-status__item-name">Доставка</div></a>
+			<svg class="order-status__separator">
+			<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#long-arrow"></use>
+			</svg><a class="order-status__item order-status__item--fill" href="#">
+			<div class="order-status__item-number">2</div>
+			<div class="order-status__item-name">Оплата</div></a>
+			<svg class="order-status__separator">
+			<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#long-arrow"></use>
+			</svg>
+			<div class="order-status__item order-status__item--active">
+			<div class="order-status__item-number">3</div>
+			<div class="order-status__item-name">Подтверждение</div>
+			</div>
+		</div>
+		<div class="order-form">
+		<div class="order-form__result">
+		<div class="order-form__result-item">
+		<div class="order-form__result-item-title">Получатель</div>
+		<div class="order-form__result-item-desc">
+		<div class="order-form__result-item-desc-text">Устинов Юрий Викторович, +996 (559) 950 725</div><a class="order-form__result-item-desc-button" href="#">Изменить</a>
+		</div>
+		</div>
+		<div class="order-form__result-item">
+		<div class="order-form__result-item-title">Доставка</div>
+		<div class="order-form__result-item-desc">
+		<div class="order-form__result-item-desc-text">Курьерская доставка</div><a class="order-form__result-item-desc-button" href="#">Изменить</a>
+		</div>
+		</div>
+		<div class="order-form__result-item">
+		<div class="order-form__result-item-title">Способ оплаты</div>
+		<div class="order-form__result-item-desc">
+		<div class="order-form__result-item-desc-text">Электронной картой онлайн</div><a class="order-form__result-item-desc-button" href="#">Изменить</a>
+		</div>
+		</div>
+		</div>
+		<div class="order-form__comment">
+		<div class="placeholder form-check__field" data-elem="textarea" data-rule="input-empty">
+		<textarea class="input input--textarea placeholder__input" placeholder="Комментарий к заказу"></textarea>
+		<div class="placeholder__item">Комментарий к заказу</div>
+		</div>
+		</div>
+		</div>
+	</div>
+	<div class="basket__order">
+	<div class="basket__order-wrapper">
+	<div class="basket__order-main">
+	<div class="basket__order-title">Заказ:</div>
+	<div class="basket__order-desc">
+	<div class="basket__order-desc-row">
+	<div class="basket__order-desc-row-item">Товары 10 шт.</div>
+	<div class="basket__order-desc-row-value">76 625 сом</div>
+	</div>
+	<div class="basket__order-desc-row">
+	<div class="basket__order-desc-row-item">Вес заказа</div>
+	<div class="basket__order-desc-row-value">0 кг</div>
+	</div>
+	<div class="basket__order-desc-row basket__order-desc-row--result">
+	<div class="basket__order-desc-row-item">Общая стоимость</div>
+	<div class="basket__order-desc-row-value">75 625 сом</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<div class="basket__order-actions-main-button form-check__button">Оплатить</div>
+	</div>
+</form>
+
+		
+<?/*
 <div class="basket-products__grid">
     <form class="basket-products__container" id="save_order">
         <div class="basket-products__title"><?=$APPLICATION->ShowTitle(false)?></div>
@@ -50,9 +124,9 @@
                         <div class="basket-products__confirmation-pay"><?=$arResult['DELIVERIES'][$arResult['SAVED']['delivery']['delivery_id']]['STORES'][$arResult['SAVED']['delivery']['POINT']]['PREVIEW_TEXT']?></div>
                         <?}else{?>
                             <?=$arResult['SAVED']['delivery']['CITY']? sprintf('Адрес: %s<br>',$arResult['SAVED']['delivery']['CITY']):''?>
-                            <?/*=$arResult['SAVED']['delivery']['STREET']? sprintf('Улица.: %s<br>',$arResult['SAVED']['delivery']['STREET']):''?>
-                            <?=$arResult['SAVED']['delivery']['HOUSE']? sprintf('Дом.: %s<br>',$arResult['SAVED']['delivery']['HOUSE']):''?>
-                            <?=$arResult['SAVED']['delivery']['APARTMENT']? sprintf('Квартира.: %s<br>',$arResult['SAVED']['delivery']['APARTMENT']):''*/?>
+                            <?//=$arResult['SAVED']['delivery']['STREET']? sprintf('Улица.: %s<br>',$arResult['SAVED']['delivery']['STREET']):''?>
+                            <?//=$arResult['SAVED']['delivery']['HOUSE']? sprintf('Дом.: %s<br>',$arResult['SAVED']['delivery']['HOUSE']):''?>
+                            <?//=$arResult['SAVED']['delivery']['APARTMENT']? sprintf('Квартира.: %s<br>',$arResult['SAVED']['delivery']['APARTMENT']):''?>
                         <?}?>
                     </div>
                     <?}?>
@@ -86,3 +160,4 @@
     </form>
     <?include 'order_info.php'?>
 </div>
+*/?>

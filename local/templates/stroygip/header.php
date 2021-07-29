@@ -19,12 +19,10 @@ global $USER;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?
-    if (
-		$APPLICATION->GetCurPage() != "/" 
-		&& $APPLICATION->GetCurPage() != "/basket/" 
-		&& $APPLICATION->GetCurPage() != "/order/" 
-		&& strpos($APPLICATION->GetCurDir(), '/catalog/') === false 
-		) {
+	$arr_ntu = array("/", "/basket/", "/order/", "/order/payment/", "/order/confirm_order/");
+	$arr_ntu_clear = array("/basket/", "/order/", "/order/payment/", "/order/confirm_order/");
+	
+    if ( !in_array($APPLICATION->GetCurPage(), $arr_ntu) && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/libs.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/style.css");
 
@@ -33,11 +31,7 @@ global $USER;
     }
 	
 	
-	if (
-		$APPLICATION->GetCurPage() != "/" 
-		&& $APPLICATION->GetCurPage() != "/basket/" 
-		&& $APPLICATION->GetCurPage() != "/order/" 
-		&& strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
+	if ( !in_array($APPLICATION->GetCurPage(), $arr_ntu) && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
 		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.carousel.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.theme.default.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/select2/dist/css/select2.min.css");
@@ -66,13 +60,13 @@ global $USER;
     <link href="<?= SITE_TEMPLATE_PATH ?>/ts/main.css" rel="stylesheet">
 </head>
 
-<body <?if( $APPLICATION->GetCurPage() == "/basket/" || $APPLICATION->GetCurPage() == "/order/" ):?>class="clear-page"<? endif; ?>>
+<body <?if( in_array($APPLICATION->GetCurPage(), $arr_ntu_clear) ):?>class="clear-page"<? endif; ?>>
 <div id="panel">
     <?$APPLICATION->ShowPanel();?>
 </div>
 
 
-<?if( $APPLICATION->GetCurPage() == "/basket/" || $APPLICATION->GetCurPage() == "/order/" ):?>
+<?if( in_array($APPLICATION->GetCurPage(), $arr_ntu_clear) ):?>
 	<div class="header-clear layout layout--small">
 		<a class="header-clear__logo" href="/">
 			<img class="header-clear__logo-img" src="/local/templates/stroygip/ts/images/logo/logo-black.svg">
@@ -85,7 +79,7 @@ global $USER;
 <?endif;?>
 
 
-<?if( $APPLICATION->GetCurPage() != "/basket/" && $APPLICATION->GetCurPage() != "/order/" ){?>
+<?if( !in_array($APPLICATION->GetCurPage(), $arr_ntu_clear) ){?>
 	<div class="menu">
 		<div class="menu__wrapper layout">
 			<div class="menu__header">
