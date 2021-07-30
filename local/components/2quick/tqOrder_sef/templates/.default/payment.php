@@ -14,7 +14,6 @@
 /** @var CBitrixComponent $component */
 ?>
 
-<!--b><?print_r($arResult);?></b-->
 <form class="basket form-check" id="order-2" data-tab="payment" data-next="<?=$arResult['TABS']['2']['URL']?>">
 	<div class="basket__products">
 		<div class="order-status">
@@ -41,8 +40,8 @@
 			<div class="order-form__group">
 				<div class="order-form__payment">
 				<?foreach ($arResult['PAYMENT'] as $arPayment){?>
-					<label class="order-form__radio order-form__radio--big form-check__field" data-elem="input" data-rule="radio-required">
-						<input class="order-form__radio-input" type="radio" value="<?=$arPayment['ID']?>" name="payment"<?if($arPayment['CHECKED']=='Y')echo ' checked'?>>
+					<label class="order-form__radio order-form__radio--big form-check__field" data-elem="input" data-rule="radio-required" onclick="setOrderPayment(<?=$arPayment['ID']?>);">
+						<input class="order-form__radio-input" type="radio" value="<?=$arPayment['ID']?>" name="payment" <?if($arPayment['CHECKED']=='Y')echo ' checked'?>>
 						<span class="order-form__radio-button">
 							<span class="order-form__radio-button-icon"></span>
 							<span class="order-form__radio-button-text">
@@ -56,6 +55,9 @@
 					</label>
 				<?}?>
 				</div>
+				
+				<div id="tq_errors"></div>
+				
 			</div>
 		</div>
 	</div>
@@ -74,46 +76,11 @@
 					</div>
 					<div class="basket__order-desc-row basket__order-desc-row--result">
 						<div class="basket__order-desc-row-item">Общая стоимость</div>
-						<div class="basket__order-desc-row-value"><?=$arResult["INFO_ORDER"]["FORMATED_BASE_PRICE"]?></div>
+						<div id="basket__order-total-sum" class="basket__order-desc-row-value"><?=$arResult["INFO_ORDER"]["FORMATED_BASE_PRICE"]?></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<a href="/order/confirm_order/" class="basket__order-actions-main-button form-check__button">Далее</a>
+		<div id="orderNextTab" onclick="submitOrderForm2();" data-tab="payment" data-next="/order/confirm_order/" class="basket__order-actions-main-button form-check__button">Далее</div>
 	</div>
 </form>
-		
-		
-<?/*
-<div class="basket-products__grid">
-    <form class="basket-products__container" id="tq_order" data-tab="payment" data-next="<?= $arResult['TABS']['2']['URL'] ?>">
-        <div class="basket-products__title"><?=$APPLICATION->ShowTitle(false)?></div>
-        <?include 'tabs.php';?>
-        <div class="basket-products__title basket-products__title--medium-center basket-products__title--mb">Оплата</div>
-        <div class="basket-products__registration-inner">
-            <div class="basket-products__registration-title basket-products__registration-title--mb">Выберите способ оплаты</div>
-            <?foreach ($arResult['PAYMENT'] as $arPayment){?>
-                <div class="basket-products__radio-box">
-                    <div class="basket-products__radio-inner">
-                        <input class="basket-products__radio-input" type="radio" name="payment" value="<?=$arPayment['ID']?>" name="payment"<?if($arPayment['CHECKED']=='Y')echo ' checked'?>>
-                        <div class="basket-products__radio-circle"></div>
-                        <div class="basket-products__radio-text"><?=$arPayment['NAME']?></div>
-                    </div>
-                    <div class="basket-products__radio-info">
-                        <?=$arPayment['DESCRIPTION']?>
-                    </div>
-                </div>
-
-            <?}?>
-
-
-        </div>
-        <button class="basket-products__next-button">Далее
-            <div class="basket-products__next-button-icon"></div>
-        </button>
-        <div class="tq_errors"></div>
-
-    </form>
-    <?include 'order_info.php'?>
-</div>
-*/?>

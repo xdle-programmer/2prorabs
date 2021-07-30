@@ -19,6 +19,7 @@ global $USER;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?
+	//"/order/confirm_order/"
 	$arr_ntu = array("/", "/basket/", "/order/", "/order/payment/", "/order/confirm_order/");
 	$arr_ntu_clear = array("/basket/", "/order/", "/order/payment/", "/order/confirm_order/");
 	
@@ -50,14 +51,16 @@ global $USER;
 
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 
+	//Asset::getInstance()->addJs("https://maps.googleapis.com/maps/api/js?sensor=false");
+
     Asset::getInstance()->addJs('https://www.google.com/recaptcha/api.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/costume.js");
     ?>
 
-    <? $APPLICATION->ShowHead(); ?>
+    <?$APPLICATION->ShowHead();?>
     <title><? $APPLICATION->ShowTitle(); ?></title>
 
-    <link href="<?= SITE_TEMPLATE_PATH ?>/ts/main.css" rel="stylesheet">
+    <link href="<?=SITE_TEMPLATE_PATH?>/ts/main.css" rel="stylesheet">
 </head>
 
 <body <?if( in_array($APPLICATION->GetCurPage(), $arr_ntu_clear) ):?>class="clear-page"<? endif; ?>>
