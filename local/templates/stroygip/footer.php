@@ -178,23 +178,22 @@ $page = $APPLICATION->GetCurPage();
 
 	</div> <!-- natural-group -->
 
-
-
-	<? if (!$USER->IsAuthorized()) { ?>
-		<? $APPLICATION->IncludeComponent(
-			"2quick:tq_auth",
-			"",
-			array(),
-			false
-		); ?>
-		<?/* $APPLICATION->IncludeComponent(
-			"2quick:tq_forgot",
-			"",
-			array()
-		); */?>
-	<? } ?>
-
 <? endif; ?>
+
+
+<? if (!$USER->IsAuthorized()) { ?>
+	<? $APPLICATION->IncludeComponent(
+		"2quick:tq_auth",
+		"",
+		array(),
+		false
+	); ?>
+	<?/* $APPLICATION->IncludeComponent(
+		"2quick:tq_forgot",
+		"",
+		array()
+	); */?>
+<? } ?>
 
 
 <script src="<?= SITE_TEMPLATE_PATH ?>/ts/main.js"></script>
