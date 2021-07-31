@@ -96,7 +96,7 @@ if( empty($arResult["ERROR_MESSAGE"]) ){
 				</div>
 			</div>
 		</div>
-		<a href="/order/" <?if( !$USER->IsAuthorized() ):?>data-modal-open='login'<?endif;?> class="basket__order-actions-main-button">Перейти к оформлению заказа</a>
+		<a <?if( !$USER->IsAuthorized() ):?>data-modal-open='login'<?else:?>href="/order/"<?endif;?> class="basket__order-actions-main-button">Перейти к оформлению заказа</a>
 	</div>
 </div>
 <?
