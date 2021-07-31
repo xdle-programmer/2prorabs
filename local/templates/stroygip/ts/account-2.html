@@ -643,7 +643,7 @@
           </div>
         </div>
       </header>
-      <section class="section section--gray">
+      <section class="section section--min-content section--gray">
         <div class="layout">
           <div class="breadcrumb"><a class="breadcrumb__item" href="#">Каталог</a>
             <svg class="breadcrumb__separator">
@@ -656,26 +656,57 @@
           </div>
           <div class="account">
             <div class="account__header">
-              <div class="account__header-button account__header-button--active">
-                <svg class="account__header-button-icon">
-                  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#user"></use>
-                </svg>
-                <div class="account__header-button-text">Личные данные</div>
+              <div class="account__header-nav">
+                <div class="account__header-nav-button account__header-nav-button--prev">
+                  <svg class="account__header-nav-button-icon">
+                    <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+                  </svg>
+                </div>
+                <div class="account__header-nav-button account__header-nav-button--next">
+                  <svg class="account__header-nav-button-icon">
+                    <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+                  </svg>
+                </div>
               </div>
-              <div class="account__header-button">
-                <svg class="account__header-button-icon">
-                  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#order"></use>
-                </svg>
-                <div class="account__header-button-text">Мои заказы</div>
-              </div>
-              <div class="account__header-button">
-                <svg class="account__header-button-icon">
-                  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#eye"></use>
-                </svg>
-                <div class="account__header-button-text">Просмотренные товары</div>
+              <div class="account__header-buttons">
+                <div class="account__header-button account__header-button--active">
+                  <div class="account__header-button-inner">
+                    <svg class="account__header-button-icon">
+                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#user"></use>
+                    </svg>
+                    <div class="account__header-button-text">Личные данные</div>
+                  </div>
+                </div>
+                <div class="account__header-button">
+                  <div class="account__header-button-inner">
+                    <svg class="account__header-button-icon">
+                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#order"></use>
+                    </svg>
+                    <div class="account__header-button-text">Мои заказы</div>
+                  </div>
+                </div>
+                <div class="account__header-button">
+                  <div class="account__header-button-inner">
+                    <svg class="account__header-button-icon">
+                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#eye"></use>
+                    </svg>
+                    <div class="account__header-button-text">Просмотренные товары</div>
+                  </div>
+                </div>
+                <div class="account__header-button">
+                  <div class="account__header-button-inner">
+                    <svg class="account__header-button-icon">
+                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#outlay"></use>
+                    </svg>
+                    <div class="account__header-button-text">Сметы</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="account__block">
+              <div class="account__order-types">
+                <div class="account__order-type account__order-type--active">Все</div><a class="account__order-type" href="#">В работе</a><a class="account__order-type" href="#">Ожидают оплаты</a><a class="account__order-type" href="#">Полученные</a><a class="account__order-type" href="#">Отмененные</a>
+              </div>
               <div class="account__order">
                 <div class="account__order-header">
                   <div class="account__order-header-info">
@@ -689,6 +720,29 @@
                       <svg class="account__order-header-button-icon">
                         <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#history"></use>
                       </svg>
+                                <div class="account__order-history">
+                                  <div class="account__order-history-close">
+                                    <svg class="account__order-history-close-icon">
+                                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+                                    </svg>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 15:00</div>
+                                    <div class="account__order-history-item-text">Заказ оформлен</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ оплачен</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ обработан менджером</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ доставлен</div>
+                                  </div>
+                                </div>
                     </div>
                     <div class="account__order-header-button account__order-header-button--toggle">
                       <div class="account__order-header-button-text">Детали заказа</div>
@@ -702,8 +756,7 @@
                             <div class="account__order-item">
                               <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
                               <div class="account__order-item-desc">
-                                <div class="account__order-item-desc-title">
-                                  <div class="account__order-item-desc-title-item">Газонокосилка электрическая huter elm-1100 70/4/2</div>
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
                                   <div class="account__order-item-desc-title-count">
                                     <div class="account__order-item-desc-title-count-text">На складе:</div>
                                     <div class="account__order-item-desc-title-count-number">42 шт.</div>
@@ -718,8 +771,7 @@
                             <div class="account__order-item">
                               <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
                               <div class="account__order-item-desc">
-                                <div class="account__order-item-desc-title">
-                                  <div class="account__order-item-desc-title-item">Газонокосилка электрическая huter elm-1100 70/4/2</div>
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
                                   <div class="account__order-item-desc-title-count">
                                     <div class="account__order-item-desc-title-count-text">На складе:</div>
                                     <div class="account__order-item-desc-title-count-number">42 шт.</div>
@@ -734,8 +786,7 @@
                             <div class="account__order-item">
                               <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
                               <div class="account__order-item-desc">
-                                <div class="account__order-item-desc-title">
-                                  <div class="account__order-item-desc-title-item">Газонокосилка электрическая huter elm-1100 70/4/2</div>
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
                                   <div class="account__order-item-desc-title-count">
                                     <div class="account__order-item-desc-title-count-text">На складе:</div>
                                     <div class="account__order-item-desc-title-count-number">42 шт.</div>
@@ -750,8 +801,7 @@
                             <div class="account__order-item">
                               <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
                               <div class="account__order-item-desc">
-                                <div class="account__order-item-desc-title">
-                                  <div class="account__order-item-desc-title-item">Газонокосилка электрическая huter elm-1100 70/4/2</div>
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
                                   <div class="account__order-item-desc-title-count">
                                     <div class="account__order-item-desc-title-count-text">На складе:</div>
                                     <div class="account__order-item-desc-title-count-number">42 шт.</div>
@@ -763,11 +813,10 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="account__order-item account__order-item--not">
+                            <div class="account__order-item account__order-item--disabled">
                               <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
                               <div class="account__order-item-desc">
-                                <div class="account__order-item-desc-title">
-                                  <div class="account__order-item-desc-title-item">Газонокосилка электрическая huter elm-1100 70/4/2</div>
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
                                   <div class="account__order-item-desc-title-count">
                                     <div class="account__order-item-desc-title-count-text">На складе:</div>
                                     <div class="account__order-item-desc-title-count-number">0</div>
@@ -782,8 +831,7 @@
                             <div class="account__order-item">
                               <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
                               <div class="account__order-item-desc">
-                                <div class="account__order-item-desc-title">
-                                  <div class="account__order-item-desc-title-item">Газонокосилка электрическая huter elm-1100 70/4/2</div>
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
                                   <div class="account__order-item-desc-title-count">
                                     <div class="account__order-item-desc-title-count-text">На складе:</div>
                                     <div class="account__order-item-desc-title-count-number">42 шт.</div>
@@ -795,11 +843,10 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="account__order-item account__order-item--not">
+                            <div class="account__order-item account__order-item--disabled">
                               <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
                               <div class="account__order-item-desc">
-                                <div class="account__order-item-desc-title">
-                                  <div class="account__order-item-desc-title-item">Газонокосилка электрическая huter elm-1100 70/4/2</div>
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
                                   <div class="account__order-item-desc-title-count">
                                     <div class="account__order-item-desc-title-count-text">На складе:</div>
                                     <div class="account__order-item-desc-title-count-number">0</div>
@@ -814,8 +861,595 @@
                             <div class="account__order-item">
                               <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
                               <div class="account__order-item-desc">
-                                <div class="account__order-item-desc-title">
-                                  <div class="account__order-item-desc-title-item">Газонокосилка электрическая huter elm-1100 70/4/2</div>
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                </div>
+                <div class="account__order-footer">
+                  <div class="account__order-footer-items">
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-item-title">Получатель:</div>
+                      <div class="account__order-footer-item-row">Alymbek</div>
+                      <div class="account__order-footer-item-row">+996 559-950-534</div>
+                      <div class="account__order-footer-item-row">sagynbaev1708@gmail.com</div>
+                    </div>
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-item-title">Доставка:</div>
+                      <div class="account__order-footer-item-row">Способ доставки: Самовывоз</div>
+                      <div class="account__order-footer-item-row">Адрес: Филиал на ул. Льва Толстого 36к</div>
+                    </div>
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-item-title">Оплата:</div>
+                      <div class="account__order-footer-item-row">Электронной картой онлайн (Visa, Mastercard)</div>
+                      <div class="account__order-footer-item-row">Сумма: 20 321 Сом</div>
+                    </div>
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-button">
+                        <svg class="account__order-footer-button-icon">
+                          <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#repeat"></use>
+                        </svg>
+                        <div class="account__order-footer-button-text">Повторить заказ</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="account__order">
+                <div class="account__order-header">
+                  <div class="account__order-header-info">
+                    <div class="account__order-header-info-text">Заказ #152 от 26 Июля 2021,</div>
+                    <div class="account__order-header-info-price">20 321 Сом</div>
+                  </div>
+                  <div class="account__order-header-status account__order-header-status--green">Завершен</div>
+                  <div class="account__order-header-buttons">
+                    <div class="account__order-header-button account__order-header-button--history">
+                      <div class="account__order-header-button-text">История заказа</div>
+                      <svg class="account__order-header-button-icon">
+                        <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#history"></use>
+                      </svg>
+                                <div class="account__order-history">
+                                  <div class="account__order-history-close">
+                                    <svg class="account__order-history-close-icon">
+                                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+                                    </svg>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 15:00</div>
+                                    <div class="account__order-history-item-text">Заказ оформлен</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ оплачен</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ обработан менджером</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ доставлен</div>
+                                  </div>
+                                </div>
+                    </div>
+                    <div class="account__order-header-button account__order-header-button--toggle">
+                      <div class="account__order-header-button-text">Детали заказа</div>
+                      <svg class="account__order-header-button-icon">
+                        <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow-bottom"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="account__order-items">
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item account__order-item--disabled">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">0</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item account__order-item--disabled">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">0</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                </div>
+                <div class="account__order-footer">
+                  <div class="account__order-footer-items">
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-item-title">Получатель:</div>
+                      <div class="account__order-footer-item-row">Alymbek</div>
+                      <div class="account__order-footer-item-row">+996 559-950-534</div>
+                      <div class="account__order-footer-item-row">sagynbaev1708@gmail.com</div>
+                    </div>
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-item-title">Доставка:</div>
+                      <div class="account__order-footer-item-row">Способ доставки: Самовывоз</div>
+                      <div class="account__order-footer-item-row">Адрес: Филиал на ул. Льва Толстого 36к</div>
+                    </div>
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-item-title">Оплата:</div>
+                      <div class="account__order-footer-item-row">Электронной картой онлайн (Visa, Mastercard)</div>
+                      <div class="account__order-footer-item-row">Сумма: 20 321 Сом</div>
+                    </div>
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-button">
+                        <svg class="account__order-footer-button-icon">
+                          <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#repeat"></use>
+                        </svg>
+                        <div class="account__order-footer-button-text">Повторить заказ</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="account__order">
+                <div class="account__order-header">
+                  <div class="account__order-header-info">
+                    <div class="account__order-header-info-text">Заказ #152 от 26 Июля 2021,</div>
+                    <div class="account__order-header-info-price">20 321 Сом</div>
+                  </div>
+                  <div class="account__order-header-status account__order-header-status--green">Завершен</div>
+                  <div class="account__order-header-buttons">
+                    <div class="account__order-header-button account__order-header-button--history">
+                      <div class="account__order-header-button-text">История заказа</div>
+                      <svg class="account__order-header-button-icon">
+                        <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#history"></use>
+                      </svg>
+                                <div class="account__order-history">
+                                  <div class="account__order-history-close">
+                                    <svg class="account__order-history-close-icon">
+                                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+                                    </svg>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 15:00</div>
+                                    <div class="account__order-history-item-text">Заказ оформлен</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ оплачен</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ обработан менджером</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ доставлен</div>
+                                  </div>
+                                </div>
+                    </div>
+                    <div class="account__order-header-button account__order-header-button--toggle">
+                      <div class="account__order-header-button-text">Детали заказа</div>
+                      <svg class="account__order-header-button-icon">
+                        <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow-bottom"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="account__order-items">
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item account__order-item--disabled">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">0</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item account__order-item--disabled">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">0</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                </div>
+                <div class="account__order-footer">
+                  <div class="account__order-footer-items">
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-item-title">Получатель:</div>
+                      <div class="account__order-footer-item-row">Alymbek</div>
+                      <div class="account__order-footer-item-row">+996 559-950-534</div>
+                      <div class="account__order-footer-item-row">sagynbaev1708@gmail.com</div>
+                    </div>
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-item-title">Доставка:</div>
+                      <div class="account__order-footer-item-row">Способ доставки: Самовывоз</div>
+                      <div class="account__order-footer-item-row">Адрес: Филиал на ул. Льва Толстого 36к</div>
+                    </div>
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-item-title">Оплата:</div>
+                      <div class="account__order-footer-item-row">Электронной картой онлайн (Visa, Mastercard)</div>
+                      <div class="account__order-footer-item-row">Сумма: 20 321 Сом</div>
+                    </div>
+                    <div class="account__order-footer-item">
+                      <div class="account__order-footer-button">
+                        <svg class="account__order-footer-button-icon">
+                          <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#repeat"></use>
+                        </svg>
+                        <div class="account__order-footer-button-text">Повторить заказ</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="account__order">
+                <div class="account__order-header">
+                  <div class="account__order-header-info">
+                    <div class="account__order-header-info-text">Заказ #152 от 26 Июля 2021,</div>
+                    <div class="account__order-header-info-price">20 321 Сом</div>
+                  </div>
+                  <div class="account__order-header-status account__order-header-status--green">Завершен</div>
+                  <div class="account__order-header-buttons">
+                    <div class="account__order-header-button account__order-header-button--history">
+                      <div class="account__order-header-button-text">История заказа</div>
+                      <svg class="account__order-header-button-icon">
+                        <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#history"></use>
+                      </svg>
+                                <div class="account__order-history">
+                                  <div class="account__order-history-close">
+                                    <svg class="account__order-history-close-icon">
+                                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+                                    </svg>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 15:00</div>
+                                    <div class="account__order-history-item-text">Заказ оформлен</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ оплачен</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ обработан менджером</div>
+                                  </div>
+                                  <div class="account__order-history-item">
+                                    <div class="account__order-history-item-date">29.07.2021 16:00</div>
+                                    <div class="account__order-history-item-text">Заказ доставлен</div>
+                                  </div>
+                                </div>
+                    </div>
+                    <div class="account__order-header-button account__order-header-button--toggle">
+                      <div class="account__order-header-button-text">Детали заказа</div>
+                      <svg class="account__order-header-button-icon">
+                        <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow-bottom"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="account__order-items">
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item account__order-item--disabled">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">0</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">42 шт.</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item account__order-item--disabled">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
+                                  <div class="account__order-item-desc-title-count">
+                                    <div class="account__order-item-desc-title-count-text">На складе:</div>
+                                    <div class="account__order-item-desc-title-count-number">0</div>
+                                  </div>
+                                </div>
+                                <div class="account__order-item-desc-price">
+                                  <div class="account__order-item-desc-price-number">122 342</div>
+                                  <div class="account__order-item-desc-price-currency">сом</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="account__order-item">
+                              <div class="account__order-item-img-wrapper"><img class="account__order-item-img" src="/local/templates/stroygip/ts/images/examples/product-1.jpg"></div>
+                              <div class="account__order-item-desc">
+                                <div class="account__order-item-desc-title"><a class="account__order-item-desc-title-item" href="#">Газонокосилка электрическая huter elm-1100 70/4/2</a>
                                   <div class="account__order-item-desc-title-count">
                                     <div class="account__order-item-desc-title-count-text">На складе:</div>
                                     <div class="account__order-item-desc-title-count-number">42 шт.</div>

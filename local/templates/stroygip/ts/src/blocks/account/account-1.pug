@@ -1,16 +1,8 @@
 .account
-    .account__header
-        .account__header-button.account__header-button--active
-            +iconSvg('user','account__header-button-icon')
-            .account__header-button-text Личные данные
-        .account__header-button
-            +iconSvg('order','account__header-button-icon')
-            .account__header-button-text Мои заказы
-        .account__header-button
-            +iconSvg('eye','account__header-button-icon')
-            .account__header-button-text Просмотренные товары
+    include account-header
     .account__block
         .account__form.form-check
+            .account__form-title Личные данные
             .account__form-item
                 .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
                     input.input.placeholder__input(placeholder='ФИО')
@@ -25,7 +17,22 @@
                     .placeholder__item Адрес
             .account__form-item
                 .account__button.form-check__button Сохранить
-
+        .account__form.form-check
+            .account__form-title Юридическое лицо
+            .account__form-item
+                .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
+                    input.input.placeholder__input(placeholder='Название юр.лица')
+                    .placeholder__item Название юр.лица
+            .account__form-item
+                .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
+                    input.input.placeholder__input(placeholder='ИНН')
+                    .placeholder__item ИНН
+            .account__form-item
+                .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
+                    input.input.placeholder__input(placeholder='Юридический адрес')
+                    .placeholder__item Юридический адрес
+            .account__form-item
+                .account__button.form-check__button Сохранить
 
 
 

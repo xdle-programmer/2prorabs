@@ -1,31 +1,95 @@
 .account
-    .account__header
-        .account__header-button.account__header-button--active
-            +iconSvg('user','account__header-button-icon')
-            .account__header-button-text Личные данные
-        .account__header-button
-            +iconSvg('order','account__header-button-icon')
-            .account__header-button-text Мои заказы
-        .account__header-button
-            +iconSvg('eye','account__header-button-icon')
-            .account__header-button-text Просмотренные товары
+    include account-header
     .account__block
-        .account__form.form-check
-            .account__form-item
-                .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
-                    input.input.placeholder__input(placeholder='ФИО')
-                    .placeholder__item ФИО
-            .account__form-item
-                .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
-                    input.input.placeholder__input(placeholder='Телефон')
-                    .placeholder__item Телефон
-            .account__form-item
-                .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
-                    input.input.placeholder__input(placeholder='Адрес')
-                    .placeholder__item Адрес
-            .account__form-item
-                .account__button.form-check__button Сохранить
+        .catalog-category__items
+            .catalog-category__items-header
+                .catalog-category__items-header-title Просмотренные товары
+                .catalog-category__items-header-filter
+                    +iconSvg('settings','catalog-category__items-header-filter-icon')
+                .catalog-category__items-header-options
+                    .catalog-category__items-header-options-item
+                        select.custom-select
+                            option(selected disabled hidden) Сортировка
+                            option Значение сортировки 1
+                            option Значение сортировки 2
+                            option Значение сортировки 3
+                            option Значение сортировки 4
+                            option Значение сортировки 5
+                            option Значение сортировки 6
+                    .catalog-category__items-header-options-item
+                        select.custom-select
+                            option(selected) Показать по 16
+                            option Показать по 24
+                            option Показать по 48
+            .catalog-category__items-grid.catalog-category__items-grid--big
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-1.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-2.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-3.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-4.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-5.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-6.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-1.jpg',
+                        rating: 0
+                    })
+            .catalog-category__items-footer
+                .catalog-category__items-footer-more
+                    .button Показать еще 16
+                .catalog-category__items-footer-pagination
+                    .pagination
+                        .pagination__inner
+                            .pagination__pages
+                                a(href="#").pagination__prev
+                                    +iconSvg('arrow','pagination__icon pagination__icon-prev')
 
+                                a(href="#").pagination__button 1
+                                a(href="#").pagination__button.active 2
+                                a(href="#").pagination__button 3
+                                a.pagination__button ...
+                                a(href="#").pagination__button 34
+
+                                a(href="#").pagination__next
+                                    +iconSvg('arrow','pagination__icon pagination__icon-next')
+                            .pagination__info 234 товара
 
 
 

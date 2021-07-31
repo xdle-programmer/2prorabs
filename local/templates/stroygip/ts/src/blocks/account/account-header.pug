@@ -1,0 +1,23 @@
+.account__header
+    .account__header-nav
+        .account__header-nav-button.account__header-nav-button--prev
+            +iconSvg('arrow', 'account__header-nav-button-icon')
+        .account__header-nav-button.account__header-nav-button--next
+            +iconSvg('arrow', 'account__header-nav-button-icon')
+    .account__header-buttons
+        .account__header-button.account__header-button--active
+            .account__header-button-inner
+                +iconSvg('user','account__header-button-icon')
+                .account__header-button-text Личные данные
+        .account__header-button
+            .account__header-button-inner
+                +iconSvg('order','account__header-button-icon')
+                .account__header-button-text Мои заказы
+        .account__header-button
+            .account__header-button-inner
+                +iconSvg('eye','account__header-button-icon')
+                .account__header-button-text Просмотренные товары
+        .account__header-button
+            .account__header-button-inner
+                +iconSvg('outlay','account__header-button-icon')
+                .account__header-button-text Сметы

@@ -7,22 +7,122 @@
   background: var(--white-color);
   border: 1px solid var(--light-gray-color);
   border-radius: 6px;
-  padding: 20px 15px;
+  padding: 20px 10px;
+
+  @include tablet-small-screen {
+    padding-top: 0;
+    padding-bottom: 14px;
+  }
 
   &__header {
-    @include flex-row;
-    align-items: center;
     border-bottom: 1px solid var(--light-gray-color);
     padding-bottom: 20px;
     margin-bottom: 20px;
+    position: relative;
+
+    @include tablet-small-screen {
+      border-bottom: none;
+      padding: 0;
+      margin: 0;
+      height: 40px;
+
+      & *,
+      & *:after,
+      & *:before {
+        transition: none !important;
+      }
+    }
+  }
+
+  &__header-nav {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -3px;
+    display: none;
+
+    @include tablet-small-screen {
+      display: block;
+    }
+  }
+
+  &__header-nav-button {
+    width: 30px;
+    height: 36px;
+    position: absolute;
+    @include flex-row-center;
+    top: 6px;
+    cursor: pointer;
+    background: var(--white-color);
+    z-index: 2;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    &--prev {
+      left: -8px;
+    }
+
+    &--next {
+      right: -8px;
+    }
+  }
+
+  $header-button-prev: '.account__header-nav-button--prev';
+
+  &__header-nav-button-icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+    fill: var(--gray-color);
+
+    #{$header-button-prev} & {
+      transform: scaleX(-1);
+    }
+  }
+
+  &__header-buttons {
+    @include flex-row;
+    align-items: center;
+
+    @include tablet-small-screen {
+      height: 40px;
+      line-height: 40px;
+      padding: 0;
+    }
   }
 
   &__header-button {
+    margin-right: 30px;
+    cursor: pointer;
+    @include unselectable;
+
+    @include tablet-small-screen {
+      margin-right: 0;
+      white-space: nowrap;
+      height: 40px;
+      line-height: 20px;
+      padding: 10px 0;
+      //background: #bacce5;
+    }
+  }
+
+  &__header-button-inner {
     display: grid;
     grid-template-columns: 20px 1fr;
     grid-gap: 6px;
-    margin-right: 30px;
-    cursor: pointer;
+    @include unselectable;
+
+    @include tablet-small-screen {
+      grid-template-columns: 1fr;
+      padding: 0;
+      align-items: baseline;
+      cursor: pointer;
+      @include flex-row-center;
+    }
   }
 
   $hover-button-hover: '.account__header-button:hover';
@@ -33,6 +133,13 @@
     height: 20px;
     display: block;
     fill: var(--gray-color);
+    @include unselectable;
+
+    @include tablet-small-screen {
+      width: 15px;
+      display: none;
+      height: 15px;
+    }
 
     #{$hover-button-active} &,
     #{$hover-button-hover} & {
@@ -43,18 +150,81 @@
   &__header-button-text {
     font-size: 16px;
     color: var(--gray-color);
+    @include unselectable;
+
+    @include tablet-small-screen {
+      font-size: 18px;
+    }
 
     #{$hover-button-active} &,
     #{$hover-button-hover} & {
       color: var(--red-color);
     }
+
+    @include tablet-small-screen {
+      #{$hover-button-hover} & {
+        color: var(--gray-color);
+      }
+
+      #{$hover-button-active} & {
+        color: var(--red-color);
+      }
+    }
   }
 
   &__block {
 
+    @include tablet-small-screen {
+      padding-top: 15px;
+    }
+  }
+
+  &__order-types {
+    @include flex-row;
+    margin-bottom: 20px;
+
+    @include tablet-small-screen {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__order-type {
+    margin-right: 20px;
+    color: var(--black-color);
+    position: relative;
+
+    @include tablet-small-screen {
+      margin-bottom: 5px;
+    }
+
+    &:hover,
+    &--active {
+      color: var(--red-color);
+    }
+
+    &:hover:after,
+    &--active:after {
+      @include pseudo-absolute;
+      width: 100%;
+      height: 1px;
+      background: var(--red-color);
+      left: 0;
+      bottom: -2px;
+    }
   }
 
   &__form {
+    margin-bottom: 30px;
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 700;
   }
 
   &__form-item {
@@ -90,21 +260,49 @@
   &__order {
     color: var(--black-color);
     margin-bottom: 15px;
-    //background: var(--extra-light-gray-color);
     border: 1px solid var(--light-gray-color);
     padding: 15px;
     border-radius: 5px;
+
+    &:hover {
+      background: var(--extra-light-gray-color);
+
+      @include tablet-small-screen {
+        background: var(--white-color);
+      }
+    }
+
+    &--show:hover {
+      background: none;
+    }
+
+    @include tablet-small-screen {
+      padding: 10px;
+    }
   }
+
+  $order-show: '.account__order--show';
 
   &__order-header {
     @include flex-row-center;
     justify-content: space-between;
-    padding-bottom: 20px;
-  }
+    padding-bottom: 0;
 
+    #{$order-show} & {
+      padding-bottom: 20px;
+    }
+
+    @include tablet-big-screen {
+      @include flex-column;
+    }
+  }
 
   &__order-header-info {
     width: 300px;
+
+    @include tablet-big-screen {
+      width: 100%;
+    }
   }
 
   &__order-header-info-text {
@@ -121,6 +319,10 @@
     margin-right: auto;
     position: relative;
     padding-left: 18px;
+
+    @include tablet-big-screen {
+      margin-top: 5px;
+    }
 
     &:after {
       @include pseudo-absolute;
@@ -142,6 +344,12 @@
 
   &__order-header-buttons {
     @include flex-row-center;
+
+    @include tablet-big-screen {
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
   }
 
   &__order-header-button {
@@ -151,24 +359,68 @@
     align-items: center;
     margin-left: 30px;
     cursor: pointer;
+    @include unselectable;
+    padding: 5px 0;
+
+    &--history {
+      position: relative;
+    }
+
+    @include tablet-big-screen {
+      margin-left: 0;
+      grid-gap: 6px;
+      grid-template-columns: 1fr 16px;
+    }
   }
 
   $order-header-button-history: '.account__order-header-button--history';
   $order-header-button-toggle: '.account__order-header-button--toggle';
+  $order-header-button-hover: '.account__order-header-button:hover';
 
 
   &__order-header-button-text {
+
+    #{$order-header-button-hover} & {
+      color: var(--red-color);
+    }
+
+    @include tablet-big-screen {
+      font-size: 13px;
+    }
   }
 
   &__order-header-button-icon {
     display: block;
     width: 20px;
     height: 20px;
+    fill: var(--black-color);
 
     #{$order-header-button-toggle} & {
       width: 16px;
       height: 16px;
+
+      #{$order-show} & {
+        transform: scaleY(-1);
+      }
     }
+
+    #{$order-header-button-hover} & {
+      fill: var(--red-color);
+    }
+
+    @include tablet-big-screen {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__order-items {
+    display: none;
+
+    #{$order-show} & {
+      display: block;
+    }
+
   }
 
   &__order-item {
@@ -176,6 +428,12 @@
 
   &__order-footer {
     padding-top: 30px;
+
+    display: none;
+
+    #{$order-show} & {
+      display: block;
+    }
   }
 
   &__order-footer-items {
@@ -183,6 +441,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
     align-items: flex-start;
+
+    @include tablet-small-screen {
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
   }
 
   &__order-footer-item {
@@ -225,26 +488,48 @@
     padding-bottom: 10px;
     border-bottom: 1px solid var(--light-gray-color);
 
-    &--not {
-      opacity: .4;
+    &--disabled {
+      color: var(--gray-color);
+    }
+
+    @include tablet-small-screen {
+      grid-template-columns: 1fr;
+      grid-gap: 5px;
     }
   }
+
+  $order-disabled: '.account__order-item--disabled';
+
 
   &__order-item-img-wrapper {
     width: 100%;
     height: 50px;
+
+    @include tablet-small-screen {
+      height: 100px;
+    }
+
+    #{$order-disabled} & {
+      opacity: .3;
+    }
   }
 
   &__order-item-img {
     display: block;
     width: 100%;
     height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 
   &__order-item-desc {
     display: grid;
     grid-template-columns: 1fr 200px;
     align-items: center;
+
+    @include tablet-small-screen {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__order-item-desc-title {
@@ -252,11 +537,29 @@
   }
 
   &__order-item-desc-title-item {
+    color: var(--black-color);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--red-color);
+    }
+
+    #{$order-disabled} & {
+      color: var(--gray-color);
+
+      &:hover {
+        color: var(--gray-color);
+      }
+    }
   }
 
   &__order-item-desc-title-count {
     @include flex-row;
     font-size: 12px;
+
+    #{$order-disabled} & {
+      color: var(--light-gray-color);
+    }
   }
 
   &__order-item-desc-title-count-text {
@@ -272,6 +575,10 @@
     text-align: right;
     font-size: 16px;
     font-weight: 700;
+
+    @include tablet-small-screen {
+      justify-content: flex-start;
+    }
   }
 
   &__order-item-desc-price-number {
@@ -280,4 +587,147 @@
   &__order-item-desc-price-currency {
     margin-left: 5px;
   }
+
+  &__order-history {
+    position: absolute;
+    width: 265px;
+    padding: 15px;
+    height: auto;
+    right: 0;
+    top: 100%;
+    display: none;
+    background: var(--white-color);
+    grid-gap: 20px;
+    border: 1px solid var(--light-gray-color);
+    border-radius: 6px;
+    align-items: flex-start;
+
+    &--show {
+      display: grid;
+      z-index: 1;
+    }
+
+    @include tablet-big-screen {
+      left: -11px;
+      width: 270px;
+      padding: 6px;
+      padding-right: 30px;
+      box-shadow: 0 0 15px 1px rgba(0, 0, 0, .2);
+    }
+  }
+
+  &__order-history-close {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  &__order-history-close-icon {
+    width: 15px;
+    height: 15px;
+    fill: var(--red-color);
+  }
+
+  &__order-history-item {
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    grid-gap: 10px;
+    align-items: flex-start;
+    height: min-content;
+  }
+
+  &__order-history-item-date {
+    font-size: 12px;
+    color: var(--gray-color);
+    height: min-content;
+  }
+
+  &__order-history-item-text {
+    height: min-content;
+
+    @include tablet-big-screen {
+      font-size: 13px;
+    }
+  }
+
+  &__outlay-items {
+    display: grid;
+    grid-gap: 15px;
+  }
+
+  &__outlay-item {
+    display: grid;
+    grid-template-columns: 30px 1fr min-content;
+    grid-gap: 10px;
+    align-items: center;
+    padding: 10px;
+
+    @include tablet-small-screen {
+      grid-template-columns: 1fr;
+    }
+
+    &:nth-of-type(odd) {
+      background: var(--extra-light-gray-color);
+    }
+
+  }
+
+  &__outlay-item-icon {
+    width: 30px;
+    height: 30px;
+
+    @include tablet-small-screen {
+      display: none;
+    }
+  }
+
+  &__outlay-item-name {
+    font-size: 16px;
+  }
+
+  &__outlay-item-buttons {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-gap: 30px;
+    align-items: baseline;
+
+    @include tablet-small-screen {
+      @include flex-row;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+  }
+
+  &__outlay-item-button {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: baseline;
+    cursor: pointer;
+  }
+
+  $outlay-del-button: '.account__outlay-item-button--del';
+  $outlay-button-hover: '.account__outlay-item-button:hover';
+
+  &__outlay-item-button-icon {
+    width: 16px;
+    height: 16px;
+
+    #{$outlay-del-button} & {
+      width: 12px;
+      height: 12px;
+    }
+
+    #{$outlay-button-hover} & {
+      fill: var(--red-color);
+    }
+  }
+
+  &__outlay-item-button-text {
+    #{$outlay-button-hover} & {
+      color: var(--red-color);
+    }
+  }
+
 }

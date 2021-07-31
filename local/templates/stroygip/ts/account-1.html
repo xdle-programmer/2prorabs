@@ -643,7 +643,7 @@
           </div>
         </div>
       </header>
-      <section class="section section--gray">
+      <section class="section section--min-content section--gray">
         <div class="layout">
           <div class="breadcrumb"><a class="breadcrumb__item" href="#">Каталог</a>
             <svg class="breadcrumb__separator">
@@ -656,27 +656,56 @@
           </div>
           <div class="account">
             <div class="account__header">
-              <div class="account__header-button account__header-button--active">
-                <svg class="account__header-button-icon">
-                  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#user"></use>
-                </svg>
-                <div class="account__header-button-text">Личные данные</div>
+              <div class="account__header-nav">
+                <div class="account__header-nav-button account__header-nav-button--prev">
+                  <svg class="account__header-nav-button-icon">
+                    <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+                  </svg>
+                </div>
+                <div class="account__header-nav-button account__header-nav-button--next">
+                  <svg class="account__header-nav-button-icon">
+                    <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+                  </svg>
+                </div>
               </div>
-              <div class="account__header-button">
-                <svg class="account__header-button-icon">
-                  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#order"></use>
-                </svg>
-                <div class="account__header-button-text">Мои заказы</div>
-              </div>
-              <div class="account__header-button">
-                <svg class="account__header-button-icon">
-                  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#eye"></use>
-                </svg>
-                <div class="account__header-button-text">Просмотренные товары</div>
+              <div class="account__header-buttons">
+                <div class="account__header-button account__header-button--active">
+                  <div class="account__header-button-inner">
+                    <svg class="account__header-button-icon">
+                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#user"></use>
+                    </svg>
+                    <div class="account__header-button-text">Личные данные</div>
+                  </div>
+                </div>
+                <div class="account__header-button">
+                  <div class="account__header-button-inner">
+                    <svg class="account__header-button-icon">
+                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#order"></use>
+                    </svg>
+                    <div class="account__header-button-text">Мои заказы</div>
+                  </div>
+                </div>
+                <div class="account__header-button">
+                  <div class="account__header-button-inner">
+                    <svg class="account__header-button-icon">
+                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#eye"></use>
+                    </svg>
+                    <div class="account__header-button-text">Просмотренные товары</div>
+                  </div>
+                </div>
+                <div class="account__header-button">
+                  <div class="account__header-button-inner">
+                    <svg class="account__header-button-icon">
+                      <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#outlay"></use>
+                    </svg>
+                    <div class="account__header-button-text">Сметы</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="account__block">
               <div class="account__form form-check">
+                <div class="account__form-title">Личные данные</div>
                 <div class="account__form-item">
                   <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
                     <input class="input placeholder__input" placeholder="ФИО">
@@ -693,6 +722,30 @@
                   <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
                     <input class="input placeholder__input" placeholder="Адрес">
                     <div class="placeholder__item">Адрес</div>
+                  </div>
+                </div>
+                <div class="account__form-item">
+                  <div class="account__button form-check__button">Сохранить</div>
+                </div>
+              </div>
+              <div class="account__form form-check">
+                <div class="account__form-title">Юридическое лицо</div>
+                <div class="account__form-item">
+                  <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+                    <input class="input placeholder__input" placeholder="Название юр.лица">
+                    <div class="placeholder__item">Название юр.лица</div>
+                  </div>
+                </div>
+                <div class="account__form-item">
+                  <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+                    <input class="input placeholder__input" placeholder="ИНН">
+                    <div class="placeholder__item">ИНН</div>
+                  </div>
+                </div>
+                <div class="account__form-item">
+                  <div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+                    <input class="input placeholder__input" placeholder="Юридический адрес">
+                    <div class="placeholder__item">Юридический адрес</div>
                   </div>
                 </div>
                 <div class="account__form-item">

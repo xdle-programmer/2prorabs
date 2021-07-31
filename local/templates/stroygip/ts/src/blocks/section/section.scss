@@ -10,6 +10,10 @@
     background: #f6f7fc;
   }
 
+  &--min-content {
+    min-height: calc(100vh - 530px);
+  }
+
   &--mobile-white {
     @include tablet-small-screen {
       background: var(--white-color);

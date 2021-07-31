@@ -1,0 +1,33 @@
+mixin outlay
+    .account__outlay-item
+        img(src='/local/templates/stroygip/ts/images/icons/xls.svg').account__outlay-item-icon
+        .account__outlay-item-name Смета #1 от 29.07.2021 (30 товаров)
+        .account__outlay-item-buttons
+            .account__outlay-item-button
+                +iconSvg('download','account__outlay-item-button-icon')
+                .account__outlay-item-button-text Скачать
+            .account__outlay-item-button.account__outlay-item-button--del
+                +iconSvg('close','account__outlay-item-button-icon')
+                .account__outlay-item-button-text Удалить
+
+.account
+    include account-header
+    .account__block
+        .account__outlay-items
+            +outlay
+            +outlay
+            +outlay
+            +outlay
+            +outlay
+            +outlay
+            +outlay
+
+
+
+
+
+
+
+
+
+
