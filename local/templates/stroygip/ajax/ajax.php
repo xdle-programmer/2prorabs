@@ -17,8 +17,8 @@ if($request->isPost()) {
             $quantity = $request->getPost('quantity');
             $result = \DDS\Basketclass::add2basket($id,$quantity);
 			
-			$_SESSION["BASKET_LIST"][$id] = $id;
-			echo count($_SESSION["BASKET_LIST"]);
+			$_SESSION["BASKET_PRODUCTS"][$id] = $quantity;
+			echo count($_SESSION["BASKET_PRODUCTS"]);
 			
             //echo json_encode('Y');
             break;
@@ -33,7 +33,7 @@ if($request->isPost()) {
             $result = \DDS\Basketclass::delete($id);
 			
 			$product_id = $request->getPost('productid');
-			unset($_SESSION["BASKET_LIST"][$product_id]);
+			unset($_SESSION["BASKET_PRODUCTS"][$product_id]);
 			
             echo json_encode($result);
             break;
@@ -53,9 +53,9 @@ if($request->isPost()) {
 
 			if( $basket_id > 0 ){
 				$result = \DDS\Basketclass::delete($basket_id);
-				unset($_SESSION["BASKET_LIST"][$product_id]);
+				unset($_SESSION["BASKET_PRODUCTS"][$product_id]);
 				
-				echo count($_SESSION["BASKET_LIST"]);
+				echo count($_SESSION["BASKET_PRODUCTS"]);
 				//echo json_encode($result);
 			}
             
@@ -63,7 +63,7 @@ if($request->isPost()) {
         case 'clear_basket':
             $result = \DDS\Basketclass::clearBasket();
 			
-			unset($_SESSION["BASKET_LIST"]);
+			unset($_SESSION["BASKET_PRODUCTS"]);
 			
             echo json_encode($result);
             break;

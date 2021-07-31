@@ -86,7 +86,7 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#favorite"></use>
 						</svg>
 					</div>
-					<div onclick="catalogAction('add2basket', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--basket<?if( in_array($arItem['ID'], $_SESSION['BASKET_LIST']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arItem['ID']?>" data-action="add2basket">
+					<div onclick="catalogAction('add2basket', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--basket<?if( array_key_exists($arItem['ID'], $_SESSION['BASKET_PRODUCTS']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arItem['ID']?>" data-action="add2basket">
 						<svg class="product-cart__button-img product-cart__button-img--basket">
 							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#basket"></use>
 						</svg>

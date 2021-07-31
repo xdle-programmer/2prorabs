@@ -68,6 +68,7 @@ global $USER;
     <?$APPLICATION->ShowPanel();?>
 </div>
 
+<?include $_SERVER['DOCUMENT_ROOT']."/local/include/basket_list.php";?>
 
 <?if( in_array($APPLICATION->GetCurPage(), $arr_ntu_clear) ):?>
 	<div class="header-clear layout layout--small">

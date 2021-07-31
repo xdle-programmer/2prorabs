@@ -119,7 +119,7 @@ $this->setFrameMode(true);?>
 									<use xlink:href="<?=SITE_TEMPLATE_PATH?>/ts/images/icons/icons-sprite.svg#favorite"></use>
 								</svg>
 							</div>
-							<div onclick="catalogAction('add2basket', <?=$arElement['ID']?>)" class="product-cart__button product-cart__button--basket <?if( in_array($arElement['ID'], $_SESSION['BASKET_LIST']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arElement['ID']?>" data-action="add2basket">
+							<div onclick="catalogAction('add2basket', <?=$arElement['ID']?>)" class="product-cart__button product-cart__button--basket <?if( array_key_exists($arElement['ID'], $_SESSION['BASKET_PRODUCTS']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arElement['ID']?>" data-action="add2basket">
 								<svg class="product-cart__button-img product-cart__button-img--basket">
 									<use xlink:href="<?=SITE_TEMPLATE_PATH?>/ts/images/icons/icons-sprite.svg#basket"></use>
 								</svg>
