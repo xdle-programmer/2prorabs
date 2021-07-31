@@ -1,0 +1,96 @@
+mixin orderProduct
+    .account__order-item
+        .account__order-item-img-wrapper
+            img(src='/local/templates/stroygip/ts/images/examples/product-1.jpg').account__order-item-img
+        .account__order-item-desc
+            .account__order-item-desc-title
+                .account__order-item-desc-title-item Газонокосилка электрическая huter elm-1100 70/4/2
+                .account__order-item-desc-title-count
+                    .account__order-item-desc-title-count-text На складе:
+                    .account__order-item-desc-title-count-number 42 шт.
+            .account__order-item-desc-price
+                .account__order-item-desc-price-number 122 342
+                .account__order-item-desc-price-currency сом
+
+mixin orderProductNot
+    .account__order-item.account__order-item--not
+        .account__order-item-img-wrapper
+            img(src='/local/templates/stroygip/ts/images/examples/product-1.jpg').account__order-item-img
+        .account__order-item-desc
+            .account__order-item-desc-title
+                .account__order-item-desc-title-item Газонокосилка электрическая huter elm-1100 70/4/2
+                .account__order-item-desc-title-count
+                    .account__order-item-desc-title-count-text На складе:
+                    .account__order-item-desc-title-count-number 0
+            .account__order-item-desc-price
+                .account__order-item-desc-price-number 122 342
+                .account__order-item-desc-price-currency сом
+
+
+.account
+    .account__header
+        .account__header-button.account__header-button--active
+            +iconSvg('user','account__header-button-icon')
+            .account__header-button-text Личные данные
+        .account__header-button
+            +iconSvg('order','account__header-button-icon')
+            .account__header-button-text Мои заказы
+        .account__header-button
+            +iconSvg('eye','account__header-button-icon')
+            .account__header-button-text Просмотренные товары
+    .account__block
+        .account__order
+            .account__order-header
+                .account__order-header-info
+                    .account__order-header-info-text Заказ #152 от 26 Июля 2021,
+                    .account__order-header-info-price 20 321 Сом
+                .account__order-header-status.account__order-header-status--yellow Принят, ожидается оплата
+                .account__order-header-buttons
+                    .account__order-header-button.account__order-header-button--history
+                        .account__order-header-button-text История заказа
+                        +iconSvg('history', 'account__order-header-button-icon')
+                    .account__order-header-button.account__order-header-button--toggle
+                        .account__order-header-button-text Детали заказа
+                        +iconSvg('arrow-bottom', 'account__order-header-button-icon')
+            .account__order-items
+                +orderProduct
+                +orderProduct
+                +orderProduct
+                +orderProduct
+                +orderProductNot
+                +orderProduct
+                +orderProductNot
+                +orderProduct
+            .account__order-footer
+                .account__order-footer-items
+                    .account__order-footer-item
+                        .account__order-footer-item-title Получатель:
+                        .account__order-footer-item-row Alymbek
+                        .account__order-footer-item-row +996 559-950-534
+                        .account__order-footer-item-row sagynbaev1708@gmail.com
+                    .account__order-footer-item
+                        .account__order-footer-item-title Доставка:
+                        .account__order-footer-item-row Способ доставки: Самовывоз
+                        .account__order-footer-item-row Адрес: Филиал на ул. Льва Толстого 36к
+                    .account__order-footer-item
+                        .account__order-footer-item-title Оплата:
+                        .account__order-footer-item-row Электронной картой онлайн (Visa, Mastercard)
+                        .account__order-footer-item-row Сумма: 20 321 Сом
+                    .account__order-footer-item
+                        .account__order-footer-button
+                            +iconSvg('repeat','account__order-footer-button-icon')
+                            .account__order-footer-button-text Повторить заказ
+
+
+
+
+
+
+
+
+
+
+
+
+
+

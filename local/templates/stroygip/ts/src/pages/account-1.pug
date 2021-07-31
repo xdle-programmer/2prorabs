@@ -1,0 +1,21 @@
+extends ../templates/main
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    include ../blocks/menu/menu
+    #main-group.preload
+        include ../blocks/mobile-header/mobile-header
+        include ../blocks/header/header
+
+        section.section.section--gray
+            .layout
+                include ../blocks/breadcrumbs/breadcrumbs
+
+                include ../blocks/account/account-1
+
+        include ../blocks/footer/footer
