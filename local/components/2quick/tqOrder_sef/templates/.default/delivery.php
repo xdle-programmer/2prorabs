@@ -98,6 +98,8 @@ $arr_month = [
 				<?foreach( $arResult['DELIVERIES'] as $key=>$arDelivery ){?>
 					<?if( $arDelivery['STORES'] ){?>
 						<? foreach( $arDelivery['STORES'] as $key1=>$arItem ){?>
+							<?if( $arItem["ID"] == "235" ){?>
+							
 				<div class="order-form__store">
 					<svg class="order-form__store-icon">
 						<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#map-pointer"></use>
@@ -113,7 +115,7 @@ $arr_month = [
 					</div>
 					
 					
-					<?if( count($arItem['UNAVAILABLE_PRODUCTS']) > 0 ):?>
+					<?/*if( count($arItem['UNAVAILABLE_PRODUCTS']) > 0 ):?>
 						<div class="checkout__unavailable-products-text">
 							На этом складе недостаточное количество следующих товаров (указан актуальный остаток):
 						</div>
@@ -122,7 +124,7 @@ $arr_month = [
 								<?=$product['NAME']?> &mdash; <?=$product['AVAILABLE']?> шт.
 							</div>
 						<?endforeach;?>
-					<?endif;?>
+					<?endif;
 					
 					<input class="tq_radio" type="radio" name="POINT" value="<?= $arItem['ID'] ?>" hidden
 						   id="point-<?=$arItem['ID']?>"
@@ -130,11 +132,15 @@ $arr_month = [
 						   <? if ($arResult['SAVED']['delivery']['POINT'] == $arItem['ID']) echo ' checked' ?>
 					>
 					<label class="basket-products__delivery-point-button" for="point-<?= $arItem['ID'] ?>">Выбрать</label>
-
+					*/?>
 				</div>
+				
+							<?}?>
 						<?}?>
 					<?}?>
 				<?}?>
+				
+				<input type="radio" name="POINT" value="235" hidden checked>
 			</div>
 			<div class="order-form__group order-form__group--hide" data-delivery="3">
 				<div class="order-form__address">
