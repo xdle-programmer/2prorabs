@@ -1,18 +1,15 @@
 <?
 use \Bitrix\Sale;
 
-//unset($_SESSION["BASKET_PRODUCTS"]);
+unset($_SESSION["BASKET_PRODUCTS"]);
 
-$user_basket_storage = \Bitrix\Sale\Basket\Storage::getInstance(\Bitrix\Sale\Fuser::getId(), SITE_ID);
-$user_basket = $user_basket_storage->getBasket();
-
-$basket = \Bitrix\Sale\Basket::loadItemsForFUser(
-   \Bitrix\Sale\Fuser::getId(), 
-   \Bitrix\Main\Context::getCurrent()->getSite()
+$basketStorage1 = \Bitrix\Sale\Basket\Storage::getInstance(
+    \Bitrix\Sale\Fuser::getId(), 
+    \Bitrix\Main\Context::getCurrent()->getSite()
 );
-
-foreach ($user_basket as $user_basket_item) {
-	$arr_product = $user_basket_item->getFieldValues();
+$basket1 = $basketStorage1->getOrderableBasket();
+foreach ($basket1 as $user_basket_item1) {
+	$arr_product = $user_basket_item1->getFieldValues();
 	$_SESSION["BASKET_PRODUCTS"][$arr_product["PRODUCT_ID"]] = intval($arr_product["QUANTITY"]);
 }
 ?>
