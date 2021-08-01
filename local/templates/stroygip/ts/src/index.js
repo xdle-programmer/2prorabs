@@ -19,10 +19,6 @@ class GetViewportOptions {
         window.addEventListener('resize', () => {
             this.viewportWidth = document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
             this.viewportHeight = document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-
-            console.log('window.innerWidth ' + window.innerWidth)
-            console.log('document.documentElement.clientWidth ' + document.documentElement.clientWidth)
-            console.log('document.getElementsByTagName(\'body\')[0].clientWidth ' + document.getElementsByTagName('body')[0].clientWidth)
         });
     }
 

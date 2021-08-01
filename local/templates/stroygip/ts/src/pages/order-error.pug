@@ -1,0 +1,20 @@
+extends ../templates/clear-page
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    +header-clear('Подтверждение заказа')
+
+    section.section
+        .layout.layout--small
+            .order-result
+                .order-result__icon-wrapper.order-result__icon-wrapper--red
+                    +iconSvg('close','order-result__icon order-result__icon--red')
+                .order-result__desc
+                    .order-result__desc-title При оплате произошла ошибка
+                    .order-result__desc-text Вы можете вернуться в личный кабинет и оплатить заказ.
+                    .order-result__desc-button Перейти к оплате заказа

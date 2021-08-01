@@ -213,8 +213,17 @@
     }
   }
 
+  &__form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+
+    @include tablet-small-screen {
+      grid-template-columns: 1fr;
+    }
+  }
+
   &__form {
-    margin-bottom: 30px;
 
     &:nth-last-of-type(1) {
       margin-bottom: 0;
@@ -655,6 +664,11 @@
   &__outlay-items {
     display: grid;
     grid-gap: 15px;
+    width: calc(100% - 400px);
+
+    @include tablet-small-screen {
+      width: 100%;
+    }
   }
 
   &__outlay-item {

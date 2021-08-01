@@ -1,0 +1,20 @@
+extends ../templates/clear-page
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    +header-clear('Подтверждение заказа')
+
+    section.section
+        .layout.layout--small
+            .order-result
+                .order-result__icon-wrapper
+                    +iconSvg('check','order-result__icon')
+                .order-result__desc
+                    .order-result__desc-title Ваш заказ №161 успешно оформлен!
+                    .order-result__desc-text На вашу электронную почту отправлены данные по заказу. Как только заказ будет отгружен, вам придет уведомление.
+                    .order-result__desc-button Отслеживать статус заказа

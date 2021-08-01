@@ -1,0 +1,50 @@
+mixin compareItem
+    .compare__slider-item
+        .compare__slider-item-inner
+            .compare__slider-item-inner-main
+                img(src='/local/templates/stroygip/ts/images/examples/product-1.jpg').compare__slider-item-img
+                .compare__slider-item-price 1 204 Сом
+                a(href='#').compare__slider-item-name Краска фасадная Murmax facade acril 14кг
+                .compare__slider-item-buttons
+                    .compare__slider-item-button-del
+                        +iconSvg('close','compare__slider-item-button-del-icon')
+                    .compare__slider-item-button В корзину
+            .compare__slider-item-options
+                .compare__slider-item-option
+                    .compare__slider-item-option-name Артикул
+                    .compare__slider-item-option-value 12312312
+                .compare__slider-item-option
+                    .compare__slider-item-option-name Характеристика
+                    .compare__slider-item-option-value Значение
+                .compare__slider-item-option
+                    .compare__slider-item-option-name Характеристика
+                    .compare__slider-item-option-value Значение
+
+.compare
+    .compare__menu
+        .compare__menu-title Категории
+        .compare__menu-items
+            .compare__menu-item.compare__menu-item--active Название категории
+            .compare__menu-item Название категории
+            .compare__menu-item Название категории
+            .compare__menu-item Название категории
+            .compare__menu-item Название категории
+            .compare__menu-item Название категории
+    .compare__slider
+        .compare__slider__header
+            .compare__slider__header-title Все товары (5 шт.)
+            .compare__slider__header-button
+                +iconSvg('close','compare__slider__header-button-icon')
+                .compare__slider__header-button-text Очистить список
+        .compare__slider-nav
+            .compare__slider-nav-button.compare__slider-nav-button--prev
+                +iconSvg('arrow','compare__slider-nav-button-icon')
+            .compare__slider-nav-button.compare__slider-nav-button--next
+                +iconSvg('arrow','compare__slider-nav-button-icon')
+        .compare__slider-items-wrapper
+            .compare__slider-items
+                +compareItem
+                +compareItem
+                +compareItem
+                +compareItem
+                +compareItem

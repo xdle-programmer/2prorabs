@@ -1,0 +1,74 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.order-result {
+  @include flex-column-center;
+  padding: 50px 0;
+
+  &__icon-wrapper {
+    width: 120px;
+    height: 120px;
+    border: 5px solid var(--green-color);
+    padding: 20px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+
+    &--red {
+      border-color: var(--red-color);
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    fill: var(--green-color);
+
+    &--red {
+      fill: var(--red-color);
+    }
+  }
+
+  &__desc {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  &__desc-title {
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &__desc-text {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+
+  &__desc-button {
+    width: 300px;
+    @include margin-auto;
+    height: 56px;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--red-color);
+    @include flex-row-center;
+    border: 1px solid var(--red-color);
+    @include unselectable;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    padding: 0 20px;
+    margin-bottom: 30px;
+
+    &:hover {
+      color: var(--white-color);
+      background: var(--red-color);
+    }
+  }
+}
+
+
+
