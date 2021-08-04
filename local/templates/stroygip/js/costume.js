@@ -275,6 +275,54 @@ function buttonSendReview(element_id) {
 }
 
 
+function personalFLUpdate() {
+	var user_name = document.getElementById('user_fl_name').value;
+	var user_phone = document.getElementById('user_fl_phone').value;
+	var user_address = document.getElementById('user_fl_address').value;
+	
+	if( user_name.length <= 0 || user_phone.length <= 0 ){
+		console.log('empty fields');
+	}else{
+		var params = "action=update_data&NAME="+user_name+"&PERSONAL_PHONE="+user_phone+"&PERSONAL_NOTES="+user_address;
+		
+		var request = new XMLHttpRequest();
+		request.open('POST', '/local/templates/stroygip/ajax/personal_data_update.php', true);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4 && request.status == 200) {
+				//console.log(request.responseText);
+				document.location.reload();
+			}
+		}
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.send(params);
+	}
+}
+
+
+
+function personalORGUpdate() {
+	var org_name = document.getElementById('user_org_name').value;
+	var org_iin = document.getElementById('user_org_iin').value;
+	var org_address = document.getElementById('user_org_address').value;
+	
+	if( org_name.length <= 0 || org_iin.length <= 0 ){
+		console.log('empty fields');
+	}else{
+		var params = "action=update_data&NAME="+org_name+"&IIN="+org_iin+"&ADDRESS="+org_address;
+		
+		/*var request = new XMLHttpRequest();
+		request.open('POST', '/local/templates/stroygip/ajax/personal_data_update.php', true);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4 && request.status == 200) {
+				//console.log(request.responseText);
+				document.location.reload();
+			}
+		}
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.send(params);*/
+	}
+}
+
 
 /*
 function ajaxUpdate(){

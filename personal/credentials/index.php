@@ -14,6 +14,7 @@ if (!$USER->IsAuthorized()) {
     false
 );?>
 
+<?/*
 	<!--Modal-->
 <div class="modal" id="modalAddAddress">
 		<div class="modal__overlay"></div>
@@ -36,7 +37,7 @@ if (!$USER->IsAuthorized()) {
 	</div>
 </div>
 <div class="modal-overlay" style="display: none;"></div>
-
+*/?>
 
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
