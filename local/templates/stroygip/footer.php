@@ -176,9 +176,15 @@ $page = $APPLICATION->GetCurPage();
 		</div>
 	</footer>
 
+	<? if ($APPLICATION->GetCurPage() == "/"){?>
 	</div> <!-- natural-group -->
-
+	<?}?>
+	
 <? endif; ?>
+
+<?if( !in_array($APPLICATION->GetCurPage(), $arr_ntu_lk) ){?>
+</div>
+<?}?>
 
 
 <? if (!$USER->IsAuthorized()) { ?>

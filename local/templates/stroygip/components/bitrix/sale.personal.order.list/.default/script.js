@@ -1,3 +1,4 @@
+/*
 BX.namespace('BX.Sale.PersonalOrderComponent');
 
 $('.nsOrderPrint').on('click', (e) => {
@@ -116,3 +117,4 @@ $('.nsOrderPrint').on('click', (e) => {
 		}
 	};
 })();
+*/

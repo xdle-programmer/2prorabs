@@ -37,7 +37,7 @@ foreach ($arResult['NEW_ORDERS'] as $order) {
     }
 }
 
-$arSelect = Array("ID", "PROPERTY_ART_NUMBER", 'PREVIEW_PICTURE');
+$arSelect = Array("ID", "PROPERTY_ART_NUMBER", 'PREVIEW_PICTURE', 'QUANTITY');
 $arFilter = Array("IBLOCK_ID"=>IBLOCK_ID_CATALOG, 'ID' => $itemsID);
 $res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
 while($ob = $res->Fetch())

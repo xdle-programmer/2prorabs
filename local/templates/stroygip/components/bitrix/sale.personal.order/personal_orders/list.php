@@ -34,7 +34,7 @@ foreach ($arParams as $key => $val)
 	if(strpos($key, "STATUS_COLOR_") !== false && strpos($key, "~") !== 0)
 		$arChildParams[$key] = $val;
 ?>
-<div class="container">
+
     <?$APPLICATION->IncludeComponent(
         "bitrix:sale.personal.order.list",
         "",
@@ -42,4 +42,3 @@ foreach ($arParams as $key => $val)
         $component
     );
     ?>
-</div>

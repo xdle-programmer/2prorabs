@@ -20,8 +20,9 @@ global $USER;
 
     <?
 	//"/order/confirm_order/"
-	$arr_ntu = array("/", "/basket/", "/order/", "/order/payment/", "/order/confirm_order/");
+	$arr_ntu = array("/", "/basket/", "/order/", "/order/payment/", "/order/confirm_order/", "/personal/orders/");
 	$arr_ntu_clear = array("/basket/", "/order/", "/order/payment/", "/order/confirm_order/");
+	$arr_ntu_lk = array("/personal/orders/");
 	
     if ( !in_array($APPLICATION->GetCurPage(), $arr_ntu) && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/libs.css");
@@ -581,9 +582,9 @@ global $USER;
 		</div>
 		<?}?>
 		
-		
+	<?if( !in_array($APPLICATION->GetCurPage(), $arr_ntu_lk) ){?>
 	</div>
-	
+	<?}?>
 	
 	<? if ($APPLICATION->GetCurPage() == "/"){?>
 	<div class="preload <? if ($APPLICATION->GetCurPage() == "/"): ?>preload--not-ready<? endif; ?>" id="natural-group">
