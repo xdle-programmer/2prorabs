@@ -39,6 +39,7 @@ if ($_REQUEST['estimate']) {
             $sheet->setCellValue('A' . $cnt, $item['NAME']);
             $sheet->setCellValue('B' . $cnt, $item['QUANTITY']);
             $sheet->setCellValue('C' . $cnt, $item['PRICE']);
+			$cnt++;
         }
 
         header ( "Expires: Mon, 1 Apr 1974 05:00:00 GMT" );

@@ -10,124 +10,113 @@ use Bitrix\Main,
 Loc::loadMessages(__FILE__);
 
 ?>
-
-
-<?
-if (!empty($arResult['ERRORS']['FATAL']))
-{
-	foreach($arResult['ERRORS']['FATAL'] as $error)
-	{
-		ShowError($error);
-	}
-	$component = $this->__component;
-	if ($arParams['AUTH_FORM_IN_TEMPLATE'] && isset($arResult['ERRORS']['FATAL'][$component::E_NOT_AUTHORIZED]))
-	{
-		$APPLICATION->AuthForm('', false, false, 'N', false);
-	}
-
-}
-else
-{
-	if (!empty($arResult['ERRORS']['NONFATAL']))
-	{
-		foreach($arResult['ERRORS']['NONFATAL'] as $error)
-		{
-			ShowError($error);
-		}
-	}
-	if (!count($arResult['ORDERS']))
-	{
-		if ($_REQUEST["filter_history"] == 'Y')
-		{
-			if ($_REQUEST["show_canceled"] == 'Y')
-			{
-				?>
-				<h3><?= Loc::getMessage('SPOL_TPL_EMPTY_CANCELED_ORDER')?></h3>
-				<?
-			}
-			else
-			{
-				?>
-				<h3><?= Loc::getMessage('SPOL_TPL_EMPTY_HISTORY_ORDER_LIST')?></h3>
-				<?
-			}
-		}
-		else
-		{
-			?>
-			<h3><?= Loc::getMessage('SPOL_TPL_EMPTY_ORDER_LIST')?></h3>
-			<?
-		}
-	}
-
-	?>
-	<div class="personal-area__block">
-		<div class="personal-area__block-inner">
-
-            <?$APPLICATION->IncludeComponent(
-                "bitrix:main.include",
-                "",
-                Array(
-                    "AREA_FILE_SHOW" => "file",
-                    "AREA_FILE_SUFFIX" => "inc",
-                    "EDIT_TEMPLATE" => "",
-                    "PATH" => SITE_TEMPLATE_PATH . "/include/estimates/preview.php"
-                )
-            );?>
-
-			<div class="personal-area__title-small">История смет</div>
-			<div class="personal-area__tab-history-block">
-				<div class="personal-area__tab-history">
-					<div class="personal-area__tab-history-head">
-						<div class="personal-area__bonuses-head-row">
-							<div class="personal-area__tab-history-col">
-								<div class="personal-area__tab-history-title">Дата:</div>
+<section class="section section--gray">
+	<div class="layout">
+		<div class="breadcrumb">
+			<a class="breadcrumb__item" href="/">Главная</a>
+			<svg class="breadcrumb__separator">
+				<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+			</svg>
+			<a class="breadcrumb__item" href="/personal/credentials/">Профиль</a>
+			<svg class="breadcrumb__separator">
+				<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+			</svg>
+			<div class="breadcrumb__item breadcrumb__item--active">Сметы</div>
+		</div>
+		
+		<div class="account">
+			<div class="account__header">
+				<div class="account__header-nav">
+					<div class="account__header-nav-button account__header-nav-button--prev">
+						<svg class="account__header-nav-button-icon">
+							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+						</svg>
+					</div>
+					<div class="account__header-nav-button account__header-nav-button--next">
+						<svg class="account__header-nav-button-icon">
+							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+						</svg>
+					</div>
+				</div>
+				<div class="account__header-buttons">
+					<a href="/personal/credentials/" class="account__header-button">
+						<div class="account__header-button-inner">
+							<svg class="account__header-button-icon">
+								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#user"></use>
+							</svg>
+							<div class="account__header-button-text">Личные данные</div>
+						</div>
+					</a>
+					<a href="/personal/orders/" class="account__header-button">
+						<div class="account__header-button-inner">
+							<svg class="account__header-button-icon">
+								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#order"></use>
+							</svg>
+							<div class="account__header-button-text">Мои заказы</div>
+						</div>
+					</a>
+					<a href="/personal/viewed/" class="account__header-button">
+						<div class="account__header-button-inner">
+							<svg class="account__header-button-icon">
+								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#eye"></use>
+							</svg>
+							<div class="account__header-button-text">Просмотренные товары</div>
+						</div>
+					</a>
+					<a href="/personal/estimates/" class="account__header-button account__header-button--active">
+						<div class="account__header-button-inner">
+							<svg class="account__header-button-icon">
+								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#outlay"></use>
+							</svg>
+							<div class="account__header-button-text">Сметы</div>
+						</div>
+					</a>
+				</div>
+			</div>
+				
+			<div class="account__block">
+				<div class="account__outlay-items">
+				
+					<?foreach( $arResult['ORDERS'] as $key=>$order ){?>
+					<div class="account__outlay-item">
+						<img class="account__outlay-item-icon" src="/local/templates/stroygip/ts/images/icons/xls.svg">
+						<div class="account__outlay-item-name">
+							Смета #<?=$order['ORDER']['ID'];?> от <?=FormatDate('d F Y', strtotime($order['ORDER']['DATE_INSERT']->toString()));?> 
+							(
+							<?
+							$basket_items_number = intval( count($order['BASKET_ITEMS']) );
+							echo $basket_items_number;
+							if( $basket_items_number <= 1 ){
+								echo " товар";
+							}elseif( $basket_items_number > 1 &&  $basket_items_number < 5 ){
+								echo " товара";
+							}else{
+								echo " товаров";
+							}
+							?> 
+							)
 							</div>
-							<div class="personal-area__tab-history-col">
-								<div class="personal-area__tab-history-title">Номер заказа:</div>
-							</div>
-							<div class="personal-area__tab-history-col">
-								<div class="personal-area__tab-history-title">Сумма заказа:</div>
-							</div>
-							<div class="personal-area__tab-history-col personal-area__tab-history-col--width">
-								<div class="personal-area__tab-history-title">Файл сметы:</div>
+						<div class="account__outlay-item-buttons">
+							<form id="smeta_form_<?=$order['ORDER']['ID'];?>" action="/local/include/estimate_download.php" method="POST" class="account__outlay-item-button">
+								<svg class="account__outlay-item-button-icon">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#download"></use>
+								</svg>
+								<div class="personal-area__estimate-file account__outlay-item-button-text" data-id="" onclick="document.getElementById('smeta_form_<?=$order['ORDER']['ID'];?>').submit();">Скачать</div>
+								<input type="hidden" name="estimate" value="<?=$order['ORDER']['ID'];?>">
+								<input type="hidden" name="order_id" value="<?=$order['ORDER']['ID'];?>">
+							</form>
+							<div class="account__outlay-item-button account__outlay-item-button--del">
+								<svg class="account__outlay-item-button-icon">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+								</svg>
+								<div class="account__outlay-item-button-text">Удалить</div>
 							</div>
 						</div>
 					</div>
-					<div class="personal-area__tab-history-inner">
-						<?foreach ($arResult['ORDERS'] as $order) {?>
-						<div class="personal-area__tab-history-row">
-							<div class="personal-area__tab-history-col">
-								<div class="personal-area__tab-history-text"><?= FormatDate('d F Y', strtotime($order['ORDER']['DATE_INSERT']->toString()));?></div>
-							</div>
-							<div class="personal-area__tab-history-col">
-								<div class="personal-area__tab-history-text">№ <?= $order['ORDER']['ID']?></div>
-							</div>
-							<div class="personal-area__tab-history-col">
-								<div class="personal-area__tab-history-text"><?= $order['ORDER']['FORMATED_PRICE'];?></div>
-							</div>
-							<div class="personal-area__tab-history-col personal-area__tab-history-col--width">
-								<div class="personal-area__estimate-row">
-									<form action="/local/include/estimate_download.php" method="POST">
-									<a href="javascript:void(0)" class="personal-area__estimate-file" data-id="" onclick="$(this).parents('form').submit();">Скачать
-										<div class="personal-area__estimate-file-icon"></div>
-									</a>
-										<input type="hidden" name="estimate" value="<?= $order['ORDER']['ID'];?>">
-									</form>
+					<?}?>
 
-										<a class="personal-area__btn-repeat-order" href="/order/?ID=<?= $order['ORDER']['ID']?>_ORDER=Y">Повторить заказ</a>
-								</div>
-							</div>
-						</div>
-						<?}?>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
-	<?
-}
-	?>
+</section>
