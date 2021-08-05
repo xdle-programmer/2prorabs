@@ -15,10 +15,15 @@ if($arResult['ITEMS']){
 foreach ($arResult['ITEMS'] as $ITEM) {
     $ITEMS_ID[$ITEM["ID"]] = $ITEM["ID"];
 }
-  $GLOBALS['viewFilter']['=ID'] =$ITEMS_ID;
-  $APPLICATION->IncludeComponent(
+
+\nav\Catalog\Sort::setFromRequest();
+$currentSort1 = \nav\Catalog\Sort::getCurrent();
+
+
+$GLOBALS['viewFilter']['=ID'] =$ITEMS_ID;
+$APPLICATION->IncludeComponent(
   "bitrix:catalog.section",
-  "catalog",
+  "personal-viewed",
   Array(
     "TITLE"=>$arParams['TITLE'],
     "ACTION_VARIABLE" => "action",
@@ -46,10 +51,10 @@ foreach ($arResult['ITEMS'] as $ITEM) {
     "DISPLAY_BOTTOM_PAGER" => "N",
     "DISPLAY_COMPARE" => "N",
     "DISPLAY_TOP_PAGER" => "N",
-    "ELEMENT_SORT_FIELD" => "sort",
-    "ELEMENT_SORT_FIELD2" => "id",
-    "ELEMENT_SORT_ORDER" => "asc",
-    "ELEMENT_SORT_ORDER2" => "desc",
+    "ELEMENT_SORT_FIELD" => $currentSort1['FIELD'][0],
+    "ELEMENT_SORT_ORDER" => $currentSort1['ORDER'][0],
+    "ELEMENT_SORT_FIELD2" => "",
+    "ELEMENT_SORT_ORDER2" => "",
     "ENLARGE_PRODUCT" => "STRICT",
     "FILTER_NAME" => "viewFilter",
     "HIDE_NOT_AVAILABLE" => "N",
