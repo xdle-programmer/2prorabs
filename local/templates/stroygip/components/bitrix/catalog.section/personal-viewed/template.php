@@ -80,7 +80,7 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 							<div class="account__header-button-text">Просмотренные товары</div>
 						</div>
 					</a>
-					<a href="#" class="account__header-button">
+					<a href="/personal/estimates/" class="account__header-button">
 						<div class="account__header-button-inner">
 							<svg class="account__header-button-icon">
 								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#outlay"></use>

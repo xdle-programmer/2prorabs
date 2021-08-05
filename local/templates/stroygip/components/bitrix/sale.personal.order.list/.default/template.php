@@ -46,7 +46,7 @@ $statuses = [
 					</div>
 				</div>
 				<div class="account__header-buttons">
-					<a href="#" class="account__header-button">
+					<a href="/personal/credentials/" class="account__header-button">
 						<div class="account__header-button-inner">
 							<svg class="account__header-button-icon">
 								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#user"></use>
@@ -62,7 +62,7 @@ $statuses = [
 							<div class="account__header-button-text">Мои заказы</div>
 						</div>
 					</a>
-					<a href="#" class="account__header-button">
+					<a href="/personal/viewed/" class="account__header-button">
 						<div class="account__header-button-inner">
 							<svg class="account__header-button-icon">
 								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#eye"></use>
@@ -70,7 +70,7 @@ $statuses = [
 							<div class="account__header-button-text">Просмотренные товары</div>
 						</div>
 					</a>
-					<a href="#" class="account__header-button">
+					<a href="/personal/estimates/" class="account__header-button">
 						<div class="account__header-button-inner">
 							<svg class="account__header-button-icon">
 								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#outlay"></use>

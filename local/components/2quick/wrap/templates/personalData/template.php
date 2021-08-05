@@ -51,7 +51,7 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
 							<div class="account__header-button-text">Мои заказы</div>
 						</div>
 					</a>
-					<a class="account__header-button">
+					<a href="/personal/viewed/" class="account__header-button">
 						<div class="account__header-button-inner">
 							<svg class="account__header-button-icon">
 								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#eye"></use>
@@ -59,7 +59,7 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
 							<div class="account__header-button-text">Просмотренные товары</div>
 						</div>
 					</a>
-					<a class="account__header-button">
+					<a href="/personal/estimates/" class="account__header-button">
 						<div class="account__header-button-inner">
 							<svg class="account__header-button-icon">
 								<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#outlay"></use>
