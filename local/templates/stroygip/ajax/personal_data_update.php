@@ -12,6 +12,52 @@ switch ($_REQUEST['action']) {
         $user = new CUser;
         $user->Update($USER->GetID(), $fields);
         break;
+	case 'update_org_data':
+        foreach ($_POST as $key => $value) {
+            $fields[$key] = htmlentities($value);
+        }
+		
+		if( isset($fields["id"]) && intval($fields["id"])>0 ){
+			$ORG_ID = $fields["id"];
+			
+			if( isset($fields["IIN"]) && strlen($fields["IIN"])>0 ){
+				CIBlockElement::SetPropertyValues($ORG_ID, 14, $fields["IIN"], "INN");
+			}
+			if( isset($fields["ADDRESS"]) && strlen($fields["ADDRESS"])>0 ){
+				CIBlockElement::SetPropertyValues($ORG_ID, 14, $fields["ADDRESS"], "JUR_ADDRESS");
+			}
+			
+			$el = new CIBlockElement;
+
+			$arLoadProductArray = Array(
+			  "NAME"   => $fields["NAME"],
+			  "ACTIVE" => "Y",
+			);
+
+			$res = $el->Update($ORG_ID, $arLoadProductArray);
+		}elseif( isset($fields["NAME"]) && isset($fields["IIN"])>0 ){
+			
+			$el = new CIBlockElement;
+			
+			$PROP = array();
+			$PROP[37] = $fields["IIN"];
+			$PROP[38] = $fields["ADDRESS"];
+			$PROP[45] = Array("VALUE" => "13");
+			$PROP[464] = $USER->GetID();
+
+			$arLoadProductArray = Array(
+				"IBLOCK_ID"       => 14,
+				"PROPERTY_VALUES" => $PROP,
+				"NAME"            => $fields["NAME"],
+				"ACTIVE"          => "Y",
+			);
+
+			$id = $el->Add($arLoadProductArray);
+		}
+		
+		
+		
+        break;
     case 'address_add':
         $el = new CIBlockElement;
         $PROP = array();

@@ -10,7 +10,6 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
  * @global CUser $USER
  */
 ?>
-<!--b><?print_r($arResult);?></b-->
 <section class="section section--min-content section--gray">
 	<div class="layout">
 		<div class="breadcrumb">
@@ -98,6 +97,7 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
 					</form>
 					
 					<form action="" id="orgDataUpdate" method="POST" class="account__form form-check">
+						<input id="user_org_id" type="hidden" value="<?=$arResult['USER_ORGANIZATION']['0']['ID']?>">
 						<div class="account__form-title">Юридическое лицо</div>
 						<div class="account__form-item">
 							<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">

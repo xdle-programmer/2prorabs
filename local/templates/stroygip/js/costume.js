@@ -301,6 +301,7 @@ function personalFLUpdate() {
 
 
 function personalORGUpdate() {
+	var org_id = document.getElementById('user_org_id').value;
 	var org_name = document.getElementById('user_org_name').value;
 	var org_iin = document.getElementById('user_org_iin').value;
 	var org_address = document.getElementById('user_org_address').value;
@@ -308,18 +309,17 @@ function personalORGUpdate() {
 	if( org_name.length <= 0 || org_iin.length <= 0 ){
 		console.log('empty fields');
 	}else{
-		var params = "action=update_data&NAME="+org_name+"&IIN="+org_iin+"&ADDRESS="+org_address;
+		var params = "action=update_org_data&NAME="+org_name+"&IIN="+org_iin+"&ADDRESS="+org_address+"&id="+org_id;
 		
-		/*var request = new XMLHttpRequest();
+		var request = new XMLHttpRequest();
 		request.open('POST', '/local/templates/stroygip/ajax/personal_data_update.php', true);
 		request.onreadystatechange = function() {
 			if (request.readyState == 4 && request.status == 200) {
-				//console.log(request.responseText);
 				document.location.reload();
 			}
 		}
 		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		request.send(params);*/
+		request.send(params);
 	}
 }
 
