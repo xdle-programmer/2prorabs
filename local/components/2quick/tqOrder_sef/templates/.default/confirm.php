@@ -114,23 +114,23 @@ while($ob = $res->GetNextElement()){
     }
     $emailPropValue = $propertyCollection->getUserEmail()->getValue();
 
+
+	$APPLICATION->SetTitle('Подтверждение заказа');
 ?>
-    <div class="basket-products__grid">
-        <div class="basket-products__container" >
-            <div class="basket-products__title"><?=$APPLICATION->ShowTitle(false)?></div>
-            <?include 'tabs.php';?>
-            <div class="basket-products__complete-box">
-    <? if (!empty($arResult["ORDER"])): ?>
 
-
-                    <div class="basket-products__complete-image-box"><img class="basket-products__complete-image" src="<?=SITE_TEMPLATE_PATH?>/assets/src/blocks/basket-products/assets/img/complete.png"></div>
-                    <div class="basket-products__complete-title">Ваш заказ №<?=$arResult['ORDER']['ORDER_ID']?> успешно оформлен!</div>
-                    <div class="basket-products__complete-text">
-                        На вашу электронную почту отправлены данные по заказу. <br>
-                        Как только заказ будет отгружен, вам придет уведомление.
-                    </div><a class="basket-products__complete-link" href="/personal/">Отслеживать статус заказа</a>
-
-        <?
+<div class="order-result">
+	<?if( !empty($arResult["ORDER"]) ){?>
+	<div class="order-result__icon-wrapper">
+		<svg class="order-result__icon">
+			<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#check"></use>
+		</svg>
+	</div>
+	<div class="order-result__desc">
+		<div class="order-result__desc-title">Ваш заказ №<?=$arResult['ORDER']['ORDER_ID']?> успешно оформлен!</div>
+		<div class="order-result__desc-text">На вашу электронную почту отправлены данные по заказу. Как только заказ будет отгружен, вам придет уведомление.</div>
+		<a href="/personal/orders/" class="order-result__desc-button">Отслеживать статус заказа</a>
+		
+		<?
         if ($arResult["ORDER"]["IS_ALLOW_PAY"] === 'Y')
         {
             if (!empty($arResult["PAYMENT"]))
@@ -149,25 +149,24 @@ while($ob = $res->GetNextElement()){
                             {
                                 ?>
                                 <br /><br />
-
-
-                                            <? if (strlen($arPaySystem["ACTION_FILE"]) > 0 && $arPaySystem["NEW_WINDOW"] == "Y" && $arPaySystem["IS_CASH"] != "Y"): ?>
-                                                <?
-                                                $orderAccountNumber = urlencode(urlencode($arResult["ORDER"]["ACCOUNT_NUMBER"]));
-                                                $paymentAccountNumber = $payment["ACCOUNT_NUMBER"];
-                                                ?>
-                                                <script>
-                                                    window.open('<?=$arParams["PATH_TO_PAYMENT"]?>?ORDER_ID=<?=$orderAccountNumber?>&PAYMENT_ID=<?=$paymentAccountNumber?>');
-                                                </script>
-                                            <?=Loc::getMessage("SOA_PAY_LINK", array("#LINK#" => $arParams["PATH_TO_PAYMENT"]."?ORDER_ID=".$orderAccountNumber."&PAYMENT_ID=".$paymentAccountNumber))?>
-                                            <? if (CSalePdf::isPdfAvailable() && $arPaySystem['IS_AFFORD_PDF']): ?>
-                                            <br/>
-                                                <?=Loc::getMessage("SOA_PAY_PDF", array("#LINK#" => $arParams["PATH_TO_PAYMENT"]."?ORDER_ID=".$orderAccountNumber."&pdf=1&DOWNLOAD=Y"))?>
-                                            <? endif ?>
-                                            <? else: ?>
-                                                <?=$arPaySystem["BUFFERED_OUTPUT"]?>
-                                            <? endif ?>
-
+								<? if (strlen($arPaySystem["ACTION_FILE"]) > 0 && $arPaySystem["NEW_WINDOW"] == "Y" && $arPaySystem["IS_CASH"] != "Y"): ?>
+									<?
+									$orderAccountNumber = urlencode(urlencode($arResult["ORDER"]["ACCOUNT_NUMBER"]));
+									$paymentAccountNumber = $payment["ACCOUNT_NUMBER"];
+									?>
+									<script>
+										window.open('<?=$arParams["PATH_TO_PAYMENT"]?>?ORDER_ID=<?=$orderAccountNumber?>&PAYMENT_ID=<?=$paymentAccountNumber?>');
+									</script>
+									<?=Loc::getMessage("SOA_PAY_LINK", array("#LINK#" => $arParams["PATH_TO_PAYMENT"]."?ORDER_ID=".$orderAccountNumber."&PAYMENT_ID=".$paymentAccountNumber))?>
+									<?/* if (CSalePdf::isPdfAvailable() && $arPaySystem['IS_AFFORD_PDF']): ?>
+										<br/>
+										<?=Loc::getMessage("SOA_PAY_PDF", array("#LINK#" => $arParams["PATH_TO_PAYMENT"]."?ORDER_ID=".$orderAccountNumber."&pdf=1&DOWNLOAD=Y"))?>
+									<? endif; */?>
+								
+								<? else: ?>
+									<?=$arPaySystem["BUFFERED_OUTPUT"]?>
+								<? endif ?>
+								
                                 <?
                             }
                             else
@@ -194,37 +193,43 @@ while($ob = $res->GetNextElement()){
             <?
         }
         ?>
-
-    <? else: ?>
-
-        <b><?=Loc::getMessage("SOA_ERROR_ORDER")?></b>
-        <br /><br />
-
-        <table class="sale_order_full_table">
-            <tr>
-                <td>
-                    <?=Loc::getMessage("SOA_ERROR_ORDER_LOST", ["#ORDER_ID#" => htmlspecialcharsbx($arResult["ACCOUNT_NUMBER"])])?>
-                    <?=Loc::getMessage("SOA_ERROR_ORDER_LOST1")?>
-                </td>
-            </tr>
-        </table>
-
-    <? endif ?>
-    </div>
-    </div>
-    <?include 'order_info.php'?>
-    </div>
+		
+	</div>
+	<?}else{ ?>
+	
+		<div class="order-result__icon-wrapper order-result__icon-wrapper--red">
+			<svg class="order-result__icon order-result__icon--red">
+				<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+			</svg>
+		</div>
+		<div class="order-result__desc">
+			<div class="order-result__desc-title"><?=Loc::getMessage("SOA_ERROR_ORDER")?></div>
+			<div class="order-result__desc-text">
+				<?=Loc::getMessage("SOA_ERROR_ORDER_LOST", ["#ORDER_ID#" => htmlspecialcharsbx($arResult["ACCOUNT_NUMBER"])])?>
+                <?=Loc::getMessage("SOA_ERROR_ORDER_LOST1")?>
+			</div>
+		</div>
+		
+	<?}?>
+</div>
 
 <?}else{?>
-    <div class="cart-empty">
-        <div class="cart-empty-msg"><strong>Заказ не найден</strong></div>
+	<div class="order-result">
 
-        <a href="/catalog/" class="btn-curved">
-            В магазин
-            <svg class="sprite btn-curved-bg">
-                <use xlink:href="/local/templates/template/svg/svg/symbols.svg#btn-curved-dds"></use>
-            </svg>
-        </a>
-    </div>
+		<div class="order-result__icon-wrapper order-result__icon-wrapper--red">
+			<svg class="order-result__icon order-result__icon--red">
+				<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+			</svg>
+		</div>
+		<div class="order-result__desc">
+			<div class="order-result__desc-title">Заказ не найден</div>
+			<div class="order-result__desc-text">
+				<?=Loc::getMessage("SOA_ERROR_ORDER_LOST", ["#ORDER_ID#" => htmlspecialcharsbx($arResult["ACCOUNT_NUMBER"])])?>
+				<?=Loc::getMessage("SOA_ERROR_ORDER_LOST1")?>
+			</div>
+			<a href="/catalog/" class="order-result__desc-button">Перейти в каталог</a>
+		</div>
 
+	</div>
 <?}?>
+
