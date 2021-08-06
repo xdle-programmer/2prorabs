@@ -27,7 +27,6 @@ $sortItems = \nav\Catalog\Sort::getTemplateData();
 $currentPageSize = \nav\Catalog\PageSize::getCurrent();
 $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 ?>
-
 <section class="section section--gray">
     <div class="layout">
 		<div class="breadcrumb">
@@ -44,16 +43,16 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 		<div class="account">
 			<div class="account__header">
 				<div class="account__header-nav">
-					<div class="account__header-nav-button account__header-nav-button--prev">
+					<a href="/personal/orders/" class="account__header-nav-button account__header-nav-button--prev">
 						<svg class="account__header-nav-button-icon">
 							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
 						</svg>
-					</div>
-					<div class="account__header-nav-button account__header-nav-button--next">
+					</a>
+					<a href="/personal/estimates/" class="account__header-nav-button account__header-nav-button--next">
 						<svg class="account__header-nav-button-icon">
 							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
 						</svg>
-					</div>
+					</a>
 				</div>
 				<div class="account__header-buttons">
 					<a href="/personal/credentials/" class="account__header-button">
