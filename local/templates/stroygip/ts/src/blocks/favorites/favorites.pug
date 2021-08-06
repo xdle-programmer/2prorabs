@@ -1,0 +1,86 @@
+.favorites
+    .favorites__menu
+        .favorites__menu-title Категории
+        .favorites__menu-items
+            .favorites__menu-item.favorites__menu-item--active Название категории
+            .favorites__menu-item Название категории
+            .favorites__menu-item Название категории
+            .favorites__menu-item Название категории
+            .favorites__menu-item Название категории
+            .favorites__menu-item Название категории
+    .favorites__slider
+        .favorites__slider-header
+            .favorites__slider-header-title Все товары (5 шт.)
+            .favorites__slider-header-button
+                +iconSvg('close','favorites__slider-header-button-icon')
+                .favorites__slider-header-button-text Очистить список
+        .favorites__grid
+            .catalog-category__items-grid
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-1.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-2.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-3.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-4.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-5.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-6.jpg',
+                        rating: 0
+                    })
+                .catalog-category__items-grid-item
+                    +productSingleNotLoad({
+                        name: 'Водонагреватель thermex er 200v',
+                        price: '40 606',
+                        img: '/local/templates/stroygip/ts/images/examples/product-1.jpg',
+                        rating: 0
+                    })
+            .catalog-category__items-footer
+                .catalog-category__items-footer-more
+                    .button Показать еще 16
+                .catalog-category__items-footer-pagination
+                    .pagination
+                        .pagination__inner
+                            .pagination__pages
+                                a(href="#").pagination__prev
+                                    +iconSvg('arrow','pagination__icon pagination__icon-prev')
+
+                                a(href="#").pagination__button 1
+                                a(href="#").pagination__button.active 2
+                                a(href="#").pagination__button 3
+                                a.pagination__button ...
+                                a(href="#").pagination__button 34
+
+                                a(href="#").pagination__next
+                                    +iconSvg('arrow','pagination__icon pagination__icon-next')
+                            .pagination__info 234 товара

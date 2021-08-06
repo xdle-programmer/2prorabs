@@ -24,6 +24,14 @@ function sliderCompare() {
         touch: true,
         mouseDrag: true,
         responsive: {
+            200: {
+                items: 2,
+                gutter: 4,
+            },
+            1320: {
+                items: 4,
+                gutter: 10,
+            },
             1500: {
                 items: 5,
             },
