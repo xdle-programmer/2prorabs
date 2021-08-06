@@ -19,7 +19,6 @@ foreach ($arResult['ITEMS'] as $ITEM) {
 \nav\Catalog\Sort::setFromRequest();
 $currentSort1 = \nav\Catalog\Sort::getCurrent();
 
-
 $GLOBALS['viewFilter']['=ID'] =$ITEMS_ID;
 $APPLICATION->IncludeComponent(
   "bitrix:catalog.section",
@@ -84,7 +83,7 @@ $APPLICATION->IncludeComponent(
     "PAGER_SHOW_ALWAYS" => "N",
     "PAGER_TEMPLATE" => ".default",
     "PAGER_TITLE" => "Товары",
-    "PAGE_ELEMENT_COUNT" => 10,
+    "PAGE_ELEMENT_COUNT" => 20,
     "PARTIAL_PRODUCT_PROPERTIES" => "N",
     "PRICE_CODE" => array("BASE"),
     "PRICE_VAT_INCLUDE" => "Y",

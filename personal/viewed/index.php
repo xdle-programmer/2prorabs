@@ -36,7 +36,7 @@ $APPLICATION->SetTitle("Просмотренные товары");
 		"MESS_BTN_DETAIL" => "Подробнее",
 		"MESS_BTN_SUBSCRIBE" => "Подписаться",
 		"MESS_NOT_AVAILABLE" => "Нет в наличии",
-		"PAGE_ELEMENT_COUNT" => "10",
+		"PAGE_ELEMENT_COUNT" => "20",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PRICE_CODE" => array("BASE"),
 		"PRICE_VAT_INCLUDE" => "Y",

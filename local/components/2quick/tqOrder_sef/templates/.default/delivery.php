@@ -153,7 +153,7 @@ $arr_month = [
 					
 					<div class="order-form__address-button" data-modal-open="delivery-map">Отметить на карте для расчета доставки</div>
 					<div class="order-form__address-price">
-						<div class="order-form__address-price-item">
+						<!--div class="order-form__address-price-item">
 							<div class="order-form__address-price-item-name">Доставка до 200 кг:</div>
 							<div class="order-form__address-price-item-number">100</div>
 							<div class="order-form__address-price-item-currency">сом</div>
@@ -162,7 +162,7 @@ $arr_month = [
 							<div class="order-form__address-price-item-name">Доставка свыше 200 кг:</div>
 							<div class="order-form__address-price-item-number">100</div>
 							<div class="order-form__address-price-item-currency">сом</div>
-						</div>
+						</div-->
 					</div>
 					
 					<div id="tq_errors"></div>
