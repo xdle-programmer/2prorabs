@@ -324,6 +324,36 @@ function personalORGUpdate() {
 }
 
 
+function addEstimate() {
+	var params = "";
+	var element_id = "";
+	var element_qnt = "";
+	params = "action=estimate_add";
+	
+	var el = document.querySelectorAll("div.basket__products-item-desc-del");
+	el.forEach(function (el1,index) {
+		element_id = el1.getAttribute("data-productid");
+		params += "&productid["+index+"]="+element_id;
+	});
+	
+	var el_qnt = document.querySelectorAll("div.basket__products-item-desc-count-value");
+	el_qnt.forEach(function (el2,index2) {
+		element_qnt = el2.innerHTML;
+		params += "&quantity["+index2+"]="+element_qnt;
+	});
+	
+	var request = new XMLHttpRequest();
+	request.open('POST', '/local/templates/stroygip/ajax/personal_data_update.php', true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			document.querySelector('.user_save_estimate').innerHTML = 'Сохранено';
+		}
+	}
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.send(params);
+}
+
+
 /*
 function ajaxUpdate(){
     $.get( "/local/templates/stroygip/ajax/basketupdate.php", function( data ) {

@@ -95,6 +95,27 @@ switch ($_REQUEST['action']) {
     case 'address_delete':
         CIBlockElement::Delete($_REQUEST['id']);
         break;
+		
+	case 'estimate_add':
+		if( count($_REQUEST['productid'])>0 ){
+			$el = new CIBlockElement;
+			$PROP = array();
+			$PROP[786] = $USER->GetID();
+			$PROP[787] = $_REQUEST['productid'];
+			$PROP[788] = $_REQUEST['quantity'];
+			
+			$el_name = $USER->GetID()."-".implode("-", $_REQUEST['productid']);
+
+			$arLoadProductArray = Array(
+				"IBLOCK_ID"      => 49,
+				"PROPERTY_VALUES"=> $PROP,
+				"NAME"           => $el_name,
+				"ACTIVE"         => "Y",
+			);
+
+			$element_id = $el->Add($arLoadProductArray);
+		}
+        break;
 
 }
 

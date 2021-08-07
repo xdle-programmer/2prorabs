@@ -83,15 +83,17 @@ if( empty($arResult["ERROR_MESSAGE"]) ){
 			</div>
 			<div class="basket__order-actions">
 				<div class="basket__order-actions-buttons">
-					<div class="basket__order-actions-button basket__order-actions-button--bill basket-products__save-us">
+					<div onclick="addEstimate()" class="basket__order-actions-button basket__order-actions-button--bill basket-products__save-us">
 						<svg class="basket__order-actions-button-icon">
 							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#bill"></use>
-						</svg><span class="basket__order-actions-button-text">Сохранить как смету</span>
+						</svg>
+						<span class="basket__order-actions-button-text user_save_estimate">Сохранить как смету</span>
 					</div>
 					<div class="basket__order-actions-button basket__order-actions-button--print" onclick="window.print()">
 						<svg class="basket__order-actions-button-icon">
 							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#print"></use>
-						</svg><span class="basket__order-actions-button-text">Версия для печати</span>
+						</svg>
+						<span class="basket__order-actions-button-text">Версия для печати</span>
 					</div>
 				</div>
 			</div>

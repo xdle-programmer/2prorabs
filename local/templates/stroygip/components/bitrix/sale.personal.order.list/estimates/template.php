@@ -73,7 +73,7 @@ Loc::loadMessages(__FILE__);
 					</a>
 				</div>
 			</div>
-				
+			
 			<div class="account__block">
 				<div class="account__outlay-items">
 				
@@ -104,6 +104,45 @@ Loc::loadMessages(__FILE__);
 								<div class="personal-area__estimate-file account__outlay-item-button-text" data-id="" onclick="document.getElementById('smeta_form_<?=$order['ORDER']['ID'];?>').submit();">Скачать</div>
 								<input type="hidden" name="estimate" value="<?=$order['ORDER']['ID'];?>">
 								<input type="hidden" name="order_id" value="<?=$order['ORDER']['ID'];?>">
+							</form>
+							<div class="account__outlay-item-button account__outlay-item-button--del">
+								<svg class="account__outlay-item-button-icon">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+								</svg>
+								<div class="account__outlay-item-button-text">Удалить</div>
+							</div>
+						</div>
+					</div>
+					<?}?>
+					
+					
+					<?foreach( $arResult['FROM_BASKET'] as $key=>$order ){?>
+					<div class="account__outlay-item">
+						<img class="account__outlay-item-icon" src="/local/templates/stroygip/ts/images/icons/xls.svg">
+						<div class="account__outlay-item-name">
+							Смета #<?=$order['ID'];?> от <?=FormatDate('d F Y', strtotime($order['DATE_CREATE']));?> 
+							(
+							<?
+							$basket_items_number = intval( count($order['PROPS']['PRODUCTS']['VALUE']) );
+							echo $basket_items_number;
+							if( $basket_items_number <= 1 ){
+								echo " товар";
+							}elseif( $basket_items_number > 1 &&  $basket_items_number < 5 ){
+								echo " товара";
+							}else{
+								echo " товаров";
+							}
+							?> 
+							)
+							</div>
+						<div class="account__outlay-item-buttons">
+							<form id="smeta_basket_<?=$order['ID'];?>" action="/local/include/estimate_download.php" method="POST" class="account__outlay-item-button">
+								<svg class="account__outlay-item-button-icon">
+									<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#download"></use>
+								</svg>
+								<div class="personal-area__estimate-file account__outlay-item-button-text" data-id="" onclick="document.getElementById('smeta_basket_<?=$order['ID'];?>').submit();">Скачать</div>
+								<input type="hidden" name="estimate_id" value="<?=$order['ID'];?>">
+								<input type="hidden" name="from_basket" value="Y">
 							</form>
 							<div class="account__outlay-item-button account__outlay-item-button--del">
 								<svg class="account__outlay-item-button-icon">
