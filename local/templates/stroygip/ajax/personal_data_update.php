@@ -97,7 +97,7 @@ switch ($_REQUEST['action']) {
         break;
 		
 	case 'estimate_add':
-		if( count($_REQUEST['productid'])>0 ){
+		if( count($_REQUEST['productid'])>0 && $USER->IsAuthorized() ){
 			$el = new CIBlockElement;
 			$PROP = array();
 			$PROP[786] = $USER->GetID();
