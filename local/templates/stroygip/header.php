@@ -20,9 +20,9 @@ global $USER;
 
     <?
 	//"/order/confirm_order/"
-	$arr_ntu = array("/", "/basket/", "/order/", "/order/payment/", "/order/confirm_order/", "/personal/orders/", "/personal/credentials/", "/personal/viewed/", "/personal/estimates/", "/compare/");
+	$arr_ntu = array("/", "/basket/", "/order/", "/order/payment/", "/order/confirm_order/", "/personal/orders/", "/personal/credentials/", "/personal/viewed/", "/personal/estimates/", "/compare/", "/favorites/");
 	$arr_ntu_clear = array("/basket/", "/order/", "/order/payment/", "/order/confirm_order/");
-	$arr_ntu_lk = array("/personal/orders/", "/personal/credentials/", "/personal/viewed/", "/personal/estimates/", "/compare/");
+	$arr_ntu_lk = array("/personal/orders/", "/personal/credentials/", "/personal/viewed/", "/personal/estimates/", "/compare/", "/favorites/");
 	
     if ( !in_array($APPLICATION->GetCurPage(), $arr_ntu) && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/libs.css");

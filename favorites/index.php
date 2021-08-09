@@ -1,11 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Избранное");
-
 ?>
-<? if ($_SESSION['FAVORITES']): ?>
-	<div class="title"><?$APPLICATION->ShowTitle();?></div>
-<? endif; ?>
+
 <?
 if($_GET['clear'] == 'yes') {
     unset($_SESSION['FAVORITES']);
@@ -77,7 +74,7 @@ if ($_SESSION['FAVORITES']) {
             "PAGER_SHOW_ALWAYS" => "N",
             "PAGER_TEMPLATE" => ".default",
             "PAGER_TITLE" => "Товары",
-            "PAGE_ELEMENT_COUNT" => "999999",
+            "PAGE_ELEMENT_COUNT" => "60",
             "PARTIAL_PRODUCT_PROPERTIES" => "N",
             "PRICE_CODE" => array("BASE"),
             "PRICE_VAT_INCLUDE" => "Y",
@@ -125,8 +122,12 @@ if ($_SESSION['FAVORITES']) {
 } else {
 	?>
     <div class="basket-empty__inner">
-        <div class="title basket-empty__title">В избранном пока ничего нет</div><img class="basket-empty__img" src="<?=SITE_TEMPLATE_PATH?>/assets/dist/src/blocks/basket-empty/assets/img/empty-box.png">
-        <div class="basket-empty__text">Воспользуйтесь поиском, чтобы найти нужный товар или<a class="basket-empty__link" href="/catalog/">перейдите в каталог.</a></div>
+        <div class="title basket-empty__title">В избранном пока ничего нет</div>
+		<img class="basket-empty__img" src="<?=SITE_TEMPLATE_PATH?>/assets/dist/src/blocks/basket-empty/assets/img/empty-box.png">
+        <div class="basket-empty__text">
+			Воспользуйтесь поиском, чтобы найти нужный товар или 
+			<a class="basket-empty__link" href="/catalog/">перейдите в каталог.</a>
+		</div>
     </div>
 	<?
 }
