@@ -158,7 +158,7 @@ if($arResult['ITEMS']){
                     $arCats[] = $arSectionPath;
 
                 }
-            $arResult['SECTIONS'][] = $arCats[0];
+            $arResult['SECTIONS'][$arCats[0]['ID']] = $arCats[0];
             $ids[$arItem['IBLOCK_SECTION_ID']] = $arItem['IBLOCK_SECTION_ID'];
             $arSectionTrue[$arItem['IBLOCK_SECTION_ID']] = $arCats[0]['ID'];
             }
@@ -193,4 +193,6 @@ if($arResult['ITEMS']){
         if($show)
         $arResult['PROPERTIES_TO_SHOW'][$key] = $arPropertyToShow['NAME'];
     }
+	
+	$arResult['PROPERTIES_TO_SHOW']['MANUFACTURER'] = 'Страна производитель';
 }
