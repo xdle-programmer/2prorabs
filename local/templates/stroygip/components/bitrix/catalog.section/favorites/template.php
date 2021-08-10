@@ -105,17 +105,17 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 										<div class="product-cart__counter-button product-cart__counter-button--plus"></div>
 									</div>
 									<div class="product-cart__buttons">
-										<div onclick="catalogAction('COMPARE', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--compare" data-id="<?=$arItem['ID']?>" data-action="COMPARE">
+										<div onclick="catalogAction('COMPARE', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--compare<?if( in_array($arItem['ID'], $_SESSION['COMPARE']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arItem['ID']?>" data-action="COMPARE">
 											<svg class="product-cart__button-img product-cart__button-img--compare">
 												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#compare"></use>
 											</svg>
 										</div>
-										<div onclick="catalogAction('FAVORITES', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--favorite" data-id="<?=$arItem['ID']?>" data-action="FAVORITES">
+										<div onclick="catalogAction('FAVORITES', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--favorite<?if( in_array($arItem['ID'], $_SESSION['FAVORITES']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arItem['ID']?>" data-action="FAVORITES">
 											<svg class="product-cart__button-img product-cart__button-img--favorite">
 												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#favorite"></use>
 											</svg>
 										</div>
-										<div onclick="catalogAction('add2basket', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--basket" data-id="<?=$arItem['ID']?>" data-action="add2basket">
+										<div onclick="catalogAction('add2basket', <?=$arItem['ID']?>)" class="product-cart__button product-cart__button--basket<?if( array_key_exists($arItem['ID'], $_SESSION['BASKET_PRODUCTS']) ):?> product-cart__button--active<?endif;?>" data-id="<?=$arItem['ID']?>" data-action="add2basket">
 											<svg class="product-cart__button-img product-cart__button-img--basket">
 												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#basket"></use>
 											</svg>
@@ -128,7 +128,6 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 						
 					</div>
 					
-					<?if( count($arResult['NEW_ITEMS'])>16 ){?>
 					<div id="btn_<?=$bxajaxid?>" class="catalog-category__items-footer">
 						<?if( $arResult["NAV_RESULT"]->nEndPage > 1 && $arResult["NAV_RESULT"]->NavPageNomer < $arResult["NAV_RESULT"]->nEndPage ):?>
 						<div class="catalog-category__items-footer-more">
@@ -147,7 +146,6 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 							<?=$arResult["NAV_STRING"]?>
 						</div>
 					</div>
-					<?}?>
 					
 				</div>
 			</div>

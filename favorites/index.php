@@ -40,15 +40,16 @@ if ($_SESSION['FAVORITES']) {
             "CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[]}",
             "DETAIL_URL" => "",
             "DISABLE_INIT_JS_IN_COMPONENT" => "N",
-            "DISPLAY_BOTTOM_PAGER" => "N",
+            "DISPLAY_BOTTOM_PAGER" => "Y",
             "DISPLAY_COMPARE" => "N",
-            "DISPLAY_TOP_PAGER" => "N",
+            "DISPLAY_TOP_PAGER" => "Y",
             "ELEMENT_SORT_FIELD" => "sort",
             "ELEMENT_SORT_FIELD2" => "id",
             "ELEMENT_SORT_ORDER" => "asc",
             "ELEMENT_SORT_ORDER2" => "desc",
             "ENLARGE_PRODUCT" => "STRICT",
             "FILTER_NAME" => "favFilter",
+			"USE_FILTER" => "Y",
             "HIDE_NOT_AVAILABLE" => "N",
             "HIDE_NOT_AVAILABLE_OFFERS" => "N",
             "IBLOCK_ID" => "1",
@@ -56,7 +57,7 @@ if ($_SESSION['FAVORITES']) {
             "INCLUDE_SUBSECTIONS" => "Y",
             "LABEL_PROP" => array(),
             "LAZY_LOAD" => "N",
-            "LINE_ELEMENT_COUNT" => "3",
+            "LINE_ELEMENT_COUNT" => "1",
             "LOAD_ON_SCROLL" => "N",
             "MESSAGE_404" => "",
             "MESS_BTN_ADD_TO_BASKET" => "В корзину",
@@ -66,15 +67,15 @@ if ($_SESSION['FAVORITES']) {
             "MESS_NOT_AVAILABLE" => "Нет в наличии",
             "META_DESCRIPTION" => "-",
             "META_KEYWORDS" => "-",
-            "OFFERS_LIMIT" => "5",
+            "OFFERS_LIMIT" => "2",
             "PAGER_BASE_LINK_ENABLE" => "N",
             "PAGER_DESC_NUMBERING" => "N",
             "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-            "PAGER_SHOW_ALL" => "N",
-            "PAGER_SHOW_ALWAYS" => "N",
+            "PAGER_SHOW_ALL" => "Y",
+            "PAGER_SHOW_ALWAYS" => "Y",
             "PAGER_TEMPLATE" => ".default",
             "PAGER_TITLE" => "Товары",
-            "PAGE_ELEMENT_COUNT" => "60",
+            "PAGE_ELEMENT_COUNT" => "16",
             "PARTIAL_PRODUCT_PROPERTIES" => "N",
             "PRICE_CODE" => array("BASE"),
             "PRICE_VAT_INCLUDE" => "Y",
@@ -121,6 +122,19 @@ if ($_SESSION['FAVORITES']) {
     );
 } else {
 	?>
+	
+<section class="section section--gray">
+	<div class="layout">
+		<div class="breadcrumb">
+			<a class="breadcrumb__item" href="/">Главная</a>
+			<svg class="breadcrumb__separator">
+				<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+			</svg>
+			<div class="breadcrumb__item breadcrumb__item--active">Избранное</div>
+		</div>
+		
+		<div class="favorites-empty">
+		
     <div class="basket-empty__inner">
         <div class="title basket-empty__title">В избранном пока ничего нет</div>
 		<img class="basket-empty__img" src="<?=SITE_TEMPLATE_PATH?>/assets/dist/src/blocks/basket-empty/assets/img/empty-box.png">
@@ -129,6 +143,11 @@ if ($_SESSION['FAVORITES']) {
 			<a class="basket-empty__link" href="/catalog/">перейдите в каталог.</a>
 		</div>
     </div>
+	
+		</div>
+	</div>
+</section>
+
 	<?
 }
 
