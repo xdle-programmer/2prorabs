@@ -28,11 +28,19 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 					<a class="favorites__menu-item <?if (empty($arParams['FAV_SECTION'])) { echo 'favorites__menu-item--active';} ?>" href="/favorites/">
 						Все товары
 					</a>
+					
 					<?foreach( $arResult['MAIN_SECTIONS'] as $sectionID => $sectionName ){ ?>
-					<a href="/favorites/?section=<?=$sectionID;?>" class="favorites__menu-item <?if( $arParams['FAV_SECTION'] == $sectionID ){?>favorites__menu-item--active<?}?>">
-						<?=$sectionName;?>
-					</a>
+						<?if( $arParams['FAV_SECTION'] == $sectionID ){?>
+							<div class="favorites__menu-item favorites__menu-item--active">
+								<?=$sectionName;?>
+							</div>
+						<?}else{?>
+							<a href="/favorites/?section=<?=$sectionID;?>" class="favorites__menu-item">
+								<?=$sectionName;?>
+							</a>
+						<?}?>
 					<?}?>
+					
 				</div>
 			</div>
 			<?}?>

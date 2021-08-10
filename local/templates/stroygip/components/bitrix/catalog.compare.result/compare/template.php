@@ -42,11 +42,19 @@ $templateData = array(
 			<div class="compare__menu">
 				<div class="compare__menu-title">Категории</div>
 				<div class="compare__menu-items">
-					<?foreach( $arResult['SECTIONS'] as $key1=>$arSection ){?>
-					<a href="<?=$arSection['LINK']?>" class="compare__menu-item <?if( $arSection['ACTIVE'] == 'Y' ):?>compare__menu-item--active<?endif;?>">
-						<?=$arSection['NAME']?>
-					</a>
+				
+					<?foreach( $arResult['SECTIONS'] as $key1=>$arSection ){?>	
+						<?if( $arSection['ACTIVE'] == 'Y' ){?>
+							<div class="compare__menu-item compare__menu-item--active">
+								<?=$arSection['NAME']?>
+							</div>
+						<?}else{?>
+							<a href="<?=$arSection['LINK']?>" class="compare__menu-item">
+								<?=$arSection['NAME']?>
+							</a>
+						<?}?>
 					<?}?>
+					
 				</div>
 			</div>
 			<?}?>
