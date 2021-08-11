@@ -23,6 +23,7 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 <? if ($arResult['ITEMS']) { ?>
 <div class="catalog-category__items-grid">
 	<? foreach ($arResult['ITEMS'] as $key=>$arItem) {?>
+	
 	<div class="catalog-category__items-grid-item">
 		<div class="previews-slider__item product-cart preload__area">
 			<div class="product-cart__block">
@@ -59,10 +60,9 @@ $showMoreText = $arResult['NAV_RESULT']->NavRecordCount - $arResult["NAV_RESULT"
 				?>
 				<img class="product-cart__img preload__item" src="<?=$preview_picture?>">
 				
-				<div class="product-cart__price <?if( !empty($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) && $arItem['PROPERTIES']["OLD_PRICE"]['VALUE'] != $arItem['MIN_PRICE']["VALUE"] ):?>product-cart__price--sale<?endif;?>">
-					
+				<div class="product-cart__price <?if( !empty($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) && intval($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) > intval($arItem['PRICES']["BASE"]["VALUE"]) ):?>product-cart__price--sale<?endif;?>">
 					<?
-					if ( !empty($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) && $arItem['PROPERTIES']["OLD_PRICE"]['VALUE'] != $arItem['MIN_PRICE']["VALUE"] ){
+					if ( !empty($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) && intval($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) > intval($arItem['PRICES']["BASE"]["VALUE"]) ){
 					
 						if( $arItem['MIN_PRICE']['DISCOUNT_DIFF'] > 0 ){
 							$arItem['MIN_PRICE']['VALUE'] = $arItem['MIN_PRICE']['DISCOUNT_VALUE']; 

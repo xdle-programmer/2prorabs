@@ -160,16 +160,26 @@ $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
                 }
 				?>
 				<img class="product-cart__img preload__item" src="<?=$preview_picture?>">
-				<div class="product-cart__price">
-					<div class="product-cart__price-number">
-						<?
-						if ($arItem['MIN_PRICE']['DISCOUNT_DIFF'] > 0): 
-						$arItem['MIN_PRICE']['VALUE'] = $arItem['MIN_PRICE']['DISCOUNT_VALUE']; 
-						endif;
-						?>
-						<?= $arItem['MIN_PRICE']['DISCOUNT_DIFF'] == 0 ? number_format($arItem['MIN_PRICE']['DISCOUNT_VALUE'], '0', ',', ' ') : number_format($arItem['MIN_PRICE']['VALUE'], '0', ',', ' ') ?>
-					</div>
-					<div class="product-cart__price-currency">сом</div>
+				<div class="product-cart__price <?if( !empty($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) && intval($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) > intval($arItem['PRICES']["BASE"]["VALUE"]) ):?>product-cart__price--sale<?endif;?>">
+					<?
+					if ( !empty($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) && intval($arItem['PROPERTIES']["OLD_PRICE"]['VALUE']) > intval($arItem['PRICES']["BASE"]["VALUE"]) ){
+					
+						if( $arItem['MIN_PRICE']['DISCOUNT_DIFF'] > 0 ){
+							$arItem['MIN_PRICE']['VALUE'] = $arItem['MIN_PRICE']['DISCOUNT_VALUE']; 
+						}
+					?>
+						<div class="product-cart__price-sale">
+							<div class="product-cart__price-sale-number"><?echo number_format($arItem['PROPERTIES']["OLD_PRICE"]['VALUE'], '0', ',', ' ');?></div>
+							<div class="product-cart__price-sale-currency">сом</div>
+						</div>
+						<div class="product-cart__price-number"><?echo number_format($arItem['MIN_PRICE']['VALUE'], '0', ',', ' ');?></div>
+						<div class="product-cart__price-currency">сом</div>
+					<?}else{?>
+						<div class="product-cart__price-number">
+							<?=$arItem['MIN_PRICE']['DISCOUNT_DIFF'] == 0 ? number_format($arItem['MIN_PRICE']['DISCOUNT_VALUE'], '0', ',', ' ') : number_format($arItem['MIN_PRICE']['VALUE'], '0', ',', ' ')?>
+						</div>
+						<div class="product-cart__price-currency">сом</div>
+					<?}?>
 				</div>
 				<div class="product-cart__code">Артикул: <?=$arItem['PROPERTIES']['ART_NUMBER']['VALUE']?></div>
 				<div class="product-cart__counter" data-counter-max="<?=$arItem["PRODUCT"]["QUANTITY"]?>">
