@@ -101,14 +101,18 @@ $templateData = array(
 										<div data-id="<?=$arCompareItem['ID']?>" onclick="fc_basket_add(<?=$arCompareItem['ID']?>)" class="compare__slider-item-button">В корзину</div>
 									</div>
 								</div>
-								<div class="compare__slider-item-options">
-									<?foreach( $arResult['PROPERTIES_TO_SHOW'] as $key2 => $arProperty ){?>
-									<div class="compare__slider-item-option">
-										<div class="compare__slider-item-option-name"><?=$arProperty?></div>
-										<div class="compare__slider-item-option-value">
-										<?=!empty($arResult['ITEMS'][$key1]['PROPERTIES'][$key2]['VALUE']) ? $arResult['ITEMS'][$key1]['PROPERTIES'][$key2]['VALUE'] : '&ndash;'?>
-										</div>
-									</div>
+								<div class="compare__slider-item-options zzz123">
+									<?foreach( $arCompareItem['PROPERTIES'] as $key2 => $arProperty ){?>
+										<?if( !in_array($key2, $arResult['PROPS_NOT_SHOW']) ){?>
+											<?if( strlen(trim($arProperty['VALUE']))>0 && $arProperty['VALUE'] != "–" && $arProperty['VALUE'] != "0" && $arProperty['VALUE'] != "false" ){?>
+											<div class="compare__slider-item-option">
+												<div class="compare__slider-item-option-name"><?=$arProperty["NAME"]?></div>
+												<div class="compare__slider-item-option-value">
+												<?=!empty($arProperty['VALUE']) ? $arProperty['VALUE'] : '&ndash;'?>
+												</div>
+											</div>
+											<?}?>
+										<?}?>
 									<?}?>
 								</div>
 							</div>
