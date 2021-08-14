@@ -324,6 +324,101 @@ function personalORGUpdate() {
 }
 
 
+function addEstimate() {
+	var params = "";
+	var element_id = "";
+	var element_qnt = "";
+	params = "action=estimate_add";
+	
+	var el = document.querySelectorAll("div.basket__products-item-desc-del");
+	el.forEach(function (el1,index) {
+		element_id = el1.getAttribute("data-productid");
+		params += "&productid["+index+"]="+element_id;
+	});
+	
+	var el_qnt = document.querySelectorAll("div.basket__products-item-desc-count-value");
+	el_qnt.forEach(function (el2,index2) {
+		element_qnt = el2.innerHTML;
+		params += "&quantity["+index2+"]="+element_qnt;
+	});
+	
+	var request = new XMLHttpRequest();
+	request.open('POST', '/local/templates/stroygip/ajax/personal_data_update.php', true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			document.querySelector('.user_save_estimate').innerHTML = 'Сохранено';
+		}
+	}
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.send(params);
+}
+
+
+function fc_basket_add(element_id) {
+	var params = "";	
+	params = "action=add2basket&quantity=1&id="+element_id;
+	
+	var request = new XMLHttpRequest();
+    request.open('POST', '/local/templates/stroygip/ajax/ajax.php', true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			var obj = JSON.parse(request.responseText);
+
+			document.querySelector('.top-basket-count').innerHTML = request.responseText;
+			document.querySelector('.mobile-header__basket-count').innerHTML = request.responseText;
+			
+			document.querySelector("div.compare__slider-item-button[data-id='"+element_id+"']").innerHTML = 'В корзине';
+		}
+	}
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.send(params);
+}
+
+
+function fc_product_del(action, element_id) {
+	var params = "";	
+	params = "action=compfavdelete&add="+action+"&id="+element_id;
+	
+	var request = new XMLHttpRequest();
+    request.open('POST', '/local/templates/stroygip/ajax/ajax.php', true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			var obj = JSON.parse(request.responseText);
+			if( action == "COMPARE" ){
+				var compContainer = document.querySelector('.header__button--compare');
+				compContainer.querySelector('.header__user-button-count').innerHTML = obj["COMP"];
+				
+				var cmp_element = document.querySelector('.compare_'+element_id+'_item');
+				cmp_element.remove();
+			}
+			/*else if( action == "FAVORITES" ){
+				var favContainer = document.querySelector('.header__button--favorits');
+				favContainer.querySelector('.header__user-button-count').innerHTML = obj["FAV"];
+			}*/
+		}
+	}
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.send(params);
+}
+
+
+function clearCompare(ids) {
+	var params = "";	
+	params = "action=clearCompare&id="+ids;
+	
+	var request = new XMLHttpRequest();
+    request.open('POST', '/local/templates/stroygip/ajax/ajax.php', true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			location.href = '/compare/';
+		}
+	}
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.send(params);
+}
+
+
+
 /*
 function ajaxUpdate(){
     $.get( "/local/templates/stroygip/ajax/basketupdate.php", function( data ) {

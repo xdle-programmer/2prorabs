@@ -8,7 +8,7 @@
 $component = $this->getComponent();
 $arParams = $component->applyTemplateModifications();
 
-$res = CIBlockElement::GetByID(329212);
+$res = CIBlockElement::GetByID(332271);
 if($ar_res = $res->GetNext()){
 	$arResult['BLOCK_GRID'] = $ar_res['PREVIEW_TEXT'];
 }

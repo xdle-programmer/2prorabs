@@ -26,95 +26,103 @@ $templateData = array(
 
 ?>
 
-<div class="title"><?= $APPLICATION->GetTitle(false) ?></div>
-<div class="favorites__grid">
-    <div class="favorites__aside">
-        <? if ($arResult['SECTIONS']) { ?>
-            <div class="favorites__category-title">Категории</div>
-            <? foreach ($arResult['SECTIONS'] as $arSection) { ?>
-                <a class="favorites__category<? if ($arSection['ACTIVE'] == 'Y') echo ' favorites__category--active' ?>"
-                   href="<?= $arSection['LINK'] ?>"><?= $arSection['NAME'] ?></a>
-            <?
-            }
-        } ?>
-    </div>
-    <div class="favorites__box">
-        <div class="favorites__inner">
-            <div class="favorites__header">
-                <? if ($arResult['CURRENT_SECTION']) { ?>
-                    <div class="title favorites__title"><?= $arResult['CURRENT_SECTION']['NAME'] ?>
-                        <div class="favorites__title-value"><?= count($arResult['ITEMS']) ?> шт.</div>
-                    </div>
-                <? } ?>
-                <a class="favorites__button-clear" href="javascript:void(0)" data-action="clearCompare" data-id="<?= implode('/', $arResult['ITEM_IDS']) ?>">
-                    <div class="favorites__button-clear-icon"></div>
-                    Очистить список</a>
-            </div>
-
-            <div class="favorites__carousel-box">
-                <div class="favorites__carousel-items owl-carousel">
-                    <? foreach ($arResult['ITEMS'] as $arCompareItem) {
-                        if (in_array($arCompareItem['ID'], $arParams['FAVORITES'])) {
-                            $fav_action = 'compfavdelete';
-                            $fav_act = ' compfavactive';
-                        } else {
-                            $fav_action = 'compfav';
-                            $fav_act = '';
-                        }
-                        ?>
-                        <div class="favorites__carousel-item">
-                            <div class="catalog-category__item catalog-category__item--height">
-                                <div class="catalog-category__button catalog-category__button--show">
-                                    <a class="button button--red" href="javascript:void(0)" data-action="add2basket" data-id="<?= $arCompareItem['ID'] ?>">В корзину</a>
-                                </div>
-                                <a class="catalog-category__image-box" href="<?= $arCompareItem['DETAIL_PAGE_URL'] ?>">
-                                    <img class="catalog-category__image" src="<?=$arCompareItem['PREVIEW_PICTURE'] ? $arCompareItem['PREVIEW_PICTURE']['SRC'] : SITE_TEMPLATE_PATH . '/img/no-image.png'?>">
-                                    <div class="catalog-category__icon-box">
-                                        <div class="catalog-category__icon catalog-category__icon-favorite catalog-category__icon--show">
-                                            <div class="catalog-category__icon-image catalog-category__icon-image--favourite<?= $fav_act ?>" data-add="FAVORITES"
-                                                 data-action="<?= $fav_action ?>" data-id="<?= $arCompareItem['ID'] ?>"></div>
-                                        </div>
-                                        <div class="catalog-category__icon catalog-category__icon--show">
-                                            <div class="catalog-category__icon-image catalog-category__icon-image--comparison" data-action="clearCompare"
-                                                 data-id="<?= $arCompareItem['ID'] ?>"></div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="catalog-category__price-box">
-                                    <div class="catalog-category__price"><?= number_format($arCompareItem['CATALOG_PRICE_1'], 0, '', ' ') ?><span
-                                                class="catalog-category__price-span">com</span></div>
-                                </div>
-                                <a class="catalog-category__name" href="<?= $arCompareItem['DETAIL_PAGE_URL'] ?>"><?= $arCompareItem['NAME'] ?></a>
-                                <div class="catalog-category__container catalog-category__container--show">
-                                    <div class="rating">
-                                        <? for ($i = 1; $i <= $arCompareItem['PROPERTIES']['RATING']['VALUE']; $i++) { ?>
-                                            <div class="rating__star active"></div>
-                                        <? } ?>
-                                        <? for ($i = $arCompareItem['PROPERTIES']['RATING']['VALUE']; $i < 5; $i++) { ?>
-                                            <div class="rating__star"></div>
-                                        <? } ?>
-                                    </div>
-                                    <div class="catalog-category__article">Арт. <?= $arCompareItem['PROPERTIES']['ART_NUMBER']['VALUE'] ?></div>
-                                </div>
-                            </div>
-                        </div>
-                    <? } ?>
-                </div>
-            </div>
-            <div class="favorites__characteristics">
-                <? foreach ($arResult['PROPERTIES_TO_SHOW'] as $key => $arProperty) { ?>
-                    <div class="favorites__characteristics-item">
-                        <div class="favorites__characteristics-title"><?= $arProperty ?></div>
-                        <div class="favorites__characteristics-row">
-                            <? foreach ($arResult['ITEMS'] as $arItem) { ?>
-                                <div class="favorites__characteristics-box">
-                                    <div class="favorites__characteristics-text"><?= !empty($arItem['PROPERTIES'][$key]['VALUE']) ? $arItem['PROPERTIES'][$key]['VALUE'] : '&ndash;' ?></div>
-                                </div>
-                            <? } ?>
-                        </div>
-                    </div>
-                <? } ?>
-            </div>
-        </div>
-    </div>
-</div>
+<section class="section section--gray">
+	<div class="layout">
+		<div class="breadcrumb">
+			<a class="breadcrumb__item" href="/">Главная</a>
+			<svg class="breadcrumb__separator">
+				<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+			</svg>
+			<div class="breadcrumb__item breadcrumb__item--active">Сравнение товаров</div>
+		</div>
+		
+		<?if( is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0 ){?>
+		<div class="compare">
+			<?if( $arResult['SECTIONS'] ){?>
+			<div class="compare__menu">
+				<div class="compare__menu-title">Категории</div>
+				<div class="compare__menu-items">
+				
+					<?foreach( $arResult['SECTIONS'] as $key1=>$arSection ){?>	
+						<?if( $arSection['ACTIVE'] == 'Y' ){?>
+							<div class="compare__menu-item compare__menu-item--active">
+								<?=$arSection['NAME']?>
+							</div>
+						<?}else{?>
+							<a href="<?=$arSection['LINK']?>" class="compare__menu-item">
+								<?=$arSection['NAME']?>
+							</a>
+						<?}?>
+					<?}?>
+					
+				</div>
+			</div>
+			<?}?>
+			
+			<div class="compare__slider">
+				<div class="compare__slider-header">
+					<div class="compare__slider-header-title">Все товары (<?echo count($arResult['ITEM_IDS']);?> шт.)</div>
+					<div class="compare__slider-header-button" onclick="clearCompare('<?=implode('/', $arResult['ITEM_IDS'])?>')">
+						<svg class="compare__slider-header-button-icon">
+							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+						</svg>
+						<div class="compare__slider-header-button-text">Очистить список</div>
+					</div>
+				</div>
+				<div class="compare__slider-nav">
+					<div class="compare__slider-nav-button compare__slider-nav-button--prev">
+						<svg class="compare__slider-nav-button-icon">
+							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+						</svg>
+					</div>
+					<div class="compare__slider-nav-button compare__slider-nav-button--next">
+						<svg class="compare__slider-nav-button-icon">
+							<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+						</svg>
+					</div>
+				</div>
+				
+				<div class="compare__slider-items-wrapper">
+					<div class="compare__slider-items">
+						
+						<?foreach( $arResult['ITEMS'] as $key1=>$arCompareItem ){?>
+						<div class="compare__slider-item compare_<?=$arCompareItem['ID']?>_item">
+							<div class="compare__slider-item-inner">
+								<div class="compare__slider-item-inner-main">
+									<img class="compare__slider-item-img" src="<?=$arCompareItem['PREVIEW_PICTURE'] ? $arCompareItem['PREVIEW_PICTURE']['SRC'] : SITE_TEMPLATE_PATH . '/img/no-image.png'?>">
+									<div class="compare__slider-item-price"><?=number_format($arCompareItem['CATALOG_PRICE_1'], 0, '', ' ')?> Сом</div>
+									<a class="compare__slider-item-name" href="<?=$arCompareItem['DETAIL_PAGE_URL']?>"><?=$arCompareItem['NAME']?></a>
+									<div class="compare__slider-item-buttons">
+										<div onclick="fc_product_del('COMPARE', <?=$arCompareItem['ID']?>)" class="compare__slider-item-button-del">
+											<svg class="compare__slider-item-button-del-icon">
+												<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#close"></use>
+											</svg>
+										</div>
+										<div data-id="<?=$arCompareItem['ID']?>" onclick="fc_basket_add(<?=$arCompareItem['ID']?>)" class="compare__slider-item-button">В корзину</div>
+									</div>
+								</div>
+								<div class="compare__slider-item-options zzz123">
+									<?foreach( $arCompareItem['PROPERTIES'] as $key2 => $arProperty ){?>
+										<?if( !in_array($key2, $arResult['PROPS_NOT_SHOW']) ){?>
+											<?if( strlen(trim($arProperty['VALUE']))>0 && $arProperty['VALUE'] != "–" && $arProperty['VALUE'] != "0" && $arProperty['VALUE'] != "false" ){?>
+											<div class="compare__slider-item-option">
+												<div class="compare__slider-item-option-name"><?=$arProperty["NAME"]?></div>
+												<div class="compare__slider-item-option-value">
+												<?=!empty($arProperty['VALUE']) ? $arProperty['VALUE'] : '&ndash;'?>
+												</div>
+											</div>
+											<?}?>
+										<?}?>
+									<?}?>
+								</div>
+							</div>
+						</div>
+						<?}?>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<?}?>
+	</div>
+</section>

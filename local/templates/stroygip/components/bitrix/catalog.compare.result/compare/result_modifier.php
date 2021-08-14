@@ -158,7 +158,7 @@ if($arResult['ITEMS']){
                     $arCats[] = $arSectionPath;
 
                 }
-            $arResult['SECTIONS'][] = $arCats[0];
+            $arResult['SECTIONS'][$arCats[0]['ID']] = $arCats[0];
             $ids[$arItem['IBLOCK_SECTION_ID']] = $arItem['IBLOCK_SECTION_ID'];
             $arSectionTrue[$arItem['IBLOCK_SECTION_ID']] = $arCats[0]['ID'];
             }
@@ -193,4 +193,57 @@ if($arResult['ITEMS']){
         if($show)
         $arResult['PROPERTIES_TO_SHOW'][$key] = $arPropertyToShow['NAME'];
     }
+	
+	$arResult['PROPERTIES_TO_SHOW']['MANUFACTURER'] = 'Страна производитель';
+
+	$arResult['PROPS_NOT_SHOW'] = array(
+		"MARK",
+		"BRAND",
+		"RATING2",
+		"RECOMEND",
+		"MAIN",
+		"BENEFITS",
+		"BEST_PRICE",
+		"BESTSELLER",
+		"CHARS",
+		"REVIEWS",
+		"GALLERY",
+		"BYE_WIDTH",
+		"REVIEWS_CNT",
+		"REF",
+		"CODE",
+		"_",
+		"OLD_PRICE",
+		"VIDNOMENKLATURY",
+		"BAZOVAYAEDINITSAIZMERENIYA",
+		"OSNOVNAYAEDINITSAIZMERENIYA",
+		"STAVKANDS",
+		"SROKKHRANENIYATOVARA",
+		"ZAKRYTA",
+		"MENEDZHER",
+		"AVTOR",
+		"DATA",
+		"TIPNOMENKLATURY",
+		"OTDEL",
+		"KATEGORIYANOMENKLATURYSAYTA",
+		"TSENA",
+		"NOMENKLATURA_STRANA_PROIS",
+		"NOMENKLATURA_TOVARNAYA_MAR",
+		"OSTATOK",
+		"SHT",
+		"FRACTIONAL_PRODUCT",
+		"ARTIKUL",
+		"NOMENKLATURA_OSNOVNAYA_EDI",
+		"vote_count",
+		"vote_sum",
+		"rating",
+		"ITOG",
+		"KON_OST",
+		"NOMENKLATURA_GLUBINA",
+		"NOMENKLATURA_VYSOTA",
+		"NOMENKLATURA_SHIRINA",
+		"NOMENKLATURA_VES_TOVARA_",
+		"PROIZVODITEL",
+		"HIDDEN_1C",
+	);
 }
