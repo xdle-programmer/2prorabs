@@ -1,0 +1,134 @@
+extends ../templates/main
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    include ../blocks/menu/menu
+    #main-group.preload
+        include ../blocks/mobile-header/mobile-header
+        include ../blocks/header/header
+
+
+        section.section.section--gray
+            .layout
+                include ../blocks/breadcrumbs/breadcrumbs
+                .static-page
+                    .static-page__title Доставка и оплата
+                    .static-page__info-block
+                        .static-page__info-block-desc
+                            .static-page__info-block-desc-text
+                                .static-page__info-block-title Уважаемые покупатели!
+                                | В связи с карантином заказы осуществляются только через интернет-магазин. На данное время оплата производится только наличными курьеру. Доставка осуществляется только по городу
+                            .static-page__info-block-desc-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/box.svg').static-page__info-block-desc-img
+        section.section
+            .layout
+                .static-page
+                    .static-page__title Расчет доставки
+                    .static-page__delivery
+                        .static-page__delivery-item
+                            .static-page__delivery-item-title Доставка по городу
+                            .static-page__delivery-block
+                                .static-page__delivery-block-title
+                                    +iconSvg('wallet','static-page__delivery-block-title-img')
+                                    .static-page__delivery-block-title-text Бесплатная доставка по Бишкеку при общей сумме заказа&nbsp;20&nbsp;000&nbsp;сом. Каждая 10 доставка бесплатно вне зависимости от суммы заказа.
+                                .static-page__delivery-block-list
+                                    .static-page__delivery-block-list-item Доставка осуществляется в черте города.
+                                    .static-page__delivery-block-list-item Способ оплаты заказа - онлайн оплата.
+                                    .static-page__delivery-block-list-item Вес всего заказа не превышает 30 кг.
+                                    .static-page__delivery-block-list-item Размер любой из сторон товара не превышает 2 метра.
+                                    .static-page__delivery-block-list-item Стоимость услуг по подъёму товара рассчитывается по стандартному тарифу.
+                            .static-page__delivery-block
+                                .static-page__delivery-block-title
+                                    +iconSvg('wallet','static-page__delivery-block-title-img')
+                                    .static-page__delivery-block-title-text График доставки
+                                .static-page__delivery-block-list
+                                    .static-page__delivery-block-list-item Ежедневно с 09.00 до 21.00 (кроме нерабочих праздничных дней)
+                            .static-page__delivery-block
+                                .static-page__delivery-block-title
+                                    +iconSvg('wallet','static-page__delivery-block-title-img')
+                                    .static-page__delivery-block-title-text Условия доставки
+                                .static-page__delivery-block-list
+                                    .static-page__delivery-block-list-item При оформлении заявки на доставку до 13.00 - доставим в этот же день (кроме нерабочих праздничных дней).
+                                    .static-page__delivery-block-list-item При оформлении заявки на доставку после 13.00 - доставим на следующий день, или день по Вашему выбору (кроме нерабочих праздничных дней).
+                        .static-page__delivery-item
+                            .static-page__delivery-item-title Доставка по области
+                            .static-page__delivery-block
+                                .static-page__delivery-block-title
+                                    +iconSvg('wallet','static-page__delivery-block-title-img')
+                                    .static-page__delivery-block-title-text Стоимость доставки
+                                .static-page__delivery-block-list
+                                    .static-page__delivery-block-list-item До 5 км - 450 com.
+                                    .static-page__delivery-block-list-item После 5 км - каждый км 50 com.
+                            .static-page__delivery-block
+                                .static-page__delivery-block-title
+                                    +iconSvg('wallet','static-page__delivery-block-title-img')
+                                    .static-page__delivery-block-title-text График доставки
+                                .static-page__delivery-block-list
+                                    .static-page__delivery-block-list-item Ежедневно с 09.00 до 21.00 (кроме нерабочих праздничных дней)
+                            .static-page__delivery-block
+                                .static-page__delivery-block-title
+                                    +iconSvg('wallet','static-page__delivery-block-title-img')
+                                    .static-page__delivery-block-title-text Сроки доставки
+                                .static-page__delivery-block-list
+                                    .static-page__delivery-block-list-item Рассчитываются индивидуально при заказе.
+        section.section.section--gray
+            .layout
+                .static-page
+                    .static-page__title Стоимость доставки по габаритам
+                    .static-page__info-block
+                        .static-page__delivery-table
+                            .static-page__delivery-table-row.static-page__delivery-table-row--header
+                                .static-page__delivery-table-cell Вес (объем) заказа
+                                .static-page__delivery-table-cell Цена, Сом
+                            .static-page__delivery-table-row
+                                .static-page__delivery-table-cell до 300 кг (до 2м3)
+                                .static-page__delivery-table-cell 350
+                            .static-page__delivery-table-row
+                                .static-page__delivery-table-cell От 300 кг до 500 кг (до 3м3)
+                                .static-page__delivery-table-cell 500
+                            .static-page__delivery-table-row
+                                .static-page__delivery-table-cell От 500 кг до 1,0 тонн (до 6м3)
+                                .static-page__delivery-table-cell 600
+                            .static-page__delivery-table-row
+                                .static-page__delivery-table-cell От 1,0 тонн до 1,5 тонн (до 10м3)
+                                .static-page__delivery-table-cell 700
+        section.section.section--gray
+            .layout
+                .static-page
+                    .static-page__info-block
+                        .static-page__info-block-desc
+                            .static-page__info-block-desc-text
+                                .static-page__info-block-title Подъем на этаж
+                                | Минимальная стоимость – 100 сом
+                                .static-page__info-block-text-small Стоимость услуг по подъёму товара рассчитывается исходя из веса и габаритов товара, высоты подъема (количества этажей), наличия лифта, но в любом случае не может быть меньше минимальной стоимости подъёма товара.
+                                .static-page__info-block-text-small При подъеме на грузовом лифте для расчета учитываются только первый и последний этажи.
+                                .static-page__info-block-text-small Подъём товара осуществляется в прихожую квартиры или частного дома. Перемещение товара по квартире или частному дому не осуществляется.
+                                .static-page__info-block-text-small Подъем крупногабаритного товара на этаж (крупногабаритный товар — единица товара объемом более 0.2 м. куб. или массой более 30 кг.)
+                            .static-page__info-block-desc-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/cargo-box.svg').static-page__info-block-desc-img
+        section.section
+            .layout
+                .static-page
+                    .static-page__title Способы оплаты
+                    .static-page__payment
+                        .static-page__payment-item
+                            .static-page__payment-item-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/1.png').static-page__payment-item-img
+                            .static-page__payment-item-title Наличными в кассе магазина
+                        .static-page__payment-item
+                            .static-page__payment-item-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/2.png').static-page__payment-item-img
+                            .static-page__payment-item-title Наличными курьеру при получении заказа
+                        .static-page__payment-item
+                            .static-page__payment-item-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/3.png').static-page__payment-item-img
+                            .static-page__payment-item-title Банковской картой на сайте
+                        .static-page__payment-item
+                            .static-page__payment-item-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/4.png').static-page__payment-item-img
+                            .static-page__payment-item-title Перевести деньги на наш расчётный счет
