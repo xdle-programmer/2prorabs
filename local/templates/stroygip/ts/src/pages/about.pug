@@ -1,0 +1,113 @@
+extends ../templates/main
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    include ../blocks/menu/menu
+    #main-group.preload
+        include ../blocks/mobile-header/mobile-header
+        include ../blocks/header/header
+
+        section.section.section--video
+            video.section__video-item(autoplay muted)
+                source(src='/local/templates/stroygip/ts/images/static-images/videoplayback.mp4')
+
+        section.section
+            .layout
+                .static-page
+                    .static-page__title У нас есть всё для ремонта и строительства!
+                    .static-page__advantages
+                        .static-page__advantages-item
+                            .static-page__advantages-item-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/about-1.svg').static-page__advantages-item-img
+                            .static-page__advantages-item-desc
+                                .static-page__advantages-item-desc-title Без наценки
+                                .static-page__advantages-item-desc-text Собственная логистика и 3 склада позволяют нам сохранять оптовые цены
+                        .static-page__advantages-item
+                            .static-page__advantages-item-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/about-2.svg').static-page__advantages-item-img
+                            .static-page__advantages-item-desc
+                                .static-page__advantages-item-desc-title Офлайн-магазины
+                                .static-page__advantages-item-desc-text Все товары можно выбрать и купить вживую в наших магазинах
+                        .static-page__advantages-item
+                            .static-page__advantages-item-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/about-3.svg').static-page__advantages-item-img
+                            .static-page__advantages-item-desc
+                                .static-page__advantages-item-desc-title Быстрая доставка
+                                .static-page__advantages-item-desc-text Доставляем в день заказа. Сроки доставки в другие города индивидуальны
+
+
+        section.section.section--gray
+            .layout
+                .static-page
+                    .static-page__title Специальные условия сотрудничества
+                    .static-page__special
+                        .static-page__special-header
+                            .static-page__special-header-item.static-page__special-header-item--active(data-target='1') Для физических лиц
+                            .static-page__special-header-item(data-target='2') Для юридических лиц
+                        .static-page__special-items
+                            .static-page__special-item.static-page__special-item--active(data-name='1')
+                                .static-page__special-list
+                                    .static-page__special-list-item
+                                        .static-page__special-list-item-img-wrapper
+                                            img(src='/local/templates/stroygip/ts/images/static-images/about-spec-1.svg').static-page__special-list-item-img
+                                        .static-page__special-list-item-desc
+                                            .static-page__special-list-item-desc-title Акции каждый день
+                                            .static-page__special-list-item-desc-text Каждый день добавляются акционные товары. Удобный поиск поможет Вам подобрать оптимальные, а так же выделены специальным элементом.
+                                    .static-page__special-list-item
+                                        .static-page__special-list-item-img-wrapper
+                                            img(src='/local/templates/stroygip/ts/images/static-images/about-spec-2.svg').static-page__special-list-item-img
+                                        .static-page__special-list-item-desc
+                                            .static-page__special-list-item-desc-title Возможность сохранять адреса доставки
+                                            .static-page__special-list-item-desc-text Не нужно постоянно вводить адреса доставки, добавляйте новые адреса в личном кабинете и выбирайте их в 1 клик при оформлении заказа.
+                                    .static-page__special-list-item
+                                        .static-page__special-list-item-img-wrapper
+                                            img(src='/local/templates/stroygip/ts/images/static-images/about-spec-3.svg').static-page__special-list-item-img
+                                        .static-page__special-list-item-desc
+                                            .static-page__special-list-item-desc-title Выгрузка сметы
+                                            .static-page__special-list-item-desc-text Выгружайте и повторяйте свои заказы в 1 клик.  Вы также можете сохранить смету и направить ее другому ответственному лицу на проверку.
+                            .static-page__special-item(data-name='2')
+                                .static-page__special-list
+                                    .static-page__special-list-item
+                                        .static-page__special-list-item-img-wrapper
+                                            img(src='/local/templates/stroygip/ts/images/static-images/about-spec-1.svg').static-page__special-list-item-img
+                                        .static-page__special-list-item-desc
+                                            .static-page__special-list-item-desc-title Оформляйте не выходя из офиса
+                                            .static-page__special-list-item-desc-text Удобная система регистрации для юридических лиц. Возможность сохранить компанию. Лучший поиск для мониторинга товаров и цен.
+                                    .static-page__special-list-item
+                                        .static-page__special-list-item-img-wrapper
+                                            img(src='/local/templates/stroygip/ts/images/static-images/about-spec-2.svg').static-page__special-list-item-img
+                                        .static-page__special-list-item-desc
+                                            .static-page__special-list-item-desc-title Отдельная касса
+                                            .static-page__special-list-item-desc-text Персональный менеджер и отдельная касса для юридических лиц. Совершайте покупки без ожидании и очередей. Индивидуальное отношение каждому клиенту.
+                                    .static-page__special-list-item
+                                        .static-page__special-list-item-img-wrapper
+                                            img(src='/local/templates/stroygip/ts/images/static-images/about-spec-3.svg').static-page__special-list-item-img
+                                        .static-page__special-list-item-desc
+                                            .static-page__special-list-item-desc-title Строгая форма отчетности
+                                            .static-page__special-list-item-desc-text Документация к каждому заказу. Выписываем счет фактуру онлайн так и оффлайн. Сертификация каждого товара.
+        section.section
+            .layout
+                .static-page
+                    .static-page__title Реквизиты
+                    .static-page__info-block
+                        .static-page__info-block-desc
+                            .static-page__info-block-desc-text
+                                .static-page__info-block-text-small ОсОО «Строительный гипермаркет «Два прораба»
+                                .static-page__info-block-text-small Юридический адрес: Кыргызская Республика, г. Бишкек, ул. Л.Толстого, 36к
+                                .static-page__info-block-text-small Код ОКПО: 29998545
+                                .static-page__info-block-text-small ИНН: 00407201710214
+                                .static-page__info-block-text-small УГНС по Свердловскому р-ну г. Бишкек, код 003
+                                .static-page__info-block-text-small р/счет: 1299003131324919 (KGS)
+                                .static-page__info-block-text-small Банк: ОАО «РСК Банк»
+                                .static-page__info-block-text-small БИК: 129001
+
+
+                            .static-page__info-block-desc-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/contract.svg').static-page__info-block-desc-img
+
+        include ../blocks/footer/footer

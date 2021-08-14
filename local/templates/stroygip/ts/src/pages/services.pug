@@ -1,0 +1,37 @@
+extends ../templates/main
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    include ../blocks/menu/menu
+    #main-group.preload
+        include ../blocks/mobile-header/mobile-header
+        include ../blocks/header/header
+
+
+        section.section
+            .layout
+                include ../blocks/breadcrumbs/breadcrumbs
+                .static-page
+                    .static-page__title Контакты
+                    .static-page__services
+                        .static-page__services-item
+                            img(src='/local/templates/stroygip/ts/images/static-images/services.png').static-page__services-img
+                            .static-page__services-desc
+                                .static-page__services-desc-title Распиловка древесины
+                                .static-page__services-desc-text Выполняем токарные работы на профессиональном оборудовании. Стоимость рассчитывается индивидуально после консультации со специалистом.
+
+                        .static-page__services-item
+                            img(src='/local/templates/stroygip/ts/images/static-images/services.png').static-page__services-img
+                            .static-page__services-desc
+                                .static-page__services-desc-title Распиловка древесины
+                                .static-page__services-desc-text Выполняем токарные работы на профессиональном оборудовании. Стоимость рассчитывается индивидуально после консультации со специалистом.
+
+
+        include ../blocks/footer/footer
+
+

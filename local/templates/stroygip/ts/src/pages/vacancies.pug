@@ -1,0 +1,77 @@
+extends ../templates/main
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+mixin vacancy
+    .static-page__vacancy
+        .static-page__vacancy-header
+            .static-page__vacancy-title Продавец-консультант
+            .static-page__vacancy-price 12 000
+        .static-page__vacancy-advantages
+            .static-page__vacancy-advantages-item
+                .static-page__vacancy-advantages-item-icon-wrapper
+                    +iconSvg('check','static-page__vacancy-advantages-item-icon')
+                .static-page__vacancy-advantages-item-text Работа в офисе
+            .static-page__vacancy-advantages-item
+                .static-page__vacancy-advantages-item-icon-wrapper
+                    +iconSvg('check','static-page__vacancy-advantages-item-icon')
+                .static-page__vacancy-advantages-item-text Оформление по ТК КР
+            .static-page__vacancy-advantages-item
+                .static-page__vacancy-advantages-item-icon-wrapper
+                    +iconSvg('check','static-page__vacancy-advantages-item-icon')
+                .static-page__vacancy-advantages-item-text Дружная команда
+        .static-page__vacancy-about-wrapper
+            .static-page__vacancy-about
+                .static-page__vacancy-about-title Описание вакансии
+                .static-page__vacancy-about-desc
+                    .static-page__vacancy-about-desc-item В молодую и современную компанию по производству требуется менеджер по продажам
+            .static-page__vacancy-about
+                .static-page__vacancy-about-title Требования
+                .static-page__vacancy-about-desc
+                    .static-page__vacancy-about-desc-item Успешный опыт в сфере продаж
+                    .static-page__vacancy-about-desc-item Стремление к саморазвитию и профессиональному росту
+                    .static-page__vacancy-about-desc-item Коммуникабельность
+            .static-page__vacancy-about
+                .static-page__vacancy-about-title Приветствуется
+                .static-page__vacancy-about-desc
+                    .static-page__vacancy-about-desc-item Знания строительной тематики
+            .static-page__vacancy-about
+                .static-page__vacancy-about-title Условия
+                .static-page__vacancy-about-desc
+                    .static-page__vacancy-about-desc-item График: 6-1 9:00 - 22:00
+                    .static-page__vacancy-about-desc-item Карьерный рост
+                    .static-page__vacancy-about-desc-item Стабильные выплаты ЗП 2 раза в месяц
+            .static-page__vacancy-about
+                .static-page__vacancy-about-title Адрес места работы
+                .static-page__vacancy-about-desc
+                    .static-page__vacancy-about-desc-item Город: Бишкек ул.Льва Толстого 36к
+                    .static-page__vacancy-about-desc-item Телефоны: +996 (559) 95 01 57
+                    .static-page__vacancy-about-desc-item Режим работы: Пн-Вс 09.00 - 22.00
+                    .static-page__vacancy-about-desc-item E-Mail: HR@2proraba.kg
+
+
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    include ../blocks/menu/menu
+    #main-group.preload
+        include ../blocks/mobile-header/mobile-header
+        include ../blocks/header/header
+
+
+        section.section.section--gray
+            .layout
+                include ../blocks/breadcrumbs/breadcrumbs
+                .static-page
+                    .static-page__title Вакансии
+                    .static-page__vacancies
+                        +vacancy
+                        +vacancy
+                        +vacancy
+                        +vacancy
+
+        include ../blocks/footer/footer
+

@@ -1,0 +1,101 @@
+extends ../templates/main
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    include ../blocks/menu/menu
+    #main-group.preload
+        include ../blocks/mobile-header/mobile-header
+        include ../blocks/header/header
+
+
+        section.section
+            .layout
+                include ../blocks/breadcrumbs/breadcrumbs
+                .static-page
+                    .static-page__title Специальные условия для корпоративных клиентов
+                    .static-page__clients
+                        .static-page__clients-item
+                            .static-page__clients-item-img-wrapper
+                                +iconSvg('check','static-page__clients-item-img')
+                            .static-page__clients-item-text Оптовые цены прямо на сайте
+                        .static-page__clients-item
+                            .static-page__clients-item-img-wrapper
+                                +iconSvg('check','static-page__clients-item-img')
+                            .static-page__clients-item-text Доставка в тот же день
+                        .static-page__clients-item
+                            .static-page__clients-item-img-wrapper
+                                +iconSvg('check','static-page__clients-item-img')
+                            .static-page__clients-item-text Возможность сохранения заказа на ваше устройство
+
+        section.section.section--gray
+            .layout
+                .static-page
+                    .static-page__title Специальные возможности личного кабинета
+                    .static-page__special
+
+                        .static-page__special-items
+                            .static-page__special-item.static-page__special-item--active(data-name='2')
+                                .static-page__special-list
+                                    .static-page__special-list-item
+                                        .static-page__special-list-item-img-wrapper
+                                            img(src='/local/templates/stroygip/ts/images/static-images/about-spec-1.svg').static-page__special-list-item-img
+                                        .static-page__special-list-item-desc
+                                            .static-page__special-list-item-desc-text Все заказы сохраняются в личном кабинете. Вы можете повторить заказ в 1 клик или немного изменив его.
+                                    .static-page__special-list-item
+                                        .static-page__special-list-item-img-wrapper
+                                            img(src='/local/templates/stroygip/ts/images/static-images/about-spec-3.svg').static-page__special-list-item-img
+                                        .static-page__special-list-item-desc
+                                            .static-page__special-list-item-desc-text Вы можете сохранить заказ в виде документа на свой компьютер и переслать его другому человеку.
+                                    .static-page__special-list-item
+                                        .static-page__special-list-item-img-wrapper
+                                            img(src='/local/templates/stroygip/ts/images/static-images/about-spec-2.svg').static-page__special-list-item-img
+                                        .static-page__special-list-item-desc
+                                            .static-page__special-list-item-desc-text Сохраняйте все адреса доставки в личном кабинете и прото выбирайте из списка во время оформления заказа.
+
+
+
+
+        section.section
+            .layout
+                .static-page
+                    .static-page__title Особенности оплаты
+                .static-page__payment.static-page__payment--three
+                    .static-page__payment-item
+                        .static-page__payment-item-img-wrapper
+                            img(src='/local/templates/stroygip/ts/images/static-images/1.png').static-page__payment-item-img
+                        .static-page__payment-item-title За наличный расчет в кассе магазина
+                    .static-page__payment-item
+                        .static-page__payment-item-img-wrapper
+                            img(src='/local/templates/stroygip/ts/images/static-images/3.png').static-page__payment-item-img
+                        .static-page__payment-item-title Корпоративной банковской картой
+                    .static-page__payment-item
+                        .static-page__payment-item-img-wrapper
+                            img(src='/local/templates/stroygip/ts/images/static-images/4.png').static-page__payment-item-img
+                        .static-page__payment-item-title Перевести деньги на наш расчётный счет
+
+        section.section.section--gray
+            .layout
+                .static-page
+                    .static-page__title Условия доставки для юридических лиц
+
+                    .static-page__info-block
+                        .static-page__info-block-desc
+                            .static-page__info-block-desc-text
+                                .static-page__clients-item.static-page__clients-item--margin-bottom
+                                    .static-page__clients-item-img-wrapper
+                                        +iconSvg('check','static-page__clients-item-img')
+                                    .static-page__clients-item-text Доставка осуществляется в тот же день или же с выбором удобной даты доставки
+
+                                .static-page__clients-item
+                                    .static-page__clients-item-img-wrapper
+                                        +iconSvg('check','static-page__clients-item-img')
+                                    .static-page__clients-item-text Стоимость доставки рассчитывается исходя из доставка в пределах города + 50 Сом за каждый последующий километр
+
+                            .static-page__info-block-desc-img-wrapper
+                                img(src='/local/templates/stroygip/ts/images/static-images/cargo-box.svg').static-page__info-block-desc-img
+        include ../blocks/footer/footer

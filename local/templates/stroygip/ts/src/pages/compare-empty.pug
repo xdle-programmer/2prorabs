@@ -1,0 +1,24 @@
+extends ../templates/main
+include ../blocks/product-cart/product-cart
+include ../blocks/checkbox/checkbox
+
+block variables
+    - var title = '2Прораба'
+
+block content
+
+    include ../blocks/menu/menu
+    #main-group.preload
+        include ../blocks/mobile-header/mobile-header
+        include ../blocks/header/header
+
+        section.section
+            .layout.layout--small
+                .basket.basket--empty
+                    .basket__empty
+                        +iconSvg('empty-box','basket__empty-icon')
+                        .basket__empty-text-box
+                            .basket__empty-text Список сравнения пуст. Вы можете выбрать товары в
+                            a(href='#').basket__empty-text-link &nbsp;каталоге
+
+        include ../blocks/footer/footer
