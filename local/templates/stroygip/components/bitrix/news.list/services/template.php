@@ -12,32 +12,23 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="services__inner">
-    <div class="services__tabs" style="display: none">
-      <? $counter =0;
-        foreach($arResult["ITEMS"] as $arItem){?>
-        <div class="services__tab <?if($counter ==0){?>active<?}$counter++;?>"><?=$arItem['NAME']?></div>
-      <?}?>
-    </div>
-  <? $counter =0;
-    foreach($arResult["ITEMS"] as $arItem){?>
-  <?
-    $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-    $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-  ?>
-    <div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="services__content <?if($counter ==0){?>active<?}$counter++;?>">
-        <div class="services__subtitle"><?=$arItem['NAME']?>
-            <div class="services__description">
-              <?=$arItem['PREVIEW_TEXT']?>
-            </div>
-            <?if($arItem['PROPERTIES']['PHOTO']['VALUE']){?>
-            <div class="services__carousel owl-carousel owl-theme owl-carousel-style">
-                <?foreach ($arItem['PROPERTIES']['PHOTO']['VALUE'] as $photo){?>
-                    <div class="services__item"><img src="<?=CFile::GetPath($photo)?>"></div>
-                <?}?>
-            </div>
-            <?}?>
-        </div>
-    </div>
+<div class="static-page__title">Услуги</div>
+<div class="static-page__services">
+<? $counter =0;
+ foreach($arResult["ITEMS"] as $arItem){?>
+  <div class="static-page__services-item">
+    <?foreach ($arItem['PROPERTIES']['PHOTO']['VALUE'] as $img_key=>$photo){?>
+        <img class="static-page__services-img" src="<?=CFile::GetPath($photo)?>">
+		<?
+		if( $img_key == 0 ){
+			break;
+		}
+		?>
+    <?}?>
+	<div class="static-page__services-desc">
+	  <div class="static-page__services-desc-title"><?=$arItem['NAME']?></div>
+	  <div class="static-page__services-desc-text"><?=$arItem['PREVIEW_TEXT']?></div>
+	</div>
+  </div>
   <?}?>
 </div>

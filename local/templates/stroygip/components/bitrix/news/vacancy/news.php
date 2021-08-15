@@ -15,41 +15,8 @@
 $this->setFrameMode(true);
 
 use Bitrix\Main\Grid\Declension;
-
-$vacancyDeclension = new Declension('открытая вакансия', 'открытые вакансии', 'открытых вакансий');
-$vacancyCount = 0;
-CModule::IncludeModule('iblock');
-$select = Array(
-    'ID',
-    'IBLOCK_ID',
-    'NAME',
-    'DATE_ACTIVE_FROM',
-    'PROPERTY_*',
-    'DETAIL_PAGE_URL',
-    'PREVIEW_TEXT',
-    'DETAIL_TEXT',
-    'PREVIEW_PICTURE',
-    'DETAIL_PICTURE'
-);
-$filter = Array('IBLOCK_ID' => $arParams['IBLOCK_ID'], 'ACTIVE_DATE' => 'Y', 'ACTIVE' => 'Y');
-$res = CIBlockElement::GetList(Array(), $filter, false, false, $select);
-while ($q = $res->Fetch()) {
-    $vacancyCount++;
-}
 ?>
-<div class="vacancies">
-	<div class="container">
-        <? $APPLICATION->IncludeComponent(
-            "bitrix:breadcrumb",
-            "breadcrumbs-default",
-            Array(
-                "PATH" => "",
-                "SITE_ID" => "s1",
-                "START_FROM" => "0"
-            )
-        ); ?>
-		<div class="title vacancies__title"><?= $APPLICATION->ShowTitle(false); ?></div>
-		<div class="vacancies__subtitle"><?= $vacancyCount ?> <?= $vacancyDeclension->get($vacancyCount); ?></div>
+
         <? $APPLICATION->IncludeComponent(
             "bitrix:news.list",
             "",
@@ -104,18 +71,3 @@ while ($q = $res->Fetch()) {
             ),
             $component
         ); ?>
-	</div>
-</div>
-
-<div class="wait-resume">
-	<div class="container">
-		<div class="title">Ждем ваше резюме</div>
-		<div class="wait-resume__image-box">
-			<img class="wait-resume__image"
-			     src="<?= SITE_TEMPLATE_PATH ?>/assets/src/blocks/wait-resume/assets/img/post-office.svg"></div>
-		<div class="wait-resume__text">Присылайте резюме на почту <br>
-			<a class="wait-resume__link" href="mailto:info@2proraba.kg">info@2proraba.kg</a> с пометкой «вакансии».
-		</div>
-	</div>
-</div>
-

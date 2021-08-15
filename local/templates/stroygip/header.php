@@ -24,7 +24,7 @@ global $USER;
 	$arr_ntu_clear = array("/basket/", "/order/", "/order/payment/", "/order/confirm_order/");
 	$arr_ntu_lk = array("/personal/orders/", "/personal/credentials/", "/personal/viewed/", "/personal/estimates/", "/compare/", "/favorites/");
 	
-    if ( !in_array($APPLICATION->GetCurPage(), $arr_ntu) && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
+    /*if ( !in_array($APPLICATION->GetCurPage(), $arr_ntu) && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/libs.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/style.css");
 
@@ -47,7 +47,7 @@ global $USER;
 		Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/lightbox.min.js");
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/plugins/jquery.inputmask.js");
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/dist/style.js");
-	}
+	}*/
 
 
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1.0">');

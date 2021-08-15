@@ -2,194 +2,191 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Доставка и оплата");
 ?>
-    <section class="delivery-pay">
-        <div class="container">
-              <? $APPLICATION->IncludeComponent(
-                "bitrix:breadcrumb",
-                "bread",
-                array(
-                  "PATH" => "",
-                  "SITE_ID" => "s1",
-                  "START_FROM" => "0",
-                  "COMPONENT_TEMPLATE" => "bread"
-                ),
-                false
-              ); ?>
-            <div class="title delivery-pay__title"><?$APPLICATION->ShowTitle(false)?></div>
-            <div class="delivery-pay__grid">
-                <div class="delivery-pay__about">
-                  <?$APPLICATION->IncludeComponent(
-                    "bitrix:main.include",
-                    "",
-                    Array(
-                      "AREA_FILE_SHOW" => "file",
-                      "AREA_FILE_SUFFIX" => "inc",
-                      "EDIT_TEMPLATE" => "",
-                      "PATH" =>"/local/include/delivery/main_title.php"
-                    )
-                  );?>
-                </div>
-                <div class="delivery-pay__image-box"><img class="delivery-pay__image" src="<?=SITE_TEMPLATE_PATH?>/assets/src/blocks/delivery-pay/assets/img/car.svg"></div>
-            </div>
-        </div>
-    </section>
-<?$APPLICATION->IncludeComponent(
-  "bitrix:news.list",
-  "delivery",
-  Array(
-    "ACTIVE_DATE_FORMAT" => "d.m.Y",
-    "ADD_SECTIONS_CHAIN" => "N",
-    "AJAX_MODE" => "N",
-    "AJAX_OPTION_ADDITIONAL" => "",
-    "AJAX_OPTION_HISTORY" => "N",
-    "AJAX_OPTION_JUMP" => "N",
-    "AJAX_OPTION_STYLE" => "Y",
-    "CACHE_FILTER" => "N",
-    "CACHE_GROUPS" => "Y",
-    "CACHE_TIME" => "36000000",
-    "CACHE_TYPE" => "A",
-    "CHECK_DATES" => "Y",
-    "DETAIL_URL" => "",
-    "DISPLAY_BOTTOM_PAGER" => "N",
-    "DISPLAY_DATE" => "Y",
-    "DISPLAY_NAME" => "Y",
-    "DISPLAY_PICTURE" => "Y",
-    "DISPLAY_PREVIEW_TEXT" => "Y",
-    "DISPLAY_TOP_PAGER" => "N",
-    "FIELD_CODE" => array("", ""),
-    "FILTER_NAME" => "",
-    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-    "IBLOCK_ID" => "37",
-    "IBLOCK_TYPE" => "information",
-    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-    "INCLUDE_SUBSECTIONS" => "Y",
-    "MESSAGE_404" => "",
-    "NEWS_COUNT" => "20",
-    "PAGER_BASE_LINK_ENABLE" => "N",
-    "PAGER_DESC_NUMBERING" => "N",
-    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-    "PAGER_SHOW_ALL" => "N",
-    "PAGER_SHOW_ALWAYS" => "N",
-    "PAGER_TEMPLATE" => ".default",
-    "PAGER_TITLE" => "Новости",
-    "PARENT_SECTION" => "",
-    "PARENT_SECTION_CODE" => "",
-    "PREVIEW_TRUNCATE_LEN" => "",
-    "PROPERTY_CODE" => array("ICON_CLASS", ""),
-    "SET_BROWSER_TITLE" => "N",
-    "SET_LAST_MODIFIED" => "N",
-    "SET_META_DESCRIPTION" => "N",
-    "SET_META_KEYWORDS" => "N",
-    "SET_STATUS_404" => "N",
-    "SET_TITLE" => "N",
-    "SHOW_404" => "N",
-    "SORT_BY1" => "SORT",
-    "SORT_BY2" => "ID",
-    "SORT_ORDER1" => "DESC",
-    "SORT_ORDER2" => "ASC",
-    "STRICT_SECTION_CHECK" => "N"
-  )
-);?>
-    <div class="cost-size">
-        <div class="container">
-          <?$APPLICATION->IncludeComponent(
-            "bitrix:main.include",
-            "",
-            Array(
-              "AREA_FILE_SHOW" => "file",
-              "AREA_FILE_SUFFIX" => "inc",
-              "EDIT_TEMPLATE" => "",
-              "PATH" =>"/local/include/delivery/table.php"
-            )
-          );?>
-        </div>
-    </div>
-    <div class="rise">
-        <div class="container">
-            <div class="title">
-              <?$APPLICATION->IncludeComponent(
-                "bitrix:main.include",
-                "",
-                Array(
-                  "AREA_FILE_SHOW" => "file",
-                  "AREA_FILE_SUFFIX" => "inc",
-                  "EDIT_TEMPLATE" => "",
-                  "PATH" =>"/local/include/delivery/place_up.php"
-                )
-              );?>
-            </div>
-            <div class="rise__inner">
-                <div class="rise__block">
-                  <?$APPLICATION->IncludeComponent(
-                    "bitrix:main.include",
-                    "",
-                    Array(
-                      "AREA_FILE_SHOW" => "file",
-                      "AREA_FILE_SUFFIX" => "inc",
-                      "EDIT_TEMPLATE" => "",
-                      "PATH" =>"/local/include/delivery/place_up_description.php"
-                    )
-                  );?>
-                </div>
-                <div class="rise__image-block"><img class="rise__image" src="<?=SITE_TEMPLATE_PATH?>/assets/src/blocks/rise/assets/img/rise.svg"></div>
-            </div>
-        </div>
-    </div>
-    <?$APPLICATION->IncludeComponent(
-      "bitrix:news.list",
-      "goods-services",
-      Array(
-        "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "ADD_SECTIONS_CHAIN" => "N",
-        "AJAX_MODE" => "N",
-        "AJAX_OPTION_ADDITIONAL" => "",
-        "AJAX_OPTION_HISTORY" => "N",
-        "AJAX_OPTION_JUMP" => "N",
-        "AJAX_OPTION_STYLE" => "Y",
-        "CACHE_FILTER" => "N",
-        "CACHE_GROUPS" => "Y",
-        "CACHE_TIME" => "36000000",
-        "CACHE_TYPE" => "A",
-        "CHECK_DATES" => "Y",
-        "DETAIL_URL" => "",
-        "DISPLAY_BOTTOM_PAGER" => "N",
-        "DISPLAY_DATE" => "Y",
-        "DISPLAY_NAME" => "Y",
-        "DISPLAY_PICTURE" => "Y",
-        "DISPLAY_PREVIEW_TEXT" => "Y",
-        "DISPLAY_TOP_PAGER" => "N",
-        "FIELD_CODE" => array("", ""),
-        "FILTER_NAME" => "",
-        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-        "IBLOCK_ID" => "40",
-        "IBLOCK_TYPE" => "information",
-        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-        "INCLUDE_SUBSECTIONS" => "Y",
-        "MESSAGE_404" => "",
-        "NEWS_COUNT" => "20",
-        "PAGER_BASE_LINK_ENABLE" => "N",
-        "PAGER_DESC_NUMBERING" => "N",
-        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-        "PAGER_SHOW_ALL" => "N",
-        "PAGER_SHOW_ALWAYS" => "N",
-        "PAGER_TEMPLATE" => ".default",
-        "PAGER_TITLE" => "Новости",
-        "PARENT_SECTION" => "",
-        "PARENT_SECTION_CODE" => "",
-        "PREVIEW_TRUNCATE_LEN" => "",
-        "PROPERTY_CODE" => array("ICON_CLASS", ""),
-        "SET_BROWSER_TITLE" => "N",
-        "SET_LAST_MODIFIED" => "N",
-        "SET_META_DESCRIPTION" => "N",
-        "SET_META_KEYWORDS" => "N",
-        "SET_STATUS_404" => "N",
-        "SET_TITLE" => "N",
-        "SHOW_404" => "N",
-        "SORT_BY1" => "SORT",
-        "SORT_BY2" => "ID",
-        "SORT_ORDER1" => "DESC",
-        "SORT_ORDER2" => "ASC",
-        "STRICT_SECTION_CHECK" => "N"
-      )
-    );?>
+
+
+  <section class="section section--gray">
+	<div class="layout">
+	  <div class="breadcrumb">
+	  <a class="breadcrumb__item" href="/">Главная</a>
+		<svg class="breadcrumb__separator">
+		  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
+		</svg>
+		<div class="breadcrumb__item breadcrumb__item--active">Доставка и оплата</div>
+	  </div>
+	  <div class="static-page">
+		<div class="static-page__title">Доставка и оплата</div>
+		<div class="static-page__info-block">
+		  <div class="static-page__info-block-desc">
+			<div class="static-page__info-block-desc-text">
+			  <div class="static-page__info-block-title">Уважаемые покупатели!</div>В связи с карантином заказы осуществляются только через интернет-магазин. На данное время оплата производится только наличными курьеру. Доставка осуществляется только по городу
+			</div>
+			<div class="static-page__info-block-desc-img-wrapper"><img class="static-page__info-block-desc-img" src="/local/templates/stroygip/ts/images/static-images/box.svg"></div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  <section class="section">
+	<div class="layout">
+	  <div class="static-page">
+		<div class="static-page__title">Расчет доставки</div>
+		<div class="static-page__delivery">
+		  <div class="static-page__delivery-item">
+			<div class="static-page__delivery-item-title">Доставка по городу</div>
+			<div class="static-page__delivery-block">
+			  <div class="static-page__delivery-block-title">
+				<svg class="static-page__delivery-block-title-img">
+				  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#wallet"></use>
+				</svg>
+				<div class="static-page__delivery-block-title-text">Бесплатная доставка по Бишкеку при общей сумме заказа&nbsp;20&nbsp;000&nbsp;сом. Каждая 10 доставка бесплатно вне зависимости от суммы заказа.</div>
+			  </div>
+			  <div class="static-page__delivery-block-list">
+				<div class="static-page__delivery-block-list-item">Доставка осуществляется в черте города.</div>
+				<div class="static-page__delivery-block-list-item">Способ оплаты заказа - онлайн оплата.</div>
+				<div class="static-page__delivery-block-list-item">Вес всего заказа не превышает 30 кг.</div>
+				<div class="static-page__delivery-block-list-item">Размер любой из сторон товара не превышает 2 метра.</div>
+				<div class="static-page__delivery-block-list-item">Стоимость услуг по подъёму товара рассчитывается по стандартному тарифу.</div>
+			  </div>
+			</div>
+			<div class="static-page__delivery-block">
+			  <div class="static-page__delivery-block-title">
+				<svg class="static-page__delivery-block-title-img">
+				  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#wallet"></use>
+				</svg>
+				<div class="static-page__delivery-block-title-text">График доставки</div>
+			  </div>
+			  <div class="static-page__delivery-block-list">
+				<div class="static-page__delivery-block-list-item">Ежедневно с 09.00 до 21.00 (кроме нерабочих праздничных дней)</div>
+			  </div>
+			</div>
+			<div class="static-page__delivery-block">
+			  <div class="static-page__delivery-block-title">
+				<svg class="static-page__delivery-block-title-img">
+				  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#wallet"></use>
+				</svg>
+				<div class="static-page__delivery-block-title-text">Условия доставки</div>
+			  </div>
+			  <div class="static-page__delivery-block-list">
+				<div class="static-page__delivery-block-list-item">При оформлении заявки на доставку до 13.00 - доставим в этот же день (кроме нерабочих праздничных дней).</div>
+				<div class="static-page__delivery-block-list-item">При оформлении заявки на доставку после 13.00 - доставим на следующий день, или день по Вашему выбору (кроме нерабочих праздничных дней).</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="static-page__delivery-item">
+			<div class="static-page__delivery-item-title">Доставка по области</div>
+			<div class="static-page__delivery-block">
+			  <div class="static-page__delivery-block-title">
+				<svg class="static-page__delivery-block-title-img">
+				  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#wallet"></use>
+				</svg>
+				<div class="static-page__delivery-block-title-text">Стоимость доставки</div>
+			  </div>
+			  <div class="static-page__delivery-block-list">
+				<div class="static-page__delivery-block-list-item">До 5 км - 450 com.</div>
+				<div class="static-page__delivery-block-list-item">После 5 км - каждый км 50 com.</div>
+			  </div>
+			</div>
+			<div class="static-page__delivery-block">
+			  <div class="static-page__delivery-block-title">
+				<svg class="static-page__delivery-block-title-img">
+				  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#wallet"></use>
+				</svg>
+				<div class="static-page__delivery-block-title-text">График доставки</div>
+			  </div>
+			  <div class="static-page__delivery-block-list">
+				<div class="static-page__delivery-block-list-item">Ежедневно с 09.00 до 21.00 (кроме нерабочих праздничных дней)</div>
+			  </div>
+			</div>
+			<div class="static-page__delivery-block">
+			  <div class="static-page__delivery-block-title">
+				<svg class="static-page__delivery-block-title-img">
+				  <use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#wallet"></use>
+				</svg>
+				<div class="static-page__delivery-block-title-text">Сроки доставки</div>
+			  </div>
+			  <div class="static-page__delivery-block-list">
+				<div class="static-page__delivery-block-list-item">Рассчитываются индивидуально при заказе.</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  <section class="section section--gray">
+	<div class="layout">
+	  <div class="static-page">
+		<div class="static-page__title">Стоимость доставки по габаритам</div>
+		<div class="static-page__info-block">
+		  <div class="static-page__delivery-table">
+			<div class="static-page__delivery-table-row static-page__delivery-table-row--header">
+			  <div class="static-page__delivery-table-cell">Вес (объем) заказа</div>
+			  <div class="static-page__delivery-table-cell">Цена, Сом</div>
+			</div>
+			<div class="static-page__delivery-table-row">
+			  <div class="static-page__delivery-table-cell">до 300 кг (до 2м3)</div>
+			  <div class="static-page__delivery-table-cell">350</div>
+			</div>
+			<div class="static-page__delivery-table-row">
+			  <div class="static-page__delivery-table-cell">От 300 кг до 500 кг (до 3м3)</div>
+			  <div class="static-page__delivery-table-cell">500</div>
+			</div>
+			<div class="static-page__delivery-table-row">
+			  <div class="static-page__delivery-table-cell">От 500 кг до 1,0 тонн (до 6м3)</div>
+			  <div class="static-page__delivery-table-cell">600</div>
+			</div>
+			<div class="static-page__delivery-table-row">
+			  <div class="static-page__delivery-table-cell">От 1,0 тонн до 1,5 тонн (до 10м3)</div>
+			  <div class="static-page__delivery-table-cell">700</div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  <section class="section section--gray">
+	<div class="layout">
+	  <div class="static-page">
+		<div class="static-page__info-block">
+		  <div class="static-page__info-block-desc">
+			<div class="static-page__info-block-desc-text">
+			  <div class="static-page__info-block-title">Подъем на этаж</div>Минимальная стоимость – 100 сом
+			  <div class="static-page__info-block-text-small">Стоимость услуг по подъёму товара рассчитывается исходя из веса и габаритов товара, высоты подъема (количества этажей), наличия лифта, но в любом случае не может быть меньше минимальной стоимости подъёма товара.</div>
+			  <div class="static-page__info-block-text-small">При подъеме на грузовом лифте для расчета учитываются только первый и последний этажи.</div>
+			  <div class="static-page__info-block-text-small">Подъём товара осуществляется в прихожую квартиры или частного дома. Перемещение товара по квартире или частному дому не осуществляется.</div>
+			  <div class="static-page__info-block-text-small">Подъем крупногабаритного товара на этаж (крупногабаритный товар — единица товара объемом более 0.2 м. куб. или массой более 30 кг.)</div>
+			</div>
+			<div class="static-page__info-block-desc-img-wrapper"><img class="static-page__info-block-desc-img" src="/local/templates/stroygip/ts/images/static-images/cargo-box.svg"></div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  <section class="section">
+	<div class="layout">
+	  <div class="static-page">
+		<div class="static-page__title">Способы оплаты</div>
+		<div class="static-page__payment">
+		  <div class="static-page__payment-item">
+			<div class="static-page__payment-item-img-wrapper"><img class="static-page__payment-item-img" src="/local/templates/stroygip/ts/images/static-images/1.png"></div>
+			<div class="static-page__payment-item-title">Наличными в кассе магазина</div>
+		  </div>
+		  <div class="static-page__payment-item">
+			<div class="static-page__payment-item-img-wrapper"><img class="static-page__payment-item-img" src="/local/templates/stroygip/ts/images/static-images/2.png"></div>
+			<div class="static-page__payment-item-title">Наличными курьеру при получении заказа</div>
+		  </div>
+		  <div class="static-page__payment-item">
+			<div class="static-page__payment-item-img-wrapper"><img class="static-page__payment-item-img" src="/local/templates/stroygip/ts/images/static-images/3.png"></div>
+			<div class="static-page__payment-item-title">Банковской картой на сайте</div>
+		  </div>
+		  <div class="static-page__payment-item">
+			<div class="static-page__payment-item-img-wrapper"><img class="static-page__payment-item-img" src="/local/templates/stroygip/ts/images/static-images/4.png"></div>
+			<div class="static-page__payment-item-title">Перевести деньги на наш расчётный счет</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  
+	  
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
