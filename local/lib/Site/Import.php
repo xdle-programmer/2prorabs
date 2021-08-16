@@ -79,6 +79,11 @@ class Import
      * @var array
      */
     protected $availableItems;
+	
+	/**
+     * @var array
+     */
+    protected $availableOldPrices;
 
     /**
      * @var array
@@ -320,11 +325,16 @@ class Import
     {
         //Текущие элементы
         $arFilter = Array('IBLOCK_ID' => $this->iblockID);
-        $iterator = \CIBlockElement::GetList(Array('sort' => 'name'), $arFilter, false, false, ['ID', 'PROPERTY_REF']);
+        $iterator = \CIBlockElement::GetList(Array('sort' => 'name'), $arFilter, false, false, ['ID', 'PROPERTY_REF', 'PROPERTY_OLD_PRICE']);
         $this->availableItems = [];
+		$this->availableOldPrices = [];
 
         while ($ar_result = $iterator->Fetch()) {
             $this->availableItems[$ar_result['PROPERTY_REF_VALUE']] = $ar_result['ID'];
+			
+			if( isset($ar_result['PROPERTY_OLD_PRICE_VALUE']) && strlen($ar_result['PROPERTY_OLD_PRICE_VALUE'])>0 ){
+				$this->availableOldPrices[] = $ar_result['ID'];
+			}
         }
     }
 
@@ -936,90 +946,15 @@ class Import
 		
 		$product_price_period = [];
 		$product_price_tmp = [];
+		$product_price_action = [];
+		$product_pass = false;
+		
 		
 		$f1 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/arr1.php", "w+");
 		fwrite ($f1, "qwe1");
 		fclose($f1);
 
-        //Обновление цен
-        foreach ($this->xmlItems as $key => $item) {
-            if ($item->tagName !== 'InformationRegisterRecordSet.ЦеныДляСайта') {
-                continue;
-            }
 
-            $arr = (array) simplexml_import_dom($item)->Records;
-
-            foreach ($arr['Record'] as $data) {
-                $data = (array)$data;
-                if ($this->availableItems[$data['Номенклатура']]) {
-					
-					
-					
-					
-					$period1 = str_replace("T", " ", $data['Period']);
-					
-					if( isset($product_price_period[$data['Номенклатура']]) && strlen($product_price_period[$data['Номенклатура']])>0 ){
-						$period2 = $product_price_period[$data['Номенклатура']];
-						
-						$element_date1 = strtotime($period1);
-						$element_date2 = strtotime($period2);
-						
-						if( $element_date1 > $element_date2 ){							
-							\CPrice::SetBasePrice($this->availableItems[$data['Номенклатура']], (float)$data['Цена'], 'KGS');
-							
-							$product_price_period[$data['Номенклатура']] = $period1;
-							
-							$product_price_tmp[$data['Номенклатура']] = $period1;
-						}
-					}else{
-						\CPrice::SetBasePrice($this->availableItems[$data['Номенклатура']], (float)$data['Цена'], 'KGS');
-						
-						$product_price_period[$data['Номенклатура']] = $period1;
-					}
-					
-					
-					
-					
-                }else{
-					
-					$second_nomenklature = trim($arr['Record']->Номенклатура);
-					$second_nomenklature_price = (float) $arr['Record']->Цена;
-					$second_nomenklature_period = $arr['Record']->Period;
-					if( strlen($second_nomenklature)>0 && $this->availableItems[$second_nomenklature] && $second_nomenklature_price > 1 ){
-						
-						$period1 = str_replace("T", " ", $second_nomenklature_period);
-						
-						if( isset($product_price_period[$second_nomenklature]) && strlen($product_price_period[$second_nomenklature])>0 ){
-							$period2 = $product_price_period[$second_nomenklature];
-							
-							$element_date1 = strtotime($period1);
-							$element_date2 = strtotime($period2);
-							
-							if( $element_date1 > $element_date2 ){
-								\CPrice::SetBasePrice($this->availableItems[$second_nomenklature], $second_nomenklature_price, 'KGS');
-								
-								$product_price_period[$second_nomenklature] = $period1;
-								
-								$product_price_tmp[$second_nomenklature] = $period1;
-							}
-						}else{
-							\CPrice::SetBasePrice($this->availableItems[$second_nomenklature], $second_nomenklature_price, 'KGS');
-							
-							$product_price_period[$second_nomenklature] = $period1;
-						}
-						
-					}
-					
-				}
-            }
-        }
-		
-		
-		$f3 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/arr3.php", "w+");
-		fwrite ($f3, "qwe3");
-		fclose($f3);
-		
-		
 
         //Обновление акционных цен
         foreach ($this->xmlItems as $key => $item) {
@@ -1035,19 +970,147 @@ class Import
                 $date = new \DateTime($data['КонецДействия']);
                 $cur_date = date('Y-m-d');
                 $end_date = date_format($date, 'Y-m-d');
+				
+				
+				$period_start = str_replace("T", " ", $data['НачалоДействия']);
+				$period_end1 = str_replace("T", " ", $data['КонецДействия']);
+				$period_end2 = str_replace("00:00:00", "23:59:59", $period_end1);
+				$period_current = date('Y-m-d')." 00:00:01";
+				
+				$element_date_start = strtotime($period_start);
+				$element_date_end = strtotime($period_end2);
+				$element_date_current = strtotime($period_current);
+				
 
-                if ($end_date > $cur_date) {
+                if ($element_date_current > $element_date_start && $element_date_end > $element_date_current) {
                     \CPrice::SetBasePrice($this->availableItems[$data['Номенклатура']], (float)$data['АкционнаяЦена'], 'KGS');
 
                     \CIBlockElement::SetPropertyValuesEx($this->availableItems[$data['Номенклатура']], $this->iblockID, [
                         'OLD_PRICE' => $data['ОбычнаяЦена'],
                         'MARK' => 'promo',
                     ]);
-                } else {
-                    \CPrice::SetBasePrice($this->availableItems[$data['Номенклатура']], (float)$data['ОбычнаяЦена'], 'KGS');
+					
+					$product_price_action[] = $this->availableItems[$data['Номенклатура']];
                 }
+				
             }
         }
+		
+		
+		
+		$f3 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/arr3.php", "w+");
+		fwrite ($f3, "qwe3");
+		fclose($f3);
+		
+		
+		
+        //Обновление цен
+        foreach ($this->xmlItems as $key => $item) {
+            if ($item->tagName !== 'InformationRegisterRecordSet.ЦеныДляСайта') {
+                continue;
+            }
+
+            $arr = (array) simplexml_import_dom($item)->Records;
+
+            foreach ($arr['Record'] as $data) {
+                $data = (array)$data;
+                if ($this->availableItems[$data['Номенклатура']]) {
+					
+					$product_pass = false;
+					if ( count($product_price_action)>0 && in_array($this->availableItems[$data['Номенклатура']], $product_price_action) ) {
+						$product_pass = true;
+					}
+					
+					if ( count($product_price_action)<=0 && in_array($this->availableItems[$data['Номенклатура']], $this->availableOldPrices) ) {
+						$product_pass = true;
+					}
+					
+					if( !$product_pass ){
+						$period1 = str_replace("T", " ", $data['Period']);
+						
+						if( isset($product_price_period[$data['Номенклатура']]) && strlen($product_price_period[$data['Номенклатура']])>0 ){
+							$period2 = $product_price_period[$data['Номенклатура']];
+							
+							$element_date1 = strtotime($period1);
+							$element_date2 = strtotime($period2);
+							
+							if( $element_date1 > $element_date2 ){							
+								\CPrice::SetBasePrice($this->availableItems[$data['Номенклатура']], (float)$data['Цена'], 'KGS');
+								
+								$product_price_period[$data['Номенклатура']] = $period1;
+								
+								$product_price_tmp[$data['Номенклатура']] = $period1;
+							}
+						}else{
+							\CPrice::SetBasePrice($this->availableItems[$data['Номенклатура']], (float)$data['Цена'], 'KGS');
+							
+							$product_price_period[$data['Номенклатура']] = $period1;
+						}
+					}else{
+						$f9 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/catch_actions_price.php", "a+");
+						fwrite ($f9, $this->availableItems[$data['Номенклатура']]);
+						fclose($f9);
+					}
+					
+					
+					
+                }else{
+					
+					$second_nomenklature = trim($arr['Record']->Номенклатура);
+					$second_nomenklature_price = (float) $arr['Record']->Цена;
+					$second_nomenklature_period = $arr['Record']->Period;
+					if( strlen($second_nomenklature)>0 && $this->availableItems[$second_nomenklature] && $second_nomenklature_price > 1 ){
+						
+						$product_pass = false;
+						if ( count($product_price_action)>0 && in_array($this->availableItems[$second_nomenklature], $product_price_action) ) {
+							$product_pass = true;
+						}
+						
+						if ( count($product_price_action)<=0 && in_array($this->availableItems[$second_nomenklature], $this->availableOldPrices) ) {
+							$product_pass = true;
+						}
+					
+						if( !$product_pass ){
+							$period1 = str_replace("T", " ", $second_nomenklature_period);
+							
+							if( isset($product_price_period[$second_nomenklature]) && strlen($product_price_period[$second_nomenklature])>0 ){
+								$period2 = $product_price_period[$second_nomenklature];
+								
+								$element_date1 = strtotime($period1);
+								$element_date2 = strtotime($period2);
+								
+								if( $element_date1 > $element_date2 ){
+									\CPrice::SetBasePrice($this->availableItems[$second_nomenklature], $second_nomenklature_price, 'KGS');
+									
+									$product_price_period[$second_nomenklature] = $period1;
+									
+									$product_price_tmp[$second_nomenklature] = $period1;
+								}
+							}else{
+								\CPrice::SetBasePrice($this->availableItems[$second_nomenklature], $second_nomenklature_price, 'KGS');
+								
+								$product_price_period[$second_nomenklature] = $period1;
+							}
+						}else{
+							$f9 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/catch_actions_price.php", "a+");
+							fwrite ($f9, $this->availableItems[$second_nomenklature]);
+							fclose($f9);
+						}
+						
+						
+						
+					}
+					
+				}
+            }
+        }
+		
+		
+		
+		$f4 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/arr4.php", "w+");
+		fwrite ($f4, "qwe4");
+		fclose($f4);
+		
     }
 
     protected function importManufacturers()
