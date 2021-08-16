@@ -7,7 +7,7 @@ if (\nav\PageState::get('comparisonListEmpty') === false) {
     return;
 }
 ?>
-<section class="section">
+<section class="section section--min-content">
 	<div class="layout layout--small">
 
 		<div class="basket basket--empty">

@@ -22,7 +22,7 @@ $sortItems = \nav\Catalog\Sort::getTemplateData();
 $currentPageSize = \nav\Catalog\PageSize::getCurrent();
 $pageSizeItems = \nav\Catalog\PageSize::getTemplateData();
 ?>
-    <section class="section section--gray">
+    <section class="section section--gray <?if($cntElems <= 0):?>section--min-content<?endif;?>">
         <div class="layout">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:breadcrumb",
