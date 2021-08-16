@@ -123,28 +123,21 @@ if ($_SESSION['FAVORITES']) {
 } else {
 	?>
 	
-<section class="section section--gray">
-	<div class="layout">
-		<div class="breadcrumb">
-			<a class="breadcrumb__item" href="/">Главная</a>
-			<svg class="breadcrumb__separator">
-				<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#arrow"></use>
-			</svg>
-			<div class="breadcrumb__item breadcrumb__item--active">Избранное</div>
-		</div>
-		
-		<div class="favorites-empty">
-		
-    <div class="basket-empty__inner">
-        <div class="title basket-empty__title">В избранном пока ничего нет</div>
-		<img class="basket-empty__img" src="<?=SITE_TEMPLATE_PATH?>/assets/dist/src/blocks/basket-empty/assets/img/empty-box.png">
-        <div class="basket-empty__text">
-			Воспользуйтесь поиском, чтобы найти нужный товар или 
-			<a class="basket-empty__link" href="/catalog/">перейдите в каталог.</a>
-		</div>
-    </div>
+<section class="section">
+	<div class="layout layout--small">
 	
+		<div class="basket basket--empty">
+			<div class="basket__empty">
+				<svg class="basket__empty-icon">
+					<use xlink:href="/local/templates/stroygip/ts/images/icons/icons-sprite.svg#empty-box"></use>
+				</svg>
+				<div class="basket__empty-text-box">
+					<div class="basket__empty-text">В избранном нет товаров. Вы можете выбрать товары в</div>
+					<a class="basket__empty-text-link" href="/catalog/">&nbsp;каталоге</a>
+				</div>
+			</div>
 		</div>
+		
 	</div>
 </section>
 

@@ -27,11 +27,11 @@ $this->setFrameMode(true);
 <div class="partners__slider">
 <?foreach ($arResult['ITEMS'] as $arItem):?>
 	<?if( strlen($arItem["PROPERTIES"]['FILE']['ARR']['SRC'])>0 ):?>
-	<div class="partners__slider-item-wrapper">
+	<a href="<?=$arItem["PROPERTIES"]['LINK']['VALUE']?>" class="partners__slider-item-wrapper">
 		<div class="partners__slider-item">
 			<img class="partners__slider-item-img preload__item" data-src="<?=$arItem["PROPERTIES"]['FILE']['ARR']['SRC']?>">
 		</div>
-	</div>
+	</a>
 	<?endif;?>
 <?endforeach;?>
 </div>
