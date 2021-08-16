@@ -1047,8 +1047,8 @@ class Import
 							$product_price_period[$data['Номенклатура']] = $period1;
 						}
 					}else{
-						$f9 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/catch_actions_price.php", "a+");
-						fwrite ($f9, $this->availableItems[$data['Номенклатура']]);
+						$f9 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/arr9.php", "w+");
+						fwrite ($f9, "qwe9");
 						fclose($f9);
 					}
 					
@@ -1092,8 +1092,8 @@ class Import
 								$product_price_period[$second_nomenklature] = $period1;
 							}
 						}else{
-							$f9 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/catch_actions_price.php", "a+");
-							fwrite ($f9, $this->availableItems[$second_nomenklature]);
+							$f9 = fopen ($_SERVER['DOCUMENT_ROOT']."/about/arr9.php", "w+");
+							fwrite ($f9, "qwe9");
 							fclose($f9);
 						}
 						

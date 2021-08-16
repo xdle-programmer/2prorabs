@@ -115,7 +115,7 @@ global $USER;
 						</div>
 					</div>
 
-					<a class="menu__category-item menu__category-item--small" href="/">
+					<a class="menu__category-item menu__category-item--small" href="#" data-modal-open="login">
 						<svg class="menu__category-icon menu__category-icon--small">
 							<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#user"></use>
 						</svg>
