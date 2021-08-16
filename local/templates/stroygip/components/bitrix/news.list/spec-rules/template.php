@@ -12,51 +12,34 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-
-
-<section class="cooperation">
-    <div class="container">
-        <div class="title"><?=GetMessage('RULES_TITLE')?></div>
-        <div class="cooperation__box">
-            <div class="cooperation__tabs">
-                <?foreach ($arResult['SECTIONS_LIST'] as $key => $item):?>
-                    <div class="cooperation__button <?if($key == 0):?> active <?endif;?>"><?=$item['NAME']?></div>
-                <?endforeach;?>
-            </div>
-            <?foreach ($arResult['SECTIONS_LIST'] as $key => $item):?>
-                <div class="cooperation__content <?if($key == 0):?> active <?endif;?>">
-                <div class="cooperation__info">
-                    <? foreach ($arResult['SECTION_ITEM'][$item['ID']] as $arItem): ?>
-                    <?
-                    $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-                    $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-                    ?>
-                    <div class="cooperation__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-                        <div class="cooperation__icon">
-                            <?if(!empty($arItem['PROPERTIES']['SVG']['VALUE'])):?>
-                                <img src="<?=CFile::GetPath($arItem['PROPERTIES']['SVG']['VALUE'])?>">
-                            <?endif;?>
-                        </div>
-                        <div class="cooperation__title"><?=$arItem['NAME']?></div>
-                        <div class="cooperation__text"><?=$arItem['PREVIEW_TEXT']?></div>
-                    </div>
-                    <? endforeach; ?>
-                </div>
-            </div>
-            <?endforeach;?>
-        </div>
-        <?if(!$USER->IsAuthorized()){?>
-            <div class="feedback-now feedback-now--mt">
-                <div class="container">
-                    <div class="feedback-now__inner">
-                        <div class="feedback-now__container">
-                            <div class="feedback-now__title"><?=GetMessage('REGISTER_TITLE')?></div>
-                            <div class="feedback-now__text"><?=GetMessage('REGISTER_TEXT')?></div>
-                        </div>
-                        <div class="feedback-now__button"><a class="button regButton" href="<?=GetMessage('REGISTER_LINK')?>"><?=GetMessage('REGISTER_NAME')?></a></div>
-                    </div>
-                </div>
-            </div>
-        <?}?>
-    </div>
-</section>
+<div class="static-page__title"><?=GetMessage('RULES_TITLE')?></div>
+<div class="static-page__special">
+	<div class="static-page__special-header">
+		<?foreach ($arResult['SECTIONS_LIST'] as $key => $item):?>
+		<div class="static-page__special-header-item <?if($key == 0):?>static-page__special-header-item--active<?endif;?>" data-target="<?=$key+1?>">
+		<?=$item['NAME']?>
+		</div>
+		<?endforeach;?>
+	</div>
+	<div class="static-page__special-items">
+		<?foreach ($arResult['SECTIONS_LIST'] as $key => $item):?>
+		<div class="static-page__special-item <?if($key == 0):?>static-page__special-item--active<?endif;?>" data-name="<?=$key+1?>">
+			<div class="static-page__special-list">
+				<? foreach ($arResult['SECTION_ITEM'][$item['ID']] as $arItem): ?>
+				<div class="static-page__special-list-item">
+					<?if(!empty($arItem['PROPERTIES']['SVG']['VALUE'])):?>
+					<div class="static-page__special-list-item-img-wrapper">
+					  <img class="static-page__special-list-item-img" src="<?=CFile::GetPath($arItem['PROPERTIES']['SVG']['VALUE'])?>">
+					</div>
+					<?endif;?>
+					<div class="static-page__special-list-item-desc">
+						<div class="static-page__special-list-item-desc-title"><?=$arItem['NAME']?></div>
+						<div class="static-page__special-list-item-desc-text"><?=$arItem['PREVIEW_TEXT']?></div>
+					</div>
+				</div>
+				<? endforeach; ?>
+		    </div>
+		</div>
+		<?endforeach;?>
+	</div>
+</div>

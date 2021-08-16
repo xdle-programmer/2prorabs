@@ -13,22 +13,26 @@
 $this->setFrameMode(true);
 ?>
 <?if($arResult['ITEMS']){?>
-<section class="improvement-service">
-    <div class="container">
-        <div class="title improvement-service__title"><?=$arResult['DESCRIPTION']?></div>
-        <div class="improvement-service__inner improvement-service__inner--direction">
-          <?foreach($arResult["ITEMS"] as $arItem){?>
-          <?
-            $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-            $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-          ?>
-            <div class="improvement-service__item improvement-service__item--indent improvement-service__item--width" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-                <div class="improvement-service__item-icon"><img src="<?=CFile::GetPath($arItem['PROPERTIES']['SVG']['VALUE'])?>"></div>
-                <div class="improvement-service__item-text"><?=$arItem['NAME']?></div>
-                <div class="improvement-service__text"><?=$arItem['PREVIEW_TEXT']?></div>
-            </div>
-          <?}?>
-        </div>
-    </div>
-</section>
+<div class="static-page">
+	<div class="static-page__title"><?=$arResult['DESCRIPTION']?></div>
+	<div class="static-page__advantages">
+	<?foreach($arResult["ITEMS"] as $arItem){?>
+	<?
+		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+	?>
+		<div class="static-page__advantages-item">
+			<?if( strlen($arItem['PROPERTIES']['SVG']['VALUE'])>0 ){?>
+			<div class="static-page__advantages-item-img-wrapper">	
+				<img class="static-page__advantages-item-img" src="<?=CFile::GetPath($arItem['PROPERTIES']['SVG']['VALUE'])?>">
+			</div>
+			<?}?>
+			<div class="static-page__advantages-item-desc">
+				<div class="static-page__advantages-item-desc-title"><?=$arItem['NAME']?></div>
+				<div class="static-page__advantages-item-desc-text"><?=$arItem['PREVIEW_TEXT']?></div>
+			</div>
+		</div>
+	<?}?>
+	</div>
+</div>
 <?}?>

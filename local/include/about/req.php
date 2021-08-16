@@ -1,34 +1,8 @@
-<div class="requisites__data-item">
-    <div class="requisites__data-text">
-        ОсОО «Строительный гипермаркет<br>
-        «Два прораба»<br>
-        Юридический адрес:<br>
-        Кыргызская Республика, г. Бишкек, ул. Л.Толстого, 36к<br>
-        Код ОКПО: 29998545<br>
-        ИНН: 00407201710214<br>
-        УГНС по Свердловскому р-ну г. Бишкек, код 003<br>
-        р/счет: 1299003131324919 (KGS)<br>
-        Банк: ОАО «РСК Банк»<br>
-        БИК: 129001
-    </div>
-</div>
-
-
-<!--<div class="requisites__data-item">-->
-<!--    <div class="requisites__data-text">-->
-<!--        <span class="requisites__data-title">ООО</span>-->
-<!--        "Название"-->
-<!--    </div>-->
-<!--</div>-->
-<!---->
-<!---->
-<!--ОсОО «Строительный гипермаркет-->
-<!--«Два прораба»-->
-<!--Юридический адрес:-->
-<!--Кыргызская Республика, г. Бишкек, ул. Л.Толстого, 36к-->
-<!--Код ОКПО: 29998545-->
-<!--ИНН: 00407201710214-->
-<!--УГНС по Свердловскому р-ну г. Бишкек, код 003-->
-<!--р/счет: 1299003131324919 (KGS)-->
-<!--Банк: ОАО «РСК Банк»-->
-<!--БИК: 129001-->
+<div class="static-page__info-block-text-small">ОсОО «Строительный гипермаркет «Два прораба»</div>
+<div class="static-page__info-block-text-small">Юридический адрес: Кыргызская Республика, г. Бишкек, ул. Л.Толстого, 36к</div>
+<div class="static-page__info-block-text-small">Код ОКПО: 29998545</div>
+<div class="static-page__info-block-text-small">ИНН: 00407201710214</div>
+<div class="static-page__info-block-text-small">УГНС по Свердловскому р-ну г. Бишкек, код 003</div>
+<div class="static-page__info-block-text-small">р/счет: 1299003131324919 (KGS)</div>
+<div class="static-page__info-block-text-small">Банк: ОАО «РСК Банк»</div>
+<div class="static-page__info-block-text-small">БИК: 129001</div>
