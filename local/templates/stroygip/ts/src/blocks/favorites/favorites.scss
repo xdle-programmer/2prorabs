@@ -41,6 +41,7 @@
 
   &__menu-item {
     cursor: pointer;
+    color: var(--black-color);
 
     &--active {
       color: var(--red-color);

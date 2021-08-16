@@ -3,7 +3,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("О нас");
 ?>
 <section class="section section--video">
-	<video class="section__video-item" autoplay muted>
+    <img src="/local/templates/stroygip/ts/images/static-images/video-plug.jpg" class="section__video-item">
+	<video class="section__video-item" autoplay muted loop>
 	  <source src="/local/templates/stroygip/ts/images/static-images/videoplayback.mp4">
 	</video>
 </section> 

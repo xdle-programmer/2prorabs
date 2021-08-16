@@ -1,0 +1,32 @@
+@import "~frontend-scss-mixins/mixins";
+@import "../base/mixins";
+@import "../base/variables";
+@import "../base/media-queries";
+
+.policy {
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__wrap ul li {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+
+  &__title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2f3137;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #2f3137;
+  }
+
+}
