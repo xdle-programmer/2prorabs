@@ -47,9 +47,11 @@ Asset::getInstance()->addJs($templateFolder . "/script.js");
 							<div class="placeholder__item" for="input-auth-password">Пароль</div>
 						</div>
 					</div>
+					<?/*
 					<div class="input-styled input-styled--indent">
 						<div class="g-recaptcha" data-sitekey="6LdOWNYZAAAAAHiY6FC-IrK-hDGYlekgyVq3MLoj"></div>
 					</div>
+					*/?>
 					<div class="tq_error tq_error_auth"></div>
 					<div class="modal__content-item">
 						<div class="modal__link">Не помню пароль</div>

@@ -188,7 +188,7 @@ class tq_reg_code extends \CBitrixComponent implements Controllerable
     public function AuthAction($email,$password,$captcha_word){
         $arErrors = [];
 
-        if (strlen($captcha_word) > 0 )
+        /*if (strlen($captcha_word) > 0 )
         {
             if (!$this->recaptchaCheck($captcha_word)){
                 $arErrors[] = 'Код защиты от автоматических сообщений введен не верно';
@@ -202,7 +202,7 @@ class tq_reg_code extends \CBitrixComponent implements Controllerable
             // htmlspecialcharsbx($APPLICATION->CaptchaGetCode())
             $captcha ='';
             return['STATUS'=>'ERROR','MESSAGE'=>implode('<br>',$arErrors),'CAPTCHA_CODE'=>$captcha,'CAPTCHA_IMG'=>sprintf('/bitrix/tools/captcha.php?captcha_sid=%s',$captcha)];
-        }
+        }*/
 
         global $USER;
         if (!is_object($USER))

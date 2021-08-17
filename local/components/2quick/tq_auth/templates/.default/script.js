@@ -133,7 +133,8 @@ $('#tq_form_registration').on('submit', function (e) {
 function modalUserAuth() {
 	let email = document.getElementById('input-auth-email').value,
 	password = document.getElementById('input-auth-password').value,
-	captcha_word = document.getElementsByClassName('g-recaptcha-response')[0].value;
+	//captcha_word = document.getElementsByClassName('g-recaptcha-response')[0].value;
+	captcha_word = "1";
 
 	BX.ajax.runComponentAction('2quick:tq_auth',
 		'Auth', {
