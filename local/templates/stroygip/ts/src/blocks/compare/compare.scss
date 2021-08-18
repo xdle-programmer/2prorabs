@@ -160,6 +160,13 @@
 
   &__slider-items-wrapper {
     width: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
 
     @include tablet-small-screen {
       width: calc(100vw - 40px);

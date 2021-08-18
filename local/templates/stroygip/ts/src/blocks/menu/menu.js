@@ -14,6 +14,7 @@ function toggleMenu() {
     let bodyOpenClass = 'open-menu';
     let currentScroll;
     let $closeButton = document.querySelector('.menu__close');
+    let $allCloseButtons = document.querySelectorAll('[data-menu-close]');
     let $logoButton = document.querySelector('.menu__logo');
 
     for (let $button of buttons) {
@@ -22,6 +23,10 @@ function toggleMenu() {
 
     $closeButton.addEventListener('click', closeMenu);
     $logoButton.addEventListener('click', closeMenu);
+
+    for (let $button of $allCloseButtons) {
+        $button.addEventListener('click', closeMenu);
+    }
 
     function handlerClick(event) {
         let target;

@@ -37,7 +37,7 @@ function sliderCompare() {
             },
         },
         onInit: () => {
-
+            $slider.closest('.compare__slider-items-wrapper').classList.add('compare__slider-items-wrapper--active');
         },
     });
 }
