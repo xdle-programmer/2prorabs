@@ -43,7 +43,7 @@
     border: 1px solid var(--light-gray-color);
     @include flex-row-center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 20px;
     border-radius: 3px;
     height: 45px;
 
@@ -69,6 +69,7 @@
 
     @include desktop-small-screen {
       margin-right: 10px;
+      font-size: 12px;
     }
 
     &:hover {
@@ -143,6 +144,10 @@
     #{$button-hover} & {
       color: var(--red-color);
     }
+
+    @include desktop-small-screen {
+      font-size: 12px;
+    }
   }
 
   &__user-group {
@@ -161,6 +166,10 @@
     position: relative;
     padding-left: 19px;
     cursor: pointer;
+
+    &--exit {
+      margin-left: 20px;
+    }
 
     &:nth-of-type(1) {
       margin-right: 20px;
@@ -183,6 +192,7 @@
   }
 
   $user-button-hover: '.header__user-button:hover';
+  $user-button-exit: '.header__user-button--exit';
 
   &__user-button-icon {
     width: 15px;
@@ -206,6 +216,16 @@
     #{$user-button-hover} & {
       color: var(--red-color);
     }
+
+    #{$user-button-exit} & {
+      @include desktop-small-screen {
+        color: transparent;
+        width: 1px;
+        overflow: hidden;
+        display: block;
+      }
+    }
+
   }
 
   &__user-button-count {

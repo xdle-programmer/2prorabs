@@ -270,6 +270,7 @@ global $USER;
 						</svg>
 						<div class="mobile-header__catalog-button-text">Каталог</div>
 					</div>
+
 					<a class="mobile-header__basket" href="/basket/">
 						<svg class="mobile-header__basket-icon">
 							<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#basket"></use>
@@ -298,6 +299,22 @@ global $USER;
 							false
 						); ?>
 					</a>
+
+                    <? if ($USER->IsAuthorized()): ?>
+                        <a class="header__user-button header__user-button--exit" href="#">
+                            <svg class="header__user-button-icon">
+                                <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#logout"></use>
+                            </svg>
+                            <span class="header__user-button-text">Выход</span>
+                        </a>
+                    <? else: ?>
+                        <div class="header__user-button header__user-button--exit" data-modal-open="login">
+                            <svg class="header__user-button-icon">
+                                <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#user"></use>
+                            </svg>
+                            <span class="header__user-button-text">Выход</span>
+                        </div>
+                    <? endif; ?>
 				</div>
 			</div>
 			<header class="header">
@@ -379,6 +396,15 @@ global $USER;
 									); ?>
 								</a>
 							</div>
+
+                            <? if ($USER->IsAuthorized()): ?>
+                                <a class="header__user-button header__user-button--exit" href="#">
+                                    <svg class="header__user-button-icon">
+                                        <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#logout"></use>
+                                    </svg>
+                                    <span class="header__user-button-text">Выход</span>
+                                </a>
+                            <? endif; ?>
 						</div>
 					</div>
 				</div>
