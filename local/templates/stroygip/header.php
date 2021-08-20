@@ -301,19 +301,12 @@ global $USER;
 					</a>
 
                     <? if ($USER->IsAuthorized()): ?>
-                        <a class="header__user-button header__user-button--exit" href="#">
+                        <a class="header__user-button header__user-button--exit" href="<?=$APPLICATION->GetCurPageParam("logout=yes", array("login","logout","register","forgot_password","change_password"));?>">
                             <svg class="header__user-button-icon">
                                 <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#logout"></use>
                             </svg>
                             <span class="header__user-button-text">Выход</span>
                         </a>
-                    <? else: ?>
-                        <div class="header__user-button header__user-button--exit" data-modal-open="login">
-                            <svg class="header__user-button-icon">
-                                <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#user"></use>
-                            </svg>
-                            <span class="header__user-button-text">Выход</span>
-                        </div>
                     <? endif; ?>
 				</div>
 			</div>
@@ -398,7 +391,7 @@ global $USER;
 							</div>
 
                             <? if ($USER->IsAuthorized()): ?>
-                                <a class="header__user-button header__user-button--exit" href="#">
+                                <a class="header__user-button header__user-button--exit" href="<?=$APPLICATION->GetCurPageParam("logout=yes", array("login","logout","register","forgot_password","change_password"));?>">
                                     <svg class="header__user-button-icon">
                                         <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#logout"></use>
                                     </svg>

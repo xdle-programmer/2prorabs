@@ -66,7 +66,7 @@ $(document).on('submit','#tq_auth_phone',function () {
 
 function modalUserReg() {
 	var formData = new FormData(document.getElementById('tq_form_registration'));
-	formData.append('captcha_word', document.getElementsByClassName('g-recaptcha-response')[1].value );
+	formData.append('captcha_word', document.getElementsByClassName('g-recaptcha-response')[0].value );
 	
 	BX.ajax.runComponentAction('2quick:tq_auth', 'sendCodeReg', {
         mode: 'class',
