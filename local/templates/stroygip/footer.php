@@ -130,11 +130,11 @@ $page = $APPLICATION->GetCurPage();
 		array(),
 		false
 	); ?>
-	<?/* $APPLICATION->IncludeComponent(
+	<? $APPLICATION->IncludeComponent(
 		"2quick:tq_forgot",
 		"",
 		array()
-	); */?>
+	); ?>
 <? } ?>
 
 

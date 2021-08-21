@@ -1,4 +1,49 @@
-$(() => {
+function modalUserReg() {
+	var formData = new FormData(document.getElementById('tq_form_registration'));
+	formData.append('captcha_word', document.getElementsByClassName('g-recaptcha-response')[0].value );
+	
+	BX.ajax.runComponentAction('2quick:tq_auth', 'sendCodeReg', {
+        mode: 'class',
+        data: formData,
+    }).then(function (response) {
+		if (response.data.STATUS === 'SUCCESS') {
+			if(response.data.BACK_URL){
+				location.href = response.data.BACK_URL
+			}else{
+				location.reload();
+			}
+		} else {
+			var d1 = document.querySelector('div.tq_error_reg');
+			d1.innerHTML = response.data.MESSAGE;
+			document.getElementById('tq_confirm_code').style.display = 'none';
+			document.getElementById('tq_register_container').style.display = 'inline-block';
+		}
+    });
+
+}
+
+
+function modalUserAuth() {
+	let email = document.getElementById('input-auth-email').value,
+	password = document.getElementById('input-auth-password').value,
+	//captcha_word = document.getElementsByClassName('g-recaptcha-response')[0].value;
+	captcha_word = "1";
+
+	BX.ajax.runComponentAction('2quick:tq_auth',
+		'Auth', {
+			mode: 'class',
+			data: {email: email,password:password,captcha_word:captcha_word},
+	}).then(function (response) {
+		if (response.data.STATUS === 'SUCCESS') {
+			location.reload();
+		} else {
+			var d1 = document.querySelector('div.tq_error_auth');
+			d1.innerHTML = response.data.MESSAGE;
+		}
+	});
+}
+
+/*$(() => {
     // Disable old click handler from dist/main.js
     $('.modal-registration__button').off('click').on('click', (e) => {
         const $block = $('.modal-registration__add-company-block');
@@ -64,29 +109,7 @@ $(document).on('submit','#tq_auth_phone',function () {
 
 
 
-function modalUserReg() {
-	var formData = new FormData(document.getElementById('tq_form_registration'));
-	formData.append('captcha_word', document.getElementsByClassName('g-recaptcha-response')[0].value );
-	
-	BX.ajax.runComponentAction('2quick:tq_auth', 'sendCodeReg', {
-        mode: 'class',
-        data: formData,
-    }).then(function (response) {
-		if (response.data.STATUS === 'SUCCESS') {
-			if(response.data.BACK_URL){
-				location.href = response.data.BACK_URL
-			}else{
-				location.reload();
-			}
-		} else {
-			var d1 = document.querySelector('div.tq_error_reg');
-			d1.innerHTML = response.data.MESSAGE;
-			document.getElementById('tq_confirm_code').style.display = 'none';
-			document.getElementById('tq_register_container').style.display = 'inline-block';
-		}
-    });
 
-}
 
 $(document).on('click','#tq_form_registration .modal-registration__button-red',function () {
 	$('form#tq_form_registration').submit();
@@ -100,22 +123,22 @@ $('#tq_form_registration').on('submit', function (e) {
         mode: 'class',
         data: formData,
     }).then(function (response) {
-            /*if (response.data.CAPTCHA_CODE) {
-                $('.modal-registration__captcha img').attr('src', response.data.CAPTCHA_IMG)
-                $('.modal-registration__captcha [name=captcha_sid]').val(response.data.CAPTCHA_CODE)
-                $('[name=captcha_word]').val('');
-            }*/
+            //if (response.data.CAPTCHA_CODE) {
+            //  $('.modal-registration__captcha img').attr('src', response.data.CAPTCHA_IMG)
+            //   $('.modal-registration__captcha [name=captcha_sid]').val(response.data.CAPTCHA_CODE)
+            //   $('[name=captcha_word]').val('');
+            //}
             if (response.data.STATUS === 'SUCCESS') {
                 if(response.data.BACK_URL){
                     location.href = response.data.BACK_URL
                 }else{
                     location.reload();
                 }
-               /* $('.tq_error').html('').hide()
-                $('#sended_phone').html(response.data.STATUS).hide()
-                $('#tq_confirm_code').show();
-                $('#tq_register_container').hide();
-                startTimer(response.data.TIME_FORMAT, response.data.TIME, 'tq_form_registration')*/
+               // $('.tq_error').html('').hide()
+               // $('#sended_phone').html(response.data.STATUS).hide()
+               // $('#tq_confirm_code').show();
+               // $('#tq_register_container').hide();
+               // startTimer(response.data.TIME_FORMAT, response.data.TIME, 'tq_form_registration')
             } else {
                 $('#tq_form_registration').find('.tq_error').html(response.data.MESSAGE).show()
                 $('#tq_confirm_code').hide();
@@ -126,30 +149,11 @@ $('#tq_form_registration').on('submit', function (e) {
 
     return false
 });
+*/
 
 
 
-
-function modalUserAuth() {
-	let email = document.getElementById('input-auth-email').value,
-	password = document.getElementById('input-auth-password').value,
-	//captcha_word = document.getElementsByClassName('g-recaptcha-response')[0].value;
-	captcha_word = "1";
-
-	BX.ajax.runComponentAction('2quick:tq_auth',
-		'Auth', {
-			mode: 'class',
-			data: {email: email,password:password,captcha_word:captcha_word},
-	}).then(function (response) {
-		if (response.data.STATUS === 'SUCCESS') {
-			location.reload();
-		} else {
-			var d1 = document.querySelector('div.tq_error_auth');
-			d1.innerHTML = response.data.MESSAGE;
-		}
-	});
-}
-
+/*
 $(document).on('click','#tq_auth_email .modal-registration__button-red',function () {
 	$('form#tq_auth_email').submit();
 });
@@ -165,11 +169,11 @@ $(document).on('submit','#tq_auth_email',function () {
             data: {email: email,password:password,captcha_word:captcha_word}, // ключи объекта data соответствуют параметрам метода
         })
         .then(function (response) {
-            /*if(response.data.CAPTCHA_CODE){
-                $('.modal-registration__captcha img').attr('src',response.data.CAPTCHA_IMG)
-                $('.modal-registration__captcha [name=captcha_sid]').val(response.data.CAPTCHA_CODE)
-                $('[name=captcha_word]').val('');
-            }*/
+            //if(response.data.CAPTCHA_CODE){
+             //   $('.modal-registration__captcha img').attr('src',response.data.CAPTCHA_IMG)
+             //   $('.modal-registration__captcha [name=captcha_sid]').val(response.data.CAPTCHA_CODE)
+             //   $('[name=captcha_word]').val('');
+            //}
             if (response.data.STATUS === 'SUCCESS') {
                location.reload();
             } else {
@@ -230,3 +234,5 @@ $(document).on('click','#tq_repeat_send',function () {
             }
         });
 })
+
+*/

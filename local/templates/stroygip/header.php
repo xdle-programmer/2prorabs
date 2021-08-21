@@ -115,15 +115,7 @@ global $USER;
 						</div>
 					</div>
 
-					<a class="menu__category-item menu__category-item--small" href="#" data-modal-open="login" data-menu-close>
-						<svg class="menu__category-icon menu__category-icon--small">
-							<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#user"></use>
-						</svg>
-						<div class="menu__category">
-							<div class="menu__category-title">Вход</div>
-							<div class="menu__mobile-desc">Вход в аккаунт для доступа к истории заказов и персональным скидкам</div>
-						</div>
-					</a>
+
 					<a class="menu__category-item menu__category-item--small" href="/catalog/sale/">
 						<svg class="menu__category-icon menu__category-icon--small">
 							<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#sale"></use>

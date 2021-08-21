@@ -16,26 +16,33 @@ use Bitrix\Main\Page\Asset;
 
 ?>
 
-<div class="modal-overlay"></div>
-<div class="modal-position">
-    <div class="reset-password">
-        <div class="reset-password__close"><img src="<?=SITE_TEMPLATE_PATH?>/assets/src/blocks/modals/reset-password/assets/img/close.svg"></div>
-        <div class="reset-password__title">Восстановление пароля</div>
-        <div class="reset-password__text">Введите свой e-mail, система автоматически сгенерирует новый пароль для вашей учетной записи и вышлет в письме</div>
-        <form class="reset-password__box" id="forgot_form">
-            <div class="input-styled">
-                <label class="input-styled__label" for="input-forgot-email">Ваш e-mail</label>
-                <input class="input-styled__input" type="email" id="input-forgot-email" name="EMAIL" required>
-            </div>
-            <div class="tq_error"></div>
-            <button class="button button--red button--red-width reset-password__button">Восстановить пароль</button>
-            <div class="reset-password__checkbox">
-                <div class="checkbox checkbox--align">
-                    <input class="checkbox__input" type="checkbox" required value="Y">
-                    <div class="checkbox__square"></div>
-                    <div class="checkbox__text checkbox__text--grey-small">Я даю согласие на обработку своих персональных данных согласно<a class="checkbox__right-link" href="#">политике конфиденциальности</a></div>
-                </div>
-            </div>
-        </form>
-    </div>
+<div class="modal" id="remember">
+	<form id="forgot_form">
+		<div class="modal__content form-check">
+			<input type="hidden" name="back_url" value="">
+			<div class="modal__header">
+				<div class="modal__header-title">Восстановление пароля</div>
+				<div class="modal__header-close" data-modal-close>
+					<svg class="modal__header-close-icon">
+						<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#close"></use>
+					</svg>
+				</div>
+			</div>
+			<div class="modal__content-items">
+				<div class="modal__content-item">
+					<div class="placeholder form-check__field" data-elem="input" data-rule="input-empty">
+						<input id="input-forgot-email" name="EMAIL" class="input placeholder__input" placeholder="Ваш e-mail" type="email" required>
+						<div class="placeholder__item" for="input-auth-email">Ваш e-mail</div>
+					</div>
+				</div>
+				<div class="tq_error tq_error_forgotpass"></div>
+				<div class="modal__content-item">
+					<div onclick="modalForgotPass()" class="modal__button button form-check__button  modal-registration__button-red">Выслать новый пароль</div>
+				</div>
+			</div>
+			<div class="modal__footer">
+				<a href="/privacy-policy/" class="modal__link">Политика конфиденцальности</a>
+			</div>
+		</div>
+	</form>
 </div>

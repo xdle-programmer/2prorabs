@@ -1,24 +1,16 @@
-$(document).on('submit','#forgot_form',function () {
-    BX.ajax.runComponentAction('2quick:tq_forgot',
-        'sendPass', { // Вызывается без постфикса Action
-            mode: 'class',
-            data: {email:$(this).find('input[name=EMAIL]').val()}, // ключи объекта data соответствуют параметрам метода
-        })
-        .then(function(response) {
-            if(response.data.STATUS === 'SUCCESS'){
-                $('#forgot_form .tq_error').html(response.data.MESSAGE).show();
-            }else{
-                $('#forgot_form .tq_error').html(response.data.MESSAGE).show();
-            }
-        });
-    return false
-});
+function modalForgotPass() {	
+	var user_email = document.getElementById('input-forgot-email').value;
+	var d1 = document.querySelector('div.tq_error_forgotpass');
+	
+	BX.ajax.runComponentAction('2quick:tq_forgot', 'sendPass', {
+        mode: 'class',
+        data: {email:user_email},
+    }).then(function (response) {
+		if (response.data.STATUS === 'SUCCESS') {
+			d1.innerHTML = "Новый пароль выслан на почту";
+		} else {
+			d1.innerHTML = response.data.MESSAGE;
+		}
+    });
 
-$(".catalog-menu__submenu-box .catalog-menu__submenu-item-button").click(function () {
-    $(this).toggleClass("active");
-    if( $(this).hasClass( "active") ){
-        $(this).siblings(".catalog-menu__submenu-inner").slideDown();
-    }else{
-        $(this).siblings(".catalog-menu__submenu-inner").slideUp();
-    }
-});
+}
