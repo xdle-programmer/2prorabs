@@ -34,7 +34,7 @@ if(!PayBoxSignature::check($arrRequest['pg_sig'], $strScriptName, $arrRequest, $
     print("Signature is not valid.");
 else
     if ($nOrderId != 0){
-        print(GetMessage("PAYMENT_SUCCESS_MESSAGE"));
+        /*print(GetMessage("PAYMENT_SUCCESS_MESSAGE"));
         $APPLICATION->IncludeComponent(
             "bitrix:sale.personal.order.detail",
             "",
@@ -45,7 +45,8 @@ else
                 "ID" => $nOrderId,
                 "SET_TITLE" => "Y"
             )
-        );
+        );*/
+		LocalRedirect("/personal/orders/");
     }
     else
         die("Invalid params.");

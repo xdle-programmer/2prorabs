@@ -158,13 +158,26 @@ while($ob = $res->GetNextElement()){
 										window.open('<?=$arParams["PATH_TO_PAYMENT"]?>?ORDER_ID=<?=$orderAccountNumber?>&PAYMENT_ID=<?=$paymentAccountNumber?>');
 									</script>
 									<?=Loc::getMessage("SOA_PAY_LINK", array("#LINK#" => $arParams["PATH_TO_PAYMENT"]."?ORDER_ID=".$orderAccountNumber."&PAYMENT_ID=".$paymentAccountNumber))?>
-									<?/* if (CSalePdf::isPdfAvailable() && $arPaySystem['IS_AFFORD_PDF']): ?>
+									<?// if (CSalePdf::isPdfAvailable() && $arPaySystem['IS_AFFORD_PDF']): ?>
 										<br/>
-										<?=Loc::getMessage("SOA_PAY_PDF", array("#LINK#" => $arParams["PATH_TO_PAYMENT"]."?ORDER_ID=".$orderAccountNumber."&pdf=1&DOWNLOAD=Y"))?>
-									<? endif; */?>
+										<?//=Loc::getMessage("SOA_PAY_PDF", array("#LINK#" => $arParams["PATH_TO_PAYMENT"]."?ORDER_ID=".$orderAccountNumber."&pdf=1&DOWNLOAD=Y"))?>
+									<?// endif; ?>
 								
 								<? else: ?>
-									<?=$arPaySystem["BUFFERED_OUTPUT"]?>
+									<?
+									if( $payment["PAY_SYSTEM_ID"] == "6" ){
+										if( strpos($arPaySystem["BUFFERED_OUTPUT"], 'https') !== false ){
+											?>
+											<script type='text/javascript'>document.getElementById("go_to_paybox").click();</script>
+											<a id="go_to_paybox" href="<?=$arPaySystem["BUFFERED_OUTPUT"]?>">Перейти на страницу оплаты</a>
+											<?
+										}else{
+											echo $arPaySystem["BUFFERED_OUTPUT"];
+										}
+									}else{
+										echo $arPaySystem["BUFFERED_OUTPUT"];
+									}
+									?>
 								<? endif ?>
 								
                                 <?
@@ -192,6 +205,7 @@ while($ob = $res->GetNextElement()){
             <br /><strong><?=$arParams['MESS_PAY_SYSTEM_PAYABLE_ERROR']?></strong>
             <?
         }
+		
         ?>
 		
 	</div>

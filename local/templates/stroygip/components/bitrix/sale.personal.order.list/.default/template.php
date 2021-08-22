@@ -11,6 +11,7 @@ Loc::loadMessages(__FILE__);
 $statuses = [
 		'W' => 'В работе',
 		'N' => 'Ожидают оплаты',
+		'OP' => 'Оплаченные',
 		'F' => 'Полученные',
 		'CN' => 'Отменённые',
 ];
@@ -96,7 +97,7 @@ $statuses = [
 							<div class="account__order-header-info-text">Заказ #<?=$order['ORDER']['ID']?> от <?=FormatDate('d F Y', strtotime($order['ORDER']['DATE_INSERT']->toString()));?>,</div>
 							<div class="account__order-header-info-price"><?=$order['ORDER']['FORMATED_PRICE'];?></div>
 						</div>
-						<div class="account__order-header-status account__order-header-status--<?if($order['ORDER']['STATUS_ID'] == "F"):?>green<?else:?>yellow<?endif;?>">
+						<div class="account__order-header-status account__order-header-status--<?if($order['ORDER']['STATUS_ID'] == "F" || $order['ORDER']['STATUS_ID'] == "OP"):?>green<?else:?>yellow<?endif;?>">
 							<?=$arResult['INFO']['STATUS'][$order['ORDER']['STATUS_ID']]['NAME'];?>
 						</div>
 						<div class="account__order-header-buttons">

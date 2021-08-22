@@ -33,11 +33,10 @@ if(!PayBoxSignature::check($arrRequest['pg_sig'], $strScriptName, $arrRequest, $
     print("Signature is not valid.");
 else
 	if ($nOrderId != 0){
-		print("????? ? ??????");
+		/*print("????? ? ??????");
 		print(" <a href='".$_SERVER['PHP_SELF']."?".$_SERVER['QUERY_STRING']."&pay=y'>?????????? ???????? ??? ???.</a>");
   
-		$APPLICATION->IncludeComponent(
-			"bitrix:sale.personal.order.detail",
+		$APPLICATION->IncludeComponent("bitrix:sale.personal.order.detail",
 			"",
 			Array(
 				"PATH_TO_LIST" => "", // path to list
@@ -45,9 +44,9 @@ else
 				"PATH_TO_PAYMENT" => "payment.php", // path to payment
 				"ID" => $nOrderId,
 				"SET_TITLE" => "Y"
-				)
-			);
-
+			)
+		);*/
+		LocalRedirect("/personal/orders/");
 	}
 	else
 		die("Invalid params.");
