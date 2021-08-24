@@ -268,7 +268,7 @@ function buttonSendReview(element_id) {
 			document.getElementById('input_rv_text').value = '';
 			
 			var el = document.querySelector("div.product-review-form-success");
-			el.classList.remove("hidden");
+			el.innerHTML = "Спасибо за отзыв! Мы проверим его и обязательно опубликуем.";
 
 		});
 	}

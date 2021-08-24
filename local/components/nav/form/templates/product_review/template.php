@@ -47,5 +47,5 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 	<div class="product-page__desc-reviews-list-form-button-block">
 		<div onclick="buttonSendReview(<?=$arParams['PRODUCT_ID']?>)" class="product-page__desc-reviews-list-form-button form-check__button button">Отправить</div>
 	</div>
-	<div id="product-review-form-success" class="hidden">Спасибо за отзыв! Мы проверим его и обязательно опубликуем.</div>
+	<div id="product-review-form-success"></div>
 </div>
