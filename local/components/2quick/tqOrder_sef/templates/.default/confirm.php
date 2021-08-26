@@ -174,6 +174,15 @@ while($ob = $res->GetNextElement()){
 										}else{
 											echo $arPaySystem["BUFFERED_OUTPUT"];
 										}
+									}elseif( $payment["PAY_SYSTEM_ID"] == "5" ){
+										if( strpos($arPaySystem["BUFFERED_OUTPUT"], 'https') !== false ){
+											?>
+											<script type='text/javascript'>document.getElementById("go_to_paybox").click();</script>
+											<a id="go_to_paybox" href="<?=$arPaySystem["BUFFERED_OUTPUT"]?>">Перейти на страницу оплаты</a>
+											<?
+										}else{
+											echo $arPaySystem["BUFFERED_OUTPUT"];
+										}
 									}else{
 										echo $arPaySystem["BUFFERED_OUTPUT"];
 									}
