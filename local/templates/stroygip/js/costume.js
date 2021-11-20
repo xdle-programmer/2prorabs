@@ -418,6 +418,28 @@ function clearCompare(ids) {
 }
 
 
+const menu_buttons = document.querySelectorAll("div[data-url]");
+menu_buttons.forEach(function (el2,index) {
+	var foo = "foo_"+el2.getAttribute("data-url");
+	var bar = el2.getAttribute("data-url");
+	el2.addEventListener('click', event => {		
+		window.history.pushState(null, null, el2.getAttribute("data-url"));
+		//BX.ajax.history.put(null, el2.getAttribute("data-url"));
+	});
+});
+
+window.onpopstate = function(event) {    
+    if(event.state == null) {
+        location.reload(); 
+    }
+}
+
+/*
+window.addEventListener('popstate',()=>{
+    window.dispatchEvent(new Event('locationchange'))
+});
+*/
+
 
 /*
 function ajaxUpdate(){

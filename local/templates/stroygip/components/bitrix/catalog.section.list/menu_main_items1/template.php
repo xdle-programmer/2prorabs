@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-
 <?
 if (0 < $arResult["SECTIONS_COUNT"])
 {
@@ -49,9 +48,20 @@ if (0 < $arResult["SECTIONS_COUNT"])
 				<?if( is_array($arResult['SECTIONS_TREE'][$arSection['ID']]) && count($arResult['SECTIONS_TREE'][$arSection['ID']])>0 ):?>
 					<?foreach( $arResult['SECTIONS_TREE'][$arSection['ID']] as $key1=>$arSection1 ):?>
 					<div class="menu__category-item preload__area">
-						<img class="preload__item menu__category-icon" data-src="<?=$arSection['PICTURE']['SRC']?>">
+						<img 
+							class="preload__item menu__category-icon" 
+							data-src="
+							<?
+							if( strlen($arSection1['PICTURE']['SRC'])>0 ):
+								echo $arSection1['PICTURE']['SRC'];
+							else:
+								echo $arSection['PICTURE']['SRC'];
+							endif;
+							?>
+							"
+						>
 						<div class="menu__category">
-							<div class="menu__category-title" data-menu-target="subcategory-<?=$arSection1['ID']?>"><? echo $arSection1["NAME"];?></div>
+							<div class="menu__category-title" data-url="<?=$arSection1['SECTION_PAGE_URL']?>" data-menu-target="subcategory-<?=$arSection1['ID']?>"><? echo $arSection1["NAME"];?></div>
 							
 							<?if( is_array($arResult['SECTIONS_TREE_2'][$arSection1['ID']]) && count($arResult['SECTIONS_TREE_2'][$arSection1['ID']])>0 ):?>
 								<?foreach( $arResult['SECTIONS_TREE_2'][$arSection1['ID']] as $key2=>$arSection2 ):?>
@@ -66,19 +76,19 @@ if (0 < $arResult["SECTIONS_COUNT"])
 							<?endif;?>
 							
 							<?if( intval($arResult['SUB_SECTIONS_NUM'][$arSection1['ID']]["COUNT"]) > 6 ):?>
-							<div class="menu__category-more-link qweqwe" data-menu-target="subcategory-<?=$arSection1['ID']?>">
+							<div class="menu__category-more-link" data-url="<?=$arSection1['SECTION_PAGE_URL']?>" data-menu-target="subcategory-<?=$arSection1['ID']?>">
 								Еще <? echo ( intval($arResult['SUB_SECTIONS_NUM'][$arSection1['ID']]["COUNT"]) - 6); ?>
 							</div>
 							<?endif;?>
 							
-							<div class="menu__mobile-desc" data-menu-target="subcategory-<?=$arSection1['ID']?>">
+							<div class="menu__mobile-desc" data-url="<?=$arSection1['SECTION_PAGE_URL']?>" data-menu-target="subcategory-<?=$arSection1['ID']?>">
 								<? echo $arSection1["NAME"];?>
 								
 								<?if( intval($arResult['SUB_SECTIONS_NUM'][$arSection1['ID']]["COUNT"]) > 6 ):?>
 								Еще <? echo ( intval($arResult['SUB_SECTIONS_NUM'][$arSection1['ID']]["COUNT"]) - 6); ?>
 								<?endif;?>
 					
-								<div class="menu__mobile-button" data-menu-target="subcategory-<?=$arSection1['ID']?>">
+								<div class="menu__mobile-button" data-url="<?=$arSection1['SECTION_PAGE_URL']?>" data-menu-target="subcategory-<?=$arSection1['ID']?>">
 									<svg class="menu__mobile-button-icon">
 									<use xlink:href="<?=SITE_TEMPLATE_PATH?>/ts/images/icons/icons-sprite.svg#arrow"></use>
 									</svg>

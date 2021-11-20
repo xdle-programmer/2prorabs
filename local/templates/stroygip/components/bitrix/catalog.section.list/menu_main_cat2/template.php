@@ -26,11 +26,11 @@ if (0 < $arResult["SECTIONS_COUNT"])
 		<div class="menu__category-item preload__area">
 			<img class="preload__item menu__category-icon" data-src="<?=$arSection['PICTURE']['SRC']?>">
 			<div class="menu__category">
-				<div class="menu__category-title" data-menu-target="category-<?=$arSection['ID']?>"><? echo $arSection["NAME"];?></div>
+				<div class="menu__category-title" data-url="<?=$arSection['SECTION_PAGE_URL']?>" data-menu-target="category-<?=$arSection['ID']?>"><? echo $arSection["NAME"];?></div>
 		
 				<?if( is_array($arResult['SECTIONS_TREE'][$arSection['ID']]) && count($arResult['SECTIONS_TREE'][$arSection['ID']])>0 ):?>
 					<?foreach( $arResult['SECTIONS_TREE'][$arSection['ID']] as $key1=>$arSection1 ):?>
-						<div class="menu__category-subtitle" data-menu-target="subcategory-<?=$arSection1['ID']?>"><? echo $arSection1["NAME"];?></div>
+						<div class="menu__category-subtitle" data-url="<?=$arSection1['SECTION_PAGE_URL']?>" data-menu-target="subcategory-<?=$arSection1['ID']?>"><? echo $arSection1["NAME"];?></div>
 						<?
 						if( $key1 >= 2 ){
 							break;
@@ -39,7 +39,7 @@ if (0 < $arResult["SECTIONS_COUNT"])
 					<?endforeach;?>
 					
 					<?if( intval($arSection["COUNT"]) > 3 ):?>
-					<div class="menu__category-more-link" data-menu-target="category-<?=$arSection['ID']?>">Еще <? echo ( intval($arSection["COUNT"]) - 3); ?></div>
+					<div class="menu__category-more-link" data-url="<?=$arSection['SECTION_PAGE_URL']?>" data-menu-target="category-<?=$arSection['ID']?>">Еще <? echo ( intval($arSection["COUNT"]) - 3); ?></div>
 					<?endif;?>
 				
 				<?endif;?>
@@ -47,14 +47,14 @@ if (0 < $arResult["SECTIONS_COUNT"])
 
 				
 
-				<div class="menu__mobile-desc" data-menu-target="category-<?=$arSection['ID']?>">
+				<div class="menu__mobile-desc" data-url="<?=$arSection['SECTION_PAGE_URL']?>" data-menu-target="category-<?=$arSection['ID']?>">
 					<? echo $arSection["NAME"];?>
 					
 					<?if( intval($arSection["COUNT"]) > 3 ):?>
 					Еще <? echo ( intval($arSection["COUNT"]) - 3); ?>
 					<?endif;?>
 					
-					<div class="menu__mobile-button" data-menu-target="category-<?=$arSection['ID']?>">
+					<div class="menu__mobile-button" data-url="<?=$arSection['SECTION_PAGE_URL']?>" data-menu-target="category-<?=$arSection['ID']?>">
 						<svg class="menu__mobile-button-icon">
 							<use xlink:href="<?=SITE_TEMPLATE_PATH?>/ts/images/icons/icons-sprite.svg#arrow"></use>
 						</svg>

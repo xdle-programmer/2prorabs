@@ -32,7 +32,7 @@ if (0 < $arResult["SECTIONS_COUNT"])
 			);
 			// $arSection['PICTURE']['SRC'];
 			?>
-			<div class="header__catalog-slider-item" data-menu-target="category-<?=$arSection['ID']?>">
+			<div class="header__catalog-slider-item" data-url="<?=$arSection['SECTION_PAGE_URL']?>" data-menu-target="category-<?=$arSection['ID']?>">
 				<div class="header__catalog-slider-item-inner"><? echo $arSection['NAME']; ?></div>
 			</div>
 		<?
