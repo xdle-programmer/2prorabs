@@ -23,7 +23,7 @@ global $USER;
 	$arr_ntu = array("/", "/basket/", "/order/", "/order/payment/", "/order/confirm_order/", "/personal/orders/", "/personal/credentials/", "/personal/viewed/", "/personal/estimates/", "/compare/", "/favorites/");
 	$arr_ntu_clear = array("/basket/", "/order/", "/order/payment/", "/order/confirm_order/");
 	$arr_ntu_lk = array("/personal/orders/", "/personal/credentials/", "/personal/viewed/", "/personal/estimates/", "/compare/", "/favorites/");
-	
+
     /*if ( !in_array($APPLICATION->GetCurPage(), $arr_ntu) && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/libs.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/style.css");
@@ -31,13 +31,13 @@ global $USER;
         // This stylesheet should become main
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/index.css");
     }
-	
-	
+
+
 	if ( !in_array($APPLICATION->GetCurPage(), $arr_ntu) && strpos($APPLICATION->GetCurDir(), '/catalog/') === false ) {
 		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.carousel.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/owl-carousel/dist/assets/owl.theme.default.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/select2/dist/css/select2.min.css");
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/fancybox-master/dist/jquery.fancybox.min.css");		
+        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/fancybox-master/dist/jquery.fancybox.min.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/plugins/range-slider/css/ion.rangeSlider.min.css");
 
 		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/dist/lightbox.min.css");
@@ -243,12 +243,12 @@ global $USER;
 		</div>
 	</div>
 
-	
+
 	<div class="preload <? if ($APPLICATION->GetCurPage() == "/"): ?>preload--not-ready<? endif; ?>" id="main-group">
 		<?if( $APPLICATION->GetCurPage() == "/" ){?>
 		<div class="section">
 		<?}?>
-		
+
 			<div class="mobile-header">
 				<div class="mobile-header__block layout preload__area">
 					<div class="mobile-header__button" data-menu-target="mobile-menu">
@@ -322,7 +322,7 @@ global $USER;
 							<a class="header__main-menu-item" href="/vacancy/">Вакансии</a>
 							<a class="header__main-menu-item" href="/clients/">Сотрудничество</a>
 						</div>
-						
+
 						<div class="header__buttons">
 							<a class="header__button header__button--sale" href="/catalog/sale/">
 								<svg class="header__button-icon">
@@ -346,12 +346,12 @@ global $USER;
 							</a>
 							<div class="header__user-group">
 								<? if (!$USER->IsAuthorized()): ?>
-									<a class="header__user-button" href="#" data-modal-open='login'>
+									<div class="header__user-button" href="#" data-modal-open='login'>
 										<svg class="header__user-button-icon">
 											<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#user"></use>
 										</svg>
 										<span class="header__user-button-text">Вход</span>
-									</a>
+									</div>
 								<? else: ?>
 									<a class="header__user-button" href="/personal/orders/">
 										<svg class="header__user-button-icon">
@@ -601,14 +601,13 @@ global $USER;
 		<? if ($APPLICATION->GetCurPage() == "/"){?>
 		</div>
 		<?}?>
-		
+
 	<?if( !in_array($APPLICATION->GetCurPage(), $arr_ntu_lk) ){?>
 	</div>
 	<?}?>
-	
+
 	<? if ($APPLICATION->GetCurPage() == "/"){?>
 	<div class="preload <? if ($APPLICATION->GetCurPage() == "/"): ?>preload--not-ready<? endif; ?>" id="natural-group">
 	<?}?>
-	
+
 <?}?>
-		
