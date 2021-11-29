@@ -9,7 +9,8 @@
 
   $not-empty: '.placeholder--not-empty';
   $error: '.form-check__error--show';
-  $search: '.main-banner__search';
+  $search: '.search-hints';
+  $search-banner: '.search-hints--banner';
   $small: '.placeholder--small';
 
   &__item {
@@ -36,7 +37,21 @@
     #{$search} & {
       font-size: 20px;
       font-weight: 600;
-      left: 64px;
+      left: 25px;
+      transform: translateY(18px) scale(1);
+
+      @include tablet-big-screen {
+        font-size: 16px;
+        font-weight: 400;
+        left: 41px;
+        transform: translateY(9px) scale(1);
+      }
+    }
+
+    #{$search-banner} & {
+      font-size: 20px;
+      font-weight: 600;
+      left: 25px;
       transform: translateY(18px) scale(1);
 
       @include tablet-big-screen {

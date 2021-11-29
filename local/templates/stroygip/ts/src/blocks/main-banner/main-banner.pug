@@ -2,7 +2,7 @@
     img(data-src='/local/templates/stroygip/ts/images/examples/main-banner.jpg').main-banner__img.preload__item
 
     .main-banner__search
-        +iconSvg('search','main-banner__search-icon')
-        .placeholder
-            input(placeholder='Поиск товара').input.input--search.placeholder__input
-            .placeholder__item Поиск товара
+        .main-banner__search-mobile(data-search-hints-open='banner-search')
+            +iconSvg('search','main-banner__search-mobile-icon')
+            .main-banner__search-mobile-text Поиск товара
+        include ./../search-hints/search-hints--banner

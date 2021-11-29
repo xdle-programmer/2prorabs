@@ -14,8 +14,6 @@ export function initPreviewsSlider() {
         const $slider = $wrapper.querySelector('.previews-slider__wrapper');
         const $nav = $wrapper.querySelector('.previews-slider__nav');
 
-        console.log($wrapper);
-
         const slider = tns({
             container: $slider,
             autoWidth: false,

@@ -28,7 +28,7 @@ header.header
                         span.header__user-button-count 214
 
     .header__catalog-wrapper
-        .header__catalog-block.layout.preload__area
+        .header__catalog-block.header__catalog-block--with-search.layout.preload__area
             a(href='/').header__logo
                 img(src='/local/templates/stroygip/ts/images/logo/logo-black.svg').header__logo-img
             .header__catalog
@@ -58,3 +58,5 @@ header.header
                             .header__catalog-slider-item-inner Категория
                 .header__catalog-slider-button
                     +iconSvg('arrow','header__catalog-slider-button-icon')
+            .header__search
+                include ./../search-hints/search-hints--header

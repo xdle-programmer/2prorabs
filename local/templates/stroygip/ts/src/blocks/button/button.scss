@@ -20,9 +20,6 @@
   cursor: pointer;
   padding: 0 20px;
 
-
-
-
   &.form-check__button--disabled {
     background: var(--light-gray-color);
     border-color: var(--light-gray-color);
@@ -63,6 +60,11 @@
 
   &--small {
     height: 48px;
+  }
+
+  &--red {
+    background: var(--red-color);
+    border: 1px solid var(--red-color);
   }
 
   &:hover {

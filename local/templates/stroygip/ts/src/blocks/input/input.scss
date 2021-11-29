@@ -24,7 +24,6 @@
   }
 
 
-
   @include tablet-big-screen {
     height: 40px;
   }
@@ -32,20 +31,6 @@
   #{$not-empty} & {
     padding-top: 14px;
   }
-
-  &--search {
-    border-radius: 30px;
-    padding-left: 63px;
-    font-size: 20px;
-    font-weight: 600;
-
-    @include tablet-big-screen {
-      font-size: 16px;
-      font-weight: 400;
-      padding-left: 40px;
-    }
-  }
-
 
   &--textarea {
     min-height: 100px;

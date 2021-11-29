@@ -45,7 +45,7 @@ function mapDeliveryHandler() {
         modals.close();
     });
 
-    let latlng = new google.maps.LatLng(42.86330569498411, 74.61784422778682);
+    let latlng = new google.maps.LatLng(window.currentLangCenter);
     let shop = new google.maps.LatLng(42.86348301510319, 74.61781435590407);
 
     let myOptions = {

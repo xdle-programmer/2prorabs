@@ -2,6 +2,8 @@
     .mobile-header__block.layout.preload__area
         .mobile-header__button(data-menu-target='mobile-menu')
             +iconSvg('menu','mobile-header__button-icon')
+        .mobile-header__search(data-search-hints-open='banner-search')
+            +iconSvg('search','mobile-header__search-icon')
         .mobile-header__catalog-button(data-menu-target='main')
             +iconSvg('mobile-catalog','mobile-header__catalog-button-icon')
             .mobile-header__catalog-button-text Каталог

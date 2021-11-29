@@ -1,0 +1,54 @@
+.search-hints__wrapper
+    .search-hints__input-row
+        .search-hints__close-button(data-search-hints-close)
+            +iconSvg('close','search-hints__close-button-icon')
+        .search-hints__input-block
+            input(placeholder='Поиск товара').search-hints__input.input.input--search
+        .search-hints__input-button
+            +iconSvg('search','search-hints__input-button-icon')
+    .search-hints__hints-wrapper
+
+        template(data-search-hints-products-item)
+            .search-hints__product
+                .search-hints__product-img-wrapper
+                    img.search-hints__product-img(src='')
+                .search-hints__product-desc
+                    a.search-hints__product-desc-name
+                    .search-hints__product-desc-control
+                        .search-hints__product-desc-control-price
+                            .search-hints__product-desc-control-price-number
+                            .search-hints__product-desc-control-price-currency сом
+                        .search-hints__product-desc-control-buy
+                            +iconSvg('basket','search-hints__product-desc-control-buy-icon')
+
+        template(data-search-hints-history-item)
+            .search-hints__hints-results-row.search-hints__hints-results-row--delete
+                a.search-hints__hints-results-row-link
+                .search-hints__hints-results-row-del
+                    +iconSvg('close','search-hints__hints-results-row-del-icon')
+
+        template(data-search-hints-popular-item)
+            .search-hints__hints-results-row
+                a.search-hints__hints-results-row-link
+
+        template(data-search-hints-category-item)
+            .search-hints__hints-results-row
+                a.search-hints__hints-results-row-link
+
+        .search-hints__hints-block
+            .search-hints__hints-results
+                .search-hints__hints-results-item
+                    .search-hints__hints-results-item-title История запросов
+                    .search-hints__hints-results-item-list(data-search-hints-history)
+                .search-hints__hints-results-item
+                    .search-hints__hints-results-item-title Частые запросы
+                    .search-hints__hints-results-item-list(data-search-hints-popular)
+                .search-hints__hints-results-item
+                    .search-hints__hints-results-item-title Категории
+                    .search-hints__hints-results-item-list(data-search-hints-category)
+
+
+            .search-hints__products
+                .search-hints__products-title Товары
+                .search-hints__products-list(data-search-hints-products)
+

@@ -127,3 +127,24 @@ block content
                         .delivery-map__form-button-save.form-check__button Сохранить
                         .delivery-map__form-button-cancel
                             +iconSvg('close','delivery-map__form-button-cancel-icon')
+
+    #choise-city.modal.modal--choise-city
+        .modal__content
+            .modal__header
+                .modal__header-title Выберите ближайший город
+                .modal__header-close(data-modal-close)
+                    +iconSvg('close','modal__header-close-icon')
+            .modal__content-items
+                .modal__content-message-two-buttons
+                    .button.button--red Бишкек
+                    .button.button--red Ош
+                //.delivery-map
+                //    .delivery-map__item
+                //    .delivery-map__form
+                //        .delivery-map__form-input
+                //            .placeholder.form-check__field(data-elem='input' data-rule='input-empty')
+                //                input.input.input--small.placeholder__input(placeholder='Кликните на карту')
+                //                .placeholder__item Кликните на карту
+                //        .delivery-map__form-button-save.form-check__button Сохранить
+                //        .delivery-map__form-button-cancel
+                //            +iconSvg('close','delivery-map__form-button-cancel-icon')
