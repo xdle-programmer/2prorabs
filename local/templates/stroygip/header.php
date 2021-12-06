@@ -69,6 +69,94 @@ global $USER;
     <?$APPLICATION->ShowPanel();?>
 </div>
 
+<script>
+window.searchHintInitData = {
+    products: [
+        {
+            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
+            name: 'Антифриз vertex ecotec g11 yellow 5л',
+            link: '#',
+            price: '250',
+        },
+        {
+            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
+            name: 'Антифриз vertex ecotec g11 yellow 5л',
+            link: '#',
+            price: '250',
+        },
+        {
+            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
+            name: 'Антифриз vertex ecotec g11 yellow 5л',
+            link: '#',
+            price: '250',
+        },
+        {
+            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
+            name: 'Антифриз vertex ecotec g11 yellow 5л',
+            link: '#',
+            price: '250',
+        },
+        {
+            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
+            name: 'Антифриз vertex ecotec g11 yellow 5л',
+            link: '#',
+            price: '250',
+        },
+        {
+            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
+            name: 'Антифриз vertex ecotec g11 yellow 5л',
+            link: '#',
+            price: '250',
+        }
+    ],
+    history: [
+        {
+            name: 'робот-пылесов',
+            link: '#',
+        },
+        {
+            name: 'робот-пылесов',
+            link: '#',
+        },
+    ],
+    popular: [
+        {
+            name: 'робот-пылесов',
+            link: '#',
+        },
+        {
+            name: 'робот-пылесов',
+            link: '#',
+        },
+        {
+            name: 'робот-пылесов',
+            link: '#',
+        },
+        {
+            name: 'робот-пылесов',
+            link: '#',
+        },
+    ],
+    category: [
+        {
+            name: 'Декор для потолка и стен',
+            link: '#',
+        },
+        {
+            name: 'Для сада и огорода',
+            link: '#',
+        },
+        {
+            name: 'Строительные материалы',
+            link: '#',
+        },
+    ],
+};
+window.searchHintUrl = '/local/include/main_search.php';
+
+window.currentLangCenter = [42.86330569498411, 74.61784422778682];
+</script>
+
 <?include $_SERVER['DOCUMENT_ROOT']."/local/include/basket_list.php";?>
 
 <?if( in_array($APPLICATION->GetCurPage(), $arr_ntu_clear) ):?>
@@ -256,6 +344,15 @@ global $USER;
 							<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#menu"></use>
 						</svg>
 					</div>
+					
+					<?if( $USER->IsAdmin() ){?>
+					<div class="mobile-header__search" data-search-hints-open="banner-search">
+						<svg class="mobile-header__search-icon">
+						  <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#search"></use>
+						</svg>
+					</div>
+					<?}?>
+					
 					<div class="mobile-header__catalog-button" data-menu-target="main">
 						<svg class="mobile-header__catalog-button-icon">
 							<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#mobile-catalog"></use>
@@ -403,7 +500,7 @@ global $USER;
 					</div>
 				</div>
 				<div class="header__catalog-wrapper">
-					<div class="header__catalog-block layout preload__area">
+					<div class="header__catalog-block <?if( $USER->IsAdmin() && $APPLICATION->GetCurPage() !== "/" ){?>header__catalog-block--with-search<?}?> layout preload__area">
 						<a class="header__logo" href="/">
 							<img class="header__logo-img" src="<?= SITE_TEMPLATE_PATH ?>/ts/images/logo/logo-black.svg">
 						</a>
@@ -449,6 +546,94 @@ global $USER;
 								</svg>
 							</div>
 						</div>
+			
+						<?if( $USER->IsAdmin() && $APPLICATION->GetCurPage() !== "/" ){?>
+						<div class="header__search">
+							<div class="search-hints search-hints--header" id="header-search">
+								<div class="search-hints__wrapper">
+									<div class="search-hints__input-row">
+										<div class="search-hints__close-button" data-search-hints-close>
+											<svg class="search-hints__close-button-icon">
+												<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#close"></use>
+											</svg>
+										</div>
+										<div class="search-hints__input-block">
+											<input class="search-hints__input input input--search" placeholder="Поиск товара">
+										</div>
+										<div class="search-hints__input-button">
+											<svg class="search-hints__input-button-icon">
+												<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#search"></use>
+											</svg>
+										</div>
+									</div>
+									<div class="search-hints__hints-wrapper">
+										<template data-search-hints-products-item>
+											<div class="search-hints__product">
+												<div class="search-hints__product-img-wrapper">
+													<img class="search-hints__product-img" src="">
+												</div>
+												<div class="search-hints__product-desc">
+													<a class="search-hints__product-desc-name"></a>
+													<div class="search-hints__product-desc-control">
+														<div class="search-hints__product-desc-control-price">
+															<div class="search-hints__product-desc-control-price-number"></div>
+															<div class="search-hints__product-desc-control-price-currency">сом</div>
+														</div>
+														<div class="search-hints__product-desc-control-buy">
+															<svg class="search-hints__product-desc-control-buy-icon">
+																<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#basket"></use>
+															</svg>
+														</div>
+													</div>
+												</div>
+											</div>
+										</template>
+										<template data-search-hints-history-item>
+										<div class="search-hints__hints-results-row search-hints__hints-results-row--delete">
+											<a class="search-hints__hints-results-row-link"></a>
+											<div class="search-hints__hints-results-row-del">
+												<svg class="search-hints__hints-results-row-del-icon">
+													<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#close"></use>
+												</svg>
+											</div>
+										</div>
+										</template>
+										<template data-search-hints-popular-item>
+											<div class="search-hints__hints-results-row">
+												<a class="search-hints__hints-results-row-link"></a>
+											</div>
+										</template>
+										<template data-search-hints-category-item>
+											<div class="search-hints__hints-results-row">
+												<a class="search-hints__hints-results-row-link"></a>
+											</div>
+										</template>
+										<div class="search-hints__hints-block">
+											<div class="search-hints__hints-results">
+												<div class="search-hints__hints-results-item">
+													<div class="search-hints__hints-results-item-title">История запросов</div>
+													<div class="search-hints__hints-results-item-list" data-search-hints-history></div>
+												</div>
+												<div class="search-hints__hints-results-item">
+													<div class="search-hints__hints-results-item-title">Частые запросы</div>
+													<div class="search-hints__hints-results-item-list" data-search-hints-popular></div>
+												</div>
+												<div class="search-hints__hints-results-item">
+													<div class="search-hints__hints-results-item-title">Категории</div>
+													<div class="search-hints__hints-results-item-list" data-search-hints-category></div>
+												</div>
+											</div>
+											<div class="search-hints__products">
+												<div class="search-hints__products-title">Товары</div>
+												<div class="search-hints__products-list" data-search-hints-products></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<?}?>
+			
 					</div>
 				</div>
 			</header>
