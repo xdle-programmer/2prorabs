@@ -61,10 +61,46 @@ if( strlen(trim($user_query))>=3 ){
 		}
 		
 		
-		if( count($arRes["products"])>= 20 ){
+		if( count($arRes["products"])>= 10 ){
 			break;
 		}
 	}
+	
+	$historyArray = array();
+	$historyArrayJs = array();
+	
+	$historyArray[] = $user_query;
+	$historyArrayJs[] = array(
+		"name" => $user_query,
+		"link" => "/catalog/?q=".$user_query,
+	);
+	
+	$history_string = "";
+	if( isset($_COOKIE["SearchHistory4"]) && count($_COOKIE["SearchHistory4"])>0 ){
+		$query_pieces = explode(";", $_COOKIE["SearchHistory4"]);
+		foreach( $query_pieces as $key=>$value){
+			$historyArray[] = $value;
+			
+			$historyArrayJs[] = array(
+				"name" => $value,
+				"link" => "/catalog/?q=".$value,
+			);
+			
+			if( count($historyArray)>=3 ){
+				break;
+			}
+		}
+	}
+	
+	$user_query_link = '/catalog/?q='.$user_query;
+	
+	$history_string = implode(";", $historyArray);
+	setcookie("SearchHistory4", $history_string, 2147483647, "/", "2proraba.kg", 1);
+
+	
+
+	
+	$arRes["history"] = $historyArrayJs;
 }
 
 print_r(json_encode($arRes));

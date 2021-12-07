@@ -69,6 +69,28 @@ global $USER;
     <?$APPLICATION->ShowPanel();?>
 </div>
 
+<?
+if( CModule::IncludeModule("search") ){
+	$arExistedPhrases = array();
+	if( is_array($_SESSION["searchPopular"]) && count($_SESSION["searchPopular"])>0 ){
+		$arExistedPhrases = $_SESSION["searchPopular"];
+	}else{
+		$dbStatistic = \CSearchStatistic::GetList(['RESULT_COUNT' => 'DESC'], false, false, false);
+		$dbStatistic->NavStart(50);
+		while ($arStatistic = $dbStatistic->Fetch()) {
+			if( strlen($arStatistic["PHRASE"])>=3 && !in_array(trim($arStatistic["PHRASE"]), $arExistedPhrases) ){
+				$pattern = '/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/';
+				if( !preg_match($pattern, $arStatistic["PHRASE"]) ){
+					$arExistedPhrases[] = trim($arStatistic["PHRASE"]);
+				}
+			} 
+		}
+		
+		$_SESSION["searchPopular"] = $arExistedPhrases;
+	}
+}
+?>
+
 <script>
 window.searchHintInitData = {
     products: [
@@ -110,32 +132,33 @@ window.searchHintInitData = {
         }
     ],
     history: [
-        {
-            name: 'робот-пылесов',
-            link: '#',
-        },
-        {
-            name: 'робот-пылесов',
-            link: '#',
-        },
+		<?
+		if( isset($_COOKIE["SearchHistory4"]) && count($_COOKIE["SearchHistory4"])>0 ){
+			$query_pieces = explode(";", $_COOKIE["SearchHistory4"]);
+			foreach( $query_pieces as $key=>$value){
+				echo "{";
+				echo "name: '".$value."',";
+				echo "link: '/catalog/?q=".$value."',";
+				echo "},";
+			}
+		}
+		?>
     ],
     popular: [
-        {
-            name: 'робот-пылесов',
-            link: '#',
-        },
-        {
-            name: 'робот-пылесов',
-            link: '#',
-        },
-        {
-            name: 'робот-пылесов',
-            link: '#',
-        },
-        {
-            name: 'робот-пылесов',
-            link: '#',
-        },
+		<?
+		if( count($arExistedPhrases)>0 ){
+			foreach( $arExistedPhrases as $key=>$value){
+				echo "{";
+				echo "name: '".$value."',";
+				echo "link: '/catalog/?q=".$value."',";
+				echo "},";
+				
+				if( $key >= 3 ){
+					break;
+				}
+			}
+		}
+		?>
     ],
     category: [
         {
