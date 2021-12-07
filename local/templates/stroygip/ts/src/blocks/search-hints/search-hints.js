@@ -106,11 +106,13 @@ function handlerSearchHints($wrapper) {
                 const $img = $clone.querySelector('.search-hints__product-img');
                 const $name = $clone.querySelector('.search-hints__product-desc-name');
                 const $price = $clone.querySelector('.search-hints__product-desc-control-price-number');
+                const $buyButton = $clone.querySelector('.search-hints__product-desc-control-buy');
 
                 $img.src = product.img;
                 $name.innerText = product.name;
                 $name.href = product.link;
                 $price.innerText = product.price;
+                $buyButton.dataset.productId = product.id
 
                 $wrapperProducts.appendChild($clone);
             });
