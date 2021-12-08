@@ -166,7 +166,7 @@ if( CModule::IncludeModule('iblock') ){
 	}
 }
 ?>
-
+ 
 <script>
 window.searchHintInitData = {
     products: <?=$arPopularJson?>,

@@ -434,6 +434,39 @@ window.onpopstate = function(event) {
     }
 }
 
+
+document.addEventListener("DOMContentLoaded", function(){
+	const search_input = document.querySelectorAll("div.search-hints__hints-results-row-del");
+	search_input.forEach(function (el2,index) {
+		
+		el2.addEventListener('click', event => {
+			var sd1 = el2.previousSibling;
+			var sd2 = sd1.previousSibling.innerText;
+			
+			clearSearchHistory(sd2);
+			sd1.parentElement.remove();
+		});
+		
+	});
+});
+
+
+function clearSearchHistory(val1) {
+	var params = "";	
+	params = "action=clearValue&param1="+val1;
+	
+	var request = new XMLHttpRequest();
+    request.open('POST', '/local/templates/stroygip/ajax/search.php', true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			console.log(request.responseText);
+		}
+	}
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.send(params);
+}
+
+
 /*
 window.addEventListener('popstate',()=>{
     window.dispatchEvent(new Event('locationchange'))
