@@ -89,48 +89,87 @@ if( CModule::IncludeModule("search") ){
 		$_SESSION["searchPopular"] = $arExistedPhrases;
 	}
 }
+
+if( CModule::IncludeModule('iblock') ){
+	$arPPSections = array();
+	
+	if( isset($_SESSION["productsPopular"]) && strlen($_SESSION["productsPopular"])>0 ){
+		$arPopularJson = $_SESSION["productsPopular"];
+		$arPopularSectJson = $_SESSION["sectionsPopular"];
+	}else{
+		$arPopularJson = "[]";
+		$arPopularProducts = array();
+		$arPPSelect = Array('ID', 'NAME', 'IBLOCK_ID', 'IBLOCK_SECTION_ID', 'PRICE_1', 'DETAIL_PAGE_URL', 'AVAILABLE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE');
+		$arPPFilter = Array("IBLOCK_ID"=>1, "ACTIVE"=>"Y", 'AVAILABLE'=>'Y');
+		$res = CIBlockElement::GetList(Array("show_counter"=>"desc"), $arPPFilter, false, Array("nPageSize"=>10), $arPPSelect);
+		while($ob = $res->GetNextElement()){
+			$arFields = $ob->GetFields();
+			
+			if( count($arPPSections)<=10 ){
+				$arPPSections[$arFields["IBLOCK_SECTION_ID"]] = $arFields["IBLOCK_SECTION_ID"];
+			}
+	
+			$arItem = array(
+				"id" => $arFields["ID"],
+				"img" => "",
+				"name" => $arFields["NAME"],
+				"link" => $arFields["DETAIL_PAGE_URL"],
+				"price" => intval($arFields["PRICE_1"]),
+			);
+
+			if( strlen($arFields["PREVIEW_PICTURE"])>0 ){
+				$file = CFile::ResizeImageGet($arFields['PREVIEW_PICTURE'], array('width'=>60, 'height'=>60), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+				$arItem["img"] = $file["src"];
+			}
+			if( empty($arItem["img"]) && strlen($arFields["DETAIL_PICTURE"])>0 ){
+				$file = CFile::ResizeImageGet($arFields['DETAIL_PICTURE'], array('width'=>60, 'height'=>60), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+				$arItem["img"] = $file["src"];
+			}
+			if( empty($arItem["img"]) ){
+				$arItem["img"] = "/local/templates/stroygip/img/no-image.png";
+			}
+			
+			$arPopularProducts[] = $arItem;
+		}
+		
+		if( count($arPopularProducts)>0 ){
+			$arPopularJson = json_encode($arPopularProducts);
+		}
+		$_SESSION["productsPopular"] = $arPopularJson;
+		
+		
+		$arPopularSectJson = "[]";
+		$arMainCategories = array();
+		$arTmpCats = array();
+		foreach( $arPPSections as $key1=>$sect_id ){
+			$list = CIBlockSection::GetNavChain(1, $sect_id, array(), true);
+			
+			if( !in_array($list[0]["CODE"], $arTmpCats) ){
+				$arSectItem = array(
+					"name" => $list[0]["NAME"],
+					"link" => "/catalog/".$list[0]["CODE"]."/",
+				);
+				$arMainCategories[] = $arSectItem;
+				
+				$arTmpCats[] = $list[0]["CODE"];
+			}
+			
+			if( count($arMainCategories)>=3 ){
+				break;
+			}
+		}
+		
+		if( count($arMainCategories)>0 ){
+			$arPopularSectJson = json_encode($arMainCategories);
+		}
+		$_SESSION["sectionsPopular"] = $arPopularSectJson;
+	}
+}
 ?>
 
 <script>
 window.searchHintInitData = {
-    products: [
-        {
-            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
-            name: 'Антифриз vertex ecotec g11 yellow 5л',
-            link: '#',
-            price: '250',
-        },
-        {
-            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
-            name: 'Антифриз vertex ecotec g11 yellow 5л',
-            link: '#',
-            price: '250',
-        },
-        {
-            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
-            name: 'Антифриз vertex ecotec g11 yellow 5л',
-            link: '#',
-            price: '250',
-        },
-        {
-            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
-            name: 'Антифриз vertex ecotec g11 yellow 5л',
-            link: '#',
-            price: '250',
-        },
-        {
-            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
-            name: 'Антифриз vertex ecotec g11 yellow 5л',
-            link: '#',
-            price: '250',
-        },
-        {
-            img: 'https://2proraba.kg/upload/iblock/b4c/b4c10b7ea99447f2f970e14e9076db60.jpeg',
-            name: 'Антифриз vertex ecotec g11 yellow 5л',
-            link: '#',
-            price: '250',
-        }
-    ],
+    products: <?=$arPopularJson?>,
     history: [
 		<?
 		if( isset($_COOKIE["SearchHistory4"]) && count($_COOKIE["SearchHistory4"])>0 ){
@@ -160,20 +199,7 @@ window.searchHintInitData = {
 		}
 		?>
     ],
-    category: [
-        {
-            name: 'Декор для потолка и стен',
-            link: '#',
-        },
-        {
-            name: 'Для сада и огорода',
-            link: '#',
-        },
-        {
-            name: 'Строительные материалы',
-            link: '#',
-        },
-    ],
+    category: <?=$arPopularSectJson?>,
 };
 window.searchHintUrl = '/local/include/main_search.php';
 
