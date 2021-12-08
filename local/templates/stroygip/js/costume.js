@@ -18,6 +18,10 @@ function catalogAction(action, element_id) {
 			});
 			
 			break;
+		case 'add2basket_search':			
+			params = "action=add2basket&quantity=1&id="+element_id;
+			
+			break;
 		case 'delete_basket_item':
 			params = "action=delete_basket_item&productid="+element_id;
 			break;
@@ -73,7 +77,7 @@ function catalogAction(action, element_id) {
 			}else if( action == "FAVORITES" ){
 				var favContainer = document.querySelector('.header__button--favorits');
 				favContainer.querySelector('.header__user-button-count').innerHTML = obj["FAV"];
-			}else if( action == "add2basket" ){
+			}else if( action == "add2basket" || action == "add2basket_search" ){
 				document.querySelector('.top-basket-count').innerHTML = request.responseText;
 				document.querySelector('.mobile-header__basket-count').innerHTML = request.responseText;
 			}else if( action == "delete_basket_item" ){
@@ -448,9 +452,17 @@ document.addEventListener("DOMContentLoaded", function(){
 		});
 		
 	});
+	
 });
 
-
+document.addEventListener('click',function(e){	
+    if( e.target && e.target.parentNode.classList[0] == 'search-hints__product-desc-control-buy' ){
+		var product_id = e.target.parentNode.getAttribute("data-product-id");
+		
+		catalogAction('add2basket_search', product_id);
+    }
+});
+ 
 function clearSearchHistory(val1) {
 	var params = "";	
 	params = "action=clearValue&param1="+val1;
