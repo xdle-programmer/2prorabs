@@ -47,7 +47,7 @@
     }
 
     #{$active} & {
-      width: 525px;
+      width: 625px;
       border-radius: 30px;
       transition: all #{$speed-transition}ms linear;
 
@@ -196,7 +196,7 @@
   &__hints-wrapper {
     position: absolute;
     top: calc(100% - 1px);
-    width: 525px;
+    width: 625px;
     right: 0;
     height: auto;
     z-index: 1;
