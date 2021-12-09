@@ -394,13 +394,11 @@ window.currentLangCenter = [42.86330569498411, 74.61784422778682];
 						</svg>
 					</div>
 					
-					<?if( $USER->IsAdmin() ){?>
 					<div class="mobile-header__search" data-search-hints-open="banner-search">
 						<svg class="mobile-header__search-icon">
 						  <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/ts/images/icons/icons-sprite.svg#search"></use>
 						</svg>
 					</div>
-					<?}?>
 					
 					<div class="mobile-header__catalog-button" data-menu-target="main">
 						<svg class="mobile-header__catalog-button-icon">
@@ -549,7 +547,7 @@ window.currentLangCenter = [42.86330569498411, 74.61784422778682];
 					</div>
 				</div>
 				<div class="header__catalog-wrapper">
-					<div class="header__catalog-block <?if( $USER->IsAdmin() && $APPLICATION->GetCurPage() !== "/" ){?>header__catalog-block--with-search<?}?> layout preload__area">
+					<div class="header__catalog-block <?if( $APPLICATION->GetCurPage() !== "/" ){?>header__catalog-block--with-search<?}?> layout preload__area">
 						<a class="header__logo" href="/">
 							<img class="header__logo-img" src="<?= SITE_TEMPLATE_PATH ?>/ts/images/logo/logo-black.svg">
 						</a>
@@ -596,7 +594,7 @@ window.currentLangCenter = [42.86330569498411, 74.61784422778682];
 							</div>
 						</div>
 			
-						<?if( $USER->IsAdmin() && $APPLICATION->GetCurPage() !== "/" ){?>
+						<?if( $APPLICATION->GetCurPage() !== "/" ){?>
 						<div class="header__search">
 							<div class="search-hints search-hints--header" id="header-search">
 								<div class="search-hints__wrapper">
