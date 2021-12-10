@@ -26,12 +26,14 @@ function handlerSearchHints($wrapper) {
     const activeClass = 'search-hints--active';
     const resultItemClass = 'search-hints__hints-results-item';
     const resultItemHideClass = 'search-hints__hints-results-item--hide';
+    const backgroundClass = `${wrapperClass}__background`
 
     init();
 
     function init() {
         addListeners();
         setData(window.searchHintInitData);
+        $wrapper.insertAdjacentHTML('afterbegin',`<div class="${backgroundClass}"></div>`)
     }
 
     function addListeners() {
@@ -84,6 +86,12 @@ function handlerSearchHints($wrapper) {
 
             // Если клик непосредственно по чему-то внутри кнопки закрытия
             if ($target.closest(`[data-search-hints-close]`)) {
+                $wrapper.classList.remove(activeClass);
+                return;
+            }
+
+            // Если клик по заглушке фона
+            if ($target.classList.contains(backgroundClass) ) {
                 $wrapper.classList.remove(activeClass);
                 return;
             }

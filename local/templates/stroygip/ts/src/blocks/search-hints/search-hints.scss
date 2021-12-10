@@ -7,7 +7,11 @@
   position: relative;
   width: 100%;
   height: 44px;
-  z-index: 1;
+
+  &--active {
+    z-index: 10001;
+  }
+
 
   &--banner {
     height: 62px;
@@ -35,6 +39,24 @@
   $banner: '.search-hints--banner';
   $active: '.search-hints--active';
 
+  &__background {
+    @include pseudo-absolute;
+    position: fixed;
+    background: var(--black-color);
+    @include absolute-fill;
+    height: calc(100vh + 300vh);
+    top: -300px;
+    opacity: 0;
+    visibility: hidden;
+    transition: none;
+
+    #{$active} & {
+      opacity: .3;
+      visibility: visible;
+    }
+
+  }
+
   &__wrapper {
     position: absolute;
     right: 0;
@@ -55,6 +77,14 @@
         width: 100%;
         border-radius: 0;
         transition: none;
+      }
+    }
+
+    #{$banner}#{$active} & {
+      width: 525px;
+
+      @include tablet-big-screen {
+        width: 100%;
       }
     }
 
@@ -242,6 +272,14 @@
     #{$banner} & {
       transition: none !important;
       transition-delay: 0ms !important;
+    }
+
+    #{$banner}#{$active} & {
+      width: 525px;
+
+      @include tablet-big-screen {
+        width: 100%;
+      }
     }
   }
 
