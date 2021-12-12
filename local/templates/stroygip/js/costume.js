@@ -448,7 +448,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			var sd2 = sd1.previousSibling.innerText;
 			
 			clearSearchHistory(sd2);
-			sd1.parentElement.remove();
+			sd1.parentElement.style.display = "none";
 		});
 		
 	});
