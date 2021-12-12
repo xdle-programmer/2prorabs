@@ -479,6 +479,18 @@ function clearSearchHistory(val1) {
 }
 
 
+var search_input = document.getElementById("headerSearchInput");
+search_input.addEventListener("keyup", function(event) {
+	if (event.keyCode === 13) {
+		event.preventDefault();
+		if( (search_input.value).length >= 3 ){
+			window.location.href = "/catalog/index.php?q="+search_input.value;
+		}
+	}
+});
+
+
+
 /*
 window.addEventListener('popstate',()=>{
     window.dispatchEvent(new Event('locationchange'))
