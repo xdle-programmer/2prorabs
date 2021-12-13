@@ -984,11 +984,14 @@ class Import
 
                 if ($element_date_current > $element_date_start && $element_date_end > $element_date_current) {
                     \CPrice::SetBasePrice($this->availableItems[$data['Номенклатура']], (float)$data['АкционнаяЦена'], 'KGS');
-
-                    \CIBlockElement::SetPropertyValuesEx($this->availableItems[$data['Номенклатура']], $this->iblockID, [
-                        'OLD_PRICE' => $data['ОбычнаяЦена'],
-                        'MARK' => 'promo',
-                    ]);
+					
+					// fix for case old price = action price
+					if( intval($data['ОбычнаяЦена']) > intval($data['АкционнаяЦена']) ){
+						\CIBlockElement::SetPropertyValuesEx($this->availableItems[$data['Номенклатура']], $this->iblockID, [
+							'OLD_PRICE' => $data['ОбычнаяЦена'],
+							'MARK' => 'promo',
+						]);
+					}
 					
 					$product_price_action[] = $this->availableItems[$data['Номенклатура']];
                 }
