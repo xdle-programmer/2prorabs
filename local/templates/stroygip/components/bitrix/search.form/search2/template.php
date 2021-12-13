@@ -27,7 +27,7 @@ $this->setFrameMode(true);?>
 				</svg>
 			</div>
 			<div class="search-hints__input-block">
-				<input class="search-hints__input input input--search" placeholder="Поиск товара">
+				<input id="headerSearchInput" class="search-hints__input input input--search" placeholder="Поиск товара">
 			</div>
 			<div class="search-hints__input-button">
 				<svg class="search-hints__input-button-icon">

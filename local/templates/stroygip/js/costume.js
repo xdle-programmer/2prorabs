@@ -448,7 +448,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			var sd2 = sd1.previousSibling.innerText;
 			
 			clearSearchHistory(sd2);
-			sd1.parentElement.remove();
+			sd1.parentElement.style.display = "none";
 		});
 		
 	});
@@ -477,6 +477,18 @@ function clearSearchHistory(val1) {
 	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	request.send(params);
 }
+
+
+var search_input = document.getElementById("headerSearchInput");
+search_input.addEventListener("keyup", function(event) {
+	if (event.keyCode === 13) {
+		event.preventDefault();
+		if( (search_input.value).length >= 3 ){
+			window.location.href = "/catalog/index.php?q="+search_input.value;
+		}
+	}
+});
+
 
 
 /*

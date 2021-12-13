@@ -605,7 +605,7 @@ window.currentLangCenter = [42.86330569498411, 74.61784422778682];
 											</svg>
 										</div>
 										<div class="search-hints__input-block">
-											<input class="search-hints__input input input--search" placeholder="Поиск товара">
+											<input id="headerSearchInput" class="search-hints__input input input--search" placeholder="Поиск товара">
 										</div>
 										<div class="search-hints__input-button">
 											<svg class="search-hints__input-button-icon">
